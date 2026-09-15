@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import {
   LuBanknote,
   LuCalendarDays,
@@ -17,8 +17,6 @@ import {
   LuSearch,
   LuUpload,
 } from "react-icons/lu";
-
-const PIPELINES = ["Default Pipeline", "Enterprise Pipeline"];
 
 const STAGES = [
   { id: "new", name: "New", tone: "purple" },
@@ -95,12 +93,6 @@ const SEED = [
   },
 ];
 
-const EXTRA_LEADS = [
-  { title: "Olivia Bennett", owner: "Olivia Bennett", phone: "555-0133", country: "United States" },
-  { title: "Daniel Hayes", owner: "Daniel Hayes", phone: "555-0188", country: "Canada" },
-  { title: "Sarah Collins", owner: "Sarah Collins", phone: "555-0129", country: "United Kingdom" },
-];
-
 function money(value) {
   return value.toLocaleString("en-US", {
     style: "currency",
@@ -168,25 +160,8 @@ function DealCard({ deal, dragging, onDragStart, onDragEnd }) {
 
 export default function PipelineBoard() {
   const [deals, setDeals] = useState(SEED);
-  const [view, setView] = useState("pipeline");
-  const [query, setQuery] = useState("");
-  const [pipeline, setPipeline] = useState(PIPELINES[0]);
-  const [pipeOpen, setPipeOpen] = useState(false);
   const [dragId, setDragId] = useState(null);
   const [overStage, setOverStage] = useState(null);
-  const [added, setAdded] = useState(0);
-
-  const filtered = useMemo(() => {
-    const needle = query.trim().toLowerCase();
-    if (!needle) return deals;
-    return deals.filter((deal) =>
-      [deal.title, deal.owner, deal.company, deal.email, deal.phone]
-        .filter(Boolean)
-        .join(" ")
-        .toLowerCase()
-        .includes(needle),
-    );
-  }, [deals, query]);
 
   function handleDragStart(event, id) {
     event.dataTransfer.setData("text/plain", id);
@@ -204,189 +179,109 @@ export default function PipelineBoard() {
     const id = event.dataTransfer.getData("text/plain") || dragId;
     if (!id) return;
     setDeals((current) =>
-      current.map((deal) => (deal.id === id ? { ...deal, stage, hot: stage === "lost" ? deal.hot : false } : deal)),
+      current.map((deal) =>
+        deal.id === id ? { ...deal, stage, hot: stage === "lost" ? deal.hot : false } : deal,
+      ),
     );
     setDragId(null);
     setOverStage(null);
   }
 
-  function addLead() {
-    const template = EXTRA_LEADS[added % EXTRA_LEADS.length];
-    setDeals((current) => [
-      {
-        id: `n-${Date.now()}`,
-        stage: "new",
-        when: "Just now",
-        amount: 0,
-        ...template,
-      },
-      ...current,
-    ]);
-    setAdded((count) => count + 1);
-    setView("pipeline");
-  }
-
   return (
     <div className="pipe-board" aria-label="Sales pipeline board">
-      <div className="pipe-toolbar">
+      <div className="pipe-toolbar" aria-hidden="true">
         <div className="pipe-toolbar-left">
-          <div className="pipe-view-toggle" role="group" aria-label="Board view">
-            <button
-              type="button"
-              className={`pipe-tool is-seg${view === "pipeline" ? " is-on" : ""}`}
-              onClick={() => setView("pipeline")}
-            >
+          <div className="pipe-view-toggle">
+            <span className="pipe-tool is-seg is-on">
               <LuColumns3 size={15} strokeWidth={2.2} />
               Pipeline
-            </button>
-            <button
-              type="button"
-              className={`pipe-tool is-seg${view === "list" ? " is-on" : ""}`}
-              onClick={() => setView("list")}
-            >
+            </span>
+            <span className="pipe-tool is-seg">
               <LuList size={15} strokeWidth={2.2} />
               List
-            </button>
+            </span>
           </div>
-          <button type="button" className="pipe-tool is-add" onClick={addLead}>
+          <span className="pipe-tool is-add">
             <LuPlus size={15} strokeWidth={2.4} />
             Lead
-          </button>
-          <button type="button" className="pipe-tool">
+          </span>
+          <span className="pipe-tool">
             <LuUpload size={15} strokeWidth={2.2} />
             Import
-          </button>
-          <button type="button" className="pipe-tool">
+          </span>
+          <span className="pipe-tool">
             <LuDownload size={15} strokeWidth={2.2} />
             Export
-          </button>
-          <button type="button" className="pipe-tool is-icon" aria-label="Refresh">
+          </span>
+          <span className="pipe-tool is-icon">
             <LuRotateCcw size={15} strokeWidth={2.2} />
-          </button>
-          <button type="button" className="pipe-tool">
-            Filters
-          </button>
+          </span>
+          <span className="pipe-tool">Filters</span>
         </div>
         <div className="pipe-toolbar-right">
-          <label className="pipe-search">
+          <span className="pipe-search">
             <LuSearch size={15} strokeWidth={2.2} />
-            <input
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search by title, email, company"
-            />
-          </label>
-          <div className="pipe-dropdown">
-            <button
-              type="button"
-              className="pipe-tool"
-              aria-expanded={pipeOpen}
-              onClick={() => setPipeOpen((open) => !open)}
-            >
-              <LuColumns3 size={15} strokeWidth={2.2} />
-              {pipeline}
-              <LuChevronDown size={14} strokeWidth={2.2} />
-            </button>
-            {pipeOpen ? (
-              <ul className="pipe-menu" role="listbox">
-                {PIPELINES.map((name) => (
-                  <li key={name}>
-                    <button
-                      type="button"
-                      role="option"
-                      aria-selected={pipeline === name}
-                      className={pipeline === name ? "is-on" : ""}
-                      onClick={() => {
-                        setPipeline(name);
-                        setPipeOpen(false);
-                      }}
-                    >
-                      {name}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-          </div>
-          <button type="button" className="pipe-tool is-icon" aria-label="Edit pipeline">
+            <span>Search by title, email, company</span>
+          </span>
+          <span className="pipe-tool">
+            <LuColumns3 size={15} strokeWidth={2.2} />
+            Default Pipeline
+            <LuChevronDown size={14} strokeWidth={2.2} />
+          </span>
+          <span className="pipe-tool is-icon">
             <LuPencil size={15} strokeWidth={2.2} />
-          </button>
+          </span>
         </div>
       </div>
 
       <div className="pipe-subbar">
         <p>
-          <b>{filtered.length}</b> deals match current filters
-          {view === "pipeline" ? <span> · Drag a card to another stage</span> : null}
+          <b>{deals.length}</b> deals match current filters
+          <span> · Drag a card to another stage</span>
         </p>
-        <span className="pipe-pill">Pipeline: {pipeline}</span>
+        <span className="pipe-pill">Pipeline: Default Pipeline</span>
       </div>
 
-      {view === "list" ? (
-        <div className="pipe-list">
-          <table>
-            <thead>
-              <tr>
-                <th>Deal</th>
-                <th>Stage</th>
-                <th>Owner</th>
-                <th>Amount</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filtered.map((deal) => (
-                <tr key={deal.id}>
-                  <td>{deal.title}</td>
-                  <td>{STAGES.find((stage) => stage.id === deal.stage)?.name}</td>
-                  <td>{deal.owner || deal.company || "—"}</td>
-                  <td>{money(deal.amount)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ) : (
-        <div className="pipe-cols">
-          {STAGES.map((stage) => {
-            const cards = filtered.filter((deal) => deal.stage === stage.id);
-            const total = cards.reduce((sum, deal) => sum + deal.amount, 0);
-            return (
-              <section
-                className={`pipe-col${overStage === stage.id ? " is-over" : ""}`}
-                key={stage.id}
-                onDragOver={(event) => {
-                  event.preventDefault();
-                  setOverStage(stage.id);
-                }}
-                onDragLeave={() => setOverStage((current) => (current === stage.id ? null : current))}
-                onDrop={(event) => handleDrop(event, stage.id)}
-              >
-                <header className={`pipe-col-head is-${stage.tone}`}>
-                  <h4>
-                    <i />
-                    {stage.name}
-                  </h4>
-                  <p>
-                    {cards.length} Leads · {money(total)}
-                  </p>
-                </header>
-                <div className="pipe-col-body">
-                  {cards.map((deal) => (
-                    <DealCard
-                      key={deal.id}
-                      deal={deal}
-                      dragging={dragId === deal.id}
-                      onDragStart={handleDragStart}
-                      onDragEnd={handleDragEnd}
-                    />
-                  ))}
-                  {cards.length === 0 ? <p className="pipe-empty">Drop a deal here</p> : null}
-                </div>
-              </section>
-            );
-          })}
-        </div>
-      )}
+      <div className="pipe-cols">
+        {STAGES.map((stage) => {
+          const cards = deals.filter((deal) => deal.stage === stage.id);
+          const total = cards.reduce((sum, deal) => sum + deal.amount, 0);
+          return (
+            <section
+              className={`pipe-col${overStage === stage.id ? " is-over" : ""}`}
+              key={stage.id}
+              onDragOver={(event) => {
+                event.preventDefault();
+                setOverStage(stage.id);
+              }}
+              onDragLeave={() => setOverStage((current) => (current === stage.id ? null : current))}
+              onDrop={(event) => handleDrop(event, stage.id)}
+            >
+              <header className={`pipe-col-head is-${stage.tone}`}>
+                <h4>
+                  <i />
+                  {stage.name}
+                </h4>
+                <p>
+                  {cards.length} Leads · {money(total)}
+                </p>
+              </header>
+              <div className="pipe-col-body">
+                {cards.map((deal) => (
+                  <DealCard
+                    key={deal.id}
+                    deal={deal}
+                    dragging={dragId === deal.id}
+                    onDragStart={handleDragStart}
+                    onDragEnd={handleDragEnd}
+                  />
+                ))}
+                {cards.length === 0 ? <p className="pipe-empty">Drop a deal here</p> : null}
+              </div>
+            </section>
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -164,47 +164,6 @@ export const FEATURES = [
     bars: [30, 46, 40, 62, 55, 74, 66, 82, 78, 96],
   },
   {
-    id: "mobile",
-    label: "Mobile CRM App",
-    title: "Mobile CRM App",
-    body: "Manage leads on the go. Log calls, update deal stages, check in at meetings and read the full customer history from your phone — online or offline.",
-    chips: ["iOS & Android", "Call logging", "Offline notes"],
-    screen: "TracktCRM mobile CRM app screens",
-    metrics: [
-      { v: "68%", k: "mobile usage" },
-      { v: "24", k: "field reps" },
-      { v: "310", k: "visits logged" },
-      { v: "4.8", k: "app rating" },
-    ],
-    columns: [
-      {
-        name: "Assigned",
-        count: 12,
-        cards: [
-          { t: "Meera Raval", v: "Call back · 11:00 AM", w: "35%" },
-          { t: "Nova Interiors", v: "Visit · Andheri", w: "45%" },
-        ],
-      },
-      {
-        name: "Checked in",
-        count: 7,
-        cards: [
-          { t: "Sunrise Realty", v: "On site · 22 min", w: "70%" },
-          { t: "Kaya Clinics", v: "Meeting logged", w: "66%" },
-        ],
-      },
-      {
-        name: "Synced",
-        count: 31,
-        cards: [
-          { t: "9 call logs", v: "Uploaded", w: "100%" },
-          { t: "4 voice notes", v: "Transcribed", w: "90%" },
-        ],
-      },
-    ],
-    bars: [48, 55, 50, 68, 60, 76, 70, 85, 80, 94],
-  },
-  {
     id: "integrations",
     label: "Integrations",
     title: "CRM Integrations",
@@ -220,26 +179,34 @@ export const FEATURES = [
     columns: [
       {
         name: "Messaging",
-        count: 4,
+        count: 5,
         cards: [
-          { t: "WhatsApp API", v: "Two-way sync", w: "100%" },
-          { t: "Gmail", v: "Threads on record", w: "90%" },
+          { t: "WhatsApp", v: "Two-way sync", w: "100%", brand: "WhatsApp" },
+          { t: "Gmail", v: "Threads on record", w: "90%", brand: "Gmail" },
+          { t: "Instagram", v: "DMs & comments", w: "82%", brand: "Instagram" },
+          { t: "Facebook", v: "Lead forms sync", w: "78%", brand: "Facebook" },
+          { t: "LinkedIn", v: "InMail capture", w: "70%", brand: "LinkedIn" },
         ],
       },
       {
         name: "Lead sources",
         count: 6,
         cards: [
-          { t: "Meta & Google Ads", v: "Instant capture", w: "85%" },
-          { t: "Website forms", v: "3 forms live", w: "72%" },
+          { t: "Google Ads", v: "Instant capture", w: "88%", brand: "Google Ads" },
+          { t: "Justdial", v: "Enquiry sync", w: "76%", brand: "Justdial" },
+          { t: "IndiaMART", v: "Buy leads", w: "74%", brand: "IndiaMART" },
+          { t: "TradeIndia", v: "RFQ capture", w: "68%", brand: "TradeIndia" },
+          { t: "WordPress", v: "Form submissions", w: "72%", brand: "WordPress" },
+          { t: "Webhooks", v: "Any custom source", w: "95%", brand: "Webhooks" },
         ],
       },
       {
         name: "Business",
-        count: 5,
+        count: 3,
         cards: [
-          { t: "Razorpay", v: "Payment status", w: "64%" },
-          { t: "Google Calendar", v: "Meetings synced", w: "80%" },
+          { t: "Shopify", v: "Orders & customers", w: "80%", brand: "Shopify" },
+          { t: "Razorpay", v: "Payment status", w: "64%", brand: "Razorpay" },
+          { t: "Delhivery", v: "Shipment tracking", w: "58%", brand: "Delhivery" },
         ],
       },
     ],
@@ -410,7 +377,7 @@ export const FAQS = [
 
 export const FOOTER_COLS = [
   { title: "Company", links: ["About Us", "Contact", "Blog", "Partner with us", "Help Center", "Privacy Policy", "Terms & Conditions"] },
-  { title: "Product", links: ["Features", "Pricing", "Integrations", "AI CRM Software", "Mobile CRM App", "Open API"] },
+  { title: "Product", links: ["Features", "Pricing", "Integrations", "AI CRM Software", "Open API"] },
   { title: "Features", links: ["Lead Management Software", "Sales Pipeline Management", "Sales Automation", "Reporting & Analytics", "Quotation Management", "Follow-up Reminders"] },
   { title: "Industries", links: ["Real Estate CRM", "Education CRM", "Agency CRM", "Freelancer CRM", "Insurance CRM", "Ecommerce CRM"] },
   { title: "Compare", links: ["CRM for Small Business", "Affordable CRM Alternative", "CRM vs Spreadsheets", "Switch from your CRM"] },

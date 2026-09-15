@@ -10,7 +10,6 @@ import {
   GoogleBadge,
   GooglePlayIcon,
   MenuIcon,
-  PlusIcon,
   SOCIALS,
 } from "./icons";
 import LeadDashboard from "./lead-dashboard";
@@ -136,6 +135,9 @@ export default function HomePage() {
             </a>
             <a href="#industries" onClick={closeMenu}>
               Industries
+            </a>
+            <a href="#forms" onClick={closeMenu}>
+              Forms
             </a>
             <a href="#integrations" onClick={closeMenu}>
               Integrations
@@ -300,7 +302,7 @@ export default function HomePage() {
             </h2>
           </div>
           <p className="section-side">
-            Lead management, sales pipeline, automation, reporting, mobile and
+            Lead management, sales pipeline, automation, reporting and
             integrations — all included on every plan.
           </p>
         </div>
@@ -316,7 +318,7 @@ export default function HomePage() {
             </button>
           ))}
         </div>
-        <div className={`product-grid${tab === "leads" || tab === "pipeline" ? " is-leads" : ""}`}>
+        <div className={`product-grid${tab === "leads" || tab === "pipeline" || tab === "integrations" ? " is-leads" : ""}`}>
           <div className="product-copy" key={tab}>
             <h3>{active.title}</h3>
             <p>{active.body}</p>
@@ -333,6 +335,53 @@ export default function HomePage() {
               <LeadDashboard key="leads-dash" />
             ) : tab === "pipeline" ? (
               <PipelineBoard key="pipe-board" />
+            ) : tab === "integrations" ? (
+              <div className="preview-card int-preview" key={tab}>
+                <div className="preview-top">
+                  <span className="dot" />
+                  <strong>{active.screen}</strong>
+                  <em>this week</em>
+                </div>
+                <div className="preview-cols int-preview-cols">
+                  {active.columns.map((column) => (
+                    <div className="col-box" key={column.name}>
+                      <div className="col-head">
+                        <span>{column.name}</span>
+                        <span>{column.count}</span>
+                      </div>
+                      {column.cards.map((card) => (
+                        <div className="mini-card int-mini" key={card.t}>
+                          {card.brand ? (
+                            <span className="int-mini-logo">
+                              <BrandMark name={card.brand} />
+                            </span>
+                          ) : null}
+                          <div className="int-mini-copy">
+                            <b>{card.t}</b>
+                            <span>{card.v}</span>
+                          </div>
+                          <div className="bar-track">
+                            <div className="bar-fill" style={{ width: card.w }} />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+                <div className="metrics">
+                  {active.metrics.map((metric) => (
+                    <div className="metric" key={metric.k}>
+                      <b>{metric.v}</b>
+                      <span>{metric.k}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="bars">
+                  {active.bars.map((height, index) => (
+                    <i key={`${height}-${index}`} style={{ height: `${height}%` }} />
+                  ))}
+                </div>
+              </div>
             ) : (
               <div className="preview-card" key={tab}>
                 <div className="preview-top">
@@ -489,6 +538,94 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section forms-section reveal" id="forms">
+        <div className="forms-layout">
+          <div className="forms-copy">
+            <p className="kicker">CUSTOM FORMS</p>
+            <h2 className="h2">Build a form. Route every lead. Embed anywhere.</h2>
+            <p>
+              Drag fields into place, map them to your CRM, pick a pipeline and
+              stage, then drop the link or iframe on any website. Submissions
+              land in TracktCRM ready for your team.
+            </p>
+            <ol className="forms-steps">
+              <li>
+                <b>01</b>
+                <span>Drag fields and map them to lead name, email, phone and more.</span>
+              </li>
+              <li>
+                <b>02</b>
+                <span>Choose the pipeline, stage and owner so every submission is assigned.</span>
+              </li>
+              <li>
+                <b>03</b>
+                <span>Copy the share link or iframe and publish it on any site.</span>
+              </li>
+            </ol>
+          </div>
+
+          <div className="forms-visual" aria-hidden="true">
+            <div className="forms-mock">
+              <div className="forms-mock-top">
+                <div>
+                  <strong>New lead form</strong>
+                  <em>Status · Active</em>
+                </div>
+                <span className="forms-badge">Create form</span>
+              </div>
+
+              <div className="forms-route">
+                <span>
+                  <small>Pipeline</small>
+                  Default Pipeline
+                </span>
+                <span>
+                  <small>Stage</small>
+                  New
+                </span>
+                <span>
+                  <small>Assign to</small>
+                  James Carter
+                </span>
+              </div>
+
+              <div className="forms-builder">
+                <div className="forms-palette">
+                  <p>Fields</p>
+                  <span>Single line</span>
+                  <span>Email</span>
+                  <span>Phone</span>
+                  <span>Dropdown</span>
+                  <span>Message</span>
+                </div>
+                <div className="forms-canvas">
+                  <p>Form layout</p>
+                  <div className="forms-field">
+                    <b>Full name</b>
+                    <em>→ Lead name</em>
+                  </div>
+                  <div className="forms-field">
+                    <b>Email</b>
+                    <em>→ Email</em>
+                  </div>
+                  <div className="forms-field">
+                    <b>Phone</b>
+                    <em>→ Phone</em>
+                  </div>
+                  <div className="forms-field is-drop">Drop a field here</div>
+                </div>
+              </div>
+
+              <div className="forms-embed">
+                <p>Share & embed</p>
+                <code>https://app.tracktcrm.com/f/new-lead</code>
+                <code>{`<iframe src="https://app.tracktcrm.com/f/new-lead"></iframe>`}</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section reveal" id="integrations">
         <div className="int-wrap">
           <div className="int-grid">
@@ -590,17 +727,29 @@ export default function HomePage() {
       </section>
 
       <section className="section faq reveal" id="faq">
-        <h2 className="h2-sm">CRM software FAQs</h2>
-        <div className="faq-list stagger">
-          {FAQS.map((item) => (
-            <details className="faq-item" key={item.q}>
-              <summary>
-                {item.q}
-                <PlusIcon />
-              </summary>
-              <p>{item.a}</p>
-            </details>
-          ))}
+        <div className="faq-layout">
+          <div className="faq-aside">
+            <h2 className="h2">Frequently asked questions</h2>
+            <div className="faq-art" aria-hidden="true">
+              <span className="faq-bubble faq-bubble-outline">
+                <i />
+                <i />
+                <i />
+              </span>
+              <span className="faq-bubble faq-bubble-solid">?</span>
+            </div>
+          </div>
+          <div className="faq-list">
+            {FAQS.map((item, index) => (
+              <details className="faq-item" key={item.q} defaultOpen={index === 0}>
+                <summary>
+                  {item.q}
+                  <span className="faq-toggle" aria-hidden="true" />
+                </summary>
+                <p>{item.a}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 
