@@ -9,9 +9,12 @@ import {
   CloseIcon,
   GoogleBadge,
   GooglePlayIcon,
+  MenuIcon,
   PlusIcon,
   SOCIALS,
 } from "./icons";
+import LeadDashboard from "./lead-dashboard";
+import PipelineBoard from "./pipeline-board";
 import {
   COMPARE,
   FAQS,
@@ -43,7 +46,12 @@ const HERO_LEADS = [
 export default function HomePage() {
   const [wordIndex, setWordIndex] = useState(0);
   const [tab, setTab] = useState("leads");
+  const [menuOpen, setMenuOpen] = useState(false);
   const active = FEATURES.find((item) => item.id === tab) || FEATURES[0];
+
+  function closeMenu() {
+    setMenuOpen(false);
+  }
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -90,31 +98,69 @@ export default function HomePage() {
     };
   }, []);
 
+  useEffect(() => {
+    function onResize() {
+      if (window.innerWidth > 980) setMenuOpen(false);
+    }
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
     <div className="home">
-      <header className="header">
+      <header className={`header${menuOpen ? " is-open" : ""}`}>
         <div className="header-inner">
-          <a href="#top">
+          <a href="#top" onClick={closeMenu}>
             <img
               className="logo-img"
               src="/assets/tracktcrm-logo.png"
               alt="TracktCRM"
             />
           </a>
-          <nav className="nav header-nav">
-            <a href="#product">Product</a>
-            <a href="#speed">Instant response</a>
-            <a href="#industries">Industries</a>
-            <a href="#integrations">Integrations</a>
-            <a href="#faq">FAQ</a>
+          <nav
+            className={`nav header-nav${menuOpen ? " is-open" : ""}`}
+            id="site-nav"
+          >
+            <a href="#product" onClick={closeMenu}>
+              Product
+            </a>
+            <a href="#speed" onClick={closeMenu}>
+              Instant response
+            </a>
+            <a href="#industries" onClick={closeMenu}>
+              Industries
+            </a>
+            <a href="#integrations" onClick={closeMenu}>
+              Integrations
+            </a>
+            <a href="#faq" onClick={closeMenu}>
+              FAQ
+            </a>
           </nav>
           <div className="header-actions">
-            <a className="link-login" href="#demo">
+            <a className="link-login" href="#demo" onClick={closeMenu}>
               Login
             </a>
-            <a className="btn btn-start" href="#demo">
+            <a className="btn btn-start" href="#demo" onClick={closeMenu}>
               Start free
             </a>
+            <button
+              type="button"
+              className="menu-toggle"
+              aria-expanded={menuOpen}
+              aria-controls="site-nav"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              {menuOpen ? <CloseIcon size={20} /> : <MenuIcon />}
+            </button>
           </div>
         </div>
       </header>
@@ -130,6 +176,11 @@ export default function HomePage() {
             <br />
             you close more{" "}
             <span className="hero-word-wrap">
+              {HERO_WORDS.map((word) => (
+                <span className="hero-word-sizer" aria-hidden="true" key={`size-${word}`}>
+                  {word}
+                </span>
+              ))}
               <span
                 key={wordIndex}
                 className={`hero-word hero-word-${wordIndex % 3}`}
@@ -265,7 +316,7 @@ export default function HomePage() {
             </button>
           ))}
         </div>
-        <div className="product-grid">
+        <div className={`product-grid${tab === "leads" || tab === "pipeline" ? " is-leads" : ""}`}>
           <div className="product-copy" key={tab}>
             <h3>{active.title}</h3>
             <p>{active.body}</p>
@@ -278,45 +329,51 @@ export default function HomePage() {
             </div>
           </div>
           <div className="product-preview">
-            <div className="preview-card" key={tab}>
-              <div className="preview-top">
-                <span className="dot" />
-                <strong>{active.screen}</strong>
-                <em>this week</em>
-              </div>
-              <div className="preview-cols">
-                {active.columns.map((column) => (
-                  <div className="col-box" key={column.name}>
-                    <div className="col-head">
-                      <span>{column.name}</span>
-                      <span>{column.count}</span>
-                    </div>
-                    {column.cards.map((card) => (
-                      <div className="mini-card" key={card.t}>
-                        <b>{card.t}</b>
-                        <span>{card.v}</span>
-                        <div className="bar-track">
-                          <div className="bar-fill" style={{ width: card.w }} />
-                        </div>
+            {tab === "leads" ? (
+              <LeadDashboard key="leads-dash" />
+            ) : tab === "pipeline" ? (
+              <PipelineBoard key="pipe-board" />
+            ) : (
+              <div className="preview-card" key={tab}>
+                <div className="preview-top">
+                  <span className="dot" />
+                  <strong>{active.screen}</strong>
+                  <em>this week</em>
+                </div>
+                <div className="preview-cols">
+                  {active.columns.map((column) => (
+                    <div className="col-box" key={column.name}>
+                      <div className="col-head">
+                        <span>{column.name}</span>
+                        <span>{column.count}</span>
                       </div>
-                    ))}
-                  </div>
-                ))}
+                      {column.cards.map((card) => (
+                        <div className="mini-card" key={card.t}>
+                          <b>{card.t}</b>
+                          <span>{card.v}</span>
+                          <div className="bar-track">
+                            <div className="bar-fill" style={{ width: card.w }} />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+                <div className="metrics">
+                  {active.metrics.map((metric) => (
+                    <div className="metric" key={metric.k}>
+                      <b>{metric.v}</b>
+                      <span>{metric.k}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="bars">
+                  {active.bars.map((height, index) => (
+                    <i key={`${height}-${index}`} style={{ height: `${height}%` }} />
+                  ))}
+                </div>
               </div>
-              <div className="metrics">
-                {active.metrics.map((metric) => (
-                  <div className="metric" key={metric.k}>
-                    <b>{metric.v}</b>
-                    <span>{metric.k}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="bars">
-                {active.bars.map((height, index) => (
-                  <i key={`${height}-${index}`} style={{ height: `${height}%` }} />
-                ))}
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>

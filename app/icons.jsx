@@ -8,6 +8,7 @@ import {
 import {
   LuArrowRight,
   LuCheck,
+  LuMenu,
   LuPlus,
   LuX,
 } from "react-icons/lu";
@@ -67,6 +68,10 @@ export function CheckIcon({ size = 12 }) {
 
 export function CloseIcon({ size = 12 }) {
   return <LuX size={size} strokeWidth={3} />;
+}
+
+export function MenuIcon({ size = 22 }) {
+  return <LuMenu size={size} strokeWidth={2.4} />;
 }
 
 export function ArrowIcon({ size = 14 }) {
