@@ -99,24 +99,24 @@ export const FEATURES = [
         name: "Today",
         count: 18,
         cards: [
-          { t: "Auto call task - Meera", v: "10:30 AM", w: "40%" },
-          { t: "WhatsApp sequence", v: "12:00 PM", w: "30%" },
+          { t: "Auto call task - Meera", v: "10:30 AM", channel: "call" },
+          { t: "WhatsApp sequence", v: "12:00 PM", channel: "whatsapp" },
         ],
       },
       {
         name: "This week",
         count: 34,
         cards: [
-          { t: "Quote follow-up", v: "Thu · Ronak Textiles", w: "62%" },
-          { t: "Meeting recap email", v: "Fri · Aarav", w: "50%" },
+          { t: "Quote follow-up", v: "Thu · Ronak Textiles", channel: "email" },
+          { t: "Meeting recap email", v: "Fri · Aarav", channel: "email" },
         ],
       },
       {
         name: "Snoozed",
         count: 6,
         cards: [
-          { t: "Zenith IT", v: "Reopen in 10 days", w: "20%" },
-          { t: "Priya Kapoor", v: "Budget next quarter", w: "15%" },
+          { t: "Zenith IT", v: "Reopen in 10 days", channel: "snooze" },
+          { t: "Priya Kapoor", v: "Budget next quarter", channel: "snooze" },
         ],
       },
     ],
@@ -162,6 +162,14 @@ export const FEATURES = [
       },
     ],
     bars: [30, 46, 40, 62, 55, 74, 66, 82, 78, 96],
+  },
+  {
+    id: "forms",
+    label: "Custom Forms",
+    title: "Custom Forms",
+    body: "Build branded lead forms without a developer. Drag fields into place, they map to your CRM automatically, then embed the form on any site.",
+    chips: ["Drag & drop builder", "Auto field mapping", "Embed anywhere"],
+    screen: "TracktCRM form builder",
   },
   {
     id: "integrations",
@@ -212,6 +220,13 @@ export const FEATURES = [
     ],
     bars: [36, 50, 46, 58, 64, 70, 76, 80, 88, 92],
   },
+];
+
+export const HERO_WORDS = [
+  "real estate",
+  "agencies",
+  "freelancers",
+  "and more",
 ];
 
 export const LOGO_ROW = [
@@ -371,7 +386,7 @@ export const FAQS = [
   { q: "What is TracktCRM?", a: "TracktCRM is AI-powered CRM software for sales teams. It captures leads from every channel, organises them in one lead management dashboard, and tracks each deal through a customisable sales pipeline. Everything - contacts, conversations, tasks and reporting - lives in a single place." },
   { q: "How does TracktCRM help increase sales?", a: "It removes the two things that lose deals: slow replies and forgotten follow-ups. TracktCRM answers new leads automatically, reminds reps of every next step, and shows exactly which pipeline stage is leaking revenue so you can fix it early." },
   { q: "Is TracktCRM good for small businesses?", a: "Yes. TracktCRM is built for small businesses, agencies, freelancers and growing sales teams who want proper lead management without enterprise pricing. There is nothing to configure on day one - pick a pipeline template and start selling." },
-  { q: "Does TracktCRM offer a free trial?", a: "Yes. Every feature is available on a free 14-day trial with no credit card required. You can import your existing leads, run your real sales pipeline, and decide afterwards." },
+  { q: "Does TracktCRM offer a free trial?", a: "Yes. Every feature is available on a free 1 month trial with no credit card required. You can import your existing leads, run your real sales pipeline, and decide afterwards." },
   { q: "What integrations does TracktCRM support?", a: "TracktCRM connects with WhatsApp, Gmail and other email, Google Calendar, Meta and Google Ads, Shopify, payment tools and Zapier. An open CRM API and webhooks cover anything custom your team needs." },
   { q: "How do I get started with TracktCRM?", a: "Start your free trial or book a demo and our team maps your current lead flow. We set up your pipeline stages, sources and users, migrate your spreadsheet or old CRM data, and most teams are live within a week." },
   { q: "Is TracktCRM a good Pipedrive alternative?", a: "Yes. TracktCRM includes AI-powered lead response, WhatsApp automation and industry-ready pipelines that Pipedrive doesn't offer natively - at a lower price point, with data migration support if you're switching." },

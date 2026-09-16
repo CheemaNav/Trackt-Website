@@ -5,8 +5,18 @@ import {
   AppleIcon,
   ArrowIcon,
   BrandMark,
+  ChannelCallIcon,
+  ChannelEmailIcon,
+  ChannelSnoozeIcon,
+  ChannelWhatsAppIcon,
   CheckIcon,
   CloseIcon,
+  DragHandleIcon,
+  FieldDropdownIcon,
+  FieldEmailIcon,
+  FieldMessageIcon,
+  FieldPhoneIcon,
+  FieldTextIcon,
   GoogleBadge,
   GooglePlayIcon,
   MenuIcon,
@@ -19,6 +29,7 @@ import {
   FAQS,
   FEATURES,
   FOOTER_COLS,
+  HERO_WORDS,
   INDUSTRIES,
   INTEGRATIONS,
   AI_FEATURES,
@@ -42,6 +53,7 @@ const HERO_LEADS = [
 ];
 
 export default function HomePage() {
+  const [wordIndex, setWordIndex] = useState(0);
   const [tab, setTab] = useState("leads");
   const [menuOpen, setMenuOpen] = useState(false);
   const active = FEATURES.find((item) => item.id === tab) || FEATURES[0];
@@ -49,6 +61,13 @@ export default function HomePage() {
   function closeMenu() {
     setMenuOpen(false);
   }
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setWordIndex((current) => (current + 1) % HERO_WORDS.length);
+    }, 2200);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const els = () => document.querySelectorAll(".reveal:not(.is-in)");
@@ -165,8 +184,25 @@ export default function HomePage() {
             AI CRM software for sales teams
           </div>
           <h1 className="h1">
-            The AI CRM that answers your leads - real estate, agencies,
-            freelancers and more.
+            <span className="hero-line">The AI CRM that answers</span>
+            <br className="hero-break" />
+            {" "}
+            <span className="hero-line">your leads&nbsp;-</span>
+            <span className="hero-line hero-line-rotate">
+              <span className="hero-word-wrap" aria-live="polite">
+                {HERO_WORDS.map((word) => (
+                  <span className="hero-word-sizer" aria-hidden="true" key={`size-${word}`}>
+                    {word}
+                  </span>
+                ))}
+                <span
+                  key={wordIndex}
+                  className={`hero-word hero-word-${wordIndex % HERO_WORDS.length}`}
+                >
+                  {HERO_WORDS[wordIndex]}
+                </span>
+              </span>
+            </span>
           </h1>
           <p className="lead">
             TracktCRM is AI-powered CRM software that captures every lead,
@@ -196,13 +232,13 @@ export default function HomePage() {
               <span className="trust-check" aria-hidden="true">
                 <CheckIcon size={11} />
               </span>
-              Free 14-day trial
+              Free 1 month trial
             </span>
             <span className="trust-item">
               <span className="trust-check" aria-hidden="true">
                 <CheckIcon size={11} />
               </span>
-              Trusted by 5,000+ businesses
+              Trusted by 500+ businesses
             </span>
           </div>
         </div>
@@ -262,7 +298,7 @@ export default function HomePage() {
       </section>
 
       <section className="marquee-section reveal">
-        <p className="marquee-kicker">TRUSTED BY 5,000+ SALES TEAMS</p>
+        <p className="marquee-kicker">TRUSTED BY 500+ SALES TEAMS</p>
         <div className="marquee">
           {logos.map((logo, index) => (
             <span key={`${logo}-${index}`}>{logo}</span>
@@ -295,7 +331,7 @@ export default function HomePage() {
             </button>
           ))}
         </div>
-        <div className={`product-grid${tab === "leads" || tab === "pipeline" || tab === "integrations" ? " is-leads" : ""}`}>
+        <div className={`product-grid${tab === "leads" || tab === "pipeline" || tab === "integrations" || tab === "forms" ? " is-leads" : ""}`}>
           <div className="product-copy" key={tab}>
             <h3>{active.title}</h3>
             <p>{active.body}</p>
@@ -312,14 +348,14 @@ export default function HomePage() {
               <LeadDashboard key="leads-dash" />
             ) : tab === "pipeline" ? (
               <PipelineBoard key="pipe-board" />
-            ) : tab === "integrations" ? (
-              <div className="preview-card int-preview" key={tab}>
+            ) : tab === "automation" ? (
+              <div className="preview-card" key={tab}>
                 <div className="preview-top">
                   <span className="dot" />
                   <strong>{active.screen}</strong>
                   <em>this week</em>
                 </div>
-                <div className="preview-cols int-preview-cols">
+                <div className="preview-cols">
                   {active.columns.map((column) => (
                     <div className="col-box" key={column.name}>
                       <div className="col-head">
@@ -327,18 +363,21 @@ export default function HomePage() {
                         <span>{column.count}</span>
                       </div>
                       {column.cards.map((card) => (
-                        <div className="mini-card int-mini" key={card.t}>
-                          {card.brand ? (
-                            <span className="int-mini-logo">
-                              <BrandMark name={card.brand} />
-                            </span>
-                          ) : null}
-                          <div className="int-mini-copy">
+                        <div className="mini-card auto-mini" key={card.t}>
+                          <span className={`auto-channel auto-channel-${card.channel}`}>
+                            {card.channel === "call" ? (
+                              <ChannelCallIcon />
+                            ) : card.channel === "whatsapp" ? (
+                              <ChannelWhatsAppIcon />
+                            ) : card.channel === "email" ? (
+                              <ChannelEmailIcon />
+                            ) : (
+                              <ChannelSnoozeIcon />
+                            )}
+                          </span>
+                          <div className="auto-mini-copy">
                             <b>{card.t}</b>
                             <span>{card.v}</span>
-                          </div>
-                          <div className="bar-track">
-                            <div className="bar-fill" style={{ width: card.w }} />
                           </div>
                         </div>
                       ))}
@@ -356,6 +395,88 @@ export default function HomePage() {
                 <div className="bars">
                   {active.bars.map((height, index) => (
                     <i key={`${height}-${index}`} style={{ height: `${height}%` }} />
+                  ))}
+                </div>
+              </div>
+            ) : tab === "forms" ? (
+              <div className="preview-card forms-tab-card" key={tab}>
+                <div className="preview-top">
+                  <span className="dot" />
+                  <strong>{active.screen}</strong>
+                  <em>live preview</em>
+                </div>
+                <div className="forms-tab-body">
+                  <div className="forms-tab-fields" aria-hidden="true">
+                    <span>
+                      <FieldTextIcon />
+                    </span>
+                    <span>
+                      <FieldEmailIcon />
+                    </span>
+                    <span>
+                      <FieldPhoneIcon />
+                    </span>
+                    <span>
+                      <FieldDropdownIcon />
+                    </span>
+                    <span>
+                      <FieldMessageIcon />
+                    </span>
+                  </div>
+                  <div className="forms-tab-form" aria-hidden="true">
+                    <div className="forms-tab-input">
+                      <FieldTextIcon />
+                      Full name
+                    </div>
+                    <div className="forms-tab-input">
+                      <FieldEmailIcon />
+                      Email address
+                    </div>
+                    <div className="forms-tab-input">
+                      <FieldPhoneIcon />
+                      Phone number
+                    </div>
+                    <div className="forms-tab-input is-textarea">
+                      <FieldMessageIcon />
+                      Message
+                    </div>
+                    <span className="forms-tab-submit">
+                      Submit
+                      <ArrowIcon size={12} />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ) : tab === "integrations" ? (
+              <div className="preview-card int-preview" key={tab}>
+                <div className="preview-top">
+                  <span className="dot" />
+                  <strong>{active.screen}</strong>
+                  <em>this week</em>
+                </div>
+                <div className="preview-cols int-preview-cols">
+                  {active.columns.map((column) => (
+                    <div className="col-box" key={column.name}>
+                      <div className="col-head">
+                        <span>{column.name}</span>
+                        <span>{column.count}</span>
+                      </div>
+                      <div className="int-mini-grid">
+                        {column.cards.map((card) => (
+                          <div className="int-mini" key={card.t} title={card.t}>
+                            <BrandMark name={card.brand} />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="metrics">
+                  {active.metrics.map((metric) => (
+                    <div className="metric" key={metric.k}>
+                      <b>{metric.v}</b>
+                      <span>{metric.k}</span>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -573,27 +694,49 @@ export default function HomePage() {
               <div className="forms-builder">
                 <div className="forms-palette">
                   <p>Fields</p>
-                  <span>Single line</span>
-                  <span>Email</span>
-                  <span>Phone</span>
-                  <span>Dropdown</span>
-                  <span>Message</span>
+                  <span>
+                    <FieldTextIcon /> Single line
+                  </span>
+                  <span>
+                    <FieldEmailIcon /> Email
+                  </span>
+                  <span>
+                    <FieldPhoneIcon /> Phone
+                  </span>
+                  <span>
+                    <FieldDropdownIcon /> Dropdown
+                  </span>
+                  <span>
+                    <FieldMessageIcon /> Message
+                  </span>
                 </div>
                 <div className="forms-canvas">
                   <p>Form layout</p>
                   <div className="forms-field">
+                    <span className="forms-field-grip">
+                      <DragHandleIcon />
+                    </span>
                     <b>Full name</b>
                     <em>→ Lead name</em>
                   </div>
                   <div className="forms-field">
+                    <span className="forms-field-grip">
+                      <DragHandleIcon />
+                    </span>
                     <b>Email</b>
                     <em>→ Email</em>
                   </div>
                   <div className="forms-field">
+                    <span className="forms-field-grip">
+                      <DragHandleIcon />
+                    </span>
                     <b>Phone</b>
                     <em>→ Phone</em>
                   </div>
                   <div className="forms-field is-drop">Drop a field here</div>
+                  <div className="forms-drag-ghost">
+                    <FieldDropdownIcon /> Dropdown
+                  </div>
                 </div>
               </div>
 
@@ -801,7 +944,7 @@ export default function HomePage() {
           <div className="footer-cols">
             {FOOTER_COLS.map((column) => (
               <div key={column.title}>
-                <h3>{column.title}</h3>
+                <p className="footer-col-title">{column.title}</p>
                 {column.links.map((link) => (
                   <a href={link.href} key={link.label}>
                     {link.label}

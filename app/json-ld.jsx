@@ -24,12 +24,12 @@ export default function JsonLd() {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
-      description: "14-day free trial - no credit card required",
+      description: "1 month free trial - no credit card required",
     },
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
-      ratingCount: "5000",
+      ratingCount: "500",
       bestRating: "5",
     },
   };

@@ -8,8 +8,16 @@ import {
 import {
   LuArrowRight,
   LuCheck,
+  LuChevronDown,
+  LuClock,
+  LuGripVertical,
+  LuMail,
   LuMenu,
+  LuMessageCircle,
+  LuMessageSquare,
+  LuPhone,
   LuPlus,
+  LuType,
   LuX,
 } from "react-icons/lu";
 
@@ -80,6 +88,46 @@ export function ArrowIcon({ size = 14 }) {
 
 export function PlusIcon({ size = 18 }) {
   return <LuPlus size={size} strokeWidth={2.4} />;
+}
+
+export function FieldTextIcon({ size = 13 }) {
+  return <LuType size={size} strokeWidth={2.4} />;
+}
+
+export function FieldEmailIcon({ size = 13 }) {
+  return <LuMail size={size} strokeWidth={2.4} />;
+}
+
+export function FieldPhoneIcon({ size = 13 }) {
+  return <LuPhone size={size} strokeWidth={2.4} />;
+}
+
+export function FieldDropdownIcon({ size = 13 }) {
+  return <LuChevronDown size={size} strokeWidth={2.4} />;
+}
+
+export function FieldMessageIcon({ size = 13 }) {
+  return <LuMessageSquare size={size} strokeWidth={2.4} />;
+}
+
+export function DragHandleIcon({ size = 13 }) {
+  return <LuGripVertical size={size} strokeWidth={2.4} />;
+}
+
+export function ChannelCallIcon({ size = 14 }) {
+  return <LuPhone size={size} strokeWidth={2.4} />;
+}
+
+export function ChannelWhatsAppIcon({ size = 14 }) {
+  return <LuMessageCircle size={size} strokeWidth={2.4} />;
+}
+
+export function ChannelEmailIcon({ size = 14 }) {
+  return <LuMail size={size} strokeWidth={2.4} />;
+}
+
+export function ChannelSnoozeIcon({ size = 14 }) {
+  return <LuClock size={size} strokeWidth={2.4} />;
 }
 
 export function GoogleBadge() {
