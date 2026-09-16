@@ -3,7 +3,7 @@ export const FEATURES = [
     id: "leads",
     label: "Lead Management Software",
     title: "Lead Management Software",
-    body: "Manage and organise every lead in one place. Website forms, WhatsApp, ads, calls and referrals are captured automatically, de-duplicated and assigned to the right rep — so no enquiry is missed.",
+    body: "Manage and organise every lead in one place. Website forms, WhatsApp, ads, calls and referrals are captured automatically, de-duplicated and assigned to the right rep - so no enquiry is missed.",
     chips: ["Auto-assignment", "Lead scoring", "Source tracking"],
     screen: "TracktCRM lead management dashboard",
     metrics: [
@@ -85,7 +85,7 @@ export const FEATURES = [
     id: "automation",
     label: "Sales Automation",
     title: "Sales Automation",
-    body: "Automated follow-ups, reminders and multi-channel outreach keep every lead moving — without a rep having to remember to chase it.",
+    body: "Automated follow-ups, reminders and multi-channel outreach keep every lead moving - without a rep having to remember to chase it.",
     chips: ["Automated follow-ups", "Task reminders", "Workflow rules"],
     screen: "TracktCRM sales automation workflow",
     metrics: [
@@ -99,7 +99,7 @@ export const FEATURES = [
         name: "Today",
         count: 18,
         cards: [
-          { t: "Auto call task — Meera", v: "10:30 AM", w: "40%" },
+          { t: "Auto call task - Meera", v: "10:30 AM", w: "40%" },
           { t: "WhatsApp sequence", v: "12:00 PM", w: "30%" },
         ],
       },
@@ -126,7 +126,7 @@ export const FEATURES = [
     id: "reports",
     label: "Reporting & Analytics",
     title: "Reporting & Analytics",
-    body: "Live rep scorecards, source-level ROI and pipeline health — no manual spreadsheet pulls at month-end.",
+    body: "Live rep scorecards, source-level ROI and pipeline health - no manual spreadsheet pulls at month-end.",
     chips: ["Live dashboards", "Revenue tracking", "Source ROI"],
     screen: "TracktCRM reporting and analytics dashboard",
     metrics: [
@@ -226,13 +226,13 @@ export const LOGO_ROW = [
 ];
 
 export const SPEED_POINTS = [
-  "You set the tone, script and hand-off rules — the AI sales assistant never goes off-script.",
+  "You set the tone, script and hand-off rules - the AI sales assistant never goes off-script.",
   "Calls are recorded, transcribed and summarised straight onto the lead record.",
   "Reps pick up mid-conversation with full context, not a cold trail.",
 ];
 
 export const TIMELINE = [
-  { at: "0s", title: "Lead arrives", sub: "Form, WhatsApp, ad or missed call — captured and scored" },
+  { at: "0s", title: "Lead arrives", sub: "Form, WhatsApp, ad or missed call - captured and scored" },
   { at: "2s", title: "WhatsApp + email out", sub: "Personalised with the enquiry details" },
   { at: "8s", title: "SMS backup", sub: "For leads who never open email" },
   { at: "45s", title: "Follow-up call placed", sub: "While the enquiry is still warm" },
@@ -249,13 +249,13 @@ export const INDUSTRIES = [
   },
   {
     name: "Freelancer CRM",
-    body: "Solo work dies in spreadsheets. TracktCRM is the CRM for freelancers who don't have time to run a CRM — track enquiries, send quotes, and get reminded to follow up automatically.",
+    body: "Solo work dies in spreadsheets. TracktCRM is the CRM for freelancers who don't have time to run a CRM - track enquiries, send quotes, and get reminded to follow up automatically.",
     points: ["Enquiry to quote", "Automated reminders", "Invoice status tracking"],
     href: "#industries",
   },
   {
     name: "Agency CRM",
-    body: "Agencies and consultants juggle pitches, retainers and referrals across tools. TracktCRM keeps proposals, client conversations and renewals in one lead management dashboard — built for agencies and consultants alike.",
+    body: "Agencies and consultants juggle pitches, retainers and referrals across tools. TracktCRM keeps proposals, client conversations and renewals in one lead management dashboard - built for agencies and consultants alike.",
     points: ["Proposal pipeline", "Retainer renewals", "Client conversation history"],
     href: "#industries",
   },
@@ -368,14 +368,14 @@ export const STEPS = [
 ];
 
 export const FAQS = [
-  { q: "What is TracktCRM?", a: "TracktCRM is AI-powered CRM software for sales teams. It captures leads from every channel, organises them in one lead management dashboard, and tracks each deal through a customisable sales pipeline. Everything — contacts, conversations, tasks and reporting — lives in a single place." },
+  { q: "What is TracktCRM?", a: "TracktCRM is AI-powered CRM software for sales teams. It captures leads from every channel, organises them in one lead management dashboard, and tracks each deal through a customisable sales pipeline. Everything - contacts, conversations, tasks and reporting - lives in a single place." },
   { q: "How does TracktCRM help increase sales?", a: "It removes the two things that lose deals: slow replies and forgotten follow-ups. TracktCRM answers new leads automatically, reminds reps of every next step, and shows exactly which pipeline stage is leaking revenue so you can fix it early." },
-  { q: "Is TracktCRM good for small businesses?", a: "Yes. TracktCRM is built for small businesses, agencies, freelancers and growing sales teams who want proper lead management without enterprise pricing. There is nothing to configure on day one — pick a pipeline template and start selling." },
+  { q: "Is TracktCRM good for small businesses?", a: "Yes. TracktCRM is built for small businesses, agencies, freelancers and growing sales teams who want proper lead management without enterprise pricing. There is nothing to configure on day one - pick a pipeline template and start selling." },
   { q: "Does TracktCRM offer a free trial?", a: "Yes. Every feature is available on a free 14-day trial with no credit card required. You can import your existing leads, run your real sales pipeline, and decide afterwards." },
   { q: "What integrations does TracktCRM support?", a: "TracktCRM connects with WhatsApp, Gmail and other email, Google Calendar, Meta and Google Ads, Shopify, payment tools and Zapier. An open CRM API and webhooks cover anything custom your team needs." },
   { q: "How do I get started with TracktCRM?", a: "Start your free trial or book a demo and our team maps your current lead flow. We set up your pipeline stages, sources and users, migrate your spreadsheet or old CRM data, and most teams are live within a week." },
-  { q: "Is TracktCRM a good Pipedrive alternative?", a: "Yes. TracktCRM includes AI-powered lead response, WhatsApp automation and industry-ready pipelines that Pipedrive doesn't offer natively — at a lower price point, with data migration support if you're switching." },
-  { q: "Does TracktCRM work as a real estate CRM?", a: "Yes. TracktCRM includes ready-made pipelines for site-visit scheduling, channel-partner tracking and unit/inventory management — built specifically for how real estate teams sell." },
+  { q: "Is TracktCRM a good Pipedrive alternative?", a: "Yes. TracktCRM includes AI-powered lead response, WhatsApp automation and industry-ready pipelines that Pipedrive doesn't offer natively - at a lower price point, with data migration support if you're switching." },
+  { q: "Does TracktCRM work as a real estate CRM?", a: "Yes. TracktCRM includes ready-made pipelines for site-visit scheduling, channel-partner tracking and unit/inventory management - built specifically for how real estate teams sell." },
 ];
 
 export const FOOTER_COLS = [

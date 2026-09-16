@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -144,7 +144,7 @@ const REPORTS = {
     ],
   },
   qtd: {
-    heading: "Jul – Sep 2026",
+    heading: "Jul - Sep 2026",
     rows: [
       {
         name: "James Carter",
@@ -306,10 +306,10 @@ const REPORTS = {
 
 const STAT_META = [
   { id: "deals", label: "Total Deals", tone: "teal", Icon: LuChartColumn },
-  { id: "created", label: "Deals Created – All", tone: "orange", Icon: LuCalendarDays },
-  { id: "contacts", label: "Contacts Created – All", tone: "cyan", Icon: LuUser },
-  { id: "won", label: "Pipelines Won – All", tone: "green", Icon: LuTrophy },
-  { id: "lost", label: "Pipelines Lost – All", tone: "pink", Icon: LuMegaphone },
+  { id: "created", label: "Deals Created - All", tone: "orange", Icon: LuCalendarDays },
+  { id: "contacts", label: "Contacts Created - All", tone: "cyan", Icon: LuUser },
+  { id: "won", label: "Pipelines Won - All", tone: "green", Icon: LuTrophy },
+  { id: "lost", label: "Pipelines Lost - All", tone: "pink", Icon: LuMegaphone },
 ];
 
 function useInView(threshold = 0.22) {
@@ -504,10 +504,10 @@ export default function LeadDashboard() {
               {...item}
               {...snapshot.stats[item.id]}
               label={item.label.replace(
-                "– All",
+                "- All",
                 range === "all"
-                  ? "– All"
-                  : `– ${RANGE_OPTIONS.find((option) => option.id === range)?.label}`,
+                  ? "- All"
+                  : `- ${RANGE_OPTIONS.find((option) => option.id === range)?.label}`,
               )}
               live={live}
               delay={`${0.04 + index * 0.06}s`}

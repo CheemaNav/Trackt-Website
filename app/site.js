@@ -7,10 +7,10 @@ export const SITE_NAME = "TracktCRM";
 export const SEO = {
   title: "AI CRM Software for Leads, Pipeline & Real Estate | TracktCRM",
   description:
-    "TracktCRM is an AI CRM that captures leads, automates follow-ups and tracks your sales pipeline — built for real estate, agencies & freelancers. Free 14-day trial.",
-  ogTitle: "TracktCRM — AI CRM Software That Answers Every Lead",
+    "TracktCRM is an AI CRM that captures leads, automates follow-ups and tracks your sales pipeline - built for real estate, agencies & freelancers. Free 14-day trial.",
+  ogTitle: "TracktCRM - AI CRM Software That Answers Every Lead",
   ogDescription:
-    "AI-powered lead management, sales pipeline tracking and automated follow-ups — for real estate teams, agencies, consultants and freelancers.",
+    "AI-powered lead management, sales pipeline tracking and automated follow-ups - for real estate teams, agencies, consultants and freelancers.",
   keywords: [
     "ai crm",
     "crm for real estate",

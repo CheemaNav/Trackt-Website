@@ -111,7 +111,7 @@ export default function HomePage() {
             <img
               className="logo-img"
               src="/assets/tracktcrm-logo.png"
-              alt="TracktCRM — AI CRM software"
+              alt="TracktCRM - AI CRM software"
             />
           </a>
           <nav
@@ -165,13 +165,13 @@ export default function HomePage() {
             AI CRM software for sales teams
           </div>
           <h1 className="h1">
-            The AI CRM that answers your leads — real estate, agencies,
+            The AI CRM that answers your leads - real estate, agencies,
             freelancers and more.
           </h1>
           <p className="lead">
             TracktCRM is AI-powered CRM software that captures every lead,
             responds in seconds over WhatsApp, email and SMS, and keeps your
-            sales pipeline organized — built for how real estate teams,
+            sales pipeline organized - built for how real estate teams,
             agencies, consultants and freelancers actually sell.
           </p>
           <div className="hero-ctas">
@@ -280,7 +280,7 @@ export default function HomePage() {
           </div>
           <p className="section-side">
             Lead management, sales pipeline, automation, reporting and
-            integrations — all included on every plan.
+            integrations - all included on every plan.
           </p>
         </div>
         <div className="tabs">
@@ -409,13 +409,13 @@ export default function HomePage() {
           <div>
             <p className="kicker">AI SALES AUTOMATION</p>
             <h2 className="h2">
-              An AI CRM that answers every lead in seconds — not just an
+              An AI CRM that answers every lead in seconds - not just an
               AI-powered dashboard
             </h2>
             <p className="speed-copy">
               Most &quot;AI CRM&quot; tools stop at smart reporting. TracktCRM&apos;s AI
               actually acts on your leads: the moment an enquiry lands, our AI
-              sales assistant sends a WhatsApp message, an email and an SMS —
+              sales assistant sends a WhatsApp message, an email and an SMS -
               then places an automated follow-up call while the lead is still
               warm. Your rep picks up mid-conversation with the full history
               attached, never a cold trail.
@@ -450,7 +450,7 @@ export default function HomePage() {
         <h2 className="h2">A CRM built around how your industry sells</h2>
         <p>
           Ready-made pipelines, fields and follow-up rules for real estate,
-          freelancers, agencies and education — live from day one.
+          freelancers, agencies and education - live from day one.
         </p>
         <div className="industry-grid stagger">
           {INDUSTRIES.map((industry) => (
@@ -462,7 +462,7 @@ export default function HomePage() {
               <p>{industry.body}</p>
               <ul>
                 {industry.points.map((point) => (
-                  <li key={point}>— {point}</li>
+                  <li key={point}>- {point}</li>
                 ))}
               </ul>
             </div>
@@ -474,7 +474,7 @@ export default function HomePage() {
         <p className="kicker">WHY TEAMS SWITCH</p>
         <h2 className="h2">An easy-to-use, affordable CRM alternative</h2>
         <p className="compare-intro">
-          Most CRM software — including tools like Pipedrive — is priced and
+          Most CRM software - including tools like Pipedrive - is priced and
           built for enterprise teams. TracktCRM gives small businesses, agencies
           and freelancers the same lead management and sales pipeline power,
           with AI-powered automation Pipedrive doesn&apos;t have, at a fraction of
@@ -763,7 +763,7 @@ export default function HomePage() {
               alt="TracktCRM AI CRM software logo"
             />
             <p>
-              TracktCRM — AI CRM Software for Sales, Leads & Pipeline
+              TracktCRM - AI CRM Software for Sales, Leads & Pipeline
               Management.
             </p>
             <div className="socials">
