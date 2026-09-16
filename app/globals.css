@@ -365,8 +365,9 @@ select {
 }
 
 .hero .h1 {
-  text-wrap: wrap;
-  max-width: 100%;
+  text-wrap: balance;
+  max-width: 16ch;
+  font-size: clamp(32px, 4.2vw, 54px);
 }
 
 .hero-word-wrap {

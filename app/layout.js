@@ -1,4 +1,6 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
+import JsonLd from "./json-ld";
+import { SEO, SITE_NAME, SITE_URL } from "./site";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -7,39 +9,71 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
 });
 
+const ogImage = `${SITE_URL}/assets/tracktcrm-logo.png`;
+
 export const metadata = {
-  title: "TracktCRM — AI-Powered CRM Software for Sales Teams",
-  description:
-    "TracktCRM is an easy-to-use AI CRM software that helps you manage leads, track your sales pipeline, and close deals faster. Try it free — no credit card required.",
-  keywords: [
-    "CRM software",
-    "sales CRM",
-    "lead management software",
-    "sales pipeline management",
-    "AI CRM software",
-    "CRM for small business",
-  ],
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SEO.title,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SEO.description,
+  keywords: SEO.keywords,
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  category: "business",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
-    title: "TracktCRM — AI-Powered CRM Software for Sales Teams",
-    description:
-      "TracktCRM is an easy-to-use AI CRM software that helps you manage leads, track your sales pipeline, and close deals faster. Try it free — no credit card required.",
-    siteName: "TracktCRM",
-    images: ["/assets/tracktcrm-logo.png"],
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: SEO.ogTitle,
+    description: SEO.ogDescription,
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "TracktCRM — AI CRM Software That Answers Every Lead",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TracktCRM — AI-Powered CRM Software for Sales Teams",
-    description:
-      "AI CRM software for lead management, sales pipeline tracking and automated follow-ups. Start your free trial — no credit card required.",
-    images: ["/assets/tracktcrm-logo.png"],
+    title: SEO.ogTitle,
+    description: SEO.ogDescription,
+    images: [ogImage],
+  },
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png" }],
+    shortcut: ["/favicon.png"],
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={plusJakarta.variable}>
-      <body>{children}</body>
+      <body>
+        <JsonLd />
+        {children}
+      </body>
     </html>
   );
 }

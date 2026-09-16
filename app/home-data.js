@@ -3,7 +3,7 @@ export const FEATURES = [
     id: "leads",
     label: "Lead Management Software",
     title: "Lead Management Software",
-    body: "Manage and organise every lead in one place. Website forms, WhatsApp, ads, calls and referrals are captured automatically, de-duplicated and assigned to the right rep.",
+    body: "Manage and organise every lead in one place. Website forms, WhatsApp, ads, calls and referrals are captured automatically, de-duplicated and assigned to the right rep — so no enquiry is missed.",
     chips: ["Auto-assignment", "Lead scoring", "Source tracking"],
     screen: "TracktCRM lead management dashboard",
     metrics: [
@@ -44,7 +44,7 @@ export const FEATURES = [
     id: "pipeline",
     label: "Sales Pipeline Management",
     title: "Sales Pipeline Management",
-    body: "Customisable pipeline stages with drag-and-drop deal tracking. Run a separate sales pipeline per team, forecast by month, and see where revenue is stuck.",
+    body: "Customise your stages to match how you actually close deals. See every deal, every owner and every next step in one pipeline view.",
     chips: ["Custom stages", "Drag & drop", "Deal forecasting"],
     screen: "TracktCRM sales pipeline view",
     metrics: [
@@ -85,7 +85,7 @@ export const FEATURES = [
     id: "automation",
     label: "Sales Automation",
     title: "Sales Automation",
-    body: "Automated follow-ups and reminders keep every lead warm. Set the rules once and TracktCRM sends the message, books the task and nudges the rep before a deal goes cold.",
+    body: "Automated follow-ups, reminders and multi-channel outreach keep every lead moving — without a rep having to remember to chase it.",
     chips: ["Automated follow-ups", "Task reminders", "Workflow rules"],
     screen: "TracktCRM sales automation workflow",
     metrics: [
@@ -126,7 +126,7 @@ export const FEATURES = [
     id: "reports",
     label: "Reporting & Analytics",
     title: "Reporting & Analytics",
-    body: "Real-time dashboards and revenue tracking. See rep performance, source ROI and stage conversion live, so sales reviews run on numbers instead of opinions.",
+    body: "Live rep scorecards, source-level ROI and pipeline health — no manual spreadsheet pulls at month-end.",
     chips: ["Live dashboards", "Revenue tracking", "Source ROI"],
     screen: "TracktCRM reporting and analytics dashboard",
     metrics: [
@@ -167,7 +167,7 @@ export const FEATURES = [
     id: "integrations",
     label: "Integrations",
     title: "CRM Integrations",
-    body: "Connect WhatsApp, email, calendar, billing and lead sources in a couple of clicks — or wire up anything custom with our open CRM API.",
+    body: "Connects with WhatsApp, Gmail, Google Calendar, Meta & Google Ads, Shopify, Razorpay, Zapier and an open API.",
     chips: ["WhatsApp API", "Email & calendar", "Open API"],
     screen: "TracktCRM integrations settings",
     metrics: [
@@ -214,8 +214,6 @@ export const FEATURES = [
   },
 ];
 
-export const HERO_WORDS = ["deals.", "leads.", "sales."];
-
 export const LOGO_ROW = [
   "Navshakti",
   "Optimum Finserve",
@@ -228,7 +226,7 @@ export const LOGO_ROW = [
 ];
 
 export const SPEED_POINTS = [
-  "You set the tone, script and hand-off rules — the automation never goes off-script.",
+  "You set the tone, script and hand-off rules — the AI sales assistant never goes off-script.",
   "Calls are recorded, transcribed and summarised straight onto the lead record.",
   "Reps pick up mid-conversation with full context, not a cold trail.",
 ];
@@ -244,24 +242,28 @@ export const TIMELINE = [
 export const INDUSTRIES = [
   {
     name: "Real Estate CRM",
-    body: "Property enquiries arrive from a dozen portals at once. TracktCRM captures each lead instantly, books the site visit and tracks every broker and unit in one sales pipeline.",
+    body: "Property enquiries arrive from a dozen portals at once. TracktCRM is a real estate CRM that captures each lead instantly, books the site visit and tracks every broker, unit and deal in one sales pipeline.",
     points: ["Site-visit scheduling", "Channel-partner tracking", "Inventory & availability"],
     featured: true,
+    href: "#industries",
+  },
+  {
+    name: "Freelancer CRM",
+    body: "Solo work dies in spreadsheets. TracktCRM is the CRM for freelancers who don't have time to run a CRM — track enquiries, send quotes, and get reminded to follow up automatically.",
+    points: ["Enquiry to quote", "Automated reminders", "Invoice status tracking"],
+    href: "#industries",
+  },
+  {
+    name: "Agency CRM",
+    body: "Agencies and consultants juggle pitches, retainers and referrals across tools. TracktCRM keeps proposals, client conversations and renewals in one lead management dashboard — built for agencies and consultants alike.",
+    points: ["Proposal pipeline", "Retainer renewals", "Client conversation history"],
+    href: "#industries",
   },
   {
     name: "Education CRM",
     body: "Admissions teams lose applicants to slow replies. TracktCRM assigns each enquiry to a counsellor, automates follow-ups and shows every applicant's admission stage live.",
     points: ["Counsellor allocation", "Admission-stage pipeline", "Fee follow-up reminders"],
-  },
-  {
-    name: "Agency CRM",
-    body: "Agencies juggle pitches, retainers and referrals across tools. TracktCRM keeps proposals, client conversations and renewals in one lead management dashboard.",
-    points: ["Proposal pipeline", "Retainer renewals", "Client conversation history"],
-  },
-  {
-    name: "Freelancer CRM",
-    body: "Solo work dies in spreadsheets. TracktCRM tracks enquiries, sends quotes and reminds you to follow up — an affordable CRM that takes minutes to run each day.",
-    points: ["Enquiry to quote", "Automated reminders", "Invoice status tracking"],
+    href: "#industries",
   },
 ];
 
@@ -372,13 +374,63 @@ export const FAQS = [
   { q: "Does TracktCRM offer a free trial?", a: "Yes. Every feature is available on a free 14-day trial with no credit card required. You can import your existing leads, run your real sales pipeline, and decide afterwards." },
   { q: "What integrations does TracktCRM support?", a: "TracktCRM connects with WhatsApp, Gmail and other email, Google Calendar, Meta and Google Ads, Shopify, payment tools and Zapier. An open CRM API and webhooks cover anything custom your team needs." },
   { q: "How do I get started with TracktCRM?", a: "Start your free trial or book a demo and our team maps your current lead flow. We set up your pipeline stages, sources and users, migrate your spreadsheet or old CRM data, and most teams are live within a week." },
+  { q: "Is TracktCRM a good Pipedrive alternative?", a: "Yes. TracktCRM includes AI-powered lead response, WhatsApp automation and industry-ready pipelines that Pipedrive doesn't offer natively — at a lower price point, with data migration support if you're switching." },
+  { q: "Does TracktCRM work as a real estate CRM?", a: "Yes. TracktCRM includes ready-made pipelines for site-visit scheduling, channel-partner tracking and unit/inventory management — built specifically for how real estate teams sell." },
 ];
 
-
 export const FOOTER_COLS = [
-  { title: "Company", links: ["About Us", "Contact", "Blog", "Partner with us", "Help Center", "Privacy Policy", "Terms & Conditions"] },
-  { title: "Product", links: ["Features", "Pricing", "Integrations", "AI CRM Software", "Open API"] },
-  { title: "Features", links: ["Lead Management Software", "Sales Pipeline Management", "Sales Automation", "Reporting & Analytics", "Quotation Management", "Follow-up Reminders"] },
-  { title: "Industries", links: ["Real Estate CRM", "Education CRM", "Agency CRM", "Freelancer CRM", "Insurance CRM", "Ecommerce CRM"] },
-  { title: "Compare", links: ["CRM for Small Business", "Affordable CRM Alternative", "CRM vs Spreadsheets", "Switch from your CRM"] },
+  {
+    title: "Company",
+    links: [
+      { label: "About Us", href: "#top" },
+      { label: "Contact", href: "#demo" },
+      { label: "Blog", href: "#top" },
+      { label: "Partner with us", href: "#demo" },
+      { label: "Help Center", href: "#faq" },
+      { label: "Privacy Policy", href: "#top" },
+      { label: "Terms & Conditions", href: "#top" },
+    ],
+  },
+  {
+    title: "Product",
+    links: [
+      { label: "Features", href: "#product" },
+      { label: "AI CRM Software", href: "#speed" },
+      { label: "Integrations", href: "#integrations" },
+      { label: "Custom Forms", href: "#forms" },
+      { label: "Pricing", href: "#demo" },
+      { label: "Open API", href: "#integrations" },
+    ],
+  },
+  {
+    title: "Features",
+    links: [
+      { label: "Lead Management Software", href: "#product" },
+      { label: "Sales Pipeline Management", href: "#product" },
+      { label: "Sales Automation", href: "#speed" },
+      { label: "Reporting & Analytics", href: "#product" },
+      { label: "AI Sales Assistant", href: "#speed" },
+      { label: "Follow-up Reminders", href: "#speed" },
+    ],
+  },
+  {
+    title: "Industries",
+    links: [
+      { label: "Real Estate CRM", href: "#industries" },
+      { label: "Best CRM for Freelancers", href: "#industries" },
+      { label: "Agency CRM", href: "#industries" },
+      { label: "CRM for Consultants", href: "#industries" },
+      { label: "Education CRM", href: "#industries" },
+      { label: "CRM for Small Business", href: "#compare" },
+    ],
+  },
+  {
+    title: "Compare",
+    links: [
+      { label: "Pipedrive Alternative", href: "#compare" },
+      { label: "Affordable CRM Alternative", href: "#compare" },
+      { label: "CRM vs Spreadsheets", href: "#compare" },
+      { label: "Switch from your CRM", href: "#compare" },
+    ],
+  },
 ];

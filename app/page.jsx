@@ -19,7 +19,6 @@ import {
   FAQS,
   FEATURES,
   FOOTER_COLS,
-  HERO_WORDS,
   INDUSTRIES,
   INTEGRATIONS,
   AI_FEATURES,
@@ -43,7 +42,6 @@ const HERO_LEADS = [
 ];
 
 export default function HomePage() {
-  const [wordIndex, setWordIndex] = useState(0);
   const [tab, setTab] = useState("leads");
   const [menuOpen, setMenuOpen] = useState(false);
   const active = FEATURES.find((item) => item.id === tab) || FEATURES[0];
@@ -51,13 +49,6 @@ export default function HomePage() {
   function closeMenu() {
     setMenuOpen(false);
   }
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setWordIndex((current) => (current + 1) % HERO_WORDS.length);
-    }, 2200);
-    return () => clearInterval(timer);
-  }, []);
 
   useEffect(() => {
     const els = () => document.querySelectorAll(".reveal:not(.is-in)");
@@ -120,7 +111,7 @@ export default function HomePage() {
             <img
               className="logo-img"
               src="/assets/tracktcrm-logo.png"
-              alt="TracktCRM"
+              alt="TracktCRM — AI CRM software"
             />
           </a>
           <nav
@@ -174,34 +165,20 @@ export default function HomePage() {
             AI CRM software for sales teams
           </div>
           <h1 className="h1">
-            The simple CRM that helps
-            <br />
-            you close more{" "}
-            <span className="hero-word-wrap">
-              {HERO_WORDS.map((word) => (
-                <span className="hero-word-sizer" aria-hidden="true" key={`size-${word}`}>
-                  {word}
-                </span>
-              ))}
-              <span
-                key={wordIndex}
-                className={`hero-word hero-word-${wordIndex % 3}`}
-              >
-                {HERO_WORDS[wordIndex]}
-              </span>
-            </span>
+            The AI CRM that answers your leads — real estate, agencies,
+            freelancers and more.
           </h1>
           <p className="lead">
-            TracktCRM is AI-powered CRM software for lead management, sales
-            pipeline tracking and automated follow-ups. Capture every lead, know
-            every deal stage, and close faster — without spreadsheets or bloated
-            software.
+            TracktCRM is AI-powered CRM software that captures every lead,
+            responds in seconds over WhatsApp, email and SMS, and keeps your
+            sales pipeline organized — built for how real estate teams,
+            agencies, consultants and freelancers actually sell.
           </p>
           <div className="hero-ctas">
             <a className="btn btn-primary" href="#demo">
               Start Free Trial
             </a>
-            <a className="btn btn-outline" href="#product">
+            <a className="btn btn-outline" href="#demo">
               Book a Demo
               <span className="btn-arrow" aria-hidden="true">
                 <ArrowIcon />
@@ -432,13 +409,16 @@ export default function HomePage() {
           <div>
             <p className="kicker">AI SALES AUTOMATION</p>
             <h2 className="h2">
-              AI CRM automation that answers every lead in seconds
+              An AI CRM that answers every lead in seconds — not just an
+              AI-powered dashboard
             </h2>
             <p className="speed-copy">
-              A WhatsApp message, an email and an SMS go out the moment a lead
-              arrives — then an automated follow-up call while the enquiry is
-              still warm. Your rep picks up mid-conversation with the full lead
-              history attached.
+              Most &quot;AI CRM&quot; tools stop at smart reporting. TracktCRM&apos;s AI
+              actually acts on your leads: the moment an enquiry lands, our AI
+              sales assistant sends a WhatsApp message, an email and an SMS —
+              then places an automated follow-up call while the lead is still
+              warm. Your rep picks up mid-conversation with the full history
+              attached, never a cold trail.
             </p>
             <div className="speed-points">
               {SPEED_POINTS.map((point) => (
@@ -470,7 +450,7 @@ export default function HomePage() {
         <h2 className="h2">A CRM built around how your industry sells</h2>
         <p>
           Ready-made pipelines, fields and follow-up rules for real estate,
-          education, agencies and freelancers — live from day one.
+          freelancers, agencies and education — live from day one.
         </p>
         <div className="industry-grid stagger">
           {INDUSTRIES.map((industry) => (
@@ -490,14 +470,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section compare-section reveal">
-        <p className="kicker">WHY TRACKTCRM</p>
+      <section className="section compare-section reveal" id="compare">
+        <p className="kicker">WHY TEAMS SWITCH</p>
         <h2 className="h2">An easy-to-use, affordable CRM alternative</h2>
         <p className="compare-intro">
-          Most CRM software is priced and built for enterprise teams. TracktCRM
-          gives small businesses, agencies and freelancers the same lead
-          management and sales pipeline power — at a fraction of the cost, with
-          nothing to learn on day one.
+          Most CRM software — including tools like Pipedrive — is priced and
+          built for enterprise teams. TracktCRM gives small businesses, agencies
+          and freelancers the same lead management and sales pipeline power,
+          with AI-powered automation Pipedrive doesn&apos;t have, at a fraction of
+          the cost.
         </p>
         <div className="compare-board">
           <article className="compare-card compare-card-old">
@@ -822,8 +803,8 @@ export default function HomePage() {
               <div key={column.title}>
                 <h3>{column.title}</h3>
                 {column.links.map((link) => (
-                  <a href="#top" key={link}>
-                    {link}
+                  <a href={link.href} key={link.label}>
+                    {link.label}
                   </a>
                 ))}
               </div>
