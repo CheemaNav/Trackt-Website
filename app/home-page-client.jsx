@@ -53,7 +53,7 @@ const HERO_LEADS = [
 
 export default function HomePageClient() {
   const [wordIndex, setWordIndex] = useState(0);
-  const [tab, setTab] = useState("leads");
+  const [tab, setTab] = useState("pipeline");
   const active = FEATURES.find((item) => item.id === tab) || FEATURES[0];
 
   useEffect(() => {
@@ -99,8 +99,7 @@ export default function HomePageClient() {
           <p className="lead">
             TracktCRM is AI-powered CRM software that captures every lead,
             responds in seconds over WhatsApp, email and SMS, and keeps your
-            sales pipeline organized - built for how real estate teams,
-            agencies, consultants and freelancers actually sell.
+            sales pipeline organized - built for how agencies, consultants and freelancers actually sell.
           </p>
           <div className="hero-ctas">
             <a className="btn btn-primary" href="#demo">
@@ -467,10 +466,7 @@ export default function HomePageClient() {
         </p>
         <div className="industry-grid stagger">
           {INDUSTRIES.map((industry) => (
-            <div
-              className={`industry-card${industry.featured ? " industry-featured" : ""}`}
-              key={industry.name}
-            >
+            <div className="industry-card" key={industry.name}>
               <h3>{industry.name}</h3>
               <p>{industry.body}</p>
               <ul>
@@ -490,13 +486,9 @@ export default function HomePageClient() {
 
       <section className="section compare-section reveal" id="compare">
         <p className="kicker">WHY TEAMS SWITCH</p>
-        <h2 className="h2">An easy-to-use, affordable CRM alternative</h2>
+        <h2 className="h2">An easy-to-use, affordable Pipedrive alternative</h2>
         <p className="compare-intro">
-          Most CRM software - including tools like Pipedrive - is priced and
-          built for enterprise teams. TracktCRM gives small businesses, agencies
-          and freelancers the same lead management and sales pipeline power,
-          with AI-powered automation Pipedrive doesn&apos;t have, at a fraction of
-          the cost.
+        Most CRM softwares including tools like Pipedrive are priced and built for enterprise teams. TracktCRM gives small businesses, agencies, and freelancers powerful lead management and sales pipeline tools, plus AI-powered automation, at a fraction of the cost.
         </p>
         <div className="compare-board">
           <article className="compare-card compare-card-old">
@@ -559,6 +551,10 @@ export default function HomePageClient() {
               <li>
                 <b>03</b>
                 <span>Copy the share link or iframe and publish it on any site.</span>
+              </li>
+              <li>
+                <b>04</b>
+                <span>Every lead goes straight into your pipeline the moment someone submits.</span>
               </li>
             </ol>
           </div>
@@ -674,7 +670,7 @@ export default function HomePageClient() {
         <p className="int-note">
           Don&apos;t see your tool?{" "}
           <a href="#demo">
-            Ask us about the open API <ArrowIcon />
+            Let us know — we&apos;ll integrate it for you <ArrowIcon />
           </a>
         </p>
       </section>
@@ -686,7 +682,7 @@ export default function HomePageClient() {
               <h2>
                 Supercharged with <span className="ai-accent">AI</span>
               </h2>
-              <p>Smart tools built into every product to save you time</p>
+              <p>Smart tools built into every product to save your time</p>
             </div>
             <div className="ai-features-grid">
               {AI_FEATURES.map((feature) => (

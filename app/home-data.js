@@ -1,46 +1,5 @@
 export const FEATURES = [
   {
-    id: "leads",
-    label: "Lead Management Software",
-    title: "Lead Management Software",
-    body: "Manage and organise every lead in one place. Website forms, WhatsApp, ads, calls and referrals are captured automatically, de-duplicated and assigned to the right rep - so no enquiry is missed.",
-    chips: ["Auto-assignment", "Lead scoring", "Source tracking"],
-    screen: "TracktCRM lead management dashboard",
-    metrics: [
-      { v: "412", k: "new leads" },
-      { v: "8s", k: "first reply" },
-      { v: "97%", k: "contacted" },
-      { v: "11", k: "sources" },
-    ],
-    columns: [
-      {
-        name: "New",
-        count: 14,
-        cards: [
-          { t: "Meera Raval", v: "Website form · 2m ago", w: "22%" },
-          { t: "Kunal Shah", v: "WhatsApp · 6m ago", w: "18%" },
-        ],
-      },
-      {
-        name: "Contacted",
-        count: 22,
-        cards: [
-          { t: "Ronak Textiles", v: "Called · yesterday", w: "48%" },
-          { t: "Divya Nair", v: "Quote sent", w: "55%" },
-        ],
-      },
-      {
-        name: "Qualified",
-        count: 9,
-        cards: [
-          { t: "Aarav Builders", v: "Site visit booked", w: "78%" },
-          { t: "Zenith IT", v: "Demo done", w: "70%" },
-        ],
-      },
-    ],
-    bars: [38, 52, 44, 66, 58, 72, 61, 84, 70, 92],
-  },
-  {
     id: "pipeline",
     label: "Sales Pipeline Management",
     title: "Sales Pipeline Management",
@@ -80,6 +39,47 @@ export const FEATURES = [
       },
     ],
     bars: [44, 40, 58, 52, 70, 64, 78, 72, 86, 80],
+  },
+  {
+    id: "leads",
+    label: "Lead Management Software",
+    title: "Lead Management Software",
+    body: "Manage and organise every lead in one place. Website forms, WhatsApp, ads, calls and referrals are captured automatically, de-duplicated and assigned to the right rep - so no enquiry is missed.",
+    chips: ["Auto-assignment", "Lead scoring", "Source tracking"],
+    screen: "TracktCRM lead management dashboard",
+    metrics: [
+      { v: "412", k: "new leads" },
+      { v: "8s", k: "first reply" },
+      { v: "97%", k: "contacted" },
+      { v: "11", k: "sources" },
+    ],
+    columns: [
+      {
+        name: "New",
+        count: 14,
+        cards: [
+          { t: "Meera Raval", v: "Website form · 2m ago", w: "22%" },
+          { t: "Kunal Shah", v: "WhatsApp · 6m ago", w: "18%" },
+        ],
+      },
+      {
+        name: "Contacted",
+        count: 22,
+        cards: [
+          { t: "Ronak Textiles", v: "Called · yesterday", w: "48%" },
+          { t: "Divya Nair", v: "Quote sent", w: "55%" },
+        ],
+      },
+      {
+        name: "Qualified",
+        count: 9,
+        cards: [
+          { t: "Aarav Builders", v: "Site visit booked", w: "78%" },
+          { t: "Zenith IT", v: "Demo done", w: "70%" },
+        ],
+      },
+    ],
+    bars: [38, 52, 44, 66, 58, 72, 61, 84, 70, 92],
   },
   {
     id: "automation",
@@ -175,8 +175,8 @@ export const FEATURES = [
     id: "integrations",
     label: "Integrations",
     title: "CRM Integrations",
-    body: "Connects with WhatsApp, Gmail, Google Calendar, Meta & Google Ads, Shopify, Razorpay, Zapier and an open API.",
-    chips: ["WhatsApp API", "Email & calendar", "Open API"],
+    body: "Connects with WhatsApp, Gmail, Google Calendar, Meta & Google Ads, 99acres, Housing.com, OLX, Shopify, Shiprocket and an open API.",
+    chips: ["WhatsApp API", "Portals & ads", "Open API"],
     screen: "TracktCRM integrations settings",
     metrics: [
       { v: "40+", k: "integrations" },
@@ -187,10 +187,11 @@ export const FEATURES = [
     columns: [
       {
         name: "Messaging",
-        count: 5,
+        count: 6,
         cards: [
           { t: "WhatsApp", v: "Two-way sync", w: "100%", brand: "WhatsApp" },
           { t: "Gmail", v: "Threads on record", w: "90%", brand: "Gmail" },
+          { t: "Google Calendar", v: "Meetings synced", w: "86%", brand: "Google Calendar" },
           { t: "Instagram", v: "DMs & comments", w: "82%", brand: "Instagram" },
           { t: "Facebook", v: "Lead forms sync", w: "78%", brand: "Facebook" },
           { t: "LinkedIn", v: "InMail capture", w: "70%", brand: "LinkedIn" },
@@ -200,21 +201,22 @@ export const FEATURES = [
         name: "Lead sources",
         count: 6,
         cards: [
-          { t: "Google Ads", v: "Instant capture", w: "88%", brand: "Google Ads" },
-          { t: "Justdial", v: "Enquiry sync", w: "76%", brand: "Justdial" },
-          { t: "IndiaMART", v: "Buy leads", w: "74%", brand: "IndiaMART" },
-          { t: "TradeIndia", v: "RFQ capture", w: "68%", brand: "TradeIndia" },
-          { t: "WordPress", v: "Form submissions", w: "72%", brand: "WordPress" },
-          { t: "Webhooks", v: "Any custom source", w: "95%", brand: "Webhooks" },
+          { t: "Meta & Google Ads", v: "Instant capture", w: "88%", brand: "Meta & Google Ads" },
+          { t: "99acres", v: "Portal enquiries", w: "84%", brand: "99acres" },
+          { t: "Housing.com", v: "Listing leads", w: "80%", brand: "Housing.com" },
+          { t: "OLX", v: "Classified leads", w: "76%", brand: "OLX" },
+          { t: "Justdial", v: "Enquiry sync", w: "74%", brand: "Justdial" },
+          { t: "Practo", v: "Clinic enquiries", w: "72%", brand: "Practo" },
         ],
       },
       {
         name: "Business",
-        count: 3,
+        count: 4,
         cards: [
           { t: "Shopify", v: "Orders & customers", w: "80%", brand: "Shopify" },
           { t: "Razorpay", v: "Payment status", w: "64%", brand: "Razorpay" },
           { t: "Delhivery", v: "Shipment tracking", w: "58%", brand: "Delhivery" },
+          { t: "Shiprocket", v: "Order fulfilment", w: "62%", brand: "Shiprocket" },
         ],
       },
     ],
@@ -224,7 +226,12 @@ export const FEATURES = [
 
 export const HERO_WORDS = [
   "real estate",
-  "agencies",
+  "education",
+  "automotive",
+  "insurance",
+  "retail",
+  "SaaS",
+  "events",
   "freelancers",
   "and more",
 ];
@@ -259,7 +266,6 @@ export const INDUSTRIES = [
     name: "Real Estate CRM",
     body: "Property enquiries arrive from a dozen portals at once. TracktCRM is a real estate CRM that captures each lead instantly, books the site visit and tracks every broker, unit and deal in one sales pipeline.",
     points: ["Site-visit scheduling", "Channel-partner tracking", "Inventory & availability"],
-    featured: true,
     href: "/real-estate-crm",
   },
   {
@@ -283,7 +289,7 @@ export const INDUSTRIES = [
 ];
 
 export const COMPARE = [
-  { old: "Leads sit in an inbox for hours before anyone replies", new: "Answered on WhatsApp, email and SMS within seconds" },
+  { old: "Leads sit in an inbox for hours before anyone replies", new: "Answered on WhatsApp, Email and SMS within seconds" },
   { old: "Data re-entered across three or four disconnected tools", new: "One dashboard for leads, deals, calls and reporting" },
   { old: "Follow-ups remembered from memory and sticky notes", new: "Every touchpoint scheduled, logged and reminded" },
   { old: "Team performance is a guess, or a monthly sheet pull", new: "Live rep scorecards and source-level ROI" },
@@ -293,25 +299,25 @@ export const COMPARE = [
 export const INTEGRATIONS = [
   "",
   "",
-  "Google Ads",
+  "Meta & Google Ads",
   "Gmail",
-  "Webhooks",
+  "Google Calendar",
   "",
   "WhatsApp",
-  "Justdial",
+  "99acres",
   "",
   "",
   "Instagram",
-  "TradeIndia",
-  "IndiaMART",
+  "Housing.com",
+  "OLX",
   "Shopify",
   "",
   "",
   "LinkedIn",
-  "WordPress",
+  "Practo",
   "",
   "Razorpay",
-  "Delhivery",
+  "Shiprocket",
   "Facebook",
   "",
   "",

@@ -29,7 +29,10 @@ import {
 
 const BRAND_LOGOS = {
   "Google Ads": "/assets/brands/google-ads.svg",
+  "Meta & Google Ads": "/assets/brands/meta-google-ads.svg",
+  Meta: "/assets/brands/meta.svg",
   Gmail: "/assets/brands/gmail.svg",
+  "Google Calendar": "/assets/brands/google-calendar.svg",
   Webhooks: "/assets/brands/webhooks.svg",
   WhatsApp: "/assets/brands/whatsapp.svg",
   Justdial: "/assets/brands/justdial.svg",
@@ -41,7 +44,12 @@ const BRAND_LOGOS = {
   WordPress: "/assets/brands/wordpress.svg",
   Razorpay: "/assets/brands/razorpay.svg",
   Delhivery: "/assets/brands/delhivery.svg",
+  Shiprocket: "/assets/brands/shiprocket.png",
   Facebook: "/assets/brands/facebook.svg",
+  "99acres": "/assets/brands/99acres.png",
+  "Housing.com": "/assets/brands/housing.svg",
+  OLX: "/assets/brands/olx.svg",
+  Practo: "/assets/brands/practo.svg",
 };
 
 export function BrandMark({ name }) {
@@ -49,7 +57,7 @@ export function BrandMark({ name }) {
   if (!src) return null;
   return (
     <span className="brand-mark">
-      <img src={src} alt={name} />
+      <img src={`${src}?v=6`} alt={name} />
     </span>
   );
 }
