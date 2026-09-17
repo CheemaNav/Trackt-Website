@@ -1,4 +1,5 @@
 import {
+  AiLeadIcon,
   ArrowIcon,
   BrokerIcon,
   CaptureIcon,
@@ -13,11 +14,14 @@ import SiteFooter from "../components/site-footer";
 import { SITE_URL } from "../site";
 import {
   BROKER_POINTS,
+  CHOOSING_POINTS,
   FEATURES,
-  PIPELINE_STAGES,
+  INTEGRATIONS,
   PROBLEM_POINTS,
+  PROCESS_STEPS,
   RE_FAQS,
-  TESTIMONIAL,
+  TESTIMONIALS,
+  WHAT_IS_POINTS,
 } from "./data";
 
 const FEATURE_ICONS = {
@@ -26,12 +30,19 @@ const FEATURE_ICONS = {
   broker: BrokerIcon,
   inventory: InventoryIcon,
   pipeline: ProjectPipelineIcon,
+  ai: AiLeadIcon,
 };
 
 export const metadata = {
   title: "Real Estate CRM Software - Capture & Close Property Leads",
   description:
     "TracktCRM is a real estate CRM that captures enquiries from every portal and WhatsApp, books site visits instantly, and tracks every broker, unit and deal.",
+  keywords: [
+    "crm for real estate",
+    "real estate crm software",
+    "ai crm for real estate",
+    "crm for real estate agents",
+  ],
   alternates: {
     canonical: "/real-estate-crm",
   },
@@ -56,72 +67,124 @@ export default function RealEstateCrmPage() {
       <RevealInit />
       <SiteHeader />
 
-      <section className="re-hero reveal" id="top">
-        <div className="re-hero-inner">
-          <div className="badge">
-            <span className="pulse" />
-            REAL ESTATE CRM
+      <section className="re-banner reveal" id="top">
+        <div className="re-banner-inner">
+          <div className="re-banner-copy">
+            <div className="badge re-banner-badge">
+              <span className="pulse" aria-hidden="true" />
+              CRM for Real Estate Brokers &amp; Property Consultants
+            </div>
+            <h1 className="re-banner-title">
+              Property enquiries.
+              <span>Follow through to closure.</span>
+            </h1>
+            <p className="re-banner-sub">
+              From &quot;send me options&quot; to site visit, negotiation and
+              closure. Keep every buyer&apos;s budget, preferred location,
+              property discussions and next follow-up in one CRM - so a
+              promising enquiry never gets forgotten.
+            </p>
+            <div className="re-banner-ctas">
+              <a className="btn btn-primary" href="#demo">
+                Show Me the Broker Workflow
+                <span className="btn-arrow" aria-hidden="true">
+                  <ArrowIcon />
+                </span>
+              </a>
+              <a className="btn btn-outline" href="#demo">
+                Start Free
+              </a>
+            </div>
           </div>
-          <h1 className="h1">The CRM Built for How Property Actually Sells</h1>
-          <p className="re-hero-sub">
-            Property enquiries land from a dozen portals, WhatsApp and
-            walk-ins - all at once. TracktCRM is a real estate CRM that
-            captures every lead instantly, books the site visit, and keeps
-            every broker, unit and deal in one pipeline.
-          </p>
-          <div className="hero-ctas">
-            <a className="btn btn-primary" href="/#demo">
-              Book a Demo
-            </a>
-            <a className="btn btn-outline" href="/#demo">
-              Start Free Trial
-              <span className="btn-arrow" aria-hidden="true">
-                <ArrowIcon />
-              </span>
-            </a>
-          </div>
-          <div className="trust-row">
-            <span className="trust-item">
-              <span className="trust-check" aria-hidden="true">
-                <CheckIcon size={11} />
-              </span>
-              Used by real estate teams managing 500+ live listings
-            </span>
-            <span className="trust-item">
-              <span className="trust-check" aria-hidden="true">
-                <CheckIcon size={11} />
-              </span>
-              No setup fee
-            </span>
-          </div>
+          <figure className="re-banner-media">
+            <img
+              src="/assets/real-estate/hero-banner.jpg"
+              alt="Couple looking out from a modern apartment at a residential development"
+              width={1400}
+              height={1050}
+            />
+          </figure>
         </div>
       </section>
 
-      <section className="section reveal" id="problem">
-        <p className="kicker">THE REAL ESTATE PROBLEM</p>
-        <h2 className="h2">
-          Your leads are scattered across a dozen portals - your pipeline
-          shouldn&apos;t be
-        </h2>
-        <p className="re-section-intro">
-          A generic CRM makes you build real estate workflows from scratch.
-          TracktCRM comes with them built in:
-        </p>
-        <div className="re-check-list">
+      <section className="section re-band reveal" id="problem">
+        <div className="re-split">
+          <div className="re-split-copy">
+            <p className="kicker">THE REAL ESTATE PROBLEM</p>
+            <h2 className="h2">
+              Your leads are scattered across a dozen portals - your pipeline
+              shouldn&apos;t be
+            </h2>
+            <p className="re-section-intro">
+              A generic CRM makes you build real estate workflows from scratch.
+              TracktCRM comes with them built in.
+            </p>
+          </div>
+          <figure className="re-photo re-photo-contain">
+            <img
+              src="/assets/real-estate/for-real-estate.jpg"
+              alt="TracktCRM pipeline board organizing real estate leads by stage"
+              width={1386}
+              height={698}
+            />
+          </figure>
+        </div>
+        <div className="re-point-grid">
           {PROBLEM_POINTS.map((point) => (
-            <div className="re-check-item" key={point}>
-              <span className="compare-icon compare-icon-ok" aria-hidden="true">
-                <CheckIcon size={13} />
+            <article className="re-point-card" key={point.title}>
+              <span className="re-point-check" aria-hidden="true">
+                <CheckIcon size={14} />
               </span>
-              <span>{point}</span>
-            </div>
+              <h3>{point.title}</h3>
+              <p>{point.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section reveal" id="what-is">
+        <div className="re-split re-split-reverse">
+          <figure className="re-photo re-photo-contain">
+            <img
+              src="/assets/real-estate/real-estate-CRM-organizes.jpg"
+              alt="TracktCRM organizing real estate leads from portals, WhatsApp and ads in one pipeline"
+              width={1600}
+              height={900}
+            />
+          </figure>
+          <div className="re-split-copy">
+            <p className="kicker">REAL ESTATE CRM SOFTWARE</p>
+            <h2 className="h2">
+              What is a CRM for real estate, and why do you need one?
+            </h2>
+            <p className="re-section-intro">
+              A real estate CRM organizes every buyer, seller, tenant and broker
+              relationship - with the property details, conversations and
+              paperwork attached. Instead of leads living across WhatsApp,
+              spreadsheets and portal inboxes, your team gets one shared view
+              from first enquiry to signed paperwork.
+            </p>
+            <p className="re-section-intro">
+              TracktCRM is built around this workflow - not adapted from a
+              generic sales CRM.
+            </p>
+          </div>
+        </div>
+        <div className="re-capability-row">
+          {WHAT_IS_POINTS.map((point) => (
+            <article className="re-capability" key={point.title}>
+              <h3>{point.title}</h3>
+              <p>{point.body}</p>
+            </article>
           ))}
         </div>
       </section>
 
       <section className="section reveal" id="features">
-        <p className="kicker">FEATURES</p>
-        <h2 className="h2">Everything a real estate sales team needs</h2>
+        <div className="re-section-head is-wide">
+          <p className="kicker">FEATURES</p>
+          <h2 className="h2">Everything a real estate sales team needs</h2>
+        </div>
         <div className="re-feature-grid">
           {FEATURES.map((feature) => {
             const Icon = FEATURE_ICONS[feature.icon];
@@ -138,75 +201,182 @@ export default function RealEstateCrmPage() {
         </div>
       </section>
 
-      <section className="section reveal" id="pipeline-preview">
-        <p className="kicker">SEE IT IN ACTION</p>
-        <h2 className="h2">One pipeline, from enquiry to registration</h2>
-        <p className="re-section-intro">
-          Every project gets its own pipeline - stages, units and deals stay
-          organized from the first enquiry to the signed sale deed.
-        </p>
-        <div className="re-pipeline-card">
-          <div className="re-pipeline-top">
-            <span className="dot" />
-            Skyline Towers - live pipeline
-          </div>
-          <div className="re-pipeline-cols">
-            {PIPELINE_STAGES.map((stage) => (
-              <div className="col-box" key={stage.name}>
-                <div className="col-head">
-                  <span>{stage.name}</span>
-                  <span>{stage.count}</span>
-                </div>
-                {stage.cards.map((card) => (
-                  <div className="mini-card" key={card.t}>
-                    <b>{card.t}</b>
-                    <span>{card.v}</span>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
+      <section className="section re-band reveal" id="process">
+        <div className="re-section-head">
+          <p className="kicker">FROM ENQUIRY TO KEYS</p>
+          <h2 className="h2">How a deal moves through TracktCRM, start to finish</h2>
+        </div>
+        <div className="re-process-grid">
+          {PROCESS_STEPS.map((step) => (
+            <article className="re-process-card" key={step.n}>
+              <b>{step.n}</b>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       <section className="section reveal" id="brokers">
-        <p className="kicker">CHANNEL PARTNERS</p>
-        <h2 className="h2">Built for how channel partners actually work with you</h2>
-        <p className="re-section-intro">
-          Real estate deals rarely close through a single agent - most run
-          through a network of brokers and channel partners. TracktCRM gives
-          each partner:
-        </p>
-        <div className="re-check-list">
-          {BROKER_POINTS.map((point) => (
-            <div className="re-check-item" key={point}>
-              <span className="compare-icon compare-icon-ok" aria-hidden="true">
-                <CheckIcon size={13} />
-              </span>
-              <span>{point}</span>
+        <div className="re-split">
+          <figure className="re-photo">
+            <img
+              src="/assets/real-estate/broker-handshake.jpg"
+              alt="Broker and developer partner shaking hands on a property deal"
+              width={1200}
+              height={900}
+            />
+          </figure>
+          <div className="re-split-copy">
+            <p className="kicker">CHANNEL PARTNERS</p>
+            <h2 className="h2">
+              Built for how channel partners actually work with you
+            </h2>
+            <p className="re-section-intro">
+              Real estate deals rarely close through a single agent - most run
+              through brokers and channel partners. TracktCRM turns that network
+              into a trackable channel.
+            </p>
+            <div className="re-mini-points">
+              {BROKER_POINTS.map((point) => (
+                <div className="re-mini-point" key={point.title}>
+                  <span className="re-point-check" aria-hidden="true">
+                    <CheckIcon size={13} />
+                  </span>
+                  <div>
+                    <strong>{point.title}</strong>
+                    <p>{point.body}</p>
+                  </div>
+                </div>
+              ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section reveal" id="choosing">
+        <p className="kicker">BUYER&apos;S GUIDE</p>
+        <h2 className="h2">What to look for in a real estate CRM</h2>
+        <p className="re-section-intro">
+          Not every CRM is built for how property actually sells. Here&apos;s what
+          matters most:
+        </p>
+        <div className="re-choose-grid">
+          {CHOOSING_POINTS.map((item) => (
+            <article className="re-choose-card" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
           ))}
         </div>
-        <p className="re-section-intro">
-          This turns broker relationships from a WhatsApp-group free-for-all
-          into a trackable, accountable channel.
+      </section>
+
+      <section className="section re-int-band reveal" id="integrations">
+        <p className="kicker">INTEGRATIONS</p>
+        <h2 className="h2">Works with the tools your team already uses</h2>
+        <p className="re-section-intro is-centered">
+          Book visits, capture enquiries, and pull portal leads into one
+          pipeline - without switching apps.
         </p>
+        <div className="re-int-showcase">
+          {INTEGRATIONS.map((item) => (
+            <article
+              className={`re-int-visual re-int-visual-${item.tone}`}
+              key={item.title}
+            >
+              <div className="re-int-visual-media">
+                <span className="re-int-pill">{item.pill}</span>
+                <img src={item.image} alt="" />
+              </div>
+              <div className="re-int-visual-foot">
+                <span className="re-int-icon" aria-hidden="true">
+                  {item.icon === "calendar" ? (
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <rect
+                        x="4"
+                        y="6"
+                        width="16"
+                        height="14"
+                        rx="2"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      />
+                      <path
+                        d="M4 10h16M8 3v4M16 3v4"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  ) : item.icon === "form" ? (
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <rect
+                        x="5"
+                        y="3"
+                        width="14"
+                        height="18"
+                        rx="2"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      />
+                      <path
+                        d="M8 8h8M8 12h8M8 16h5"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  ) : (
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M4 11.5 12 5l8 6.5V20a1 1 0 0 1-1 1h-5v-5H10v5H5a1 1 0 0 1-1-1v-8.5Z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
+                </span>
+                <h3>{item.title}</h3>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section reveal" id="pipeline-preview">
+        <p className="kicker is-centered">SEE IT IN ACTION</p>
+        <h2 className="h2 is-centered">One pipeline, from enquiry to registration</h2>
+        <p className="re-section-intro is-centered">
+          Every project gets its own pipeline - stages, units and deals stay
+          organized from the first enquiry to the signed sale deed.
+        </p>
+        <figure className="re-shot re-shot-wide">
+          <img
+            src="/assets/real-estate/for-real-estate.jpg"
+            alt="TracktCRM real estate pipeline from enquiry to registration"
+            width={1386}
+            height={698}
+          />
+        </figure>
       </section>
 
       <section className="section reveal" id="testimonial">
-        <div className="re-testimonial">
-          <blockquote>&ldquo;{TESTIMONIAL.quote}&rdquo;</blockquote>
-          <cite>- {TESTIMONIAL.attribution}</cite>
+        <p className="kicker is-centered">SOCIAL PROOF</p>
+        <h2 className="h2 is-centered">Teams closing property deals with TracktCRM</h2>
+        <div className="re-testimonial-grid">
+          {TESTIMONIALS.map((item) => (
+            <div className="re-testimonial" key={item.quote}>
+              <blockquote>&ldquo;{item.quote}&rdquo;</blockquote>
+              <cite>- {item.attribution}</cite>
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="section faq reveal" id="faq">
-        <p className="kicker" style={{ textAlign: "center" }}>
-          FAQ
-        </p>
-        <h2 className="h2" style={{ textAlign: "center" }}>
-          Frequently asked questions
-        </h2>
+        <p className="kicker is-centered">FAQ</p>
+        <h2 className="h2 is-centered">Frequently asked questions</h2>
         <div className="faq-list re-faq-list">
           {RE_FAQS.map((item, index) => (
             <details className="faq-item" key={item.q} defaultOpen={index === 0}>
@@ -230,10 +400,10 @@ export default function RealEstateCrmPage() {
             </p>
           </div>
           <div className="cta-actions">
-            <a className="btn-dark" href="/#demo">
+            <a className="btn-dark" href="#demo">
               Book a Demo
             </a>
-            <a className="btn-ghost" href="/#demo">
+            <a className="btn-ghost" href="#demo">
               Start Free Trial
             </a>
           </div>

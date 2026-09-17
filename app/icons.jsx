@@ -21,6 +21,7 @@ import {
   LuMessageSquare,
   LuPhone,
   LuPlus,
+  LuSparkles,
   LuType,
   LuUsers,
   LuX,
@@ -111,6 +112,10 @@ export function FieldDropdownIcon({ size = 13 }) {
   return <LuChevronDown size={size} strokeWidth={2.4} />;
 }
 
+export function ChevronDownIcon({ size = 14 }) {
+  return <LuChevronDown size={size} strokeWidth={2.4} />;
+}
+
 export function FieldMessageIcon({ size = 13 }) {
   return <LuMessageSquare size={size} strokeWidth={2.4} />;
 }
@@ -153,6 +158,10 @@ export function InventoryIcon({ size = 22 }) {
 
 export function ProjectPipelineIcon({ size = 22 }) {
   return <LuLayers size={size} strokeWidth={2} />;
+}
+
+export function AiLeadIcon({ size = 22 }) {
+  return <LuSparkles size={size} strokeWidth={2} />;
 }
 
 export function GoogleBadge() {

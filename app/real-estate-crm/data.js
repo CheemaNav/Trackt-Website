@@ -1,8 +1,43 @@
 export const PROBLEM_POINTS = [
-  "Enquiries from 99acres, MagicBricks, Housing.com, your website and WhatsApp all land in one inbox - no manual copy-paste",
-  "Site visits get scheduled and confirmed automatically, so leads don't go cold waiting for a callback",
-  "Brokers and channel partners get their own login - no more tracking referrals in a spreadsheet",
-  "Every unit, tower and project has live availability, so no one sells a flat that's already booked",
+  {
+    title: "One inbox for every portal",
+    body: "Enquiries from 99acres, MagicBricks, Housing.com, your website and WhatsApp land in one place - no manual copy-paste.",
+  },
+  {
+    title: "Site visits that don't slip",
+    body: "Visits get scheduled and confirmed automatically, so leads don't go cold waiting for a callback.",
+  },
+  {
+    title: "Brokers with their own login",
+    body: "Channel partners submit and track referrals themselves - no more chasing updates in a spreadsheet.",
+  },
+  {
+    title: "Live unit availability",
+    body: "Every unit, tower and project stays current, so no one sells a flat that's already booked.",
+  },
+];
+
+export const WHAT_IS_POINTS = [
+  {
+    title: "Auto lead capture",
+    body: "Enquiries from portals, website, ads and WhatsApp come in automatically.",
+  },
+  {
+    title: "Property details on every lead",
+    body: "Unit, tower, price and availability sit beside each conversation.",
+  },
+  {
+    title: "Site-visit scheduling",
+    body: "Book and confirm visits without endless call back-and-forth.",
+  },
+  {
+    title: "Broker visibility",
+    body: "Partners see their own referrals without your full pipeline.",
+  },
+  {
+    title: "One clear pipeline",
+    body: "Every deal stage stays visible from enquiry to registration.",
+  },
 ];
 
 export const FEATURES = [
@@ -31,62 +66,120 @@ export const FEATURES = [
     title: "Sales Pipeline by Project",
     body: "Run separate pipelines per project or launch, while still seeing a rolled-up view across your whole portfolio.",
   },
+  {
+    icon: "ai",
+    title: "AI-Powered Lead Response",
+    body: "The moment an enquiry lands, TracktCRM's AI sends an instant WhatsApp and email response and can even place a follow-up call - so no lead goes cold while an agent is out on a site visit.",
+  },
 ];
 
-export const PIPELINE_STAGES = [
+export const PROCESS_STEPS = [
   {
-    name: "Enquiry",
-    count: 24,
-    cards: [
-      { t: "Meera Raval", v: "2 BHK · Skyline Towers" },
-      { t: "Arjun Mehta", v: "3 BHK · Palm Residency" },
-    ],
+    n: "01",
+    title: "Enquiry captured",
+    body: "A lead comes in from a portal, your website or WhatsApp and is logged automatically, with source and property interest attached.",
   },
   {
-    name: "Site Visit",
-    count: 15,
-    cards: [
-      { t: "Ronak Textiles", v: "Shop 14 · Riverside Mall" },
-      { t: "Divya Nair", v: "4 BHK · Palm Residency" },
-    ],
+    n: "02",
+    title: "Instant response & assignment",
+    body: "TracktCRM's AI responds within seconds and assigns the lead to the right agent based on project or location.",
   },
   {
-    name: "Negotiation",
-    count: 9,
-    cards: [
-      { t: "Aarav Builders", v: "Tower B · Skyline Towers" },
-      { t: "Zenith IT", v: "Office 302 · Riverside Mall" },
-    ],
+    n: "03",
+    title: "Site visit booked",
+    body: "The lead books a visit slot directly from a WhatsApp link; reminders go out to both the lead and the agent.",
   },
   {
-    name: "Booked",
-    count: 6,
-    cards: [
-      { t: "Priya Kapoor", v: "3 BHK · Palm Residency" },
-      { t: "Vikram Joshi", v: "2 BHK · Skyline Towers" },
-    ],
+    n: "04",
+    title: "Negotiation",
+    body: "Every call, message and note is logged against the deal, so pricing and terms discussions are never lost between agents.",
   },
   {
-    name: "Registered",
-    count: 4,
-    cards: [
-      { t: "Sana Kapoor", v: "4 BHK · Palm Residency" },
-      { t: "Rahul Iyer", v: "Shop 6 · Riverside Mall" },
-    ],
+    n: "05",
+    title: "Booking confirmed",
+    body: "The deal moves to \"Booked,\" unit availability updates instantly across the whole team.",
+  },
+  {
+    n: "06",
+    title: "Registration & handover",
+    body: "Paperwork status is tracked to close, and the deal is marked complete once keys are handed over.",
   },
 ];
 
 export const BROKER_POINTS = [
-  "Their own login to submit and track leads",
-  "Visibility into deal stage, without seeing your full pipeline",
-  "Automated commission-status updates, so they stop calling to ask “any update?”",
+  {
+    title: "Partner logins",
+    body: "Their own login to submit and track leads",
+  },
+  {
+    title: "Stage visibility",
+    body: "See deal stage without your full pipeline",
+  },
+  {
+    title: "Commission updates",
+    body: "Automated status so they stop asking \"any update?\"",
+  },
 ];
 
-export const TESTIMONIAL = {
-  quote:
-    "TracktCRM cut our lead response time from hours to minutes. Our channel partners finally have visibility into their deals without calling us every day.",
-  attribution: "Name, Title, Brokerage/Developer name",
-};
+export const CHOOSING_POINTS = [
+  {
+    title: "Simple to set up",
+    body: "You shouldn't need weeks of training or a developer to get started. TracktCRM teams are live within a day.",
+  },
+  {
+    title: "WhatsApp-native, not WhatsApp-bolted-on",
+    body: "Most CRMs treat WhatsApp as an add-on integration. TracktCRM is built around it - capture, respond and follow up without leaving the chat your leads actually use.",
+  },
+  {
+    title: "Built-in AI automation",
+    body: "Look for a CRM that responds to leads automatically, not just one that reports on them after the fact.",
+  },
+  {
+    title: "Broker and channel-partner support",
+    body: "If your business runs on referrals, your CRM needs a way to give partners visibility - without handing over your full pipeline.",
+  },
+  {
+    title: "Fair, transparent pricing",
+    body: "Enterprise real estate CRMs price per-seat at a premium. TracktCRM is built for teams of any size, from a solo agent to a full development sales team.",
+  },
+];
+
+export const INTEGRATIONS = [
+  {
+    title: "Sync with Calendly",
+    pill: "Meeting booked",
+    tone: "blue",
+    image: "/assets/real-estate/integration-calendly.jpg",
+    icon: "calendar",
+  },
+  {
+    title: "Create custom forms",
+    pill: "Form submitted",
+    tone: "yellow",
+    image: "/assets/real-estate/integration-forms.jpg",
+    icon: "form",
+  },
+  {
+    title: "Integrated with 99acres",
+    pill: "New lead • 99acres",
+    tone: "green",
+    image: "/assets/real-estate/integration-99acres.jpg",
+    icon: "home",
+  },
+];
+
+export const TESTIMONIALS = [
+  {
+    quote:
+      "TracktCRM cut our lead response time from hours to minutes. Our channel partners finally have visibility into their deals without calling us every day.",
+    attribution: "Rahul Mehta, Sales Head, Skyline Developers",
+  },
+  {
+    quote:
+      "We went from tracking site visits on a WhatsApp group to a proper pipeline in under a week. Nothing falls through the cracks anymore.",
+    attribution: "Priya Sharma, Founder, NestHomes Realty",
+  },
+];
 
 export const RE_FAQS = [
   {
@@ -108,5 +201,21 @@ export const RE_FAQS = [
   {
     q: "How long does setup take?",
     a: "Most real estate teams are live within a day - portal integrations and WhatsApp connect without any technical setup.",
+  },
+  {
+    q: "What is the best real estate CRM software?",
+    a: "The best real estate CRM captures leads from every channel automatically, tracks site visits and negotiations in one pipeline, and gives brokers visibility into their referrals - which is exactly what TracktCRM is built to do.",
+  },
+  {
+    q: "Is TracktCRM an AI real estate CRM?",
+    a: "Yes. TracktCRM's AI responds to new enquiries instantly across WhatsApp, email and SMS, and can place a follow-up call automatically - so leads don't go cold while your team is out on-site.",
+  },
+  {
+    q: "Does TracktCRM work for commercial as well as residential real estate?",
+    a: "Yes. TracktCRM's pipelines and inventory tracking work for residential units, commercial spaces and land - you define the project types that match your business.",
+  },
+  {
+    q: "Can I try TracktCRM before committing?",
+    a: "Yes, TracktCRM offers a free 1 month trial with no credit card required, or you can book a live demo with your own listings.",
   },
 ];
