@@ -9,7 +9,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
 });
 
-const ogImage = `${SITE_URL}/assets/tracktcrm-logo.png`;
+const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -50,7 +50,7 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "TracktCRM - AI CRM Software That Answers Every Lead",
+        alt: "TracktCRM",
       },
     ],
   },

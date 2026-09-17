@@ -1,42 +1,42 @@
 export const PROBLEM_POINTS = [
   {
     title: "One inbox for every portal",
-    body: "Enquiries from 99acres, MagicBricks, Housing.com, your website and WhatsApp land in one place - no manual copy-paste.",
+    body: "Enquiries from 99acres, MagicBricks, Housing.com, your website and WhatsApp all land in one inbox - no manual copy-paste.",
   },
   {
     title: "Site visits that don't slip",
-    body: "Visits get scheduled and confirmed automatically, so leads don't go cold waiting for a callback.",
+    body: "Site visits get scheduled and confirmed automatically, so leads don't go cold waiting for a callback.",
   },
   {
     title: "Brokers with their own login",
-    body: "Channel partners submit and track referrals themselves - no more chasing updates in a spreadsheet.",
+    body: "Brokers and channel partners get their own login - no more tracking referrals in a spreadsheet.",
   },
   {
     title: "Live unit availability",
-    body: "Every unit, tower and project stays current, so no one sells a flat that's already booked.",
+    body: "Every unit, tower and project has live availability, so no one sells a flat that's already booked.",
   },
 ];
 
 export const WHAT_IS_POINTS = [
   {
     title: "Auto lead capture",
-    body: "Enquiries from portals, website, ads and WhatsApp come in automatically.",
+    body: "Capture enquiries automatically from property portals, your website, ads and WhatsApp.",
   },
   {
     title: "Property details on every lead",
-    body: "Unit, tower, price and availability sit beside each conversation.",
+    body: "Track property details - unit, tower, price, availability - alongside each lead.",
   },
   {
     title: "Site-visit scheduling",
-    body: "Book and confirm visits without endless call back-and-forth.",
+    body: "Schedule and confirm site visits without back-and-forth calls.",
   },
   {
     title: "Broker visibility",
-    body: "Partners see their own referrals without your full pipeline.",
+    body: "Give brokers and channel partners visibility into their own referrals.",
   },
   {
     title: "One clear pipeline",
-    body: "Every deal stage stays visible from enquiry to registration.",
+    body: "Show every deal's stage, from enquiry to registration, in one pipeline.",
   },
 ];
 
@@ -97,7 +97,7 @@ export const PROCESS_STEPS = [
   {
     n: "05",
     title: "Booking confirmed",
-    body: "The deal moves to \"Booked,\" unit availability updates instantly across the whole team.",
+    body: 'The deal moves to "Booked," unit availability updates instantly across the whole team.',
   },
   {
     n: "06",
@@ -113,11 +113,11 @@ export const BROKER_POINTS = [
   },
   {
     title: "Stage visibility",
-    body: "See deal stage without your full pipeline",
+    body: "Visibility into deal stage, without seeing your full pipeline",
   },
   {
     title: "Commission updates",
-    body: "Automated status so they stop asking \"any update?\"",
+    body: 'Automated commission-status updates, so they stop calling to ask "any update?"',
   },
 ];
 
@@ -145,6 +145,38 @@ export const CHOOSING_POINTS = [
 ];
 
 export const INTEGRATIONS = [
+  {
+    title: "WhatsApp Business",
+    body: "Capture and respond to leads directly",
+    brand: "WhatsApp",
+  },
+  {
+    title: "Property portals",
+    body: "99acres, MagicBricks, Housing.com and more",
+  },
+  {
+    title: "Google Calendar",
+    body: "Site visits sync automatically",
+    brand: "Gmail",
+  },
+  {
+    title: "Meta & Google Ads",
+    body: "Leads flow straight into your pipeline",
+    brand: "Google Ads",
+  },
+  {
+    title: "Payment & e-sign tools",
+    body: "Track booking payments and signed agreements against each deal",
+    brand: "Razorpay",
+  },
+  {
+    title: "Zapier & open API",
+    body: "Connect anything else your team runs on",
+    brand: "Webhooks",
+  },
+];
+
+export const SHOWCASE_INTEGRATIONS = [
   {
     title: "Sync with Calendly",
     pill: "Meeting booked",
@@ -216,6 +248,6 @@ export const RE_FAQS = [
   },
   {
     q: "Can I try TracktCRM before committing?",
-    a: "Yes, TracktCRM offers a free 1 month trial with no credit card required, or you can book a live demo with your own listings.",
+    a: "Yes, TracktCRM offers a free 14-day trial with no credit card required, or you can book a live demo with your own listings.",
   },
 ];

@@ -2866,6 +2866,13 @@ select {
   margin-top: 28px;
 }
 
+.re-banner-trust {
+  margin: 18px 0 0;
+  color: var(--tc-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .re-banner-ctas .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -3408,6 +3415,68 @@ select {
   font-size: 18px;
   letter-spacing: -0.02em;
   color: #fff;
+}
+
+.re-int-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 36px;
+  text-align: left;
+}
+
+.re-int-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 18px 16px;
+}
+
+.re-int-logo,
+.re-int-fallback {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.re-int-logo .brand-mark,
+.re-int-logo img {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+}
+
+.re-int-logo img {
+  object-fit: contain;
+}
+
+.re-int-fallback {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--tc-cta);
+}
+
+.re-int-card h3 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  margin: 0 0 4px;
+  color: #fff;
+}
+
+.re-int-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .re-testimonial-grid {
@@ -5054,6 +5123,10 @@ select {
     margin-right: auto;
   }
 
+  .re-int-list {
+    grid-template-columns: 1fr;
+  }
+
   .re-capability-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -5431,6 +5504,7 @@ select {
   .re-process-grid,
   .re-choose-grid,
   .re-int-showcase,
+  .re-int-list,
   .re-testimonial-grid,
   .re-point-grid,
   .re-capability-row,
