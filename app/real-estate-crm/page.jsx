@@ -134,7 +134,7 @@ export default function RealEstateCrmPage() {
           <figure className="re-banner-media">
             <img
               src="/assets/real-estate/hero-banner.jpg"
-              alt="Couple looking out from a modern apartment at a residential development"
+              alt="Bright modern apartment interior overlooking a residential skyline"
               width={1400}
               height={1050}
             />
@@ -260,7 +260,7 @@ export default function RealEstateCrmPage() {
           <figure className="re-photo">
             <img
               src="/assets/real-estate/broker-handshake.jpg"
-              alt="Broker and developer partner shaking hands on a property deal"
+              alt="Handshake closing a property partnership deal"
               width={1200}
               height={900}
             />
