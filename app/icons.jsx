@@ -7,10 +7,14 @@ import {
 } from "react-icons/fa6";
 import {
   LuArrowRight,
+  LuBoxes,
+  LuCalendarCheck,
   LuCheck,
   LuChevronDown,
   LuClock,
   LuGripVertical,
+  LuInbox,
+  LuLayers,
   LuMail,
   LuMenu,
   LuMessageCircle,
@@ -18,6 +22,7 @@ import {
   LuPhone,
   LuPlus,
   LuType,
+  LuUsers,
   LuX,
 } from "react-icons/lu";
 
@@ -128,6 +133,26 @@ export function ChannelEmailIcon({ size = 14 }) {
 
 export function ChannelSnoozeIcon({ size = 14 }) {
   return <LuClock size={size} strokeWidth={2.4} />;
+}
+
+export function CaptureIcon({ size = 22 }) {
+  return <LuInbox size={size} strokeWidth={2} />;
+}
+
+export function SiteVisitIcon({ size = 22 }) {
+  return <LuCalendarCheck size={size} strokeWidth={2} />;
+}
+
+export function BrokerIcon({ size = 22 }) {
+  return <LuUsers size={size} strokeWidth={2} />;
+}
+
+export function InventoryIcon({ size = 22 }) {
+  return <LuBoxes size={size} strokeWidth={2} />;
+}
+
+export function ProjectPipelineIcon({ size = 22 }) {
+  return <LuLayers size={size} strokeWidth={2} />;
 }
 
 export function GoogleBadge() {

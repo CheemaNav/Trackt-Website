@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import {
-  AppleIcon,
   ArrowIcon,
   BrandMark,
   ChannelCallIcon,
@@ -18,17 +18,16 @@ import {
   FieldPhoneIcon,
   FieldTextIcon,
   GoogleBadge,
-  GooglePlayIcon,
-  MenuIcon,
-  SOCIALS,
 } from "./icons";
 import LeadDashboard from "./lead-dashboard";
 import PipelineBoard from "./pipeline-board";
+import SiteHeader from "./components/site-header";
+import SiteFooter from "./components/site-footer";
+import useReveal from "./use-reveal";
 import {
   COMPARE,
   FAQS,
   FEATURES,
-  FOOTER_COLS,
   HERO_WORDS,
   INDUSTRIES,
   INTEGRATIONS,
@@ -55,12 +54,7 @@ const HERO_LEADS = [
 export default function HomePage() {
   const [wordIndex, setWordIndex] = useState(0);
   const [tab, setTab] = useState("leads");
-  const [menuOpen, setMenuOpen] = useState(false);
   const active = FEATURES.find((item) => item.id === tab) || FEATURES[0];
-
-  function closeMenu() {
-    setMenuOpen(false);
-  }
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -69,113 +63,11 @@ export default function HomePage() {
     return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    const els = () => document.querySelectorAll(".reveal:not(.is-in)");
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-in"));
-      return;
-    }
-
-    function revealVisible() {
-      els().forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 16 && rect.bottom > 72) {
-          el.classList.add("is-in");
-        }
-      });
-    }
-
-    revealVisible();
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-in");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.01, rootMargin: "80px 0px -16px 0px" },
-    );
-    els().forEach((el) => io.observe(el));
-    window.addEventListener("scroll", revealVisible, { passive: true });
-    window.addEventListener("hashchange", revealVisible);
-    return () => {
-      io.disconnect();
-      window.removeEventListener("scroll", revealVisible);
-      window.removeEventListener("hashchange", revealVisible);
-    };
-  }, []);
-
-  useEffect(() => {
-    function onResize() {
-      if (window.innerWidth > 980) setMenuOpen(false);
-    }
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [menuOpen]);
+  useReveal();
 
   return (
     <div className="home">
-      <header className={`header${menuOpen ? " is-open" : ""}`}>
-        <div className="header-inner">
-          <a href="#top" onClick={closeMenu}>
-            <img
-              className="logo-img"
-              src="/assets/tracktcrm-logo.png"
-              alt="TracktCRM - AI CRM software"
-            />
-          </a>
-          <nav
-            className={`nav header-nav${menuOpen ? " is-open" : ""}`}
-            id="site-nav"
-          >
-            <a href="#product" onClick={closeMenu}>
-              Product
-            </a>
-            <a href="#speed" onClick={closeMenu}>
-              Instant response
-            </a>
-            <a href="#industries" onClick={closeMenu}>
-              Industries
-            </a>
-            <a href="#forms" onClick={closeMenu}>
-              Forms
-            </a>
-            <a href="#integrations" onClick={closeMenu}>
-              Integrations
-            </a>
-            <a href="#faq" onClick={closeMenu}>
-              FAQ
-            </a>
-          </nav>
-          <div className="header-actions">
-            <a className="link-login" href="#demo" onClick={closeMenu}>
-              Login
-            </a>
-            <a className="btn btn-start" href="#demo" onClick={closeMenu}>
-              Start free
-            </a>
-            <button
-              type="button"
-              className="menu-toggle"
-              aria-expanded={menuOpen}
-              aria-controls="site-nav"
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-              onClick={() => setMenuOpen((open) => !open)}
-            >
-              {menuOpen ? <CloseIcon size={20} /> : <MenuIcon />}
-            </button>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className="hero" id="top">
         <div className="hero-copy">
@@ -586,6 +478,11 @@ export default function HomePage() {
                   <li key={point}>- {point}</li>
                 ))}
               </ul>
+              {industry.href.startsWith("/") ? (
+                <Link className="industry-link" href={industry.href}>
+                  Learn more <ArrowIcon size={13} />
+                </Link>
+              ) : null}
             </div>
           ))}
         </div>
@@ -897,121 +794,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer className="footer">
-        <div className="footer-top">
-          <div className="footer-brand">
-            <img
-              className="logo-img logo-img-lg"
-              src="/assets/tracktcrm-logo.png"
-              alt="TracktCRM AI CRM software logo"
-            />
-            <p>
-              TracktCRM - AI CRM Software for Sales, Leads & Pipeline
-              Management.
-            </p>
-            <div className="socials">
-              {SOCIALS.map(({ id, label, Icon }) => (
-                <a className="social" href="#top" key={id} aria-label={label}>
-                  <Icon size={15} />
-                </a>
-              ))}
-            </div>
-            <div className="app-label">
-              <span>Mobile app</span>
-              <em className="soon">COMING SOON</em>
-            </div>
-            <div className="app-btns">
-              <a className="app-btn" href="#top">
-                <span className="store-icon">
-                  <AppleIcon />
-                </span>
-                <span>
-                  <small>DOWNLOAD ON THE</small>
-                  <strong>App Store</strong>
-                </span>
-              </a>
-              <a className="app-btn" href="#top">
-                <span className="store-icon">
-                  <GooglePlayIcon />
-                </span>
-                <span>
-                  <small>GET IT ON</small>
-                  <strong>Google Play</strong>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div className="footer-cols">
-            {FOOTER_COLS.map((column) => (
-              <div key={column.title}>
-                <p className="footer-col-title">{column.title}</p>
-                {column.links.map((link) => (
-                  <a href={link.href} key={link.label}>
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="mega" aria-label="TracktCRM">
-          <svg className="mega-filter" width="0" height="0" aria-hidden="true">
-            <defs>
-              <filter
-                id="mega-grain"
-                x="-20%"
-                y="-20%"
-                width="140%"
-                height="140%"
-                filterUnits="objectBoundingBox"
-                colorInterpolationFilters="sRGB"
-              >
-                <feTurbulence
-                  type="fractalNoise"
-                  baseFrequency="0.88 0.88"
-                  numOctaves="3"
-                  stitchTiles="stitch"
-                  result="noise"
-                  seed="2853"
-                />
-                <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
-                <feComponentTransfer in="alphaNoise" result="coloredNoise">
-                  <feFuncA
-                    type="discrete"
-                    tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
-                  />
-                </feComponentTransfer>
-                <feComposite operator="in" in2="SourceGraphic" in="coloredNoise" result="noiseClipped" />
-                <feFlood floodColor="rgba(0, 0, 0, 0.10)" result="colorFlood" />
-                <feComposite operator="in" in2="noiseClipped" in="colorFlood" result="color1" />
-                <feMerge>
-                  <feMergeNode in="SourceGraphic" />
-                  <feMergeNode in="color1" />
-                </feMerge>
-              </filter>
-            </defs>
-          </svg>
-          <div className="mega-grain-overlay" aria-hidden="true" />
-          <div className="mega-word" aria-hidden="true">
-            {"TRACKTCRM".split("").map((letter, index) => (
-              <span className="mega-letter" key={`${letter}-${index}`}>
-                {letter}
-              </span>
-            ))}
-          </div>
-          <div className="mega-fade" aria-hidden="true" />
-        </div>
-        <div className="legal">
-          <div className="legal-inner">
-            <span>© 2026 TracktCRM. All rights reserved.</span>
-            <span className="legal-links">
-              <a href="#top">Privacy Policy</a>
-              <a href="#top">Terms & Conditions</a>
-              <a href="#top">Contact Us</a>
-            </span>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

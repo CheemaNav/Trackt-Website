@@ -2681,6 +2681,195 @@ select {
   color: #d7dce2;
 }
 
+.industry-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--tc-cta);
+}
+
+.industry-featured .industry-link {
+  color: #fff;
+}
+
+.industry-link svg {
+  transition: transform 0.2s var(--tc-ease);
+}
+
+.industry-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* Real Estate CRM page */
+
+.re-hero {
+  padding: 56px 24px 52px;
+  text-align: center;
+  background: linear-gradient(180deg, #fff5ef 0%, #fff 65%);
+}
+
+.re-hero-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.re-hero .h1 {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.re-hero-sub {
+  margin: 18px auto 0;
+  max-width: 620px;
+  color: var(--tc-muted);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.re-section-intro {
+  max-width: 720px;
+  margin: 14px 0 0;
+  color: var(--tc-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.re-section-intro.is-centered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.re-check-list {
+  display: grid;
+  gap: 4px;
+  max-width: 860px;
+  margin: 28px 0 0;
+}
+
+.re-check-list.is-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.re-check-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-top: 1px solid var(--tc-line);
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--tc-ink);
+  text-align: left;
+}
+
+.re-check-item:last-child {
+  border-bottom: 1px solid var(--tc-line);
+}
+
+.re-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.re-feature-card {
+  background: #fff;
+  border: 1px solid var(--tc-line);
+  border-radius: 18px;
+  padding: 26px 24px;
+}
+
+.re-feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 80, 24, 0.1);
+  color: var(--tc-cta);
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+}
+
+.re-feature-card h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+.re-feature-card p {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--tc-muted);
+  margin: 0;
+}
+
+.re-pipeline-card {
+  margin-top: 32px;
+  background: #fff;
+  border: 1px solid var(--tc-line);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 24px 50px -30px rgba(28, 31, 59, 0.28);
+}
+
+.re-pipeline-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--tc-line);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.re-pipeline-cols {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.re-testimonial {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.re-testimonial blockquote {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.6vw, 28px);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--tc-ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.re-testimonial cite {
+  display: block;
+  margin-top: 20px;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tc-muted);
+}
+
+.re-faq-list {
+  max-width: 760px;
+  margin: 24px auto 0;
+}
+
 /* Custom Forms */
 .forms-section {
   padding-top: 72px;
@@ -4266,6 +4455,15 @@ select {
     padding-top: 48px;
   }
 
+  .re-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .re-pipeline-cols {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px 12px;
+  }
+
   .hero {
     padding-top: 56px;
   }
@@ -4553,7 +4751,9 @@ select {
   .metrics,
   .industry-grid,
   .step-grid,
-  .footer-cols {
+  .footer-cols,
+  .re-feature-grid,
+  .re-pipeline-cols {
     grid-template-columns: 1fr;
   }
 

@@ -10,5 +10,11 @@ export default function sitemap() {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: `${SITE_URL}/real-estate-crm`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 }
