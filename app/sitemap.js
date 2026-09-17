@@ -13,8 +13,8 @@ export default function sitemap() {
     {
       url: `${SITE_URL}/real-estate-crm`,
       lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
   ];
 }
