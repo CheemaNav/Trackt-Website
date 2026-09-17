@@ -2,15 +2,20 @@
 
 > TracktCRM is an AI CRM for sales teams. It captures leads, answers them instantly over WhatsApp, email and SMS, and keeps pipelines organized for real estate, agencies, consultants and freelancers.
 
-## Site
-- Homepage: https://tracktcrm.com/
-- Real Estate CRM: https://tracktcrm.com/real-estate-crm
-- Sitemap: https://tracktcrm.com/sitemap.xml
-- Robots: https://tracktcrm.com/robots.txt
+Use the links below for the main product pages and crawlable site metadata.
+
+## Pages
+
+- [Homepage](https://tracktcrm.com/): AI CRM overview, product features, integrations and FAQ
+- [Real Estate CRM](https://tracktcrm.com/real-estate-crm): Property lead capture, site visits, brokers and deal pipeline
+- [Contact](https://tracktcrm.com/contact): Phone, WhatsApp, office address and contact form
 
 ## Product
-TracktCRM helps teams capture portal and WhatsApp enquiries, automate follow-ups, schedule site visits, manage brokers/channel partners, and track deals from enquiry to close.
 
-## Contact
-- Website: https://tracktcrm.com/
-- Login / app entry: linked from the site header ("Login" / "Start free")
+TracktCRM helps teams capture portal and WhatsApp enquiries, automate follow-ups, schedule site visits, manage brokers and channel partners, and track deals from enquiry to close.
+
+## Optional
+
+- [Sitemap](https://tracktcrm.com/sitemap.xml): Indexable URLs for crawlers
+- [Robots](https://tracktcrm.com/robots.txt): Crawl rules for search and AI bots
+- [WhatsApp](https://wa.me/917009811184): Chat with the TracktCRM team

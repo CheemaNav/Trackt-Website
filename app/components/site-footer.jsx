@@ -61,7 +61,7 @@ export default function SiteFooter() {
           ))}
         </div>
       </div>
-      <div className="mega" aria-label="TracktCRM">
+      <div className="mega" role="img" aria-label="TracktCRM">
         <svg className="mega-filter" width="0" height="0" aria-hidden="true">
           <defs>
             <filter
