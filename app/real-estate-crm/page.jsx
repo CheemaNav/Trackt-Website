@@ -21,7 +21,6 @@ import {
   PROBLEM_POINTS,
   PROCESS_STEPS,
   RE_FAQS,
-  SHOWCASE_INTEGRATIONS,
   TESTIMONIALS,
   WHAT_IS_POINTS,
 } from "./data";
@@ -298,74 +297,6 @@ export default function RealEstateCrmPage() {
       <section className="section re-int-band reveal" id="integrations">
         <p className="kicker">INTEGRATIONS</p>
         <h2 className="h2">Connects with the tools you already use</h2>
-        <p className="re-section-intro is-centered">
-          Book visits, capture enquiries, and pull portal leads into one
-          pipeline - without switching apps.
-        </p>
-        <div className="re-int-showcase">
-          {SHOWCASE_INTEGRATIONS.map((item) => (
-            <article
-              className={`re-int-visual re-int-visual-${item.tone}`}
-              key={item.title}
-            >
-              <div className="re-int-visual-media">
-                <span className="re-int-pill">{item.pill}</span>
-                <img src={item.image} alt="" />
-              </div>
-              <div className="re-int-visual-foot">
-                <span className="re-int-icon" aria-hidden="true">
-                  {item.icon === "calendar" ? (
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <rect
-                        x="4"
-                        y="6"
-                        width="16"
-                        height="14"
-                        rx="2"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      />
-                      <path
-                        d="M4 10h16M8 3v4M16 3v4"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  ) : item.icon === "form" ? (
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <rect
-                        x="5"
-                        y="3"
-                        width="14"
-                        height="18"
-                        rx="2"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      />
-                      <path
-                        d="M8 8h8M8 12h8M8 16h5"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  ) : (
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M4 11.5 12 5l8 6.5V20a1 1 0 0 1-1 1h-5v-5H10v5H5a1 1 0 0 1-1-1v-8.5Z"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  )}
-                </span>
-                <h3>{item.title}</h3>
-              </div>
-            </article>
-          ))}
-        </div>
         <div className="re-int-list">
           {INTEGRATIONS.map((item) => (
             <article className="re-int-card" key={item.title}>

@@ -176,30 +176,6 @@ export const INTEGRATIONS = [
   },
 ];
 
-export const SHOWCASE_INTEGRATIONS = [
-  {
-    title: "Sync with Calendly",
-    pill: "Meeting booked",
-    tone: "blue",
-    image: "/assets/real-estate/integration-calendly.jpg",
-    icon: "calendar",
-  },
-  {
-    title: "Create custom forms",
-    pill: "Form submitted",
-    tone: "yellow",
-    image: "/assets/real-estate/integration-forms.jpg",
-    icon: "form",
-  },
-  {
-    title: "Integrated with 99acres",
-    pill: "New lead • 99acres",
-    tone: "green",
-    image: "/assets/real-estate/integration-99acres.jpg",
-    icon: "home",
-  },
-];
-
 export const TESTIMONIALS = [
   {
     quote:
