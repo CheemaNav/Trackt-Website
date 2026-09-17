@@ -19,10 +19,9 @@ import {
   FieldTextIcon,
   GoogleBadge,
 } from "./icons";
-import LeadDashboard from "./lead-dashboard";
-import PipelineBoard from "./pipeline-board";
 import SiteHeader from "./components/site-header";
 import SiteFooter from "./components/site-footer";
+import HeroLottie from "./components/hero-lottie";
 import useReveal from "./use-reveal";
 import {
   COMPARE,
@@ -41,15 +40,6 @@ import {
 
 const logos = [...LOGO_ROW, ...LOGO_ROW];
 const reviews = [...QUOTES, ...QUOTES];
-const HERO_LEADS = [
-  { name: "Meera Raval", status: "NEW", tone: "new", source: "Website", owner: "PR" },
-  { name: "Arjun Mehta", status: "FOLLOW-UP", tone: "follow", source: "WhatsApp", owner: "NS" },
-  { name: "Priya Shah", status: "DEAD", tone: "dead", source: "Facebook", owner: "KR" },
-  { name: "Rahul Iyer", status: "NEW", tone: "new", source: "IndiaMART", owner: "PR" },
-  { name: "Sana Kapoor", status: "CONVERTED", tone: "won", source: "Referral", owner: "NS" },
-  { name: "Vikram Joshi", status: "FOLLOW-UP", tone: "follow", source: "Google Ads", owner: "KR" },
-  { name: "Ananya Desai", status: "NEW", tone: "new", source: "Justdial", owner: "PR" },
-];
 
 export default function HomePageClient() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -136,53 +126,8 @@ export default function HomePageClient() {
 
         <div className="hero-showcase">
           <div className="hero-visual">
-            <div className="hero-mock-shell">
-              <div className="hero-mock">
-                <div className="hero-dash" aria-hidden="true">
-                  <aside className="dash-side">
-                    <div className="dash-brand">TracktCRM</div>
-                    <nav>
-                      <span className="is-on">Leads</span>
-                      <span>Pipeline</span>
-                      <span>Quotes</span>
-                      <span>Activities</span>
-                      <span>Reports</span>
-                    </nav>
-                  </aside>
-                  <div className="dash-main">
-                    <div className="dash-bar">
-                      <b>Leads</b>
-                      <input readOnly tabIndex={-1} placeholder="Search" />
-                    </div>
-                    <table className="dash-table">
-                      <thead>
-                        <tr>
-                          <th>Lead name</th>
-                          <th>Status</th>
-                          <th>Source</th>
-                          <th>Owner</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {HERO_LEADS.map((lead) => (
-                          <tr key={lead.name}>
-                            <td>{lead.name}</td>
-                            <td>
-                              <span className={`dash-status dash-status-${lead.tone}`}>
-                                {lead.status}
-                              </span>
-                            </td>
-                            <td>{lead.source}</td>
-                            <td>
-                              <span className="dash-owner">{lead.owner}</span>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
+            <div className="hero-lottie-wrap">
+              <HeroLottie />
             </div>
           </div>
         </div>
@@ -216,7 +161,14 @@ export default function HomePageClient() {
               key={feature.id}
               type="button"
               className={`tab${tab === feature.id ? " tab-active" : ""}`}
-              onClick={() => setTab(feature.id)}
+              onClick={(event) => {
+                setTab(feature.id);
+                event.currentTarget.scrollIntoView({
+                  behavior: "smooth",
+                  inline: "center",
+                  block: "nearest",
+                });
+              }}
             >
               {feature.label}
             </button>
@@ -236,9 +188,25 @@ export default function HomePageClient() {
           </div>
           <div className="product-preview">
             {tab === "leads" ? (
-              <LeadDashboard key="leads-dash" />
+              <img
+                className="product-shot"
+                src="/assets/dashboard.png"
+                alt="TracktCRM lead management dashboard with deals, stages and customer report"
+                width={1381}
+                height={407}
+                loading="lazy"
+                decoding="async"
+              />
             ) : tab === "pipeline" ? (
-              <PipelineBoard key="pipe-board" />
+              <img
+                className="product-shot"
+                src="/assets/leadmanage.png"
+                alt="TracktCRM sales pipeline board with New, Won, Lost and Junk stages"
+                width={1383}
+                height={695}
+                loading="lazy"
+                decoding="async"
+              />
             ) : tab === "automation" ? (
               <div className="preview-card" key={tab}>
                 <div className="preview-top">
@@ -757,8 +725,8 @@ export default function HomePageClient() {
             </div>
           </div>
           <div className="faq-list">
-            {FAQS.map((item, index) => (
-              <details className="faq-item" key={item.q} defaultOpen={index === 0}>
+            {FAQS.map((item) => (
+              <details className="faq-item" key={item.q}>
                 <summary>
                   {item.q}
                   <span className="faq-toggle" aria-hidden="true" />

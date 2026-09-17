@@ -133,10 +133,10 @@ export default function RealEstateCrmPage() {
           </div>
           <figure className="re-banner-media">
             <img
-              src="/assets/real-estate/hero-banner.jpg"
-              alt="Bright modern apartment interior overlooking a residential skyline"
-              width={1400}
-              height={1050}
+              src="/assets/Property-enquiries.png"
+              alt="Bright modern apartment interior overlooking a city skyline and park"
+              width={1552}
+              height={1013}
             />
           </figure>
         </div>

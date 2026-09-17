@@ -404,7 +404,7 @@ export const FOOTER_COLS = [
     title: "Company",
     links: [
       { label: "About Us", href: "/#top" },
-      { label: "Contact", href: "/#demo" },
+      { label: "Contact", href: "/contact" },
       { label: "Blog", href: "/#top" },
       { label: "Partner with us", href: "/#demo" },
       { label: "Help Center", href: "/#faq" },

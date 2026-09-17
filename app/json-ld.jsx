@@ -24,7 +24,16 @@ export default function JsonLd() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      url: `${SITE_URL}/#demo`,
+      telephone: "+917009811184",
+      url: `${SITE_URL}/contact`,
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "3rd Floor, D-231, Phase 8B, Sector 91",
+      addressLocality: "Sahibzada Ajit Singh Nagar",
+      addressRegion: "Punjab",
+      postalCode: "140308",
+      addressCountry: "IN",
     },
   };
 

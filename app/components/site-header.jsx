@@ -12,11 +12,31 @@ export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
   const industriesRef = useRef(null);
+  const industriesCloseTimer = useRef(null);
 
   function closeMenu() {
+    clearTimeout(industriesCloseTimer.current);
     setMenuOpen(false);
     setIndustriesOpen(false);
   }
+
+  function openIndustriesDesktop() {
+    if (!window.matchMedia("(min-width: 981px)").matches) return;
+    clearTimeout(industriesCloseTimer.current);
+    setIndustriesOpen(true);
+  }
+
+  function scheduleCloseIndustriesDesktop() {
+    if (!window.matchMedia("(min-width: 981px)").matches) return;
+    clearTimeout(industriesCloseTimer.current);
+    industriesCloseTimer.current = setTimeout(() => {
+      setIndustriesOpen(false);
+    }, 120);
+  }
+
+  useEffect(() => {
+    return () => clearTimeout(industriesCloseTimer.current);
+  }, []);
 
   useEffect(() => {
     function onResize() {
@@ -30,20 +50,40 @@ export default function SiteHeader() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
+    const html = document.documentElement;
+    const { body } = document;
+    if (menuOpen) {
+      html.style.overflow = "hidden";
+      body.style.overflow = "hidden";
+    } else {
+      html.style.overflow = "";
+      body.style.overflow = "";
+    }
     return () => {
-      document.body.style.overflow = "";
+      html.style.overflow = "";
+      body.style.overflow = "";
     };
   }, [menuOpen]);
 
   useEffect(() => {
     function onPointerDown(event) {
-      if (!industriesRef.current?.contains(event.target)) {
+      if (
+        industriesOpen &&
+        !industriesRef.current?.contains(event.target)
+      ) {
         setIndustriesOpen(false);
       }
+      if (!menuOpen) return;
+      const nav = document.getElementById("site-nav");
+      const toggle = document.querySelector(".menu-toggle");
+      if (nav?.contains(event.target) || toggle?.contains(event.target)) return;
+      closeMenu();
     }
     function onKeyDown(event) {
-      if (event.key === "Escape") setIndustriesOpen(false);
+      if (event.key === "Escape") {
+        if (menuOpen) closeMenu();
+        else setIndustriesOpen(false);
+      }
     }
     document.addEventListener("pointerdown", onPointerDown);
     document.addEventListener("keydown", onKeyDown);
@@ -51,7 +91,7 @@ export default function SiteHeader() {
       document.removeEventListener("pointerdown", onPointerDown);
       document.removeEventListener("keydown", onKeyDown);
     };
-  }, []);
+  }, [menuOpen, industriesOpen]);
 
   return (
     <header className={`header${menuOpen ? " is-open" : ""}`}>
@@ -76,6 +116,8 @@ export default function SiteHeader() {
           <div
             className={`nav-dropdown${industriesOpen ? " is-open" : ""}`}
             ref={industriesRef}
+            onMouseEnter={openIndustriesDesktop}
+            onMouseLeave={scheduleCloseIndustriesDesktop}
           >
             <button
               type="button"
@@ -83,7 +125,11 @@ export default function SiteHeader() {
               aria-expanded={industriesOpen}
               aria-haspopup="true"
               aria-controls="industries-menu"
-              onClick={() => setIndustriesOpen((open) => !open)}
+              onClick={() => {
+                if (window.matchMedia("(max-width: 980px)").matches) {
+                  setIndustriesOpen((open) => !open);
+                }
+              }}
             >
               Industries
               <FieldDropdownIcon size={14} />
@@ -138,6 +184,13 @@ export default function SiteHeader() {
           </button>
         </div>
       </div>
+      <button
+        type="button"
+        className={`nav-backdrop${menuOpen ? " is-open" : ""}`}
+        aria-label="Close menu"
+        tabIndex={menuOpen ? 0 : -1}
+        onClick={closeMenu}
+      />
     </header>
   );
 }

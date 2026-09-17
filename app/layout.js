@@ -1,5 +1,6 @@
 import Script from "next/script";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import WhatsAppFloat from "./components/whatsapp-float";
 import JsonLd from "./json-ld";
 import { SEO, SITE_NAME, SITE_URL } from "./site";
 import "./globals.css";
@@ -95,6 +96,7 @@ export default function RootLayout({ children }) {
         </Script>
         <JsonLd />
         {children}
+        <WhatsAppFloat />
       </body>
     </html>
   );

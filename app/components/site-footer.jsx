@@ -114,7 +114,7 @@ export default function SiteFooter() {
           <span className="legal-links">
             <Link href="/#top">Privacy Policy</Link>
             <Link href="/#top">Terms & Conditions</Link>
-            <Link href="/#top">Contact Us</Link>
+            <Link href="/contact">Contact Us</Link>
           </span>
         </div>
       </div>

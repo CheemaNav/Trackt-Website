@@ -4,6 +4,17 @@ export const SITE_URL =
 
 export const SITE_NAME = "TracktCRM";
 
+export const CONTACT = {
+  phoneE164: "917009811184",
+  phoneDisplay: "+91 70098 11184",
+  phoneTel: "+917009811184",
+  whatsappUrl: "https://wa.me/917009811184",
+  address:
+    "3rd Floor, D-231, Phase 8B, Sector 91, Sahibzada Ajit Singh Nagar, Punjab 140308",
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=3rd+Floor,+D-231,+Phase+8B,+Sector+91,+Sahibzada+Ajit+Singh+Nagar,+Punjab+140308",
+};
+
 export const SEO = {
   title: "AI CRM Software for Leads, Pipeline & Real Estate | TracktCRM",
   description:
