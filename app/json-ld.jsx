@@ -7,7 +7,8 @@ export default function JsonLd() {
     "@type": "Organization",
     name: SITE_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/assets/tracktcrm-logo.png`,
+    logo: `${SITE_URL}/logo.png`,
+    image: `${SITE_URL}/TracktCRM-Og.jpg`,
     description: SEO.description,
     sameAs: [],
   };

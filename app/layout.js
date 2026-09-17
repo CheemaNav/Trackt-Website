@@ -10,6 +10,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const siteLogo = `${SITE_URL}/logo.png`;
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -50,7 +51,7 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "TracktCRM",
+        alt: `${SITE_NAME} - AI CRM Software`,
       },
     ],
   },
@@ -61,9 +62,16 @@ export const metadata = {
     images: [ogImage],
   },
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png" }],
-    apple: [{ url: "/apple-icon.png", type: "image/png" }],
-    shortcut: ["/favicon.png"],
+    icon: [
+      { url: "/logo.png", type: "image/png", sizes: "512x512" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
+    shortcut: ["/logo.png"],
+  },
+  other: {
+    "og:logo": siteLogo,
   },
 };
 

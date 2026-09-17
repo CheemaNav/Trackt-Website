@@ -12,7 +12,7 @@ import {
 import RevealInit from "../components/reveal-init";
 import SiteHeader from "../components/site-header";
 import SiteFooter from "../components/site-footer";
-import { SITE_URL } from "../site";
+import { SITE_NAME, SITE_URL } from "../site";
 import {
   BROKER_POINTS,
   CHOOSING_POINTS,
@@ -35,6 +35,7 @@ const FEATURE_ICONS = {
 };
 
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const siteLogo = `${SITE_URL}/logo.png`;
 
 export const metadata = {
   title: "Real Estate CRM Software - Capture & Close Property Leads",
@@ -51,7 +52,9 @@ export const metadata = {
   },
   openGraph: {
     type: "website",
+    locale: "en_US",
     url: `${SITE_URL}/real-estate-crm`,
+    siteName: SITE_NAME,
     title: "TracktCRM - The CRM Built for How Property Actually Sells",
     description:
       "Capture leads from every portal, book site visits instantly, and manage brokers, units and deals in one real estate CRM.",
@@ -70,6 +73,9 @@ export const metadata = {
     description:
       "Capture leads from every portal, book site visits instantly, and manage brokers, units and deals in one real estate CRM.",
     images: [ogImage],
+  },
+  other: {
+    "og:logo": siteLogo,
   },
 };
 
