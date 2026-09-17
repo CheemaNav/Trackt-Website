@@ -13,6 +13,7 @@ import RevealInit from "../components/reveal-init";
 import SiteHeader from "../components/site-header";
 import SiteFooter from "../components/site-footer";
 import { SITE_NAME, SITE_URL } from "../site";
+import { RealEstateJsonLd } from "../json-ld";
 import {
   BROKER_POINTS,
   CHOOSING_POINTS,
@@ -93,6 +94,7 @@ export const metadata = {
 export default function RealEstateCrmPage() {
   return (
     <div className="home">
+      <RealEstateJsonLd faqs={RE_FAQS} />
       <RevealInit />
       <SiteHeader />
 
