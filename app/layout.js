@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import JsonLd from "./json-ld";
 import { SEO, SITE_NAME, SITE_URL } from "./site";
@@ -9,6 +10,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
 });
 
+const GA_MEASUREMENT_ID = "G-947EJKYD0S";
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
 const siteLogo = `${SITE_URL}/logo.png`;
 
@@ -79,6 +81,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={plusJakarta.variable}>
       <body>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <JsonLd />
         {children}
       </body>
