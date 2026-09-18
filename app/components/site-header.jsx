@@ -165,6 +165,9 @@ export default function SiteHeader() {
           <Link href="/#faq" onClick={closeMenu}>
             FAQ
           </Link>
+          <Link href="/contact" onClick={closeMenu}>
+            Contact Us
+          </Link>
         </nav>
         <div className="header-actions">
           <Link className="link-login" href="/#demo" onClick={closeMenu}>
