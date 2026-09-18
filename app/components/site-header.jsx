@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CloseIcon, FieldDropdownIcon, MenuIcon } from "../icons";
 
 const INDUSTRY_LINKS = [
+  { label: "AI CRM", href: "/ai-crm" },
   { label: "Real Estate CRM", href: "/real-estate-crm" },
 ];
 

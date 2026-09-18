@@ -17,6 +17,12 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${SITE_URL}/ai-crm`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${SITE_URL}/contact`,
       lastModified,
       changeFrequency: "monthly",

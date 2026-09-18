@@ -410,6 +410,14 @@ export default function HomePageClient() {
                 </div>
               ))}
             </div>
+            <p className="speed-more">
+              <Link href="/ai-crm">
+                Explore TracktCRM&apos;s AI CRM
+                <span className="btn-arrow" aria-hidden="true">
+                  <ArrowIcon />
+                </span>
+              </Link>
+            </p>
           </div>
           <div className="timeline stagger">
             {TIMELINE.map((item) => (

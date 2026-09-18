@@ -105,7 +105,7 @@ export function RealEstateJsonLd({ faqs }) {
       name: SITE_NAME,
       url: SITE_URL,
     },
-    areaServed: "India",
+    areaServed: "Worldwide",
     description:
       "TracktCRM is a real estate CRM that captures enquiries from every portal and WhatsApp, books site visits instantly, and tracks every broker, unit and deal.",
     url: `${SITE_URL}/real-estate-crm`,
@@ -115,6 +115,44 @@ export function RealEstateJsonLd({ faqs }) {
     <>
       <SchemaScript id="schema-re-faq" data={faqPage} />
       <SchemaScript id="schema-re-service" data={service} />
+    </>
+  );
+}
+
+/** AI CRM page FAQ + Service schema. */
+export function AiCrmJsonLd({ faqs }) {
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "AI CRM Software",
+    provider: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    areaServed: "Worldwide",
+    description:
+      "TracktCRM is an AI CRM that answers every lead in seconds across WhatsApp, email and SMS, then automates follow-ups and reporting.",
+    url: `${SITE_URL}/ai-crm`,
+  };
+
+  return (
+    <>
+      <SchemaScript id="schema-ai-faq" data={faqPage} />
+      <SchemaScript id="schema-ai-service" data={service} />
     </>
   );
 }

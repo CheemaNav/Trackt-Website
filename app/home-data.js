@@ -416,7 +416,7 @@ export const FOOTER_COLS = [
     title: "Product",
     links: [
       { label: "Features", href: "/#product" },
-      { label: "AI CRM Software", href: "/#speed" },
+      { label: "AI CRM Software", href: "/ai-crm" },
       { label: "Integrations", href: "/#integrations" },
       { label: "Custom Forms", href: "/#forms" },
       { label: "Pricing", href: "/#demo" },
@@ -428,10 +428,10 @@ export const FOOTER_COLS = [
     links: [
       { label: "Lead Management Software", href: "/#product" },
       { label: "Sales Pipeline Management", href: "/#product" },
-      { label: "Sales Automation", href: "/#speed" },
+      { label: "Sales Automation", href: "/ai-crm" },
       { label: "Reporting & Analytics", href: "/#product" },
-      { label: "AI Sales Assistant", href: "/#speed" },
-      { label: "Follow-up Reminders", href: "/#speed" },
+      { label: "AI Sales Assistant", href: "/ai-crm" },
+      { label: "Follow-up Reminders", href: "/ai-crm" },
     ],
   },
   {

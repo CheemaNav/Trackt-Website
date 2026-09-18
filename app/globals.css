@@ -2535,6 +2535,22 @@ select {
   gap: 12px;
 }
 
+.speed-more {
+  margin: 22px 0 0;
+}
+
+.speed-more a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #c5c9ff;
+}
+
+.speed-more a:hover {
+  color: #fff;
+}
+
 .speed-point {
   display: grid;
   grid-template-columns: 22px minmax(0, 1fr);
@@ -3001,6 +3017,50 @@ select {
   object-position: 70% center;
 }
 
+.ai-banner-media {
+  min-height: 0;
+  align-self: stretch;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 12px 0 12px 0;
+  overflow: visible;
+}
+
+.ai-banner-media::before {
+  display: none;
+}
+
+.ai-banner-media img {
+  width: 106%;
+  max-width: none;
+  height: auto;
+  min-height: min(78vh, 741px);
+  max-height: none;
+  object-fit: contain;
+  object-position: right center;
+  transform: scale(1.08);
+  transform-origin: 100%;
+  margin-right: -20px;
+}
+
+.ai-banner .re-banner-inner,
+.ai-banner-inner {
+  grid-template-columns: minmax(280px, 480px) minmax(0, 1.35fr);
+  min-height: min(78vh, 760px);
+  align-items: center;
+  overflow: visible;
+}
+
+.ai-banner {
+  overflow: visible;
+}
+
+.ai-banner .re-banner-copy {
+  padding-right: 12px;
+}
+
 .re-hero {
   padding: 56px 24px 52px;
   text-align: center;
@@ -3373,6 +3433,40 @@ select {
   line-height: 1.55;
 }
 
+.ai-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.ai-compare-card {
+  border: 1px solid var(--tc-line);
+  border-radius: 18px;
+  background: #fff;
+  padding: 24px 22px;
+}
+
+.ai-compare-card.is-highlight {
+  border-color: rgba(97, 97, 255, 0.45);
+  background: linear-gradient(180deg, #f7f7ff 0%, #fff 70%);
+  box-shadow: 0 18px 36px -28px rgba(97, 97, 255, 0.45);
+}
+
+.ai-compare-card h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: var(--tc-ink);
+}
+
+.ai-compare-card p {
+  margin: 0;
+  color: var(--tc-muted);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
 .re-int-band {
   background:
     radial-gradient(circle at 15% 20%, rgba(97, 97, 255, 0.28), transparent 42%),
@@ -3518,8 +3612,8 @@ select {
 
 .re-int-card {
   display: flex;
-  gap: 14px;
-  align-items: flex-start;
+  gap: 16px;
+  align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.06);
@@ -3528,32 +3622,52 @@ select {
 
 .re-int-logo,
 .re-int-fallback {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
   background: #fff;
   display: grid;
   place-items: center;
   flex-shrink: 0;
   overflow: hidden;
+  padding: 6px;
+  box-sizing: border-box;
 }
 
 .re-int-logo .brand-mark,
 .re-int-logo img {
-  width: 24px;
-  height: 24px;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   display: grid;
   place-items: center;
 }
 
 .re-int-logo img {
   object-fit: contain;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.35);
+}
+
+.re-int-logo .brand-mark-icon {
+  width: 100%;
+  height: 100%;
+  color: inherit;
+}
+
+.re-int-logo .brand-mark-icon svg {
+  width: 36px;
+  height: 36px;
 }
 
 .re-int-fallback {
   font-family: var(--font-display);
   font-weight: 700;
+  font-size: 22px;
   color: var(--tc-cta);
+  padding: 0;
 }
 
 .re-int-card h3 {
@@ -3974,6 +4088,14 @@ select {
   place-items: center;
   width: 100%;
   height: 100%;
+}
+
+.brand-mark-icon.is-whatsapp {
+  color: #25d366;
+}
+
+.brand-mark-icon.is-call {
+  color: var(--tc-blue);
 }
 
 .brand-mark img {
@@ -5227,6 +5349,7 @@ select {
   .re-dual-photos,
   .re-choose-grid,
   .re-testimonial-grid,
+  .ai-compare-grid,
   .re-banner-inner,
   #what-is .re-split,
   #what-is .re-split-reverse {
@@ -5273,6 +5396,29 @@ select {
 
   .re-banner-media img {
     object-position: center;
+  }
+
+  .ai-banner-media {
+    min-height: 0;
+    max-height: none;
+    padding: 4px 8px 24px;
+    justify-content: center;
+  }
+
+  .ai-banner-media img {
+    width: 100%;
+    min-height: 0;
+    max-height: none;
+    height: auto;
+    object-fit: contain;
+    transform: none;
+    transform-origin: center;
+  }
+
+  .ai-banner .re-banner-inner,
+  .ai-banner-inner {
+    grid-template-columns: 1fr;
+    min-height: 0;
   }
 
   .re-banner-title {
@@ -5673,6 +5819,7 @@ select {
   .re-int-showcase,
   .re-int-list,
   .re-testimonial-grid,
+  .ai-compare-grid,
   .re-point-grid,
   .re-capability-row,
   .re-dual-photos {

@@ -3,6 +3,7 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
+  FaWhatsapp,
   FaYoutube,
 } from "react-icons/fa6";
 import {
@@ -52,7 +53,22 @@ const BRAND_LOGOS = {
   Practo: "/assets/brands/practo.svg",
 };
 
+const BRAND_ICONS = {
+  WhatsApp: FaWhatsapp,
+  Calling: LuPhone,
+};
+
 export function BrandMark({ name }) {
+  const Icon = BRAND_ICONS[name];
+  if (Icon) {
+    return (
+      <span
+        className={`brand-mark brand-mark-icon${name === "WhatsApp" ? " is-whatsapp" : ""}${name === "Calling" ? " is-call" : ""}`}
+      >
+        <Icon size={28} aria-hidden="true" />
+      </span>
+    );
+  }
   const src = BRAND_LOGOS[name];
   if (!src) return null;
   return (

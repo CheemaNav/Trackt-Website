@@ -232,7 +232,15 @@ export default function RealEstateCrmPage() {
                   <Icon />
                 </div>
                 <h3>{feature.title}</h3>
-                <p>{feature.body}</p>
+                <p>
+                  {feature.body}
+                  {feature.href ? (
+                    <>
+                      {" "}
+                      <a href={feature.href}>{feature.linkLabel}</a>.
+                    </>
+                  ) : null}
+                </p>
               </article>
             );
           })}
