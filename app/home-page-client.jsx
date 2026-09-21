@@ -59,6 +59,7 @@ export default function HomePageClient() {
     <div className="home">
       <SiteHeader />
 
+      <main>
       <section className="hero" id="top">
         <div className="hero-copy">
           <div className="badge">
@@ -68,18 +69,17 @@ export default function HomePageClient() {
           <h1 className="h1">
             <span className="hero-line">The AI CRM that answers</span>
             <br className="hero-break" />
-            {" "}
-            <span className="hero-line">your leads&nbsp;-</span>
-            <span className="hero-line hero-line-rotate">
-              <span className="hero-word-wrap" aria-live="polite">
+            <span className="hero-line">your leads&nbsp;–</span>
+            <span className="hero-line hero-line-rotate" aria-hidden="true">
+              <span className="hero-word-wrap">
                 {HERO_WORDS.map((word) => (
-                  <span className="hero-word-sizer" aria-hidden="true" key={`size-${word}`}>
+                  <span className="hero-word-sizer" key={`size-${word}`}>
                     {word}
                   </span>
                 ))}
                 <span
                   key={wordIndex}
-                  className={`hero-word hero-word-${wordIndex % HERO_WORDS.length}`}
+                  className={`hero-word hero-word-${wordIndex % 4}`}
                 >
                   {HERO_WORDS[wordIndex]}
                 </span>
@@ -89,13 +89,15 @@ export default function HomePageClient() {
           <p className="lead">
             TracktCRM is AI-powered CRM software that captures every lead,
             responds in seconds over WhatsApp, email and SMS, and keeps your
-            sales pipeline organized - built for how agencies, consultants and freelancers actually sell.
+            sales pipeline organized - built for how agencies, consultants and freelancers actually sell.{" "}
+            <a href="/ai-crm">See the AI sales assistant</a> or explore our{" "}
+            <a href="/real-estate-crm">real estate CRM</a>.
           </p>
           <div className="hero-ctas">
-            <a className="btn btn-primary" href="#demo">
+            <a className="btn btn-primary" href="/contact">
               Start Free Trial
             </a>
-            <a className="btn btn-outline" href="#demo">
+            <a className="btn btn-outline" href="/contact">
               Book a Demo
               <span className="btn-arrow" aria-hidden="true">
                 <ArrowIcon />
@@ -464,7 +466,8 @@ export default function HomePageClient() {
         <p className="kicker">WHY TEAMS SWITCH</p>
         <h2 className="h2">An easy-to-use, affordable Pipedrive alternative</h2>
         <p className="compare-intro">
-        Most CRM softwares including tools like Pipedrive are priced and built for enterprise teams. TracktCRM gives small businesses, agencies, and freelancers powerful lead management and sales pipeline tools, plus AI-powered automation, at a fraction of the cost.
+        Most CRM software including tools like Pipedrive is priced and built for enterprise teams. TracktCRM gives small businesses, agencies, and freelancers powerful lead management and sales pipeline tools, plus AI-powered automation, at a fraction of the cost. See why teams choose TracktCRM as a{" "}
+        <Link href="/pipedrive-alternative">Pipedrive alternative</Link>.
         </p>
         <div className="compare-board">
           <article className="compare-card compare-card-old">
@@ -621,32 +624,39 @@ export default function HomePageClient() {
 
       <section className="section reveal" id="integrations">
         <div className="int-wrap">
-          <div className="int-grid">
-            {INTEGRATIONS.map((name, index) => (
-              <div className="int-cell" key={`${name}-${index}`}>
-                {name ? <BrandMark name={name} /> : null}
-              </div>
-            ))}
-          </div>
           <div className="int-center">
             <h2>
-              <span className="accent">CONNECTS</span> with the{" "}
-              <span className="orange">TOOLS</span>
+              <span className="accent int-cap">Connects</span> with the{" "}
+              <span className="orange int-cap">tools</span>
               <br />
               you already use
             </h2>
-            <a className="int-cta" href="#demo">
+            <a className="int-cta" href="/contact">
               Start Free Trial
               <span className="int-cta-arrow">
                 <ArrowIcon />
               </span>
             </a>
           </div>
+          <div className="int-grid">
+            {INTEGRATIONS.map((name, index) => (
+              <div
+                className={`int-cell${name ? "" : " is-empty"}`}
+                key={`${name || "empty"}-${index}`}
+                aria-hidden={name ? undefined : true}
+              >
+                {name ? <BrandMark name={name} /> : null}
+              </div>
+            ))}
+          </div>
         </div>
         <p className="int-note">
           Don&apos;t see your tool?{" "}
-          <a href="#demo">
-            Let us know — we&apos;ll integrate it for you <ArrowIcon />
+          <a href="/contact">
+            Let us know — we&apos;ll integrate it for you
+            <span className="int-note-arrow" aria-hidden="true">
+              <ArrowIcon />
+            </span>
           </a>
         </p>
       </section>
@@ -756,16 +766,17 @@ export default function HomePageClient() {
             </p>
           </div>
           <div className="cta-actions">
-            <a className="btn-dark" href="#top">
+            <a className="btn-dark" href="/contact">
               Start free
             </a>
-            <a className="btn-ghost" href="#top">
+            <a className="btn-ghost" href="/contact">
               Book a demo
             </a>
           </div>
         </div>
       </section>
 
+      </main>
       <SiteFooter />
     </div>
   );

@@ -1,5 +1,5 @@
+import { CONTACT, SITE_NAME, SITE_URL, SOCIAL_PROFILES } from "./site";
 import { FAQS } from "./home-data";
-import { SITE_NAME, SITE_URL } from "./site";
 
 function SchemaScript({ data, id }) {
   return (
@@ -11,7 +11,7 @@ function SchemaScript({ data, id }) {
   );
 }
 
-/** Global Organization + SoftwareApplication (all pages via layout). */
+/** Global Organization + WebSite + SoftwareApplication (layout). */
 export default function JsonLd() {
   const organization = {
     "@context": "https://schema.org",
@@ -21,11 +21,15 @@ export default function JsonLd() {
     logo: `${SITE_URL}/logo.png`,
     description:
       "TracktCRM is an AI-powered CRM that captures leads, automates follow-ups and tracks sales pipelines for real estate teams, agencies, consultants and freelancers.",
+    sameAs: Object.values(SOCIAL_PROFILES),
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      telephone: "+917009811184",
+      telephone: CONTACT.phoneTel,
+      email: CONTACT.email,
       url: `${SITE_URL}/contact`,
+      areaServed: "Worldwide",
+      availableLanguage: ["en", "hi"],
     },
     address: {
       "@type": "PostalAddress",
@@ -37,20 +41,34 @@ export default function JsonLd() {
     },
   };
 
+  const website = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    url: SITE_URL,
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  };
+
   const software = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: SITE_NAME,
     applicationCategory: "BusinessApplication",
     applicationSubCategory: "CRM Software",
-    operatingSystem: "Web, iOS, Android",
+    operatingSystem: "Web",
     description:
       "AI-powered CRM software that captures leads across WhatsApp, email and SMS, automates follow-ups, and manages sales pipelines - built for real estate, agencies, consultants and freelancers.",
     offers: {
       "@type": "Offer",
-      price: "0",
+      url: `${SITE_URL}/pricing`,
       priceCurrency: "INR",
-      description: "Free trial available - no credit card required",
+      price: "0",
+      description: "1-month free trial - no credit card required. Paid plans after trial.",
+      category: "FreeTrial",
     },
     url: SITE_URL,
   };
@@ -58,9 +76,27 @@ export default function JsonLd() {
   return (
     <>
       <SchemaScript id="schema-organization" data={organization} />
+      <SchemaScript id="schema-website" data={website} />
       <SchemaScript id="schema-software" data={software} />
     </>
   );
+}
+
+export function BreadcrumbJsonLd({ items }) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.href.startsWith("http")
+        ? item.href
+        : `${SITE_URL}${item.href === "/" ? "" : item.href}`,
+    })),
+  };
+
+  return <SchemaScript id="schema-breadcrumb" data={data} />;
 }
 
 /** Homepage FAQ schema - only the FAQs visible on `/`. */
@@ -137,7 +173,7 @@ export function AiCrmJsonLd({ faqs }) {
   const service = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "AI CRM Software",
+    serviceType: "AI Sales Assistant",
     provider: {
       "@type": "Organization",
       name: SITE_NAME,
@@ -145,7 +181,7 @@ export function AiCrmJsonLd({ faqs }) {
     },
     areaServed: "Worldwide",
     description:
-      "TracktCRM is an AI CRM that answers every lead in seconds across WhatsApp, email and SMS, then automates follow-ups and reporting.",
+      "TracktCRM's AI sales assistant answers every lead in seconds across WhatsApp, email and SMS, then automates follow-ups and reporting.",
     url: `${SITE_URL}/ai-crm`,
   };
 
@@ -155,4 +191,47 @@ export function AiCrmJsonLd({ faqs }) {
       <SchemaScript id="schema-ai-service" data={service} />
     </>
   );
+}
+
+export function ContactPageJsonLd() {
+  const contactPage = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: `Contact ${SITE_NAME}`,
+    url: `${SITE_URL}/contact`,
+    mainEntity: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+      email: CONTACT.email,
+      telephone: CONTACT.phoneTel,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "3rd Floor, D-231, Phase 8B, Sector 91",
+        addressLocality: "Sahibzada Ajit Singh Nagar",
+        addressRegion: "Punjab",
+        postalCode: "140308",
+        addressCountry: "IN",
+      },
+    },
+  };
+
+  return <SchemaScript id="schema-contact" data={contactPage} />;
+}
+
+export function FaqJsonLd({ id = "schema-faq", faqs }) {
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
+  return <SchemaScript id={id} data={faqPage} />;
 }

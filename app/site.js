@@ -4,11 +4,22 @@ export const SITE_URL =
 
 export const SITE_NAME = "TracktCRM";
 
+export const APP_LOGIN_URL = "https://app.tracktcrm.com";
+
+export const SOCIAL_PROFILES = {
+  linkedin: "https://www.linkedin.com/company/tracktcrm",
+  facebook: "https://www.facebook.com/tracktcrm",
+  instagram: "https://www.instagram.com/tracktcrm",
+  youtube: "https://www.youtube.com/@tracktcrm",
+};
+
 export const CONTACT = {
   phoneE164: "917009811184",
   phoneDisplay: "+91 70098 11184",
   phoneTel: "+917009811184",
+  email: "traktcrm@gmail.com",
   whatsappUrl: "https://wa.me/917009811184",
+  supportHours: "Mon–Fri, 10:00–19:00 IST",
   address:
     "3rd Floor, D-231, Phase 8B, Sector 91, Sahibzada Ajit Singh Nagar, Punjab 140308",
   mapsUrl:
@@ -16,23 +27,10 @@ export const CONTACT = {
 };
 
 export const SEO = {
-  title: "AI CRM Software for Leads, Pipeline & Real Estate | TracktCRM",
+  title: "AI CRM Software That Answers Every Lead | TracktCRM",
   description:
-    "TracktCRM is an AI CRM that captures leads, automates follow-ups and tracks your sales pipeline - built for real estate, agencies & freelancers. Free 1 month trial.",
+    "TracktCRM is an AI CRM that replies to every lead in seconds, automates follow-ups and tracks your pipeline. Start your free 1-month trial.",
   ogTitle: "TracktCRM - AI CRM Software That Answers Every Lead",
   ogDescription:
     "AI-powered lead management, sales pipeline tracking and automated follow-ups - for real estate teams, agencies, consultants and freelancers.",
-  keywords: [
-    "ai crm",
-    "crm for real estate",
-    "pipedrive alternative",
-    "best crm for freelancers",
-    "lead management software",
-    "crm for agency",
-    "crm for consultants",
-    "crm for small business",
-    "ai sales assistant",
-    "sales pipeline management",
-    "AI CRM software",
-  ],
 };

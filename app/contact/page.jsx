@@ -1,28 +1,24 @@
 import ContactPageClient from "./contact-page-client";
-import { CONTACT, SITE_NAME, SITE_URL } from "../site";
+import { ContactPageJsonLd, BreadcrumbJsonLd } from "../json-ld";
+import { SITE_NAME, SITE_URL } from "../site";
 
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
-const siteLogo = `${SITE_URL}/logo.png`;
 
 export const metadata = {
-  title: "Contact Us - Talk to the TracktCRM Team",
+  title: {
+    absolute: "Contact TracktCRM | Book a Demo or Talk to Sales",
+  },
   description:
-    "Get in touch with TracktCRM. Call or WhatsApp us, or send a message to book a demo of our AI CRM - we support teams worldwide.",
-  keywords: [
-    "tracktcrm contact",
-    "crm support",
-    "book crm demo",
-    "contact tracktcrm",
-  ],
+    "Call, WhatsApp or message the TracktCRM team to book a demo of our AI CRM. We support teams worldwide and reply within one business day.",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
     url: `${SITE_URL}/contact`,
     siteName: SITE_NAME,
-    title: "Contact TracktCRM",
+    title: "Contact TracktCRM | Book a Demo or Talk to Sales",
     description:
       "Call, WhatsApp, or message the TracktCRM team. We reply within one business day.",
     images: [
@@ -36,7 +32,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact TracktCRM",
+    title: "Contact TracktCRM | Book a Demo or Talk to Sales",
     description:
       "Call, WhatsApp, or message the TracktCRM team. We reply within one business day.",
     images: [ogImage],
@@ -45,34 +41,17 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  other: {
-    "og:logo": siteLogo,
-  },
 };
 
 export default function ContactPage() {
-  const localBusiness = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: SITE_NAME,
-    url: `${SITE_URL}/contact`,
-    telephone: CONTACT.phoneTel,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "3rd Floor, D-231, Phase 8B, Sector 91",
-      addressLocality: "Sahibzada Ajit Singh Nagar",
-      addressRegion: "Punjab",
-      postalCode: "140308",
-      addressCountry: "IN",
-    },
-  };
-
   return (
     <>
-      <script
-        id="schema-contact"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
+      <ContactPageJsonLd />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Contact", href: "/contact" },
+        ]}
       />
       <ContactPageClient />
     </>

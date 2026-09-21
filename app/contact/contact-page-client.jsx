@@ -2,17 +2,34 @@
 
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa6";
-import { LuMapPin, LuPhone } from "react-icons/lu";
+import { LuClock, LuMail, LuMapPin, LuPhone } from "react-icons/lu";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 import SiteFooter from "../components/site-footer";
 import SiteHeader from "../components/site-header";
 import useReveal from "../use-reveal";
 import { CONTACT } from "../site";
 
+const CONTACT_FAQS = [
+  {
+    q: "How quickly do you reply?",
+    a: "We usually reply within one business day. For urgent demos, WhatsApp is the fastest channel.",
+  },
+  {
+    q: "What happens on a demo?",
+    a: "A 30-minute walkthrough where we map your lead flow, show TracktCRM on your use case, and answer pricing questions.",
+  },
+  {
+    q: "Do you support teams outside India?",
+    a: "Yes. TracktCRM supports sales teams worldwide. Support hours are listed below in IST.",
+  },
+];
+
 const INITIAL = {
   name: "",
   email: "",
   phone: "",
-  country: "",
+  country: "India",
   company: "",
   message: "",
 };
@@ -20,25 +37,59 @@ const INITIAL = {
 export default function ContactPageClient() {
   const [form, setForm] = useState(INITIAL);
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   useReveal();
 
   function onChange(event) {
     const { name, value } = event.target;
     setForm((current) => ({ ...current, [name]: value }));
+    if (error) setError("");
   }
 
-  function onSubmit(event) {
+  async function onSubmit(event) {
     event.preventDefault();
-    setSent(true);
+    setSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const payload = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(payload.error || "Failed to send message.");
+      }
+
+      setSent(true);
+    } catch (err) {
+      setError(err.message || "Failed to send message. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
     <div className="home">
       <SiteHeader />
 
+      <main>
       <section className="contact-hero reveal" id="top">
         <div className="contact-hero-inner wrap">
+          <nav className="breadcrumbs" aria-label="Breadcrumb">
+            <ol>
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <span aria-current="page">Contact</span>
+              </li>
+            </ol>
+          </nav>
           <div className="badge contact-hero-badge">
             <span className="pulse" aria-hidden="true" />
             CONTACT US
@@ -58,8 +109,8 @@ export default function ContactPageClient() {
           <aside className="contact-info">
             <h2 className="h2 contact-info-title">Get in touch</h2>
             <p className="contact-info-copy">
-              Prefer a quick chat? Call or WhatsApp us - or send a message and
-              we&apos;ll follow up.
+              Prefer a quick chat? Call, email or WhatsApp us - or send a
+              message and we&apos;ll follow up.
             </p>
 
             <div className="contact-cards">
@@ -70,6 +121,16 @@ export default function ContactPageClient() {
                 <span>
                   <strong>Phone</strong>
                   <em>{CONTACT.phoneDisplay}</em>
+                </span>
+              </a>
+
+              <a className="contact-card" href={`mailto:${CONTACT.email}`}>
+                <span className="contact-card-icon" aria-hidden="true">
+                  <LuMail size={20} strokeWidth={2.2} />
+                </span>
+                <span>
+                  <strong>Email</strong>
+                  <em>{CONTACT.email}</em>
                 </span>
               </a>
 
@@ -87,6 +148,16 @@ export default function ContactPageClient() {
                   <em>Chat with us on WhatsApp</em>
                 </span>
               </a>
+
+              <div className="contact-card contact-card-static">
+                <span className="contact-card-icon" aria-hidden="true">
+                  <LuClock size={20} strokeWidth={2.2} />
+                </span>
+                <span>
+                  <strong>Support hours</strong>
+                  <em>{CONTACT.supportHours}</em>
+                </span>
+              </div>
 
               <a
                 className="contact-card"
@@ -164,42 +235,39 @@ export default function ContactPageClient() {
                 <div className="form-row">
                   <label className="field">
                     <span>Phone</span>
-                    <input
-                      className="input"
-                      name="phone"
-                      type="tel"
-                      autoComplete="tel"
-                      required
+                    <PhoneInput
+                      defaultCountry="in"
                       value={form.phone}
-                      onChange={onChange}
-                      placeholder="With country code"
+                      onChange={(phone, meta) => {
+                        setForm((current) => ({
+                          ...current,
+                          phone,
+                          country: meta?.country?.name || current.country,
+                        }));
+                      }}
+                      inputProps={{
+                        name: "phone",
+                        required: true,
+                        autoComplete: "tel",
+                        "aria-label": "Phone number",
+                      }}
+                      className="contact-phone"
+                      placeholder="Phone number"
                     />
                   </label>
                   <label className="field">
-                    <span>Country</span>
+                    <span>Company Name</span>
                     <input
                       className="input"
-                      name="country"
+                      name="company"
                       type="text"
-                      autoComplete="country-name"
-                      value={form.country}
+                      autoComplete="organization"
+                      value={form.company}
                       onChange={onChange}
-                      placeholder="Your country"
+                      placeholder="Optional"
                     />
                   </label>
                 </div>
-                <label className="field">
-                  <span>Company</span>
-                  <input
-                    className="input"
-                    name="company"
-                    type="text"
-                    autoComplete="organization"
-                    value={form.company}
-                    onChange={onChange}
-                    placeholder="Optional"
-                  />
-                </label>
                 <label className="field">
                   <span>Message</span>
                   <textarea
@@ -212,9 +280,14 @@ export default function ContactPageClient() {
                     placeholder="How can we help?"
                   />
                 </label>
-                <button className="btn btn-primary contact-submit" type="submit">
-                  Send message
+                <button
+                  className="btn btn-primary contact-submit"
+                  type="submit"
+                  disabled={submitting}
+                >
+                  {submitting ? "Sending…" : "Send message"}
                 </button>
+                {error ? <p className="contact-form-error">{error}</p> : null}
                 <p className="form-note">
                   Or reach us anytime on WhatsApp
                 </p>
@@ -223,6 +296,28 @@ export default function ContactPageClient() {
           </div>
         </div>
       </section>
+
+      <section className="section contact-faq reveal" id="faq">
+        <div className="wrap">
+          <h2 className="h2 is-centered">Contact FAQ</h2>
+          <div className="faq-list re-faq-list">
+            {CONTACT_FAQS.map((item, index) => (
+              <details
+                className="faq-item"
+                key={item.q}
+                open={index === 0}
+              >
+                <summary>
+                  {item.q}
+                  <span className="faq-toggle" aria-hidden="true" />
+                </summary>
+                <p>{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+      </main>
 
       <SiteFooter />
     </div>

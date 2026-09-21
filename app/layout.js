@@ -13,7 +13,6 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 const GA_MEASUREMENT_ID = "G-947EJKYD0S";
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
-const siteLogo = `${SITE_URL}/logo.png`;
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -22,7 +21,6 @@ export const metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SEO.description,
-  keywords: SEO.keywords,
   applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
@@ -44,7 +42,7 @@ export const metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
     url: SITE_URL,
     siteName: SITE_NAME,
     title: SEO.ogTitle,
@@ -73,14 +71,11 @@ export const metadata = {
     apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
     shortcut: ["/logo.png"],
   },
-  other: {
-    "og:logo": siteLogo,
-  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={plusJakarta.variable}>
+    <html lang="en-IN" className={plusJakarta.variable}>
       <body>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}

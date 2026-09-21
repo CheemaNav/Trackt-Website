@@ -142,7 +142,7 @@ export const CHOOSING_POINTS = [
   },
   {
     title: "Fair, transparent pricing",
-    body: "Enterprise real estate CRMs price per-seat at a premium. TracktCRM is built for teams of any size, from a solo agent to a full development sales team.",
+    body: "Enterprise real estate CRMs price per-seat at a premium. TracktCRM offers a free 1-month trial and clear plans after a short demo - see tracktcrm.com/pricing.",
   },
 ];
 

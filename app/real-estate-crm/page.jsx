@@ -13,7 +13,7 @@ import RevealInit from "../components/reveal-init";
 import SiteHeader from "../components/site-header";
 import SiteFooter from "../components/site-footer";
 import { SITE_NAME, SITE_URL } from "../site";
-import { RealEstateJsonLd } from "../json-ld";
+import { BreadcrumbJsonLd, RealEstateJsonLd } from "../json-ld";
 import {
   BROKER_POINTS,
   CHOOSING_POINTS,
@@ -36,27 +36,20 @@ const FEATURE_ICONS = {
 };
 
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
-const siteLogo = `${SITE_URL}/logo.png`;
 
 export const metadata = {
-  title: "Real Estate CRM Software - Capture & Close Property Leads",
+  title: "Real Estate CRM: Capture & Close Property Leads",
   description:
-    "TracktCRM is a real estate CRM that captures enquiries from every portal and WhatsApp, books site visits instantly, and tracks every broker, unit and deal.",
-  keywords: [
-    "crm for real estate",
-    "real estate crm software",
-    "ai crm for real estate",
-    "crm for real estate agents",
-  ],
+    "Real estate CRM that captures leads from every portal and WhatsApp, books site visits and tracks brokers, units and deals. Start a free trial.",
   alternates: {
     canonical: "/real-estate-crm",
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
     url: `${SITE_URL}/real-estate-crm`,
     siteName: SITE_NAME,
-    title: "TracktCRM - The CRM Built for How Property Actually Sells",
+    title: "Real Estate CRM: Capture & Close Property Leads | TracktCRM",
     description:
       "Capture leads from every portal, book site visits instantly, and manage brokers, units and deals in one real estate CRM.",
     images: [
@@ -64,7 +57,7 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "TracktCRM - The CRM Built for How Property Actually Sells",
+        alt: "TracktCRM real estate CRM for property leads",
       },
     ],
   },
@@ -81,13 +74,10 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TracktCRM - The CRM Built for How Property Actually Sells",
+    title: "Real Estate CRM: Capture & Close Property Leads | TracktCRM",
     description:
       "Capture leads from every portal, book site visits instantly, and manage brokers, units and deals in one real estate CRM.",
     images: [ogImage],
-  },
-  other: {
-    "og:logo": siteLogo,
   },
 };
 
@@ -95,9 +85,16 @@ export default function RealEstateCrmPage() {
   return (
     <div className="home">
       <RealEstateJsonLd faqs={RE_FAQS} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Real Estate CRM", href: "/real-estate-crm" },
+        ]}
+      />
       <RevealInit />
       <SiteHeader />
 
+      <main>
       <section className="re-banner reveal" id="top">
         <div className="re-banner-inner">
           <div className="re-banner-copy">
@@ -106,7 +103,7 @@ export default function RealEstateCrmPage() {
               REAL ESTATE CRM
             </div>
             <h1 className="re-banner-title">
-              The CRM Built for
+              Real Estate CRM Built for
               <span>How Property Actually Sells</span>
             </h1>
             <p className="re-banner-sub">
@@ -116,13 +113,13 @@ export default function RealEstateCrmPage() {
               every broker, unit and deal in one pipeline.
             </p>
             <div className="re-banner-ctas">
-              <a className="btn btn-primary" href="#demo">
+              <a className="btn btn-primary" href="/contact">
                 Book a Demo
                 <span className="btn-arrow" aria-hidden="true">
                   <ArrowIcon />
                 </span>
               </a>
-              <a className="btn btn-outline" href="#demo">
+              <a className="btn btn-outline" href="/contact">
                 Start Free Trial
               </a>
             </div>
@@ -137,6 +134,8 @@ export default function RealEstateCrmPage() {
               alt="Bright modern apartment interior overlooking a city skyline and park"
               width={1552}
               height={1013}
+              fetchPriority="high"
+              decoding="async"
             />
           </figure>
         </div>
@@ -161,6 +160,8 @@ export default function RealEstateCrmPage() {
               alt="TracktCRM pipeline board organizing real estate leads by stage"
               width={1386}
               height={698}
+              loading="lazy"
+              decoding="async"
             />
           </figure>
         </div>
@@ -185,6 +186,8 @@ export default function RealEstateCrmPage() {
               alt="TracktCRM organizing real estate leads from portals, WhatsApp and ads in one pipeline"
               width={1600}
               height={900}
+              loading="lazy"
+              decoding="async"
             />
           </figure>
           <div className="re-split-copy">
@@ -271,6 +274,8 @@ export default function RealEstateCrmPage() {
               alt="Handshake closing a property partnership deal"
               width={1200}
               height={900}
+              loading="lazy"
+              decoding="async"
             />
           </figure>
           <div className="re-split-copy">
@@ -350,16 +355,10 @@ export default function RealEstateCrmPage() {
         <h2 className="h2 is-centered">One pipeline, from enquiry to registration</h2>
         <p className="re-section-intro is-centered">
           Every project gets its own pipeline - stages, units and deals stay
-          organized from the first enquiry to the signed sale deed.
+          organized from the first enquiry to the signed sale deed.{" "}
+          <a href="/contact">Book a 30-minute demo</a> to see your listings
+          inside TracktCRM.
         </p>
-        <figure className="re-shot re-shot-wide">
-          <img
-            src="/assets/real-estate/for-real-estate.jpg"
-            alt="TracktCRM real estate pipeline from enquiry to registration"
-            width={1386}
-            height={698}
-          />
-        </figure>
       </section>
 
       <section className="section reveal" id="testimonial">
@@ -396,21 +395,22 @@ export default function RealEstateCrmPage() {
           <div>
             <h2>See TracktCRM on your own property portfolio</h2>
             <p>
-              Book a 20-minute demo and we&apos;ll show you how your current
+              Book a 30-minute demo and we&apos;ll show you how your current
               listings and leads would look inside TracktCRM.
             </p>
           </div>
           <div className="cta-actions">
-            <a className="btn-dark" href="#demo">
+            <a className="btn-dark" href="/contact">
               Book a Demo
             </a>
-            <a className="btn-ghost" href="#demo">
+            <a className="btn-ghost" href="/contact">
               Start Free Trial
             </a>
           </div>
         </div>
       </section>
 
+      </main>
       <SiteFooter />
     </div>
   );

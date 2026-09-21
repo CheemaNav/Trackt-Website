@@ -14,7 +14,7 @@ import RevealInit from "../components/reveal-init";
 import SiteHeader from "../components/site-header";
 import SiteFooter from "../components/site-footer";
 import { SITE_NAME, SITE_URL } from "../site";
-import { AiCrmJsonLd } from "../json-ld";
+import { AiCrmJsonLd, BreadcrumbJsonLd } from "../json-ld";
 import {
   AI_FAQS,
   CHOOSING_POINTS,
@@ -37,28 +37,20 @@ const FEATURE_ICONS = {
 };
 
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
-const siteLogo = `${SITE_URL}/logo.png`;
 
 export const metadata = {
-  title: "AI CRM Software - Automated Lead Response & Follow-Ups",
+  title: "AI Sales Assistant: Instant Lead Response",
   description:
-    "TracktCRM is an AI CRM that answers every lead in seconds across WhatsApp, email and SMS, then automates follow-ups and reporting - so nothing falls through the cracks.",
-  keywords: [
-    "ai crm",
-    "ai sales assistant",
-    "ai lead response",
-    "crm with ai automation",
-    "ai crm software",
-  ],
+    "See how TracktCRM's AI answers leads on WhatsApp, email and SMS, places follow-up calls and hands off to reps with full context. Book a demo.",
   alternates: {
     canonical: "/ai-crm",
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
     url: `${SITE_URL}/ai-crm`,
     siteName: SITE_NAME,
-    title: "TracktCRM - An AI CRM That Actually Answers Your Leads",
+    title: "AI Sales Assistant: Instant Lead Response | TracktCRM",
     description:
       "Instant multi-channel lead response, automated follow-up calls, and AI-powered reporting - not just another AI dashboard.",
     images: [
@@ -66,7 +58,7 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "TracktCRM - An AI CRM That Actually Answers Your Leads",
+        alt: "TracktCRM AI sales assistant answering leads",
       },
     ],
   },
@@ -83,13 +75,10 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TracktCRM - An AI CRM That Actually Answers Your Leads",
+    title: "AI Sales Assistant: Instant Lead Response | TracktCRM",
     description:
       "Instant multi-channel lead response, automated follow-up calls, and AI-powered reporting - not just another AI dashboard.",
     images: [ogImage],
-  },
-  other: {
-    "og:logo": siteLogo,
   },
 };
 
@@ -97,18 +86,25 @@ export default function AiCrmPage() {
   return (
     <div className="home">
       <AiCrmJsonLd faqs={AI_FAQS} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "AI Sales Assistant", href: "/ai-crm" },
+        ]}
+      />
       <RevealInit />
       <SiteHeader />
 
+      <main>
       <section className="re-banner ai-banner reveal" id="top">
         <div className="re-banner-inner ai-banner-inner">
           <div className="re-banner-copy">
             <div className="badge re-banner-badge">
               <span className="pulse" aria-hidden="true" />
-              AI CRM SOFTWARE
+              AI SALES ASSISTANT
             </div>
             <h1 className="re-banner-title">
-              An AI CRM That Actually Answers Your Leads
+              An AI Sales Assistant That Answers Your Leads,
               <span>Not Just Analyzes Them</span>
             </h1>
             <p className="re-banner-sub">
@@ -139,6 +135,8 @@ export default function AiCrmPage() {
               alt="TracktCRM AI CRM responding to leads across WhatsApp, email and SMS"
               width={1600}
               height={1000}
+              fetchPriority="high"
+              decoding="async"
             />
           </figure>
         </div>
@@ -178,6 +176,8 @@ export default function AiCrmPage() {
               alt="TracktCRM AI CRM pipeline board organizing leads by stage"
               width={1600}
               height={900}
+              loading="lazy"
+              decoding="async"
             />
           </figure>
           <div className="re-split-copy">
@@ -257,6 +257,11 @@ export default function AiCrmPage() {
             Several CRMs now offer an AI feature - here&apos;s a factual look at
             how they differ, so you can judge what fits your team:
           </p>
+          <p className="content-meta">
+            Last verified: September 2026 · Based on publicly documented product
+            features. Always confirm current pricing and capabilities with each
+            vendor.
+          </p>
         </div>
         <div className="ai-compare-grid">
           {COMPARE_POINTS.map((item) => (
@@ -327,6 +332,8 @@ export default function AiCrmPage() {
             alt="TracktCRM AI CRM reporting dashboard from enquiry response to hand-off"
             width={1600}
             height={900}
+            loading="lazy"
+            decoding="async"
           />
         </figure>
       </section>
@@ -383,6 +390,7 @@ export default function AiCrmPage() {
         </div>
       </section>
 
+      </main>
       <SiteFooter />
     </div>
   );

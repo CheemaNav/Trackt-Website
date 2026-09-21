@@ -269,15 +269,15 @@ export const INDUSTRIES = [
     href: "/real-estate-crm",
   },
   {
+    name: "AI CRM",
+    body: "Most AI CRMs only analyse deals. TracktCRM's AI sales assistant answers every lead in seconds across WhatsApp, email and SMS, places follow-up calls, and hands reps a fully briefed conversation.",
+    points: ["Instant multi-channel reply", "Automated follow-up calls", "Briefed hand-off to reps"],
+    href: "/ai-crm",
+  },
+  {
     name: "Freelancer CRM",
     body: "Solo work dies in spreadsheets. TracktCRM is the CRM for freelancers who don't have time to run a CRM - track enquiries, send quotes, and get reminded to follow up automatically.",
     points: ["Enquiry to quote", "Automated reminders", "Invoice status tracking"],
-    href: "#industries",
-  },
-  {
-    name: "Agency CRM",
-    body: "Agencies and consultants juggle pitches, retainers and referrals across tools. TracktCRM keeps proposals, client conversations and renewals in one lead management dashboard - built for agencies and consultants alike.",
-    points: ["Proposal pipeline", "Retainer renewals", "Client conversation history"],
     href: "#industries",
   },
   {
@@ -403,55 +403,35 @@ export const FOOTER_COLS = [
   {
     title: "Company",
     links: [
-      { label: "About Us", href: "/#top" },
+      { label: "About Us", href: "/about" },
       { label: "Contact", href: "/contact" },
-      { label: "Blog", href: "/#top" },
-      { label: "Partner with us", href: "/#demo" },
-      { label: "Help Center", href: "/#faq" },
-      { label: "Privacy Policy", href: "/#top" },
-      { label: "Terms & Conditions", href: "/#top" },
+      { label: "Blog", href: "/blog" },
+      { label: "Help Center", href: "/help" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms & Conditions", href: "/terms" },
     ],
   },
   {
     title: "Product",
     links: [
-      { label: "Features", href: "/#product" },
       { label: "AI CRM Software", href: "/ai-crm" },
-      { label: "Integrations", href: "/#integrations" },
-      { label: "Custom Forms", href: "/#forms" },
-      { label: "Pricing", href: "/#demo" },
-      { label: "Open API", href: "/#integrations" },
-    ],
-  },
-  {
-    title: "Features",
-    links: [
-      { label: "Lead Management Software", href: "/#product" },
-      { label: "Sales Pipeline Management", href: "/#product" },
-      { label: "Sales Automation", href: "/ai-crm" },
-      { label: "Reporting & Analytics", href: "/#product" },
       { label: "AI Sales Assistant", href: "/ai-crm" },
-      { label: "Follow-up Reminders", href: "/ai-crm" },
+      { label: "Pricing", href: "/pricing" },
+      { label: "Contact / Demo", href: "/contact" },
     ],
   },
   {
     title: "Industries",
     links: [
+      { label: "AI CRM", href: "/ai-crm" },
       { label: "Real Estate CRM", href: "/real-estate-crm" },
-      { label: "Best CRM for Freelancers", href: "/#industries" },
-      { label: "Agency CRM", href: "/#industries" },
-      { label: "CRM for Consultants", href: "/#industries" },
-      { label: "Education CRM", href: "/#industries" },
-      { label: "CRM for Small Business", href: "/#compare" },
+      { label: "WhatsApp CRM", href: "/whatsapp-crm" },
     ],
   },
   {
     title: "Compare",
     links: [
-      { label: "Pipedrive Alternative", href: "/#compare" },
-      { label: "Affordable CRM Alternative", href: "/#compare" },
-      { label: "CRM vs Spreadsheets", href: "/#compare" },
-      { label: "Switch from your CRM", href: "/#compare" },
+      { label: "Pipedrive Alternative", href: "/pipedrive-alternative" },
     ],
   },
 ];

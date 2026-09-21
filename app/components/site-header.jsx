@@ -3,10 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { CloseIcon, FieldDropdownIcon, MenuIcon } from "../icons";
+import { APP_LOGIN_URL } from "../site";
 
 const INDUSTRY_LINKS = [
   { label: "AI CRM", href: "/ai-crm" },
   { label: "Real Estate CRM", href: "/real-estate-crm" },
+  { label: "WhatsApp CRM", href: "/whatsapp-crm" },
 ];
 
 export default function SiteHeader() {
@@ -170,10 +172,16 @@ export default function SiteHeader() {
           </Link>
         </nav>
         <div className="header-actions">
-          <Link className="link-login" href="/#demo" onClick={closeMenu}>
+          <a
+            className="link-login"
+            href={APP_LOGIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeMenu}
+          >
             Login
-          </Link>
-          <Link className="btn btn-start" href="/#demo" onClick={closeMenu}>
+          </a>
+          <Link className="btn btn-start" href="/contact" onClick={closeMenu}>
             Start free
           </Link>
           <button

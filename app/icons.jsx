@@ -3,7 +3,6 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaWhatsapp,
   FaYoutube,
 } from "react-icons/fa6";
 import {
@@ -54,7 +53,6 @@ const BRAND_LOGOS = {
 };
 
 const BRAND_ICONS = {
-  WhatsApp: FaWhatsapp,
   Calling: LuPhone,
 };
 

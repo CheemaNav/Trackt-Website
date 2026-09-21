@@ -1,6 +1,14 @@
 import Link from "next/link";
-import { AppleIcon, GooglePlayIcon, SOCIALS } from "../icons";
+import { SOCIALS } from "../icons";
 import { FOOTER_COLS } from "../home-data";
+import { SOCIAL_PROFILES } from "../site";
+
+const SOCIAL_HREFS = {
+  youtube: SOCIAL_PROFILES.youtube,
+  facebook: SOCIAL_PROFILES.facebook,
+  instagram: SOCIAL_PROFILES.instagram,
+  linkedin: SOCIAL_PROFILES.linkedin,
+};
 
 export default function SiteFooter() {
   return (
@@ -11,6 +19,8 @@ export default function SiteFooter() {
             className="logo-img logo-img-lg"
             src="/assets/tracktcrm-logo.png"
             alt="TracktCRM AI CRM software logo"
+            width={160}
+            height={40}
           />
           <p>
             TracktCRM - AI CRM Software for Sales, Leads & Pipeline
@@ -18,35 +28,27 @@ export default function SiteFooter() {
           </p>
           <div className="socials">
             {SOCIALS.map(({ id, label, Icon }) => (
-              <Link className="social" href="/#top" key={id} aria-label={label}>
+              <a
+                className="social"
+                href={SOCIAL_HREFS[id] || "/contact"}
+                key={id}
+                aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Icon size={15} />
-              </Link>
+              </a>
             ))}
           </div>
           <div className="app-label">
             <span>Mobile app</span>
             <em className="soon">COMING SOON</em>
           </div>
-          <div className="app-btns">
-            <Link className="app-btn" href="/#top">
-              <span className="store-icon">
-                <AppleIcon />
-              </span>
-              <span>
-                <small>DOWNLOAD ON THE</small>
-                <strong>App Store</strong>
-              </span>
-            </Link>
-            <Link className="app-btn" href="/#top">
-              <span className="store-icon">
-                <GooglePlayIcon />
-              </span>
-              <span>
-                <small>GET IT ON</small>
-                <strong>Google Play</strong>
-              </span>
-            </Link>
-          </div>
+          <p className="app-waitlist">
+            Native iOS and Android apps are on the way.{" "}
+            <Link href="/contact">Join the waitlist</Link> and we&apos;ll notify
+            you at launch.
+          </p>
         </div>
         <div className="footer-cols">
           {FOOTER_COLS.map((column) => (
@@ -112,8 +114,8 @@ export default function SiteFooter() {
         <div className="legal-inner">
           <span>© 2026 TracktCRM. All rights reserved.</span>
           <span className="legal-links">
-            <Link href="/#top">Privacy Policy</Link>
-            <Link href="/#top">Terms & Conditions</Link>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/terms">Terms & Conditions</Link>
             <Link href="/contact">Contact Us</Link>
           </span>
         </div>

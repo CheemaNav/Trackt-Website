@@ -55,7 +55,15 @@ const PRIORITY = {
   "/": 1,
   "/ai-crm": 0.9,
   "/real-estate-crm": 0.9,
+  "/whatsapp-crm": 0.85,
+  "/pipedrive-alternative": 0.85,
+  "/pricing": 0.85,
   "/contact": 0.8,
+  "/about": 0.7,
+  "/blog": 0.6,
+  "/help": 0.5,
+  "/privacy-policy": 0.3,
+  "/terms": 0.3,
 };
 
 export default function sitemap() {
