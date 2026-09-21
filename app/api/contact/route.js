@@ -2,8 +2,6 @@ import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 function escapeHtml(value) {
   return String(value || "")
     .replaceAll("&", "&amp;")
@@ -19,7 +17,8 @@ function isValidEmail(email) {
 
 export async function POST(request) {
   try {
-    if (!process.env.RESEND_API_KEY) {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
       return Response.json(
         { error: "Email service is not configured." },
         { status: 500 },
@@ -72,6 +71,7 @@ export async function POST(request) {
       message: escapeHtml(message).replaceAll("\n", "<br />"),
     };
 
+    const resend = new Resend(apiKey);
     const { data, error } = await resend.emails.send({
       from,
       to: [to],
