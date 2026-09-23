@@ -2,8 +2,14 @@
 const nextConfig = {
   async redirects() {
     return [
+      // Old flat URLs → Features / Industries structure
       {
         source: "/whatsapp-crm",
+        destination: "/features/whatsapp-crm",
+        permanent: true,
+      },
+      {
+        source: "/whatsapp-crm/",
         destination: "/features/whatsapp-crm",
         permanent: true,
       },
@@ -13,7 +19,48 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/ai-crm/",
+        destination: "/industries/ai-crm",
+        permanent: true,
+      },
+      {
         source: "/real-estate-crm",
+        destination: "/industries/real-estate-crm",
+        permanent: true,
+      },
+      {
+        source: "/real-estate-crm/",
+        destination: "/industries/real-estate-crm",
+        permanent: true,
+      },
+      // Short aliases that would otherwise 404
+      {
+        source: "/whatsapp",
+        destination: "/features/whatsapp-crm",
+        permanent: true,
+      },
+      {
+        source: "/whatsapp/",
+        destination: "/features/whatsapp-crm",
+        permanent: true,
+      },
+      {
+        source: "/ai",
+        destination: "/industries/ai-crm",
+        permanent: true,
+      },
+      {
+        source: "/ai/",
+        destination: "/industries/ai-crm",
+        permanent: true,
+      },
+      {
+        source: "/real-estate",
+        destination: "/industries/real-estate-crm",
+        permanent: true,
+      },
+      {
+        source: "/real-estate/",
         destination: "/industries/real-estate-crm",
         permanent: true,
       },
