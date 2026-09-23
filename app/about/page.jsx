@@ -43,11 +43,11 @@ export default function AboutPage() {
         </p>
         <p>
           We built an{" "}
-          <Link href="/ai-crm">AI sales assistant</Link> that replies in
+          <Link href="/industries/ai-crm">AI sales assistant</Link> that replies in
           seconds, places follow-up calls, and hands reps a briefed conversation
           - then wraps that automation in a practical CRM for pipelines,
           reporting and industry workflows like{" "}
-          <Link href="/real-estate-crm">real estate</Link>.
+          <Link href="/industries/real-estate-crm">real estate</Link>.
         </p>
 
         <h2>Where we work</h2>

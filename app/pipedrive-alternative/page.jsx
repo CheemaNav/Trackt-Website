@@ -64,7 +64,7 @@ export default function PipedriveAlternativePage() {
         <h2>Who should consider switching</h2>
         <ul>
           <li>Leads arrive on WhatsApp, forms and ads after hours</li>
-          <li>You want an <Link href="/ai-crm">AI sales assistant</Link> that acts, not only reports</li>
+          <li>You want an <Link href="/industries/ai-crm">AI sales assistant</Link> that acts, not only reports</li>
           <li>You need real-estate or SMB pipelines without enterprise complexity</li>
           <li>You are comparing affordable CRM alternatives for a smaller team</li>
         </ul>
@@ -100,7 +100,7 @@ export default function PipedriveAlternativePage() {
                 <td>Configurable</td>
                 <td>
                   Ready-made on{" "}
-                  <Link href="/real-estate-crm">/real-estate-crm</Link>
+                  <Link href="/industries/real-estate-crm">/industries/real-estate-crm</Link>
                 </td>
               </tr>
               <tr>

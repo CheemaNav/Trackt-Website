@@ -7,17 +7,17 @@ const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
 const TOPICS = [
   {
     title: "How fast should you respond to a new lead?",
-    href: "/ai-crm",
+    href: "/industries/ai-crm",
     blurb: "Why speed-to-lead matters and how an AI sales assistant closes the gap.",
   },
   {
     title: "WhatsApp lead follow-up for sales teams",
-    href: "/whatsapp-crm",
+    href: "/features/whatsapp-crm",
     blurb: "Templates and workflows for the channel your leads already use.",
   },
   {
     title: "Real estate pipeline stages from enquiry to registration",
-    href: "/real-estate-crm",
+    href: "/industries/real-estate-crm",
     blurb: "How property teams keep brokers, units and site visits in one CRM.",
   },
   {

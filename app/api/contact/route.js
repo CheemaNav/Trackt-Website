@@ -43,6 +43,8 @@ export async function POST(request) {
     const country = String(body?.country || "").trim();
     const company = String(body?.company || "").trim();
     const message = String(body?.message || "").trim();
+    const intent = String(body?.intent || "").trim().toLowerCase();
+    const isDemo = intent === "demo";
 
     if (!name || !email || !phone || !message) {
       return Response.json(
@@ -76,11 +78,13 @@ export async function POST(request) {
       from,
       to: [to],
       replyTo: email,
-      subject: `New contact from ${name}${company ? ` · ${company}` : ""}`,
+      subject: isDemo
+        ? `Demo request from ${name}${company ? ` · ${company}` : ""}`
+        : `New contact from ${name}${company ? ` · ${company}` : ""}`,
       html: `
         <div style="font-family:Arial,sans-serif;line-height:1.5;color:#1c1f3b">
-          <h2 style="margin:0 0 12px">New TracktCRM contact form</h2>
-          <p style="margin:0 0 16px">Someone submitted the contact form on tracktcrm.com.</p>
+          <h2 style="margin:0 0 12px">${isDemo ? "New TracktCRM demo request" : "New TracktCRM contact form"}</h2>
+          <p style="margin:0 0 16px">${isDemo ? "Someone requested a demo from the homepage popup." : "Someone submitted the contact form on tracktcrm.com."}</p>
           <table style="border-collapse:collapse;width:100%;max-width:560px">
             <tr><td style="padding:8px 0;font-weight:700">Name</td><td style="padding:8px 0">${safe.name}</td></tr>
             <tr><td style="padding:8px 0;font-weight:700">Email</td><td style="padding:8px 0"><a href="mailto:${safe.email}">${safe.email}</a></td></tr>
@@ -92,7 +96,7 @@ export async function POST(request) {
         </div>
       `,
       text: [
-        "New TracktCRM contact form",
+        isDemo ? "New TracktCRM demo request" : "New TracktCRM contact form",
         `Name: ${name}`,
         `Email: ${email}`,
         `Phone: ${phone}`,

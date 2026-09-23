@@ -4,7 +4,7 @@ import { SITE_URL } from "./site";
  * Site-wide crawl policy.
  *
  * Uses a single Allow: / for every user-agent so ANY current or future
- * public path (e.g. /ai-crm, /contact, /whatever-comes-next) is allowed
+ * public path (e.g. /industries/ai-crm, /contact, /whatever-comes-next) is allowed
  * without editing this file again.
  *
  * Private prefixes that do not exist yet are still reserved via Disallow

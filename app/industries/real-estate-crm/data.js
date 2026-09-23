@@ -70,7 +70,7 @@ export const FEATURES = [
     icon: "ai",
     title: "AI-Powered Lead Response",
     body: "The moment an enquiry lands, TracktCRM's AI sends an instant WhatsApp and email response and can even place a follow-up call - so no lead goes cold while an agent is out on a site visit.",
-    href: "/ai-crm",
+    href: "/industries/ai-crm",
     linkLabel: "See how TracktCRM's AI CRM works",
   },
 ];

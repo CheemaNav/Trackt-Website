@@ -3,49 +3,58 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { CloseIcon, FieldDropdownIcon, MenuIcon } from "../icons";
-import { APP_LOGIN_URL } from "../site";
+import { APP_LOGIN_URL, APP_REGISTER_URL } from "../site";
 
 const INDUSTRY_LINKS = [
-  { label: "AI CRM", href: "/ai-crm" },
-  { label: "Real Estate CRM", href: "/real-estate-crm" },
-  { label: "WhatsApp CRM", href: "/whatsapp-crm" },
+  { label: "AI CRM", href: "/industries/ai-crm" },
+  { label: "Real Estate CRM", href: "/industries/real-estate-crm" },
+];
+
+const FEATURE_LINKS = [
+  { label: "WhatsApp CRM", href: "/features/whatsapp-crm" },
 ];
 
 export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [industriesOpen, setIndustriesOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
   const industriesRef = useRef(null);
-  const industriesCloseTimer = useRef(null);
+  const featuresRef = useRef(null);
+  const dropdownCloseTimer = useRef(null);
 
   function closeMenu() {
-    clearTimeout(industriesCloseTimer.current);
+    clearTimeout(dropdownCloseTimer.current);
     setMenuOpen(false);
-    setIndustriesOpen(false);
+    setOpenDropdown(null);
   }
 
-  function openIndustriesDesktop() {
+  function openDropdownDesktop(id) {
     if (!window.matchMedia("(min-width: 981px)").matches) return;
-    clearTimeout(industriesCloseTimer.current);
-    setIndustriesOpen(true);
+    clearTimeout(dropdownCloseTimer.current);
+    setOpenDropdown(id);
   }
 
-  function scheduleCloseIndustriesDesktop() {
+  function scheduleCloseDropdownDesktop() {
     if (!window.matchMedia("(min-width: 981px)").matches) return;
-    clearTimeout(industriesCloseTimer.current);
-    industriesCloseTimer.current = setTimeout(() => {
-      setIndustriesOpen(false);
+    clearTimeout(dropdownCloseTimer.current);
+    dropdownCloseTimer.current = setTimeout(() => {
+      setOpenDropdown(null);
     }, 120);
   }
 
+  function toggleDropdownMobile(id) {
+    if (!window.matchMedia("(max-width: 980px)").matches) return;
+    setOpenDropdown((current) => (current === id ? null : id));
+  }
+
   useEffect(() => {
-    return () => clearTimeout(industriesCloseTimer.current);
+    return () => clearTimeout(dropdownCloseTimer.current);
   }, []);
 
   useEffect(() => {
     function onResize() {
       if (window.innerWidth > 980) {
         setMenuOpen(false);
-        setIndustriesOpen(false);
+        setOpenDropdown(null);
       }
     }
     window.addEventListener("resize", onResize);
@@ -70,11 +79,10 @@ export default function SiteHeader() {
 
   useEffect(() => {
     function onPointerDown(event) {
-      if (
-        industriesOpen &&
-        !industriesRef.current?.contains(event.target)
-      ) {
-        setIndustriesOpen(false);
+      const inIndustries = industriesRef.current?.contains(event.target);
+      const inFeatures = featuresRef.current?.contains(event.target);
+      if (openDropdown && !inIndustries && !inFeatures) {
+        setOpenDropdown(null);
       }
       if (!menuOpen) return;
       const nav = document.getElementById("site-nav");
@@ -85,7 +93,7 @@ export default function SiteHeader() {
     function onKeyDown(event) {
       if (event.key === "Escape") {
         if (menuOpen) closeMenu();
-        else setIndustriesOpen(false);
+        else setOpenDropdown(null);
       }
     }
     document.addEventListener("pointerdown", onPointerDown);
@@ -94,7 +102,10 @@ export default function SiteHeader() {
       document.removeEventListener("pointerdown", onPointerDown);
       document.removeEventListener("keydown", onKeyDown);
     };
-  }, [menuOpen, industriesOpen]);
+  }, [menuOpen, openDropdown]);
+
+  const industriesOpen = openDropdown === "industries";
+  const featuresOpen = openDropdown === "features";
 
   return (
     <header className={`header${menuOpen ? " is-open" : ""}`}>
@@ -110,17 +121,11 @@ export default function SiteHeader() {
           className={`nav header-nav${menuOpen ? " is-open" : ""}`}
           id="site-nav"
         >
-          <Link href="/#product" onClick={closeMenu}>
-            Product
-          </Link>
-          <Link href="/#speed" onClick={closeMenu}>
-            Instant response
-          </Link>
           <div
             className={`nav-dropdown${industriesOpen ? " is-open" : ""}`}
             ref={industriesRef}
-            onMouseEnter={openIndustriesDesktop}
-            onMouseLeave={scheduleCloseIndustriesDesktop}
+            onMouseEnter={() => openDropdownDesktop("industries")}
+            onMouseLeave={scheduleCloseDropdownDesktop}
           >
             <button
               type="button"
@@ -128,11 +133,7 @@ export default function SiteHeader() {
               aria-expanded={industriesOpen}
               aria-haspopup="true"
               aria-controls="industries-menu"
-              onClick={() => {
-                if (window.matchMedia("(max-width: 980px)").matches) {
-                  setIndustriesOpen((open) => !open);
-                }
-              }}
+              onClick={() => toggleDropdownMobile("industries")}
             >
               Industries
               <FieldDropdownIcon size={14} />
@@ -158,6 +159,41 @@ export default function SiteHeader() {
               </Link>
             </div>
           </div>
+          <div
+            className={`nav-dropdown${featuresOpen ? " is-open" : ""}`}
+            ref={featuresRef}
+            onMouseEnter={() => openDropdownDesktop("features")}
+            onMouseLeave={scheduleCloseDropdownDesktop}
+          >
+            <button
+              type="button"
+              className="nav-dropdown-trigger"
+              aria-expanded={featuresOpen}
+              aria-haspopup="true"
+              aria-controls="features-menu"
+              onClick={() => toggleDropdownMobile("features")}
+            >
+              Features
+              <FieldDropdownIcon size={14} />
+            </button>
+            <div
+              className="nav-dropdown-menu"
+              id="features-menu"
+              role="menu"
+              hidden={!featuresOpen}
+            >
+              {FEATURE_LINKS.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  role="menuitem"
+                  onClick={closeMenu}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
           <Link href="/#forms" onClick={closeMenu}>
             Forms
           </Link>
@@ -181,9 +217,15 @@ export default function SiteHeader() {
           >
             Login
           </a>
-          <Link className="btn btn-start" href="/contact" onClick={closeMenu}>
+          <a
+            className="btn btn-start"
+            href={APP_REGISTER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeMenu}
+          >
             Start free
-          </Link>
+          </a>
           <button
             type="button"
             className="menu-toggle"

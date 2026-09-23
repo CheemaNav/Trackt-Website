@@ -1,5 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/whatsapp-crm",
+        destination: "/features/whatsapp-crm",
+        permanent: true,
+      },
+      {
+        source: "/ai-crm",
+        destination: "/industries/ai-crm",
+        permanent: true,
+      },
+      {
+        source: "/real-estate-crm",
+        destination: "/industries/real-estate-crm",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

@@ -9,12 +9,12 @@ import {
   FieldMessageIcon,
   InventoryIcon,
   ProjectPipelineIcon,
-} from "../icons";
-import RevealInit from "../components/reveal-init";
-import SiteHeader from "../components/site-header";
-import SiteFooter from "../components/site-footer";
-import { SITE_NAME, SITE_URL } from "../site";
-import { AiCrmJsonLd, BreadcrumbJsonLd } from "../json-ld";
+} from "../../icons";
+import RevealInit from "../../components/reveal-init";
+import SiteHeader from "../../components/site-header";
+import SiteFooter from "../../components/site-footer";
+import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
+import { AiCrmJsonLd, BreadcrumbJsonLd } from "../../json-ld";
 import {
   AI_FAQS,
   CHOOSING_POINTS,
@@ -43,12 +43,12 @@ export const metadata = {
   description:
     "See how TracktCRM's AI answers leads on WhatsApp, email and SMS, places follow-up calls and hands off to reps with full context. Book a demo.",
   alternates: {
-    canonical: "/ai-crm",
+    canonical: "/industries/ai-crm",
   },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: `${SITE_URL}/ai-crm`,
+    url: `${SITE_URL}/industries/ai-crm`,
     siteName: SITE_NAME,
     title: "AI Sales Assistant: Instant Lead Response | TracktCRM",
     description:
@@ -89,7 +89,8 @@ export default function AiCrmPage() {
       <BreadcrumbJsonLd
         items={[
           { name: "Home", href: "/" },
-          { name: "AI Sales Assistant", href: "/ai-crm" },
+          { name: "Industries", href: "/#industries" },
+          { name: "AI Sales Assistant", href: "/industries/ai-crm" },
         ]}
       />
       <RevealInit />
@@ -114,7 +115,12 @@ export default function AiCrmPage() {
               hands your reps a fully-briefed conversation - not a cold lead.
             </p>
             <div className="re-banner-ctas">
-              <a className="btn btn-primary" href="/contact">
+              <a
+                className="btn btn-primary"
+                href={APP_REGISTER_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Start Free Trial
                 <span className="btn-arrow" aria-hidden="true">
                   <ArrowIcon />
@@ -380,7 +386,12 @@ export default function AiCrmPage() {
             </p>
           </div>
           <div className="cta-actions">
-            <a className="btn-dark" href="/contact">
+            <a
+              className="btn-dark"
+              href={APP_REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Start Free Trial
             </a>
             <a className="btn-ghost" href="/contact">

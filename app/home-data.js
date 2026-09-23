@@ -266,13 +266,13 @@ export const INDUSTRIES = [
     name: "Real Estate CRM",
     body: "Property enquiries arrive from a dozen portals at once. TracktCRM is a real estate CRM that captures each lead instantly, books the site visit and tracks every broker, unit and deal in one sales pipeline.",
     points: ["Site-visit scheduling", "Channel-partner tracking", "Inventory & availability"],
-    href: "/real-estate-crm",
+    href: "/industries/real-estate-crm",
   },
   {
     name: "AI CRM",
     body: "Most AI CRMs only analyse deals. TracktCRM's AI sales assistant answers every lead in seconds across WhatsApp, email and SMS, places follow-up calls, and hands reps a fully briefed conversation.",
     points: ["Instant multi-channel reply", "Automated follow-up calls", "Briefed hand-off to reps"],
-    href: "/ai-crm",
+    href: "/industries/ai-crm",
   },
   {
     name: "Freelancer CRM",
@@ -414,18 +414,21 @@ export const FOOTER_COLS = [
   {
     title: "Product",
     links: [
-      { label: "AI CRM Software", href: "/ai-crm" },
-      { label: "AI Sales Assistant", href: "/ai-crm" },
       { label: "Pricing", href: "/pricing" },
       { label: "Contact / Demo", href: "/contact" },
     ],
   },
   {
+    title: "Features",
+    links: [
+      { label: "WhatsApp CRM", href: "/features/whatsapp-crm" },
+    ],
+  },
+  {
     title: "Industries",
     links: [
-      { label: "AI CRM", href: "/ai-crm" },
-      { label: "Real Estate CRM", href: "/real-estate-crm" },
-      { label: "WhatsApp CRM", href: "/whatsapp-crm" },
+      { label: "AI CRM", href: "/industries/ai-crm" },
+      { label: "Real Estate CRM", href: "/industries/real-estate-crm" },
     ],
   },
   {

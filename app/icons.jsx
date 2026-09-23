@@ -3,7 +3,6 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaYoutube,
 } from "react-icons/fa6";
 import {
   LuArrowRight,
@@ -77,7 +76,6 @@ export function BrandMark({ name }) {
 }
 
 export const SOCIALS = [
-  { id: "youtube", label: "YouTube", Icon: FaYoutube },
   { id: "facebook", label: "Facebook", Icon: FaFacebookF },
   { id: "instagram", label: "Instagram", Icon: FaInstagram },
   { id: "linkedin", label: "LinkedIn", Icon: FaLinkedinIn },

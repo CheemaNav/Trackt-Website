@@ -8,12 +8,12 @@ import {
   InventoryIcon,
   ProjectPipelineIcon,
   SiteVisitIcon,
-} from "../icons";
-import RevealInit from "../components/reveal-init";
-import SiteHeader from "../components/site-header";
-import SiteFooter from "../components/site-footer";
-import { SITE_NAME, SITE_URL } from "../site";
-import { BreadcrumbJsonLd, RealEstateJsonLd } from "../json-ld";
+} from "../../icons";
+import RevealInit from "../../components/reveal-init";
+import SiteHeader from "../../components/site-header";
+import SiteFooter from "../../components/site-footer";
+import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
+import { BreadcrumbJsonLd, RealEstateJsonLd } from "../../json-ld";
 import {
   BROKER_POINTS,
   CHOOSING_POINTS,
@@ -42,12 +42,12 @@ export const metadata = {
   description:
     "Real estate CRM that captures leads from every portal and WhatsApp, books site visits and tracks brokers, units and deals. Start a free trial.",
   alternates: {
-    canonical: "/real-estate-crm",
+    canonical: "/industries/real-estate-crm",
   },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: `${SITE_URL}/real-estate-crm`,
+    url: `${SITE_URL}/industries/real-estate-crm`,
     siteName: SITE_NAME,
     title: "Real Estate CRM: Capture & Close Property Leads | TracktCRM",
     description:
@@ -88,7 +88,8 @@ export default function RealEstateCrmPage() {
       <BreadcrumbJsonLd
         items={[
           { name: "Home", href: "/" },
-          { name: "Real Estate CRM", href: "/real-estate-crm" },
+          { name: "Industries", href: "/#industries" },
+          { name: "Real Estate CRM", href: "/industries/real-estate-crm" },
         ]}
       />
       <RevealInit />
@@ -119,7 +120,12 @@ export default function RealEstateCrmPage() {
                   <ArrowIcon />
                 </span>
               </a>
-              <a className="btn btn-outline" href="/contact">
+              <a
+                className="btn btn-outline"
+                href={APP_REGISTER_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Start Free Trial
               </a>
             </div>
@@ -403,7 +409,12 @@ export default function RealEstateCrmPage() {
             <a className="btn-dark" href="/contact">
               Book a Demo
             </a>
-            <a className="btn-ghost" href="/contact">
+            <a
+              className="btn-ghost"
+              href={APP_REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Start Free Trial
             </a>
           </div>

@@ -53,9 +53,9 @@ function collectPageRoutes(dir, urlPath = "") {
 
 const PRIORITY = {
   "/": 1,
-  "/ai-crm": 0.9,
-  "/real-estate-crm": 0.9,
-  "/whatsapp-crm": 0.85,
+  "/industries/ai-crm": 0.9,
+  "/industries/real-estate-crm": 0.9,
+  "/features/whatsapp-crm": 0.85,
   "/pipedrive-alternative": 0.85,
   "/pricing": 0.85,
   "/contact": 0.8,

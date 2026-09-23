@@ -1,18 +1,18 @@
 import Link from "next/link";
 import ContentPage from "../components/content-page";
 import { FaqJsonLd } from "../json-ld";
-import { CONTACT, SITE_NAME, SITE_URL } from "../site";
+import { APP_LOGIN_URL, APP_REGISTER_URL, CONTACT, SITE_NAME, SITE_URL } from "../site";
 
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
 
 const FAQS = [
   {
     q: "How do I start a trial?",
-    a: "Open the contact page, send a message asking for a trial, or book a 30-minute demo and we will provision access.",
+    a: "Create an account at https://dashboard.tracktcrm.com/register, or book a 30-minute demo and we will provision access.",
   },
   {
     q: "Where do I log in?",
-    a: "Use https://app.tracktcrm.com with the credentials we issue after signup.",
+    a: "Use https://dashboard.tracktcrm.com/login with the credentials from signup.",
   },
   {
     q: "How do I get support?",
@@ -48,13 +48,16 @@ export default function HelpPage() {
       schema={<FaqJsonLd id="schema-help-faq" faqs={FAQS} />}
     >
       <div className="help-links">
-        <Link href="https://app.tracktcrm.com" target="_blank" rel="noopener noreferrer">
+        <Link href={APP_LOGIN_URL} target="_blank" rel="noopener noreferrer">
           Open app login
+        </Link>
+        <Link href={APP_REGISTER_URL} target="_blank" rel="noopener noreferrer">
+          Start free trial
         </Link>
         <Link href="/pricing">Pricing &amp; trial</Link>
         <Link href="/contact">Book a demo</Link>
-        <Link href="/ai-crm">AI sales assistant guide</Link>
-        <Link href="/real-estate-crm">Real estate CRM guide</Link>
+        <Link href="/industries/ai-crm">AI sales assistant guide</Link>
+        <Link href="/industries/real-estate-crm">Real estate CRM guide</Link>
         <Link href="/privacy-policy">Privacy Policy</Link>
       </div>
 

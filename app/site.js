@@ -4,13 +4,14 @@ export const SITE_URL =
 
 export const SITE_NAME = "TracktCRM";
 
-export const APP_LOGIN_URL = "https://app.tracktcrm.com";
+export const APP_BASE_URL = "https://dashboard.tracktcrm.com";
+export const APP_LOGIN_URL = `${APP_BASE_URL}/login`;
+export const APP_REGISTER_URL = `${APP_BASE_URL}/register`;
 
 export const SOCIAL_PROFILES = {
   linkedin: "https://www.linkedin.com/company/tracktcrm",
   facebook: "https://www.facebook.com/tracktcrm",
   instagram: "https://www.instagram.com/tracktcrm",
-  youtube: "https://www.youtube.com/@tracktcrm",
 };
 
 export const CONTACT = {

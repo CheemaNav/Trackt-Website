@@ -4,7 +4,6 @@ import { FOOTER_COLS } from "../home-data";
 import { SOCIAL_PROFILES } from "../site";
 
 const SOCIAL_HREFS = {
-  youtube: SOCIAL_PROFILES.youtube,
   facebook: SOCIAL_PROFILES.facebook,
   instagram: SOCIAL_PROFILES.instagram,
   linkedin: SOCIAL_PROFILES.linkedin,
@@ -40,15 +39,6 @@ export default function SiteFooter() {
               </a>
             ))}
           </div>
-          <div className="app-label">
-            <span>Mobile app</span>
-            <em className="soon">COMING SOON</em>
-          </div>
-          <p className="app-waitlist">
-            Native iOS and Android apps are on the way.{" "}
-            <Link href="/contact">Join the waitlist</Link> and we&apos;ll notify
-            you at launch.
-          </p>
         </div>
         <div className="footer-cols">
           {FOOTER_COLS.map((column) => (

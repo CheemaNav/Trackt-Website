@@ -1,7 +1,7 @@
 import Link from "next/link";
 import ContentPage from "../components/content-page";
 import { FaqJsonLd } from "../json-ld";
-import { CONTACT, SITE_NAME, SITE_URL } from "../site";
+import { APP_REGISTER_URL, CONTACT, SITE_NAME, SITE_URL } from "../site";
 
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
 
@@ -90,7 +90,12 @@ export default function PricingPage() {
             <li>Pipeline, reporting and forms</li>
             <li>No credit card required</li>
           </ul>
-          <Link className="btn btn-primary" href="/contact">
+          <Link
+            className="btn btn-primary"
+            href={APP_REGISTER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Start free trial
           </Link>
         </article>
@@ -118,7 +123,7 @@ export default function PricingPage() {
           TracktCRM is built so teams are not blocked by feature gates while
           evaluating. During the trial you can run real pipelines, connect
           channels, and test the{" "}
-          <Link href="/ai-crm">AI sales assistant</Link> on live enquiries.
+          <Link href="/industries/ai-crm">AI sales assistant</Link> on live enquiries.
         </p>
         <h2>Need numbers for procurement?</h2>
         <p>

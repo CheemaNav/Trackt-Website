@@ -22,7 +22,9 @@ import {
 import SiteHeader from "./components/site-header";
 import SiteFooter from "./components/site-footer";
 import HeroLottie from "./components/hero-lottie";
+import { BookDemoButton } from "./components/demo-request-provider";
 import useReveal from "./use-reveal";
+import { APP_REGISTER_URL } from "./site";
 import {
   COMPARE,
   FAQS,
@@ -90,19 +92,24 @@ export default function HomePageClient() {
             TracktCRM is AI-powered CRM software that captures every lead,
             responds in seconds over WhatsApp, email and SMS, and keeps your
             sales pipeline organized - built for how agencies, consultants and freelancers actually sell.{" "}
-            <a href="/ai-crm">See the AI sales assistant</a> or explore our{" "}
-            <a href="/real-estate-crm">real estate CRM</a>.
+            <a href="/industries/ai-crm">See the AI sales assistant</a> or explore our{" "}
+            <a href="/industries/real-estate-crm">real estate CRM</a>.
           </p>
           <div className="hero-ctas">
-            <a className="btn btn-primary" href="/contact">
+            <a
+              className="btn btn-primary"
+              href={APP_REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Start Free Trial
             </a>
-            <a className="btn btn-outline" href="/contact">
+            <BookDemoButton className="btn btn-outline">
               Book a Demo
               <span className="btn-arrow" aria-hidden="true">
                 <ArrowIcon />
               </span>
-            </a>
+            </BookDemoButton>
           </div>
           <div className="trust-row">
             <span className="trust-item">
@@ -413,7 +420,7 @@ export default function HomePageClient() {
               ))}
             </div>
             <p className="speed-more">
-              <Link href="/ai-crm">
+              <Link href="/industries/ai-crm">
                 Explore TracktCRM&apos;s AI CRM
                 <span className="btn-arrow" aria-hidden="true">
                   <ArrowIcon />
@@ -631,7 +638,12 @@ export default function HomePageClient() {
               <br />
               you already use
             </h2>
-            <a className="int-cta" href="/contact">
+            <a
+              className="int-cta"
+              href={APP_REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Start Free Trial
               <span className="int-cta-arrow">
                 <ArrowIcon />
@@ -766,12 +778,15 @@ export default function HomePageClient() {
             </p>
           </div>
           <div className="cta-actions">
-            <a className="btn-dark" href="/contact">
+            <a
+              className="btn-dark"
+              href={APP_REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Start free
             </a>
-            <a className="btn-ghost" href="/contact">
-              Book a demo
-            </a>
+            <BookDemoButton className="btn-ghost">Book a demo</BookDemoButton>
           </div>
         </div>
       </section>
