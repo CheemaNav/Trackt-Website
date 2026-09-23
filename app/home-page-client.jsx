@@ -19,8 +19,6 @@ import {
   FieldTextIcon,
   GoogleBadge,
 } from "./icons";
-import SiteHeader from "./components/site-header";
-import SiteFooter from "./components/site-footer";
 import HeroLottie from "./components/hero-lottie";
 import { BookDemoButton } from "./components/demo-request-provider";
 import useReveal from "./use-reveal";
@@ -59,7 +57,6 @@ export default function HomePageClient() {
 
   return (
     <div className="home">
-      <SiteHeader />
 
       <main>
       <section className="hero" id="top">
@@ -792,7 +789,6 @@ export default function HomePageClient() {
       </section>
 
       </main>
-      <SiteFooter />
     </div>
   );
 }

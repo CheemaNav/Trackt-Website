@@ -1,6 +1,9 @@
 import Script from "next/script";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import WhatsAppFloat from "./components/whatsapp-float";
+import SiteHeader from "./components/site-header";
+import SiteFooter from "./components/site-footer";
+import NavigationProgress from "./components/navigation-progress";
 import { DemoRequestProvider } from "./components/demo-request-provider";
 import JsonLd from "./json-ld";
 import { SEO, SITE_NAME, SITE_URL } from "./site";
@@ -76,7 +79,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-IN" className={plusJakarta.variable}>
+    <html
+      lang="en-IN"
+      className={plusJakarta.variable}
+      data-scroll-behavior="smooth"
+    >
       <body>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
@@ -92,7 +99,12 @@ export default function RootLayout({ children }) {
         </Script>
         <JsonLd />
         <DemoRequestProvider>
-          {children}
+          <NavigationProgress />
+          <div className="home site-shell">
+            <SiteHeader />
+            {children}
+            <SiteFooter />
+          </div>
           <WhatsAppFloat />
         </DemoRequestProvider>
       </body>

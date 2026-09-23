@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { CloseIcon, FieldDropdownIcon, MenuIcon } from "../icons";
 import { APP_LOGIN_URL, APP_REGISTER_URL } from "../site";
 
@@ -15,11 +16,16 @@ const FEATURE_LINKS = [
 ];
 
 export default function SiteHeader() {
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const industriesRef = useRef(null);
   const featuresRef = useRef(null);
   const dropdownCloseTimer = useRef(null);
+
+  function prefetchLinks(links) {
+    links.forEach((item) => router.prefetch(item.href));
+  }
 
   function closeMenu() {
     clearTimeout(dropdownCloseTimer.current);
@@ -31,6 +37,8 @@ export default function SiteHeader() {
     if (!window.matchMedia("(min-width: 981px)").matches) return;
     clearTimeout(dropdownCloseTimer.current);
     setOpenDropdown(id);
+    if (id === "industries") prefetchLinks(INDUSTRY_LINKS);
+    if (id === "features") prefetchLinks(FEATURE_LINKS);
   }
 
   function scheduleCloseDropdownDesktop() {
@@ -44,6 +52,8 @@ export default function SiteHeader() {
   function toggleDropdownMobile(id) {
     if (!window.matchMedia("(max-width: 980px)").matches) return;
     setOpenDropdown((current) => (current === id ? null : id));
+    if (id === "industries") prefetchLinks(INDUSTRY_LINKS);
+    if (id === "features") prefetchLinks(FEATURE_LINKS);
   }
 
   useEffect(() => {

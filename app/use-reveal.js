@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 
 export default function useReveal() {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const all = () => document.querySelectorAll(".reveal");
     const pending = () => document.querySelectorAll(".reveal:not(.is-in)");
 
@@ -15,11 +15,14 @@ export default function useReveal() {
     function revealVisible() {
       pending().forEach((el) => {
         const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 8 && rect.bottom > 40) {
+        if (rect.top < window.innerHeight + 40 && rect.bottom > 0) {
           el.classList.add("is-in");
         }
       });
     }
+
+    // Mark first viewport immediately so navigations don't feel blank
+    revealVisible();
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -30,16 +33,14 @@ export default function useReveal() {
           }
         });
       },
-      { threshold: 0.05, rootMargin: "120px 0px -8px 0px" },
+      { threshold: 0.05, rootMargin: "160px 0px -8px 0px" },
     );
 
     pending().forEach((el) => io.observe(el));
-    revealVisible();
-    const t1 = window.setTimeout(revealVisible, 80);
-    const t2 = window.setTimeout(revealVisible, 320);
+    const t1 = window.setTimeout(revealVisible, 50);
+    const t2 = window.setTimeout(revealVisible, 200);
     window.addEventListener("scroll", revealVisible, { passive: true });
     window.addEventListener("hashchange", revealVisible);
-    window.addEventListener("load", revealVisible);
 
     return () => {
       io.disconnect();
@@ -47,7 +48,6 @@ export default function useReveal() {
       window.clearTimeout(t2);
       window.removeEventListener("scroll", revealVisible);
       window.removeEventListener("hashchange", revealVisible);
-      window.removeEventListener("load", revealVisible);
     };
   }, []);
 }

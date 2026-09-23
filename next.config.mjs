@@ -64,6 +64,27 @@ const nextConfig = {
         destination: "/industries/real-estate-crm",
         permanent: true,
       },
+      // Legal page aliases (Zayda-style paths)
+      {
+        source: "/privacy-policies",
+        destination: "/privacy-policy",
+        permanent: true,
+      },
+      {
+        source: "/privacy-policies/",
+        destination: "/privacy-policy",
+        permanent: true,
+      },
+      {
+        source: "/terms-conditions",
+        destination: "/terms",
+        permanent: true,
+      },
+      {
+        source: "/terms-conditions/",
+        destination: "/terms",
+        permanent: true,
+      },
     ];
   },
   async headers() {

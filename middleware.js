@@ -8,6 +8,8 @@ const REDIRECTS = new Map([
   ["/whatsapp", "/features/whatsapp-crm"],
   ["/ai", "/industries/ai-crm"],
   ["/real-estate", "/industries/real-estate-crm"],
+  ["/privacy-policies", "/privacy-policy"],
+  ["/terms-conditions", "/terms"],
 ]);
 
 export function middleware(request) {
@@ -37,5 +39,9 @@ export const config = {
     "/ai/",
     "/real-estate",
     "/real-estate/",
+    "/privacy-policies",
+    "/privacy-policies/",
+    "/terms-conditions",
+    "/terms-conditions/",
   ],
 };

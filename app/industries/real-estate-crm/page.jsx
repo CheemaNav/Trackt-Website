@@ -10,8 +10,6 @@ import {
   SiteVisitIcon,
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
-import SiteHeader from "../../components/site-header";
-import SiteFooter from "../../components/site-footer";
 import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
 import { BreadcrumbJsonLd, RealEstateJsonLd } from "../../json-ld";
 import {
@@ -93,7 +91,6 @@ export default function RealEstateCrmPage() {
         ]}
       />
       <RevealInit />
-      <SiteHeader />
 
       <main>
       <section className="re-banner reveal" id="top">
@@ -365,6 +362,16 @@ export default function RealEstateCrmPage() {
           <a href="/contact">Book a 30-minute demo</a> to see your listings
           inside TracktCRM.
         </p>
+        <figure className="re-shot re-shot-wide">
+          <img
+            src="/assets/leadmanage.png"
+            alt="TracktCRM real estate sales pipeline from enquiry to registration"
+            width={1600}
+            height={900}
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
       </section>
 
       <section className="section reveal" id="testimonial">
@@ -422,7 +429,6 @@ export default function RealEstateCrmPage() {
       </section>
 
       </main>
-      <SiteFooter />
     </div>
   );
 }

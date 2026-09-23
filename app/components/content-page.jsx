@@ -1,7 +1,5 @@
 import Link from "next/link";
 import RevealInit from "./reveal-init";
-import SiteFooter from "./site-footer";
-import SiteHeader from "./site-header";
 import { BreadcrumbJsonLd } from "../json-ld";
 
 export default function ContentPage({
@@ -13,11 +11,10 @@ export default function ContentPage({
   schema,
 }) {
   return (
-    <div className="home">
+    <>
       {schema}
       {breadcrumbs ? <BreadcrumbJsonLd items={breadcrumbs} /> : null}
       <RevealInit />
-      <SiteHeader />
       <main>
         <section className="content-hero reveal" id="top">
           <div className="content-hero-inner wrap">
@@ -53,7 +50,6 @@ export default function ContentPage({
           <div className="content-body-inner wrap">{children}</div>
         </section>
       </main>
-      <SiteFooter />
-    </div>
+    </>
   );
 }

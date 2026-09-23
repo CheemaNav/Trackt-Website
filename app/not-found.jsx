@@ -1,6 +1,4 @@
 import Link from "next/link";
-import SiteHeader from "./components/site-header";
-import SiteFooter from "./components/site-footer";
 import { BookDemoButton } from "./components/demo-request-provider";
 import { ArrowIcon } from "./icons";
 
@@ -25,7 +23,6 @@ const QUICK_LINKS = [
 export default function NotFound() {
   return (
     <div className="home not-found-page">
-      <SiteHeader />
       <main className="not-found">
         <div className="not-found-bg" aria-hidden="true">
           <span className="not-found-orb not-found-orb-a" />
@@ -72,7 +69,6 @@ export default function NotFound() {
           </nav>
         </div>
       </main>
-      <SiteFooter />
     </div>
   );
 }

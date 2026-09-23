@@ -11,8 +11,6 @@ import {
   ProjectPipelineIcon,
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
-import SiteHeader from "../../components/site-header";
-import SiteFooter from "../../components/site-footer";
 import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
 import { AiCrmJsonLd, BreadcrumbJsonLd } from "../../json-ld";
 import {
@@ -94,7 +92,6 @@ export default function AiCrmPage() {
         ]}
       />
       <RevealInit />
-      <SiteHeader />
 
       <main>
       <section className="re-banner ai-banner reveal" id="top">
@@ -402,7 +399,6 @@ export default function AiCrmPage() {
       </section>
 
       </main>
-      <SiteFooter />
     </div>
   );
 }

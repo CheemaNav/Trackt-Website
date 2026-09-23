@@ -10,8 +10,6 @@ import {
   AiLeadIcon,
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
-import SiteHeader from "../../components/site-header";
-import SiteFooter from "../../components/site-footer";
 import { BookDemoButton } from "../../components/demo-request-provider";
 import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
 import { BreadcrumbJsonLd, WhatsAppCrmJsonLd } from "../../json-ld";
@@ -96,7 +94,6 @@ export default function WhatsAppCrmPage() {
         ]}
       />
       <RevealInit />
-      <SiteHeader />
 
       <main>
         <section className="wa-hero reveal" id="top">
@@ -443,8 +440,6 @@ export default function WhatsAppCrmPage() {
           </div>
         </section>
       </main>
-
-      <SiteFooter />
     </div>
   );
 }

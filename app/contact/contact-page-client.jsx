@@ -5,8 +5,6 @@ import { FaWhatsapp } from "react-icons/fa6";
 import { LuClock, LuMail, LuMapPin, LuPhone } from "react-icons/lu";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
-import SiteFooter from "../components/site-footer";
-import SiteHeader from "../components/site-header";
 import useReveal from "../use-reveal";
 import { CONTACT } from "../site";
 
@@ -75,7 +73,6 @@ export default function ContactPageClient() {
 
   return (
     <div className="home">
-      <SiteHeader />
 
       <main>
       <section className="contact-hero reveal" id="top">
@@ -318,8 +315,6 @@ export default function ContactPageClient() {
         </div>
       </section>
       </main>
-
-      <SiteFooter />
     </div>
   );
 }
