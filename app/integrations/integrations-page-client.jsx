@@ -1,0 +1,318 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { LuSearch } from "react-icons/lu";
+import { ArrowIcon, BrandMark } from "../icons";
+import { BookDemoButton } from "../components/demo-request-provider";
+import useReveal from "../use-reveal";
+import { APP_REGISTER_URL } from "../site";
+import {
+  INTEGRATION_APPS,
+  INTEGRATION_CATEGORIES,
+  INTEGRATION_FAQS,
+  INTEGRATION_POPULAR,
+  INTEGRATION_STEPS,
+} from "./data";
+
+function matchesQuery(app, query) {
+  if (!query) return true;
+  const haystack = [app.name, app.body, ...(app.tags || [])]
+    .join(" ")
+    .toLowerCase();
+  return haystack.includes(query);
+}
+
+export default function IntegrationsPageClient() {
+  const [draft, setDraft] = useState("");
+  const [query, setQuery] = useState("");
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  useReveal();
+
+  const normalisedQuery = query.trim().toLowerCase();
+
+  function runSearch(value = draft) {
+    const next = value.trim();
+    setDraft(next);
+    setQuery(next);
+    setActiveCategory("all");
+  }
+
+  function onSearchSubmit(event) {
+    event.preventDefault();
+    runSearch();
+  }
+
+  useEffect(() => {
+    if (activeCategory === "all" && !normalisedQuery) return;
+    document
+      .querySelector(".int-page-catalog")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [activeCategory, normalisedQuery]);
+
+  const visibleCategories = useMemo(() => {
+    return INTEGRATION_CATEGORIES.map((category) => ({
+      ...category,
+      apps: INTEGRATION_APPS.filter(
+        (app) =>
+          app.category === category.id &&
+          matchesQuery(app, normalisedQuery) &&
+          (activeCategory === "all" || app.category === activeCategory),
+      ),
+    })).filter((category) => category.apps.length > 0);
+  }, [normalisedQuery, activeCategory]);
+
+  const visibleCount = visibleCategories.reduce(
+    (sum, category) => sum + category.apps.length,
+    0,
+  );
+
+  return (
+    <main>
+      <section className="int-page-hero reveal" id="top">
+        <div className="wrap int-page-hero-inner">
+          <nav className="breadcrumbs" aria-label="Breadcrumb">
+            <ol>
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <span aria-current="page">Integrations</span>
+              </li>
+            </ol>
+          </nav>
+          <div className="badge">
+            <span className="pulse" aria-hidden="true" />
+            {INTEGRATION_APPS.length} integrations · no code required
+          </div>
+          <h1 className="h1">
+            Connect TracktCRM to WhatsApp and everything else you run on
+          </h1>
+          <p className="lead">
+            Lead sources, ads, payments, Google Workspace and shipping — search
+            your stack and plug it into one CRM.
+          </p>
+
+          <form className="int-page-search" onSubmit={onSearchSubmit}>
+            <LuSearch size={18} aria-hidden="true" />
+            <label className="sr-only" htmlFor="int-search">
+              Search integrations
+            </label>
+            <input
+              id="int-search"
+              className="input"
+              type="search"
+              value={draft}
+              onChange={(event) => setDraft(event.target.value)}
+              placeholder="Search WhatsApp, Gmail…"
+              autoComplete="off"
+            />
+            <button className="int-page-search-btn" type="submit">
+              Search
+            </button>
+          </form>
+
+          <p className="int-page-popular">
+            Popular:
+            {INTEGRATION_POPULAR.map((name) => (
+              <button
+                type="button"
+                key={name}
+                onClick={() => runSearch(name)}
+              >
+                {name}
+              </button>
+            ))}
+          </p>
+        </div>
+      </section>
+
+      <nav className="int-page-tabs" aria-label="Integration categories">
+        <div className="wrap int-page-tabs-inner">
+          <button
+            type="button"
+            className={activeCategory === "all" ? "is-active" : ""}
+            onClick={() => setActiveCategory("all")}
+          >
+            All apps
+            <em>{INTEGRATION_APPS.length}</em>
+          </button>
+          {INTEGRATION_CATEGORIES.map((category) => {
+            const count = INTEGRATION_APPS.filter(
+              (app) => app.category === category.id,
+            ).length;
+            return (
+              <button
+                type="button"
+                key={category.id}
+                className={activeCategory === category.id ? "is-active" : ""}
+                onClick={() => setActiveCategory(category.id)}
+              >
+                {category.label}
+                <em>{count}</em>
+              </button>
+            );
+          })}
+        </div>
+      </nav>
+
+      <section className="int-page-catalog">
+        <div className="wrap">
+          {visibleCount === 0 ? (
+            <div className="int-page-empty reveal">
+              <h2>No integrations match that search.</h2>
+              <p>
+                Try another keyword — or tell us what to build and we will add
+                it to the roadmap.
+              </p>
+              <Link className="btn btn-primary" href="/contact">
+                Suggest an integration
+              </Link>
+            </div>
+          ) : (
+            visibleCategories.map((category) => (
+              <section
+                className="int-page-group reveal"
+                key={category.id}
+                id={category.id}
+              >
+                <header className="int-page-group-head">
+                  <p className="kicker">
+                    {category.label}
+                    <span>{category.apps.length} apps</span>
+                  </p>
+                  <h2 className="h2">{category.title}</h2>
+                  <p className="lead">{category.body}</p>
+                </header>
+                <div className="int-page-grid">
+                  {category.apps.map((app) => {
+                    const CardTag = app.href ? Link : "article";
+                    const cardProps = app.href
+                      ? { href: app.href }
+                      : {};
+                    return (
+                      <CardTag
+                        className="int-page-card"
+                        key={app.name}
+                        {...cardProps}
+                      >
+                        <span className="int-page-logo" aria-hidden="true">
+                          <BrandMark name={app.name} />
+                        </span>
+                        <h3>{app.name}</h3>
+                        <p>{app.body}</p>
+                        {app.href ? (
+                          <span className="int-page-more">
+                            Learn more
+                            <ArrowIcon />
+                          </span>
+                        ) : null}
+                      </CardTag>
+                    );
+                  })}
+                </div>
+              </section>
+            ))
+          )}
+        </div>
+      </section>
+
+      <section className="section reveal" id="how">
+        <h2 className="h2-sm">How integrations work</h2>
+        <p className="int-page-section-lead">
+          No developers, no downtime. Connect your tools in three steps and
+          leads start flowing into your pipeline.
+        </p>
+        <div className="step-grid stagger">
+          {INTEGRATION_STEPS.map((step) => (
+            <div className="step" key={step.n}>
+              <b>{step.n}</b>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="section int-page-suggest reveal" id="suggest">
+        <div className="int-page-suggest-grid">
+          <article>
+            <p className="kicker">CAN&apos;T FIND YOUR APP?</p>
+            <h2 className="h2">This is just the start</h2>
+            <p>
+              Reach thousands more apps through webhooks, or tell us what to
+              build next. Popular requests jump to the front of our roadmap.
+            </p>
+            <div className="hero-ctas int-page-suggest-ctas">
+              <Link className="btn btn-primary" href="/contact">
+                Suggest an integration
+              </Link>
+              <BookDemoButton className="btn btn-outline">
+                Book a demo
+                <span className="btn-arrow" aria-hidden="true">
+                  <ArrowIcon />
+                </span>
+              </BookDemoButton>
+            </div>
+          </article>
+          <article>
+            <p className="kicker">BUILD YOUR OWN</p>
+            <h2 className="h2">Webhooks and custom forms</h2>
+            <p>
+              Generate a webhook, map fields, or embed a TracktCRM form on any
+              site. Submissions land in the right pipeline and owner
+              automatically.
+            </p>
+            <Link className="int-page-more" href="/#forms">
+              See custom forms
+              <ArrowIcon />
+            </Link>
+          </article>
+        </div>
+      </section>
+
+      <section className="section faq reveal" id="faq">
+        <div className="faq-layout">
+          <div className="faq-aside">
+            <h2 className="h2">Frequently asked questions</h2>
+          </div>
+          <div className="faq-list">
+            {INTEGRATION_FAQS.map((item) => (
+              <details className="faq-item" key={item.q}>
+                <summary>
+                  {item.q}
+                  <span className="faq-toggle" aria-hidden="true" />
+                </summary>
+                <p>{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="cta-section reveal" id="demo">
+        <div className="cta">
+          <div>
+            <h2>Your next lead is already waiting.</h2>
+            <p>
+              Start free today, or get a 30-minute walkthrough of the
+              integrations your team actually uses. No credit card, no lock-in.
+            </p>
+          </div>
+          <div className="cta-actions">
+            <a
+              className="btn-dark"
+              href={APP_REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Start free
+            </a>
+            <BookDemoButton className="btn-ghost">Book a demo</BookDemoButton>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

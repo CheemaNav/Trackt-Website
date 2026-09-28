@@ -13,6 +13,8 @@ export const metadata = {
 };
 
 const QUICK_LINKS = [
+  { label: "CRM Software", href: "/crm-software" },
+  { label: "Integrations", href: "/integrations" },
   { label: "WhatsApp CRM", href: "/features/whatsapp-crm" },
   { label: "AI CRM", href: "/industries/ai-crm" },
   { label: "Real Estate CRM", href: "/industries/real-estate-crm" },

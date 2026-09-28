@@ -1,6 +1,7 @@
-export const SITE_URL =
+export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://tracktcrm.com";
+  "https://tracktcrm.com"
+).replace("://www.", "://");
 
 export const SITE_NAME = "TracktCRM";
 

@@ -210,7 +210,8 @@ export default function RealEstateCrmPage() {
             <p className="re-section-intro">
               For real estate specifically, a good CRM needs to do more than
               store contacts. TracktCRM is built around exactly this workflow -
-              not adapted from a generic sales CRM.
+              not adapted from a generic sales CRM. See the full{" "}
+              <a href="/crm-software">CRM software</a> overview.
             </p>
           </div>
         </div>

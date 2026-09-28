@@ -49,6 +49,9 @@ const BRAND_LOGOS = {
   "Housing.com": "/assets/brands/housing.svg",
   OLX: "/assets/brands/olx.svg",
   Practo: "/assets/brands/practo.svg",
+  MagicBricks: "/assets/brands/magicbricks.svg",
+  Calendly: "/assets/brands/calendly.svg",
+  "Custom Forms": "/assets/brands/custom-forms.svg",
 };
 
 const BRAND_ICONS = {

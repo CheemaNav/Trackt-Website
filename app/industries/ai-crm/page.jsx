@@ -197,7 +197,9 @@ export default function AiCrmPage() {
             </p>
             <p className="re-section-intro">
               TracktCRM is built around this definition, not adapted from a
-              regular CRM with an AI feature added on top.
+              regular CRM with an AI feature added on top. See how it sits
+              inside TracktCRM&apos;s{" "}
+              <a href="/crm-software">CRM software</a>.
             </p>
           </div>
         </div>

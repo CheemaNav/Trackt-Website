@@ -393,7 +393,7 @@ export const FAQS = [
   { q: "How does TracktCRM help increase sales?", a: "It removes the two things that lose deals: slow replies and forgotten follow-ups. TracktCRM answers new leads automatically, reminds reps of every next step, and shows exactly which pipeline stage is leaking revenue so you can fix it early." },
   { q: "Is TracktCRM good for small businesses?", a: "Yes. TracktCRM is built for small businesses, agencies, freelancers and growing sales teams who want proper lead management without enterprise pricing. There is nothing to configure on day one - pick a pipeline template and start selling." },
   { q: "Does TracktCRM offer a free trial?", a: "Yes. Every feature is available on a free 1 month trial with no credit card required. You can import your existing leads, run your real sales pipeline, and decide afterwards." },
-  { q: "What integrations does TracktCRM support?", a: "TracktCRM connects with WhatsApp, Gmail and other email, Google Calendar, Meta and Google Ads, Shopify, payment tools and Zapier. An open CRM API and webhooks cover anything custom your team needs." },
+  { q: "What integrations does TracktCRM support?", a: "TracktCRM connects with WhatsApp, Gmail, Google Calendar, Meta and Google Ads, India marketplaces, Shopify, Razorpay, shipping tools and webhooks. Browse the full catalogue on the integrations page, or ask us to add a tool you do not see." },
   { q: "How do I get started with TracktCRM?", a: "Start your free trial or book a demo and our team maps your current lead flow. We set up your pipeline stages, sources and users, migrate your spreadsheet or old CRM data, and most teams are live within a week." },
   { q: "Is TracktCRM a good Pipedrive alternative?", a: "Yes. TracktCRM includes AI-powered lead response, WhatsApp automation and industry-ready pipelines that Pipedrive doesn't offer natively - at a lower price point, with data migration support if you're switching." },
   { q: "Does TracktCRM work as a real estate CRM?", a: "Yes. TracktCRM includes ready-made pipelines for site-visit scheduling, channel-partner tracking and unit/inventory management - built specifically for how real estate teams sell." },
@@ -414,7 +414,9 @@ export const FOOTER_COLS = [
   {
     title: "Product",
     links: [
+      { label: "CRM Software", href: "/crm-software" },
       { label: "Pricing", href: "/pricing" },
+      { label: "Integrations", href: "/integrations" },
       { label: "Contact / Demo", href: "/contact" },
     ],
   },

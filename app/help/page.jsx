@@ -56,6 +56,8 @@ export default function HelpPage() {
         </Link>
         <Link href="/pricing">Pricing &amp; trial</Link>
         <Link href="/contact">Book a demo</Link>
+        <Link href="/crm-software">CRM software</Link>
+        <Link href="/integrations">Integrations</Link>
         <Link href="/industries/ai-crm">AI sales assistant guide</Link>
         <Link href="/industries/real-estate-crm">Real estate CRM guide</Link>
         <Link href="/privacy-policy">Privacy Policy</Link>

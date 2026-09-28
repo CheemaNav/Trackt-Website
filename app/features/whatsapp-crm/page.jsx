@@ -203,7 +203,8 @@ export default function WhatsAppCrmPage() {
                   to it as an add-on. TracktCRM is built around this definition
                   from the ground up — WhatsApp isn&apos;t a plug-in, it&apos;s
                   the core channel. Pair it with our{" "}
-                  <a href="/industries/ai-crm">AI sales assistant</a> or see how{" "}
+                  <a href="/industries/ai-crm">AI sales assistant</a>, browse our{" "}
+                  <a href="/crm-software">CRM software</a>, or see how{" "}
                   <a href="/industries/real-estate-crm">real estate teams</a> use WhatsApp
                   for site-visit follow-ups.
                 </p>

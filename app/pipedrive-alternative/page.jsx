@@ -66,7 +66,7 @@ export default function PipedriveAlternativePage() {
           <li>Leads arrive on WhatsApp, forms and ads after hours</li>
           <li>You want an <Link href="/industries/ai-crm">AI sales assistant</Link> that acts, not only reports</li>
           <li>You need real-estate or SMB pipelines without enterprise complexity</li>
-          <li>You are comparing affordable CRM alternatives for a smaller team</li>
+          <li>You are comparing affordable <Link href="/crm-software">CRM software</Link> alternatives for a smaller team</li>
         </ul>
 
         <h2>Feature and trade-off comparison</h2>

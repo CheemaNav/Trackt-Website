@@ -273,3 +273,55 @@ export function FaqJsonLd({ id = "schema-faq", faqs }) {
 
   return <SchemaScript id={id} data={faqPage} />;
 }
+
+/** CRM software pillar page FAQ + SoftwareApplication schema. */
+export function CrmSoftwareJsonLd({ faqs }) {
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
+  const software = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: SITE_NAME,
+    applicationCategory: "BusinessApplication",
+    applicationSubCategory: "CRM Software",
+    operatingSystem: "Web, iOS, Android",
+    description:
+      "AI-powered CRM software that captures leads, replies in seconds across WhatsApp, email and SMS, and tracks every deal in one pipeline.",
+    url: `${SITE_URL}/crm-software`,
+  };
+
+  return (
+    <>
+      <SchemaScript id="schema-cs-faq" data={faqPage} />
+      <SchemaScript id="schema-cs-software" data={software} />
+    </>
+  );
+}
+
+export function IntegrationsJsonLd({ apps }) {
+  const itemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "TracktCRM CRM integrations",
+    itemListElement: apps.map((app, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: app.name,
+      description: app.body,
+      url: app.href ? `${SITE_URL}${app.href}` : `${SITE_URL}/integrations`,
+    })),
+  };
+
+  return <SchemaScript id="schema-integrations" data={itemList} />;
+}

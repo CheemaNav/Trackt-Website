@@ -12,6 +12,7 @@ const INDUSTRY_LINKS = [
 ];
 
 const FEATURE_LINKS = [
+  { label: "CRM Software", href: "/crm-software" },
   { label: "WhatsApp CRM", href: "/features/whatsapp-crm" },
 ];
 
@@ -164,9 +165,6 @@ export default function SiteHeader() {
                   {item.label}
                 </Link>
               ))}
-              <Link href="/#industries" role="menuitem" onClick={closeMenu}>
-                All industries
-              </Link>
             </div>
           </div>
           <div
@@ -207,11 +205,8 @@ export default function SiteHeader() {
           <Link href="/#forms" onClick={closeMenu}>
             Forms
           </Link>
-          <Link href="/#integrations" onClick={closeMenu}>
+          <Link href="/integrations" onClick={closeMenu}>
             Integrations
-          </Link>
-          <Link href="/#faq" onClick={closeMenu}>
-            FAQ
           </Link>
           <Link href="/contact" onClick={closeMenu}>
             Contact Us

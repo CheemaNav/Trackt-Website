@@ -7,8 +7,11 @@ Use the links below for the main product pages and crawlable site metadata.
 ## Pages
 
 - [Homepage](https://tracktcrm.com/): AI CRM overview, product features, integrations and FAQ
-- [AI CRM](https://tracktcrm.com/ai-crm): Instant multi-channel lead response, automated follow-up calls and AI hand-off
-- [Real Estate CRM](https://tracktcrm.com/real-estate-crm): Property lead capture, site visits, brokers and deal pipeline
+- [CRM Software](https://tracktcrm.com/crm-software): Simple CRM software for leads, pipeline and follow-ups
+- [AI CRM](https://tracktcrm.com/industries/ai-crm): Instant multi-channel lead response, automated follow-up calls and AI hand-off
+- [Real Estate CRM](https://tracktcrm.com/industries/real-estate-crm): Property lead capture, site visits, brokers and deal pipeline
+- [WhatsApp CRM](https://tracktcrm.com/features/whatsapp-crm): Capture, chat and close on WhatsApp
+- [Integrations](https://tracktcrm.com/integrations): Apps connected to TracktCRM
 - [Contact](https://tracktcrm.com/contact): Phone, WhatsApp, office address and contact form
 
 ## Product

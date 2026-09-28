@@ -86,7 +86,8 @@ export default function HomePageClient() {
             </span>
           </h1>
           <p className="lead">
-            TracktCRM is AI-powered CRM software that captures every lead,
+            TracktCRM is AI-powered{" "}
+            <a href="/crm-software">CRM software</a> that captures every lead,
             responds in seconds over WhatsApp, email and SMS, and keeps your
             sales pipeline organized - built for how agencies, consultants and freelancers actually sell.{" "}
             <a href="/industries/ai-crm">See the AI sales assistant</a> or explore our{" "}
@@ -470,7 +471,8 @@ export default function HomePageClient() {
         <p className="kicker">WHY TEAMS SWITCH</p>
         <h2 className="h2">An easy-to-use, affordable Pipedrive alternative</h2>
         <p className="compare-intro">
-        Most CRM software including tools like Pipedrive is priced and built for enterprise teams. TracktCRM gives small businesses, agencies, and freelancers powerful lead management and sales pipeline tools, plus AI-powered automation, at a fraction of the cost. See why teams choose TracktCRM as a{" "}
+        Most{" "}
+        <Link href="/crm-software">CRM software</Link> including tools like Pipedrive is priced and built for enterprise teams. TracktCRM gives small businesses, agencies, and freelancers powerful lead management and sales pipeline tools, plus AI-powered automation, at a fraction of the cost. See why teams choose TracktCRM as a{" "}
         <Link href="/pipedrive-alternative">Pipedrive alternative</Link>.
         </p>
         <div className="compare-board">
@@ -660,6 +662,13 @@ export default function HomePageClient() {
           </div>
         </div>
         <p className="int-note">
+          <a href="/integrations">
+            Browse all integrations
+            <span className="int-note-arrow" aria-hidden="true">
+              <ArrowIcon />
+            </span>
+          </a>
+          {" · "}
           Don&apos;t see your tool?{" "}
           <a href="/contact">
             Let us know — we&apos;ll integrate it for you

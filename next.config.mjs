@@ -2,6 +2,12 @@
 const nextConfig = {
   async redirects() {
     return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.tracktcrm.com" }],
+        destination: "https://tracktcrm.com/:path*",
+        statusCode: 301,
+      },
       // Old flat URLs → Features / Industries structure
       {
         source: "/whatsapp-crm",
