@@ -3,11 +3,12 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { LuSearch } from "react-icons/lu";
-import { ArrowIcon, BrandMark } from "../icons";
+import { ArrowIcon, BrandMark, CheckIcon } from "../icons";
 import { BookDemoButton } from "../components/demo-request-provider";
 import useReveal from "../use-reveal";
 import { APP_REGISTER_URL } from "../site";
 import {
+  CUSTOM_WORK,
   INTEGRATION_APPS,
   INTEGRATION_CATEGORIES,
   INTEGRATION_FAQS,
@@ -91,7 +92,8 @@ export default function IntegrationsPageClient() {
           </h1>
           <p className="lead">
             Lead sources, ads, payments, Google Workspace and shipping — search
-            your stack and plug it into one CRM.
+            your stack and plug it into one CRM. Need a custom integration or
+            other custom work? We can build that too.
           </p>
 
           <form className="int-page-search" onSubmit={onSearchSubmit}>
@@ -163,11 +165,11 @@ export default function IntegrationsPageClient() {
             <div className="int-page-empty reveal">
               <h2>No integrations match that search.</h2>
               <p>
-                Try another keyword — or tell us what to build and we will add
-                it to the roadmap.
+                Try another keyword — or ask us for a custom integration. If
+                your tool is not listed, we can still connect it.
               </p>
               <Link className="btn btn-primary" href="/contact">
-                Suggest an integration
+                Request custom work
               </Link>
             </div>
           ) : (
@@ -235,18 +237,53 @@ export default function IntegrationsPageClient() {
         </div>
       </section>
 
+      <section className="section int-page-custom reveal" id="custom">
+        <p className="kicker is-centered">CUSTOM WORK</p>
+        <h2 className="h2-sm is-centered">
+          Need a custom integration? We can do that too.
+        </h2>
+        <p className="int-page-section-lead is-centered">
+          If you want a custom integration, a one-off workflow, or other custom
+          work around TracktCRM, tell us what you use. We map the fields,
+          connect the source, and keep every lead in your pipeline.
+        </p>
+        <div className="int-page-custom-grid">
+          {CUSTOM_WORK.map((item) => (
+            <article className="int-page-custom-card" key={item.title}>
+              <span className="re-point-check" aria-hidden="true">
+                <CheckIcon size={14} />
+              </span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+        <div className="hero-ctas int-page-custom-ctas">
+          <Link className="btn btn-primary" href="/contact">
+            Request custom work
+          </Link>
+          <BookDemoButton className="btn btn-outline">
+            Book a demo
+            <span className="btn-arrow" aria-hidden="true">
+              <ArrowIcon />
+            </span>
+          </BookDemoButton>
+        </div>
+      </section>
+
       <section className="section int-page-suggest reveal" id="suggest">
         <div className="int-page-suggest-grid">
           <article>
             <p className="kicker">CAN&apos;T FIND YOUR APP?</p>
-            <h2 className="h2">This is just the start</h2>
+            <h2 className="h2">Ask us to connect it</h2>
             <p>
-              Reach thousands more apps through webhooks, or tell us what to
-              build next. Popular requests jump to the front of our roadmap.
+              Don&apos;t see your tool? We build custom integrations and other
+              custom work for teams that need a source that is not listed yet.
+              Tell us the app and we will map how it should land in TracktCRM.
             </p>
             <div className="hero-ctas int-page-suggest-ctas">
               <Link className="btn btn-primary" href="/contact">
-                Suggest an integration
+                Request custom work
               </Link>
               <BookDemoButton className="btn btn-outline">
                 Book a demo

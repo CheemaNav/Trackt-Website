@@ -216,6 +216,21 @@ export const INTEGRATION_STEPS = [
   },
 ];
 
+export const CUSTOM_WORK = [
+  {
+    title: "Custom integrations",
+    body: "If your app is not in the catalogue — a portal, an in-house tool, or another CRM — we can connect it so leads still land in TracktCRM.",
+  },
+  {
+    title: "Custom workflows",
+    body: "Assignment rules, field mapping and follow-up logic built around how your team actually sells, not a generic template.",
+  },
+  {
+    title: "Custom forms and webhooks",
+    body: "Branded forms, inbound APIs and one-off data feeds. We map the fields and keep every submission on the right deal.",
+  },
+];
+
 export const INTEGRATION_FAQS = [
   {
     q: "Does TracktCRM integrate with WhatsApp?",
@@ -239,6 +254,10 @@ export const INTEGRATION_FAQS = [
   },
   {
     q: "What if my tool is not listed?",
-    a: "Tell us which app you need. Popular requests jump the roadmap, and webhooks plus Zapier-style automation cover thousands of other tools in the meantime.",
+    a: "Tell us which app you need. We can build a custom integration or other custom work around TracktCRM. Popular requests also jump the roadmap, and webhooks cover thousands of other tools in the meantime.",
+  },
+  {
+    q: "Can you build a custom integration for us?",
+    a: "Yes. If you need a custom integration, a one-off workflow, or other custom work, we can do that too. Book a demo or contact us with the tool you use and we will map how it should land in TracktCRM.",
   },
 ];
