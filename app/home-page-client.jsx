@@ -17,7 +17,6 @@ import {
   FieldMessageIcon,
   FieldPhoneIcon,
   FieldTextIcon,
-  GoogleBadge,
 } from "./icons";
 import HeroLottie from "./components/hero-lottie";
 import { BookDemoButton } from "./components/demo-request-provider";
@@ -32,14 +31,12 @@ import {
   INTEGRATIONS,
   AI_FEATURES,
   LOGO_ROW,
-  QUOTES,
   SPEED_POINTS,
   STEPS,
   TIMELINE,
 } from "./home-data";
 
 const logos = [...LOGO_ROW, ...LOGO_ROW];
-const reviews = [...QUOTES, ...QUOTES];
 
 export default function HomePageClient() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -699,37 +696,6 @@ export default function HomePageClient() {
                 </article>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section reviews-section reveal">
-        <h2 className="h2-sm">Sales teams growing with TracktCRM</h2>
-        <div className="reviews-marquee">
-          <div className="reviews-track">
-            {reviews.map((quote, index) => (
-              <article className="review-card" key={`${quote.name}-${index}`}>
-                <div className="review-top">
-                  <span className="review-stars" aria-label={`${quote.stars} star rating`}>
-                    {"★★★★★".slice(0, quote.stars)}
-                  </span>
-                  <GoogleBadge />
-                </div>
-                <p className="review-text">{quote.text}</p>
-                <div className="review-bottom">
-                  <div className="review-user">
-                    <span
-                      className="review-avatar"
-                      style={{ backgroundColor: quote.color }}
-                    >
-                      {quote.initials}
-                    </span>
-                    <span className="review-name">{quote.name}</span>
-                  </div>
-                  <span className="review-verified">Verified</span>
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>

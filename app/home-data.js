@@ -336,51 +336,6 @@ export const AI_FEATURES = [
   },
 ];
 
-export const QUOTES = [
-  {
-    text: "Our response time went from four hours to under a minute. That alone changed our close rate. TracktCRM is easy to use and the team keeps everything organised.",
-    name: "Bhairav Shah",
-    initials: "BS",
-    color: "#7B3FF2",
-    stars: 5,
-  },
-  {
-    text: "Every enquiry, call and quote sits on one screen. Monday reviews take fifteen minutes now. The platform is easy to use and support has been very responsive.",
-    name: "Shubhajit Maji",
-    initials: "SM",
-    color: "#1A8A4A",
-    stars: 5,
-  },
-  {
-    text: "We moved twelve reps across three branches onto TracktCRM in a week, with zero data loss. Follow-ups finally happen on time and the pipeline is actually accurate.",
-    name: "Anurag Sundarka",
-    initials: "AS",
-    color: "#12B5CB",
-    stars: 5,
-  },
-  {
-    text: "I've been using TracktCRM for a while now and honestly had a really great experience. The platform is easy to use, helps keep everything organized, and the support team has been very responsive whenever needed.",
-    name: "Himanshi Bhola",
-    initials: "HB",
-    color: "#7B3FF2",
-    stars: 5,
-  },
-  {
-    text: "TracktCRM support team takes quick actions to resolve your query. Lead capture from WhatsApp and ads is instant, so our reps never miss a warm enquiry.",
-    name: "Yogita Mangal",
-    initials: "YM",
-    color: "#1A8A4A",
-    stars: 5,
-  },
-  {
-    text: "This system is easy to pick up in a few days and it has made it simple to track leads and run automated follow-ups. Exactly what a small sales team needs.",
-    name: "Ajay Chauhan",
-    initials: "AC",
-    color: "#6B8F71",
-    stars: 5,
-  },
-];
-
 export const STEPS = [
   { n: "01", title: "Book a demo", body: "A 30-minute call where we map your current lead flow." },
   { n: "02", title: "We configure it", body: "Pipelines, stages, sources and rules set up for your process." },
