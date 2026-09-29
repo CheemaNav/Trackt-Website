@@ -60,6 +60,7 @@ export default function HelpPage() {
         <Link href="/integrations">Integrations</Link>
         <Link href="/industries/ai-crm">AI sales assistant guide</Link>
         <Link href="/industries/real-estate-crm">Real estate CRM guide</Link>
+        <Link href="/industries/education-crm">Education CRM guide</Link>
         <Link href="/privacy-policy">Privacy Policy</Link>
       </div>
 

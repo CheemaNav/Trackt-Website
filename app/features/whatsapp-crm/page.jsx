@@ -206,7 +206,9 @@ export default function WhatsAppCrmPage() {
                   <a href="/industries/ai-crm">AI sales assistant</a>, browse our{" "}
                   <a href="/crm-software">CRM software</a>, or see how{" "}
                   <a href="/industries/real-estate-crm">real estate teams</a> use WhatsApp
-                  for site-visit follow-ups.
+                  for site-visit follow-ups, or how{" "}
+                  <a href="/industries/education-crm">admissions teams</a> capture
+                  student enquiries.
                 </p>
               </div>
               <figure className="wa-what-visual">

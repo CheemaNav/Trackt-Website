@@ -194,7 +194,9 @@ export default function CrmSoftwarePage() {
           <p className="cs-footnote">
             Any team that handles leads across more than one channel benefits:
             small businesses, startups, agencies, consultants, freelancers and
-            sales teams in industries like real estate and education.
+            sales teams in industries like{" "}
+            <a href="/industries/real-estate-crm">real estate</a> and{" "}
+            <a href="/industries/education-crm">education</a>.
           </p>
         </section>
 

@@ -193,6 +193,44 @@ export function AiCrmJsonLd({ faqs }) {
   );
 }
 
+/** Education CRM page FAQ + Service schema. */
+export function EducationCrmJsonLd({ faqs }) {
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Education CRM Software",
+    provider: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    areaServed: "Worldwide",
+    description:
+      "TracktCRM is an education CRM that captures student enquiries from every channel, assigns them to counsellors, and tracks each applicant to enrolment.",
+    url: `${SITE_URL}/industries/education-crm`,
+  };
+
+  return (
+    <>
+      <SchemaScript id="schema-edu-faq" data={faqPage} />
+      <SchemaScript id="schema-edu-service" data={service} />
+    </>
+  );
+}
+
 /** WhatsApp CRM page FAQ + Service schema. */
 export function WhatsAppCrmJsonLd({ faqs }) {
   const faqPage = {

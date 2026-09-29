@@ -21,6 +21,11 @@ const TOPICS = [
     blurb: "How property teams keep brokers, units and site visits in one CRM.",
   },
   {
+    title: "Education CRM for admissions from enquiry to enrolment",
+    href: "/industries/education-crm",
+    blurb: "How institutes capture enquiries, assign counsellors and track fee status.",
+  },
+  {
     title: "Pipedrive vs TracktCRM for small sales teams",
     href: "/pipedrive-alternative",
     blurb: "A practical comparison for teams that need WhatsApp-native AI response.",

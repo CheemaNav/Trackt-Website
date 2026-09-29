@@ -284,7 +284,7 @@ export const INDUSTRIES = [
     name: "Education CRM",
     body: "Admissions teams lose applicants to slow replies. TracktCRM assigns each enquiry to a counsellor, automates follow-ups and shows every applicant's admission stage live.",
     points: ["Counsellor allocation", "Admission-stage pipeline", "Fee follow-up reminders"],
-    href: "#industries",
+    href: "/industries/education-crm",
   },
 ];
 
@@ -386,6 +386,7 @@ export const FOOTER_COLS = [
     links: [
       { label: "AI CRM", href: "/industries/ai-crm" },
       { label: "Real Estate CRM", href: "/industries/real-estate-crm" },
+      { label: "Education CRM", href: "/industries/education-crm" },
     ],
   },
   {

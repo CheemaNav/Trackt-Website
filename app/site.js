@@ -16,11 +16,11 @@ export const SOCIAL_PROFILES = {
 };
 
 export const CONTACT = {
-  phoneE164: "917009811184",
-  phoneDisplay: "+91 70098 11184",
-  phoneTel: "+917009811184",
+  phoneE164: "916239520057",
+  phoneDisplay: "+91 62395 20057",
+  phoneTel: "+916239520057",
   email: "traktcrm@gmail.com",
-  whatsappUrl: "https://wa.me/917009811184",
+  whatsappUrl: "https://wa.me/916239520057",
   supportHours: "Mon–Fri, 10:00–19:00 IST",
   address:
     "3rd Floor, D-231, Phase 8B, Sector 91, Sahibzada Ajit Singh Nagar, Punjab 140308",

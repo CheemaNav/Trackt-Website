@@ -39,6 +39,16 @@ const nextConfig = {
         destination: "/industries/real-estate-crm",
         permanent: true,
       },
+      {
+        source: "/education-crm",
+        destination: "/industries/education-crm",
+        permanent: true,
+      },
+      {
+        source: "/education-crm/",
+        destination: "/industries/education-crm",
+        permanent: true,
+      },
       // Short aliases that would otherwise 404
       {
         source: "/whatsapp",
@@ -68,6 +78,16 @@ const nextConfig = {
       {
         source: "/real-estate/",
         destination: "/industries/real-estate-crm",
+        permanent: true,
+      },
+      {
+        source: "/education",
+        destination: "/industries/education-crm",
+        permanent: true,
+      },
+      {
+        source: "/education/",
+        destination: "/industries/education-crm",
         permanent: true,
       },
       // Legal page aliases (Zayda-style paths)

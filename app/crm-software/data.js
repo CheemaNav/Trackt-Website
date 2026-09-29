@@ -190,6 +190,8 @@ export const AUDIENCES = [
   {
     title: "Education",
     body: "Assign enquiries to counsellors and track every admission stage.",
+    href: "/industries/education-crm",
+    linkLabel: "See CRM for education",
   },
 ];
 

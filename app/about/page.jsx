@@ -47,7 +47,8 @@ export default function AboutPage() {
           seconds, places follow-up calls, and hands reps a briefed conversation
           - then wraps that automation in a practical CRM for pipelines,
           reporting and industry workflows like{" "}
-          <Link href="/industries/real-estate-crm">real estate</Link>.
+          <Link href="/industries/real-estate-crm">real estate</Link> and{" "}
+          <Link href="/industries/education-crm">education</Link>.
         </p>
 
         <h2>Where we work</h2>

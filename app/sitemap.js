@@ -56,6 +56,7 @@ const PRIORITY = {
   "/crm-software": 0.95,
   "/industries/ai-crm": 0.9,
   "/industries/real-estate-crm": 0.9,
+  "/industries/education-crm": 0.9,
   "/features/whatsapp-crm": 0.85,
   "/pipedrive-alternative": 0.85,
   "/pricing": 0.85,

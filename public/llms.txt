@@ -10,6 +10,7 @@ Use the links below for the main product pages and crawlable site metadata.
 - [CRM Software](https://tracktcrm.com/crm-software): Simple CRM software for leads, pipeline and follow-ups
 - [AI CRM](https://tracktcrm.com/industries/ai-crm): Instant multi-channel lead response, automated follow-up calls and AI hand-off
 - [Real Estate CRM](https://tracktcrm.com/industries/real-estate-crm): Property lead capture, site visits, brokers and deal pipeline
+- [Education CRM](https://tracktcrm.com/industries/education-crm): Student enquiry capture, counsellor assignment and admission-stage pipeline
 - [WhatsApp CRM](https://tracktcrm.com/features/whatsapp-crm): Capture, chat and close on WhatsApp
 - [Integrations](https://tracktcrm.com/integrations): Apps connected to TracktCRM
 - [Contact](https://tracktcrm.com/contact): Phone, WhatsApp, office address and contact form
@@ -22,4 +23,4 @@ TracktCRM helps teams capture portal and WhatsApp enquiries, automate follow-ups
 
 - [Sitemap](https://tracktcrm.com/sitemap.xml): Indexable URLs for crawlers
 - [Robots](https://tracktcrm.com/robots.txt): Crawl rules for search and AI bots
-- [WhatsApp](https://wa.me/917009811184): Chat with the TracktCRM team
+- [WhatsApp](https://wa.me/916239520057): Chat with the TracktCRM team

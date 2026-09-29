@@ -18,6 +18,7 @@ const QUICK_LINKS = [
   { label: "WhatsApp CRM", href: "/features/whatsapp-crm" },
   { label: "AI CRM", href: "/industries/ai-crm" },
   { label: "Real Estate CRM", href: "/industries/real-estate-crm" },
+  { label: "Education CRM", href: "/industries/education-crm" },
   { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
 ];
