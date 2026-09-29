@@ -2,7 +2,6 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { PhoneInput } from "react-international-phone";
-import "react-international-phone/style.css";
 import { CloseIcon } from "../icons";
 import { CONTACT } from "../site";
 

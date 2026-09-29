@@ -4,7 +4,6 @@ import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa6";
 import { LuClock, LuMail, LuMapPin, LuPhone } from "react-icons/lu";
 import { PhoneInput } from "react-international-phone";
-import "react-international-phone/style.css";
 import useReveal from "../use-reveal";
 import { CONTACT } from "../site";
 
