@@ -237,14 +237,13 @@ export const HERO_WORDS = [
 ];
 
 export const LOGO_ROW = [
-  "Navshakti",
-  "Optimum Finserve",
-  "ZebraLearn",
-  "Bharat Weaves",
-  "Sunrise Realty",
-  "Kaya Clinics",
-  "Greenleaf",
-  "Nova Interiors",
+  { name: "Coursely", src: "/assets/clients/coursely.webp", width: 228, height: 120 },
+  { name: "On Road Driving School", src: "/assets/clients/on-road-driving-school.webp", width: 155, height: 120 },
+  { name: "Task Canada Immigration", src: "/assets/clients/task-canada-immigration.webp", width: 382, height: 120 },
+  { name: "My Transition Team", src: "/assets/clients/my-transition-team.webp", width: 433, height: 87 },
+  { name: "Arch Referrals", src: "/assets/clients/arch-referrals.webp", width: 300, height: 120 },
+  { name: "Gaudium", src: "/assets/clients/gaudium.webp", width: 295, height: 55 },
+  { name: "Frill Thrills", src: "/assets/clients/frill-thrills.webp", width: 199, height: 68 },
 ];
 
 export const SPEED_POINTS = [
@@ -269,22 +268,22 @@ export const INDUSTRIES = [
     href: "/industries/real-estate-crm",
   },
   {
-    name: "AI CRM",
-    body: "Most AI CRMs only analyse deals. TracktCRM's AI sales assistant answers every lead in seconds across WhatsApp, email and SMS, places follow-up calls, and hands reps a fully briefed conversation.",
-    points: ["Instant multi-channel reply", "Automated follow-up calls", "Briefed hand-off to reps"],
-    href: "/industries/ai-crm",
-  },
-  {
-    name: "Freelancer CRM",
-    body: "Solo work dies in spreadsheets. TracktCRM is the CRM for freelancers who don't have time to run a CRM - track enquiries, send quotes, and get reminded to follow up automatically.",
-    points: ["Enquiry to quote", "Automated reminders", "Invoice status tracking"],
-    href: "#industries",
-  },
-  {
     name: "Education CRM",
     body: "Admissions teams lose applicants to slow replies. TracktCRM assigns each enquiry to a counsellor, automates follow-ups and shows every applicant's admission stage live.",
     points: ["Counsellor allocation", "Admission-stage pipeline", "Fee follow-up reminders"],
     href: "/industries/education-crm",
+  },
+  {
+    name: "Agency CRM",
+    body: "Pitches, retainers and client chats scattered across inboxes. TracktCRM tracks every proposal, renewal and client conversation in one pipeline.",
+    points: ["Proposal pipeline", "Retainer renewal tracking", "Client conversation history"],
+    href: "/industries/crm-for-agencies",
+  },
+  {
+    name: "Recruitment CRM",
+    body: "Candidates in one sheet, client roles in another. TracktCRM tracks both side by side, reaches candidates on WhatsApp and reminds recruiters to follow up.",
+    points: ["Candidate pipeline", "Client pipeline", "Follow-up reminders"],
+    href: "/industries/crm-for-recruitment",
   },
 ];
 
@@ -360,7 +359,6 @@ export const FOOTER_COLS = [
     links: [
       { label: "About Us", href: "/about" },
       { label: "Contact", href: "/contact" },
-      { label: "Blog", href: "/blog" },
       { label: "Help Center", href: "/help" },
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms & Conditions", href: "/terms" },
@@ -378,15 +376,18 @@ export const FOOTER_COLS = [
   {
     title: "Features",
     links: [
+      { label: "AI CRM", href: "/industries/ai-crm" },
       { label: "WhatsApp CRM", href: "/features/whatsapp-crm" },
     ],
   },
   {
     title: "Industries",
     links: [
-      { label: "AI CRM", href: "/industries/ai-crm" },
       { label: "Real Estate CRM", href: "/industries/real-estate-crm" },
       { label: "Education CRM", href: "/industries/education-crm" },
+      { label: "Agency CRM", href: "/industries/crm-for-agencies" },
+      { label: "Recruitment CRM", href: "/industries/crm-for-recruitment" },
+      { label: "All industries", href: "/industries" },
     ],
   },
   {

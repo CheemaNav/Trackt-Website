@@ -14,8 +14,11 @@ const INITIAL = {
   message: "",
 };
 
-export default function DemoRequestModal({ open, onClose }) {
+export const DEMO_REQUESTED_KEY = "tc-demo-requested";
+
+export default function DemoRequestModal({ open, auto = false, onClose }) {
   const titleId = useId();
+  const dialogRef = useRef(null);
   const firstFieldRef = useRef(null);
   const [form, setForm] = useState(INITIAL);
   const [sent, setSent] = useState(false);
@@ -27,7 +30,11 @@ export default function DemoRequestModal({ open, onClose }) {
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const timer = window.setTimeout(() => firstFieldRef.current?.focus(), 40);
+    // Focusing an input on an unrequested popup would open the phone keyboard.
+    const timer = window.setTimeout(
+      () => (auto ? dialogRef.current : firstFieldRef.current)?.focus(),
+      40,
+    );
 
     function onKeyDown(event) {
       if (event.key === "Escape") onClose();
@@ -39,7 +46,7 @@ export default function DemoRequestModal({ open, onClose }) {
       window.clearTimeout(timer);
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [open, onClose]);
+  }, [open, auto, onClose]);
 
   useEffect(() => {
     if (!open) {
@@ -82,6 +89,9 @@ export default function DemoRequestModal({ open, onClose }) {
       }
 
       setSent(true);
+      try {
+        window.localStorage.setItem(DEMO_REQUESTED_KEY, "1");
+      } catch {}
     } catch (err) {
       setError(err.message || "Failed to send demo request. Please try again.");
     } finally {
@@ -98,6 +108,8 @@ export default function DemoRequestModal({ open, onClose }) {
       }}
     >
       <div
+        ref={dialogRef}
+        tabIndex={-1}
         className={`demo-modal${sent ? " is-sent" : ""}`}
         role="dialog"
         aria-modal="true"
@@ -239,9 +251,6 @@ export default function DemoRequestModal({ open, onClose }) {
                 {submitting ? "Sending…" : "Request demo"}
               </button>
               {error ? <p className="contact-form-error">{error}</p> : null}
-              <p className="form-note">
-                We usually reply within one business day.
-              </p>
             </form>
           </>
         )}

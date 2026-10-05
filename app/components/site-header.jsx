@@ -7,13 +7,16 @@ import { CloseIcon, FieldDropdownIcon, MenuIcon } from "../icons";
 import { APP_LOGIN_URL, APP_REGISTER_URL } from "../site";
 
 const INDUSTRY_LINKS = [
-  { label: "AI CRM", href: "/industries/ai-crm" },
   { label: "Real Estate CRM", href: "/industries/real-estate-crm" },
   { label: "Education CRM", href: "/industries/education-crm" },
+  { label: "Agency CRM", href: "/industries/crm-for-agencies" },
+  { label: "Recruitment CRM", href: "/industries/crm-for-recruitment" },
+  { label: "All industries", href: "/industries", isHub: true },
 ];
 
 const FEATURE_LINKS = [
   { label: "CRM Software", href: "/crm-software" },
+  { label: "AI CRM", href: "/industries/ai-crm" },
   { label: "WhatsApp CRM", href: "/features/whatsapp-crm" },
 ];
 
@@ -161,6 +164,7 @@ export default function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   role="menuitem"
+                  className={item.isHub ? "nav-dropdown-hub" : undefined}
                   onClick={closeMenu}
                 >
                   {item.label}

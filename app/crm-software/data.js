@@ -186,6 +186,14 @@ export const AUDIENCES = [
   {
     title: "Agencies, consultants and freelancers",
     body: "Proposals, retainers and client conversations in one place.",
+    href: "/industries/crm-for-agencies",
+    linkLabel: "See CRM for agencies",
+  },
+  {
+    title: "Recruiters",
+    body: "Track candidates and client roles in one pipeline, with reminders to follow up.",
+    href: "/industries/crm-for-recruitment",
+    linkLabel: "See CRM for recruitment",
   },
   {
     title: "Education",

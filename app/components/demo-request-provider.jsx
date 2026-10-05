@@ -4,18 +4,58 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from "react";
-import DemoRequestModal from "./demo-request-modal";
+import { usePathname } from "next/navigation";
+import DemoRequestModal, { DEMO_REQUESTED_KEY } from "./demo-request-modal";
 
 const DemoRequestContext = createContext(null);
 
-export function DemoRequestProvider({ children }) {
-  const [open, setOpen] = useState(false);
+const AUTO_OPEN_DELAY_MS = 3500;
+const AUTO_OPEN_SHOWN_KEY = "tc-demo-popup-shown";
+const AUTO_OPEN_EXCLUDED_PATHS = ["/contact"];
 
-  const openDemo = useCallback(() => setOpen(true), []);
+function readStorage(storage, key) {
+  try {
+    return window[storage].getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function markAutoOpenShown() {
+  try {
+    window.sessionStorage.setItem(AUTO_OPEN_SHOWN_KEY, "1");
+  } catch {}
+}
+
+export function DemoRequestProvider({ children }) {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  const [auto, setAuto] = useState(false);
+
+  const openDemo = useCallback(() => {
+    markAutoOpenShown();
+    setAuto(false);
+    setOpen(true);
+  }, []);
   const closeDemo = useCallback(() => setOpen(false), []);
+
+  useEffect(() => {
+    if (open || AUTO_OPEN_EXCLUDED_PATHS.includes(pathname)) return undefined;
+    if (readStorage("sessionStorage", AUTO_OPEN_SHOWN_KEY)) return undefined;
+    if (readStorage("localStorage", DEMO_REQUESTED_KEY)) return undefined;
+
+    const timer = window.setTimeout(() => {
+      markAutoOpenShown();
+      setAuto(true);
+      setOpen(true);
+    }, AUTO_OPEN_DELAY_MS);
+
+    return () => window.clearTimeout(timer);
+  }, [pathname, open]);
 
   const value = useMemo(
     () => ({ open, openDemo, closeDemo }),
@@ -25,7 +65,7 @@ export function DemoRequestProvider({ children }) {
   return (
     <DemoRequestContext.Provider value={value}>
       {children}
-      <DemoRequestModal open={open} onClose={closeDemo} />
+      <DemoRequestModal open={open} auto={auto} onClose={closeDemo} />
     </DemoRequestContext.Provider>
   );
 }

@@ -7,6 +7,7 @@ const SOCIAL_HREFS = {
   facebook: SOCIAL_PROFILES.facebook,
   instagram: SOCIAL_PROFILES.instagram,
   linkedin: SOCIAL_PROFILES.linkedin,
+  google: SOCIAL_PROFILES.google,
 };
 
 export default function SiteFooter() {

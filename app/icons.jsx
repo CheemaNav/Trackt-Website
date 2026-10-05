@@ -1,27 +1,38 @@
 import {
   FaApple,
   FaFacebookF,
+  FaGoogle,
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa6";
 import {
   LuArrowRight,
   LuBoxes,
+  LuBriefcase,
+  LuBuilding2,
   LuCalendarCheck,
+  LuChartColumn,
   LuCheck,
   LuChevronDown,
   LuClock,
+  LuFileText,
+  LuGraduationCap,
   LuGripVertical,
   LuInbox,
   LuLayers,
   LuMail,
+  LuMegaphone,
   LuMenu,
   LuMessageCircle,
   LuMessageSquare,
   LuPhone,
   LuPlus,
+  LuRefreshCw,
+  LuSmartphone,
   LuSparkles,
   LuType,
+  LuUserCheck,
+  LuUserSearch,
   LuUsers,
   LuX,
 } from "react-icons/lu";
@@ -82,6 +93,7 @@ export const SOCIALS = [
   { id: "facebook", label: "Facebook", Icon: FaFacebookF },
   { id: "instagram", label: "Instagram", Icon: FaInstagram },
   { id: "linkedin", label: "LinkedIn", Icon: FaLinkedinIn },
+  { id: "google", label: "Google Business Profile", Icon: FaGoogle },
 ];
 
 export function AppleIcon({ size = 20 }) {
@@ -185,6 +197,54 @@ export function ProjectPipelineIcon({ size = 22 }) {
 
 export function AiLeadIcon({ size = 22 }) {
   return <LuSparkles size={size} strokeWidth={2} />;
+}
+
+export function ProposalIcon({ size = 22 }) {
+  return <LuFileText size={size} strokeWidth={2} />;
+}
+
+export function RenewalIcon({ size = 22 }) {
+  return <LuRefreshCw size={size} strokeWidth={2} />;
+}
+
+export function ConversationIcon({ size = 22 }) {
+  return <LuMessageSquare size={size} strokeWidth={2} />;
+}
+
+export function ReminderIcon({ size = 22 }) {
+  return <LuClock size={size} strokeWidth={2} />;
+}
+
+export function ReportIcon({ size = 22 }) {
+  return <LuChartColumn size={size} strokeWidth={2} />;
+}
+
+export function ClientIcon({ size = 22 }) {
+  return <LuBriefcase size={size} strokeWidth={2} />;
+}
+
+export function OwnerIcon({ size = 22 }) {
+  return <LuUserCheck size={size} strokeWidth={2} />;
+}
+
+export function RealEstateIcon({ size = 22 }) {
+  return <LuBuilding2 size={size} strokeWidth={2} />;
+}
+
+export function EducationIcon({ size = 22 }) {
+  return <LuGraduationCap size={size} strokeWidth={2} />;
+}
+
+export function AgencyIcon({ size = 22 }) {
+  return <LuMegaphone size={size} strokeWidth={2} />;
+}
+
+export function RecruitmentIcon({ size = 22 }) {
+  return <LuUserSearch size={size} strokeWidth={2} />;
+}
+
+export function MobileIcon({ size = 22 }) {
+  return <LuSmartphone size={size} strokeWidth={2} />;
 }
 
 export function GoogleBadge() {

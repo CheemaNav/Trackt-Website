@@ -10,9 +10,10 @@ export const APP_LOGIN_URL = `${APP_BASE_URL}/login`;
 export const APP_REGISTER_URL = `${APP_BASE_URL}/register`;
 
 export const SOCIAL_PROFILES = {
-  linkedin: "https://www.linkedin.com/company/tracktcrm",
-  facebook: "https://www.facebook.com/tracktcrm",
+  linkedin: "https://www.linkedin.com/in/trakt-undefined-74740b439/",
+  facebook: "https://www.facebook.com/profile.php?id=61594335255912",
   instagram: "https://www.instagram.com/tracktcrm",
+  google: "https://share.google/hBbCBq0J68WNCWACF",
 };
 
 export const CONTACT = {

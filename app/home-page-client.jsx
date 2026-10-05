@@ -36,7 +36,8 @@ import {
   TIMELINE,
 } from "./home-data";
 
-const logos = [...LOGO_ROW, ...LOGO_ROW];
+// The track scrolls by -50%, so each half must be wider than the widest screen.
+const logos = [...LOGO_ROW, ...LOGO_ROW, ...LOGO_ROW, ...LOGO_ROW];
 
 export default function HomePageClient() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -142,7 +143,16 @@ export default function HomePageClient() {
         <p className="marquee-kicker">TRUSTED BY 500+ SALES TEAMS</p>
         <div className="marquee">
           {logos.map((logo, index) => (
-            <span key={`${logo}-${index}`}>{logo}</span>
+            <span className="marquee-logo" key={`${logo.name}-${index}`}>
+              <img
+                src={logo.src}
+                alt={index < LOGO_ROW.length ? logo.name : ""}
+                aria-hidden={index < LOGO_ROW.length ? undefined : true}
+                width={logo.width}
+                height={logo.height}
+                decoding="async"
+              />
+            </span>
           ))}
         </div>
       </section>
@@ -440,10 +450,14 @@ export default function HomePageClient() {
 
       <section className="section industries reveal" id="industries">
         <p className="kicker">INDUSTRY CRM SOLUTIONS</p>
-        <h2 className="h2">A CRM built around how your industry sells</h2>
+        <h2 className="h2">
+          <Link className="industries-head-link" href="/industries">
+            A CRM built around how your industry sells
+          </Link>
+        </h2>
         <p>
           Ready-made pipelines, fields and follow-up rules for real estate,
-          freelancers, agencies and education - live from day one.
+          education, agencies and recruitment - live from day one.
         </p>
         <div className="industry-grid stagger">
           {INDUSTRIES.map((industry) => (
@@ -455,13 +469,19 @@ export default function HomePageClient() {
                   <li key={point}>- {point}</li>
                 ))}
               </ul>
-              {industry.href.startsWith("/") ? (
-                <Link className="industry-link" href={industry.href}>
-                  Learn more <ArrowIcon size={13} />
-                </Link>
-              ) : null}
+              <Link className="industry-link" href={industry.href}>
+                Learn more <ArrowIcon size={13} />
+              </Link>
             </div>
           ))}
+        </div>
+        <div className="industries-view-all">
+          <Link className="btn btn-outline" href="/industries">
+            View all industries
+            <span className="btn-arrow" aria-hidden="true">
+              <ArrowIcon />
+            </span>
+          </Link>
         </div>
       </section>
 

@@ -10,6 +10,7 @@ import {
   SiteVisitIcon,
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
+import RelatedIndustries from "../../components/related-industries";
 import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
 import { BreadcrumbJsonLd, RealEstateJsonLd } from "../../json-ld";
 import {
@@ -86,7 +87,7 @@ export default function RealEstateCrmPage() {
       <BreadcrumbJsonLd
         items={[
           { name: "Home", href: "/" },
-          { name: "Industries", href: "/#industries" },
+          { name: "Industries", href: "/industries" },
           { name: "Real Estate CRM", href: "/industries/real-estate-crm" },
         ]}
       />
@@ -387,6 +388,8 @@ export default function RealEstateCrmPage() {
           ))}
         </div>
       </section>
+
+      <RelatedIndustries current="real-estate" />
 
       <section className="section faq reveal" id="faq">
         <p className="kicker is-centered">FAQ</p>

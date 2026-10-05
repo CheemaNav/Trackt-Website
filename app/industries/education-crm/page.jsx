@@ -9,6 +9,7 @@ import {
   ProjectPipelineIcon,
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
+import RelatedIndustries from "../../components/related-industries";
 import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
 import { BreadcrumbJsonLd, EducationCrmJsonLd } from "../../json-ld";
 import {
@@ -86,53 +87,62 @@ export default function EducationCrmPage() {
       <BreadcrumbJsonLd
         items={[
           { name: "Home", href: "/" },
-          { name: "Industries", href: "/#industries" },
+          { name: "Industries", href: "/industries" },
           { name: "Education CRM", href: "/industries/education-crm" },
         ]}
       />
       <RevealInit />
 
       <main>
-        <section className="edu-hero reveal" id="top">
-          <div className="edu-hero-inner">
-            <h1>
-              The CRM Built for How Admissions Teams{" "}
-              <span className="edu-hero-mark">Actually Work</span>
-            </h1>
-            <p className="edu-hero-sub">
-              Enquiries arrive from ad campaigns, portals, walk-ins and
-              WhatsApp — often all at once during admission season. TracktCRM
-              is an education CRM that captures every enquiry, assigns it to a
-              counsellor, and tracks each applicant from first contact to
-              enrolment.
-            </p>
-            <div className="edu-hero-ctas">
-              <a className="btn btn-primary edu-hero-cta" href="/contact">
-                Book a Demo
-                <span className="btn-arrow" aria-hidden="true">
-                  <ArrowIcon />
-                </span>
-              </a>
-              <a
-                className="btn btn-outline edu-hero-cta-ghost"
-                href={APP_REGISTER_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Start Free Trial
-              </a>
+        <section className="re-banner reveal" id="top">
+          <div className="re-banner-inner">
+            <div className="re-banner-copy">
+              <div className="badge re-banner-badge">
+                <span className="pulse" aria-hidden="true" />
+                EDUCATION CRM
+              </div>
+              <h1 className="re-banner-title">
+                The CRM Built for How Admissions Teams
+                <span>Actually Work</span>
+              </h1>
+              <p className="re-banner-sub">
+                Enquiries arrive from ad campaigns, portals, walk-ins and
+                WhatsApp — often all at once during admission season. TracktCRM
+                is an education CRM that captures every enquiry, assigns it to a
+                counsellor, and tracks each applicant from first contact to
+                enrolment.
+              </p>
+              <div className="re-banner-ctas">
+                <a className="btn btn-primary" href="/contact">
+                  Book a Demo
+                  <span className="btn-arrow" aria-hidden="true">
+                    <ArrowIcon />
+                  </span>
+                </a>
+                <a
+                  className="btn btn-outline"
+                  href={APP_REGISTER_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Start Free Trial
+                </a>
+              </div>
+              <p className="re-banner-trust">
+                No credit card required · Free 1 month trial · No setup fee
+              </p>
             </div>
+            <figure className="re-banner-media edu-banner-media">
+              <img
+                src="/assets/education/education-crm-hero.webp"
+                alt="TracktCRM education CRM dashboard on a laptop and phone showing enquiries, applications and enrolled students"
+                width={1774}
+                height={887}
+                fetchPriority="high"
+                decoding="async"
+              />
+            </figure>
           </div>
-          <figure className="edu-hero-blob">
-            <img
-              src="/assets/leadmanage.png"
-              alt="TracktCRM admissions pipeline showing student enquiries by stage"
-              width={1600}
-              height={900}
-              fetchPriority="high"
-              decoding="async"
-            />
-          </figure>
         </section>
 
         <section className="edu-why reveal" id="problem">
@@ -312,6 +322,8 @@ export default function EducationCrmPage() {
             ))}
           </div>
         </section>
+
+        <RelatedIndustries current="education" />
 
         <section className="edu-faq reveal" id="faq">
           <p className="kicker is-centered">FAQ</p>

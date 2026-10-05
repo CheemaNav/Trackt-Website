@@ -10,7 +10,11 @@ export default function WhatsAppFloat() {
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
     >
-      <FaWhatsapp size={28} aria-hidden="true" />
+      <span className="whatsapp-ring" aria-hidden="true" />
+      <span className="whatsapp-ring whatsapp-ring-delay" aria-hidden="true" />
+      <span className="whatsapp-btn">
+        <FaWhatsapp size={30} aria-hidden="true" />
+      </span>
     </a>
   );
 }

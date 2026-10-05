@@ -231,6 +231,111 @@ export function EducationCrmJsonLd({ faqs }) {
   );
 }
 
+/** Agency CRM page FAQ + Service schema. */
+export function AgencyCrmJsonLd({ faqs }) {
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Agency CRM Software",
+    provider: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    areaServed: "Worldwide",
+    description:
+      "TracktCRM is an agency CRM that tracks proposals, retainer renewals and client conversations in one pipeline.",
+    url: `${SITE_URL}/industries/crm-for-agencies`,
+  };
+
+  return (
+    <>
+      <SchemaScript id="schema-agency-faq" data={faqPage} />
+      <SchemaScript id="schema-agency-service" data={service} />
+    </>
+  );
+}
+
+/** Recruitment CRM page FAQ + Service schema. */
+export function RecruitmentCrmJsonLd({ faqs }) {
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Recruitment CRM Software",
+    provider: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    areaServed: "Worldwide",
+    description:
+      "TracktCRM is a recruitment CRM that tracks candidates and client roles in one pipeline, reaches candidates on WhatsApp and reminds recruiters to follow up.",
+    url: `${SITE_URL}/industries/crm-for-recruitment`,
+  };
+
+  return (
+    <>
+      <SchemaScript id="schema-recruitment-faq" data={faqPage} />
+      <SchemaScript id="schema-recruitment-service" data={service} />
+    </>
+  );
+}
+
+/** Industries hub: CollectionPage with an ItemList of live industry pages, plus FAQ. */
+export function IndustriesHubJsonLd({ industries, faqs }) {
+  const collection = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "CRM by Industry",
+    description:
+      "Find the TracktCRM built for your industry: real estate, education, agencies and recruitment.",
+    url: `${SITE_URL}/industries`,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: industries.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        description: item.body,
+        url: `${SITE_URL}${item.href}`,
+      })),
+    },
+  };
+
+  return (
+    <>
+      <SchemaScript id="schema-industries-collection" data={collection} />
+      <FaqJsonLd id="schema-industries-faq" faqs={faqs} />
+    </>
+  );
+}
+
 /** WhatsApp CRM page FAQ + Service schema. */
 export function WhatsAppCrmJsonLd({ faqs }) {
   const faqPage = {

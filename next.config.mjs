@@ -49,6 +49,46 @@ const nextConfig = {
         destination: "/industries/education-crm",
         permanent: true,
       },
+      {
+        source: "/crm-for-agencies",
+        destination: "/industries/crm-for-agencies",
+        permanent: true,
+      },
+      {
+        source: "/crm-for-agencies/",
+        destination: "/industries/crm-for-agencies",
+        permanent: true,
+      },
+      {
+        source: "/agency-crm",
+        destination: "/industries/crm-for-agencies",
+        permanent: true,
+      },
+      {
+        source: "/agency-crm/",
+        destination: "/industries/crm-for-agencies",
+        permanent: true,
+      },
+      {
+        source: "/crm-for-recruitment",
+        destination: "/industries/crm-for-recruitment",
+        permanent: true,
+      },
+      {
+        source: "/crm-for-recruitment/",
+        destination: "/industries/crm-for-recruitment",
+        permanent: true,
+      },
+      {
+        source: "/recruitment-crm",
+        destination: "/industries/crm-for-recruitment",
+        permanent: true,
+      },
+      {
+        source: "/recruitment-crm/",
+        destination: "/industries/crm-for-recruitment",
+        permanent: true,
+      },
       // Short aliases that would otherwise 404
       {
         source: "/whatsapp",

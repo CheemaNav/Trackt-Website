@@ -19,6 +19,9 @@ const QUICK_LINKS = [
   { label: "AI CRM", href: "/industries/ai-crm" },
   { label: "Real Estate CRM", href: "/industries/real-estate-crm" },
   { label: "Education CRM", href: "/industries/education-crm" },
+  { label: "Agency CRM", href: "/industries/crm-for-agencies" },
+  { label: "Recruitment CRM", href: "/industries/crm-for-recruitment" },
+  { label: "All industries", href: "/industries" },
   { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
 ];

@@ -340,7 +340,16 @@ export default function CrmSoftwarePage() {
         <section className="section reveal" id="who">
           <div className="re-section-head is-wide">
             <p className="kicker">WHO IT&apos;S FOR</p>
-            <h2 className="h2">CRM software for every kind of sales team</h2>
+            <h2 className="h2">
+              <a className="industries-head-link" href="/industries">
+                CRM software for every kind of sales team
+              </a>
+            </h2>
+            <p className="re-section-intro">
+              Dedicated setups for real estate, education, agencies and
+              recruitment. <a href="/industries">See every industry TracktCRM
+              supports</a>.
+            </p>
           </div>
           <div className="cs-audience-grid">
             {AUDIENCES.map((item) => (

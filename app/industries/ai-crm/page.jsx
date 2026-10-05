@@ -87,7 +87,7 @@ export default function AiCrmPage() {
       <BreadcrumbJsonLd
         items={[
           { name: "Home", href: "/" },
-          { name: "Industries", href: "/#industries" },
+          { name: "Industries", href: "/industries" },
           { name: "AI Sales Assistant", href: "/industries/ai-crm" },
         ]}
       />
