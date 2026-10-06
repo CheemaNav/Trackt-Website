@@ -192,7 +192,7 @@ export default function AutomotiveCrmPage() {
                 src="/assets/automotive/automotive-crm-follow-up.webp"
                 alt="TracktCRM lead list with WhatsApp, call and email follow-up reminders and the next follow-up scheduled"
                 width={1049}
-                height={1024}
+                height={720}
                 loading="lazy"
                 decoding="async"
               />
