@@ -104,7 +104,7 @@ export default function AgencyCrmPage() {
                 AGENCY CRM
               </div>
               <h1 className="re-banner-title">
-                The CRM for Agencies Juggling
+                The CRM for Agencies Juggling{" "}
                 <span>Pitches, Retainers and Client Chats</span>
               </h1>
               <p className="re-banner-sub">
@@ -130,7 +130,7 @@ export default function AgencyCrmPage() {
                 </a>
               </div>
               <p className="re-banner-trust">
-                Built for agencies of two people or twenty · 30-day free trial
+                Built for agencies of two people or twenty · Free 1 month trial
               </p>
             </div>
             <figure className="re-banner-media agency-banner-media">
@@ -392,7 +392,7 @@ export default function AgencyCrmPage() {
           <h2 className="h2 is-centered">Frequently asked questions</h2>
           <div className="faq-list re-faq-list">
             {AGENCY_FAQS.map((item, index) => (
-              <details className="faq-item" key={item.q} defaultOpen={index === 0}>
+              <details className="faq-item" key={item.q} open={index === 0}>
                 <summary>
                   {item.q}
                   <span className="faq-toggle" aria-hidden="true" />
@@ -408,7 +408,7 @@ export default function AgencyCrmPage() {
             <div>
               <h2>See TracktCRM on your own agency pipeline</h2>
               <p>
-                Start a free 30-day trial, or book a demo and we will walk
+                Start a free 1 month trial, or book a demo and we will walk
                 through your pitches and retainers inside TracktCRM.
               </p>
             </div>

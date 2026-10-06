@@ -11,7 +11,9 @@ const INDUSTRY_LINKS = [
   { label: "Education CRM", href: "/industries/education-crm" },
   { label: "Agency CRM", href: "/industries/crm-for-agencies" },
   { label: "Recruitment CRM", href: "/industries/crm-for-recruitment" },
-  { label: "All industries", href: "/industries", isHub: true },
+  { label: "Insurance CRM", href: "/industries/crm-for-insurance" },
+  { label: "Automotive CRM", href: "/industries/crm-for-automotive" },
+  { label: "Healthcare CRM", href: "/industries/crm-for-healthcare" },
 ];
 
 const FEATURE_LINKS = [
@@ -59,6 +61,13 @@ export default function SiteHeader() {
     setOpenDropdown((current) => (current === id ? null : id));
     if (id === "industries") prefetchLinks(INDUSTRY_LINKS);
     if (id === "features") prefetchLinks(FEATURE_LINKS);
+  }
+
+  function toggleDropdownCaret(id) {
+    const isMobile = window.matchMedia("(max-width: 980px)").matches;
+    clearTimeout(dropdownCloseTimer.current);
+    setOpenDropdown((current) => (current === id && isMobile ? null : id));
+    if (id === "industries") prefetchLinks(INDUSTRY_LINKS);
   }
 
   useEffect(() => {
@@ -142,17 +151,26 @@ export default function SiteHeader() {
             onMouseEnter={() => openDropdownDesktop("industries")}
             onMouseLeave={scheduleCloseDropdownDesktop}
           >
-            <button
-              type="button"
-              className="nav-dropdown-trigger"
-              aria-expanded={industriesOpen}
-              aria-haspopup="true"
-              aria-controls="industries-menu"
-              onClick={() => toggleDropdownMobile("industries")}
-            >
-              Industries
-              <FieldDropdownIcon size={14} />
-            </button>
+            <div className="nav-dropdown-head">
+              <Link
+                href="/industries"
+                className="nav-dropdown-trigger nav-dropdown-label"
+                onClick={closeMenu}
+              >
+                Industries
+              </Link>
+              <button
+                type="button"
+                className="nav-dropdown-trigger nav-dropdown-caret"
+                aria-label="Show industry pages"
+                aria-expanded={industriesOpen}
+                aria-haspopup="true"
+                aria-controls="industries-menu"
+                onClick={() => toggleDropdownCaret("industries")}
+              >
+                <FieldDropdownIcon size={14} />
+              </button>
+            </div>
             <div
               className="nav-dropdown-menu"
               id="industries-menu"
@@ -164,7 +182,6 @@ export default function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   role="menuitem"
-                  className={item.isHub ? "nav-dropdown-hub" : undefined}
                   onClick={closeMenu}
                 >
                   {item.label}

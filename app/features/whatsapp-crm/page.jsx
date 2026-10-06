@@ -104,7 +104,7 @@ export default function WhatsAppCrmPage() {
                 WHATSAPP CRM
               </div>
               <h1 className="h1">
-                The CRM Built Around WhatsApp —
+                The CRM Built Around WhatsApp —{" "}
                 <span className="wa-hero-accent">Not Bolted Onto It</span>
               </h1>
               <p className="lead">

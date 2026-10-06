@@ -1,11 +1,11 @@
 import {
+  AiLeadIcon,
   ArrowIcon,
   BrandMark,
-  BrokerIcon,
+  CaptureIcon,
   CheckIcon,
-  ClientIcon,
-  ConversationIcon,
   OwnerIcon,
+  ProjectPipelineIcon,
   ReminderIcon,
   ReportIcon,
   SiteVisitIcon,
@@ -13,27 +13,26 @@ import {
 import RevealInit from "../../components/reveal-init";
 import RelatedIndustries from "../../components/related-industries";
 import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
-import { BreadcrumbJsonLd, RecruitmentCrmJsonLd } from "../../json-ld";
+import { BreadcrumbJsonLd, HealthcareCrmJsonLd } from "../../json-ld";
 import {
-  ATS_COMPARE_ROWS,
   CHOOSING_POINTS,
+  EHR_COMPARE_ROWS,
   FEATURES,
+  HEALTHCARE_FAQS,
   INTEGRATIONS,
-  PIPELINE_POINTS,
   PROBLEM_POINTS,
   PROCESS_STEPS,
-  RECRUITMENT_FAQS,
   TESTIMONIALS,
   WHAT_IS_POINTS,
 } from "./data";
 
 const FEATURE_ICONS = {
-  candidates: BrokerIcon,
-  clients: ClientIcon,
-  channels: ConversationIcon,
+  capture: CaptureIcon,
+  ai: AiLeadIcon,
+  pipeline: ProjectPipelineIcon,
+  appointment: SiteVisitIcon,
   reminders: ReminderIcon,
   ownership: OwnerIcon,
-  calendar: SiteVisitIcon,
   reporting: ReportIcon,
 };
 
@@ -41,27 +40,27 @@ const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
 
 export const metadata = {
   title: {
-    absolute: "Recruitment CRM Software for Recruiters | TracktCRM",
+    absolute: "Healthcare CRM Software for Clinics & Hospitals | TracktCRM",
   },
   description:
-    "TracktCRM is a recruitment CRM that tracks candidates and client roles in one pipeline, reaches candidates on WhatsApp and reminds recruiters to follow up.",
+    "TracktCRM is a healthcare CRM that captures patient enquiries, books appointments and follows up, with WhatsApp and AI replies. Free 1 month trial.",
   alternates: {
-    canonical: "/industries/crm-for-recruitment",
+    canonical: "/industries/crm-for-healthcare",
   },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: `${SITE_URL}/industries/crm-for-recruitment`,
+    url: `${SITE_URL}/industries/crm-for-healthcare`,
     siteName: SITE_NAME,
-    title: "TracktCRM — The CRM for Recruiters Working Candidates and Clients",
+    title: "TracktCRM — The CRM for Clinics and Healthcare Teams",
     description:
-      "Track candidates and client roles in one pipeline, and never let a conversation go quiet.",
+      "Answer every patient enquiry, book appointments and follow up in one place.",
     images: [
       {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "TracktCRM recruitment CRM for candidates and client roles",
+        alt: "TracktCRM healthcare CRM for clinics and hospitals",
       },
     ],
   },
@@ -78,43 +77,44 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TracktCRM — The CRM for Recruiters Working Candidates and Clients",
+    title: "TracktCRM — The CRM for Clinics and Healthcare Teams",
     description:
-      "Track candidates and client roles in one pipeline, and never let a conversation go quiet.",
+      "Answer every patient enquiry, book appointments and follow up in one place.",
     images: [ogImage],
   },
 };
 
-export default function RecruitmentCrmPage() {
+export default function HealthcareCrmPage() {
   return (
-    <div className="home recruitment-page">
-      <RecruitmentCrmJsonLd faqs={RECRUITMENT_FAQS} />
+    <div className="home healthcare-page">
+      <HealthcareCrmJsonLd faqs={HEALTHCARE_FAQS} />
       <BreadcrumbJsonLd
         items={[
           { name: "Home", href: "/" },
           { name: "Industries", href: "/industries" },
-          { name: "Recruitment CRM", href: "/industries/crm-for-recruitment" },
+          { name: "Healthcare CRM", href: "/industries/crm-for-healthcare" },
         ]}
       />
       <RevealInit />
 
       <main>
-        <section className="re-banner card-banner reveal" id="top">
+        <section className="re-banner reveal" id="top">
           <div className="re-banner-inner">
             <div className="re-banner-copy">
               <div className="badge re-banner-badge">
                 <span className="pulse" aria-hidden="true" />
-                RECRUITMENT CRM
+                HEALTHCARE CRM
               </div>
               <h1 className="re-banner-title">
-                The CRM for Recruiters Working{" "}
-                <span>Candidates and Clients at Once</span>
+                The CRM for Healthcare Teams{" "}
+                <span>Who Want Every Patient Enquiry Answered</span>
               </h1>
               <p className="re-banner-sub">
-                Candidates in one spreadsheet, client roles in another, and half
-                the conversations on WhatsApp. TracktCRM is a recruitment CRM
-                that keeps every candidate, every client and every conversation
-                in one pipeline, with reminders so nobody goes quiet.
+                Patients enquire on WhatsApp, by phone and through your website,
+                often while the front desk is already busy. TracktCRM is a
+                healthcare CRM that captures every enquiry, replies in seconds
+                and keeps each patient moving from first message to appointment
+                to follow-up.
               </p>
               <div className="re-banner-ctas">
                 <a
@@ -133,15 +133,16 @@ export default function RecruitmentCrmPage() {
                 </a>
               </div>
               <p className="re-banner-trust">
-                Built for solo recruiters, in-house teams and agencies · Free 1 month trial
+                Built for clinics, diagnostic centres and care teams · Free 1
+                month trial
               </p>
             </div>
-            <figure className="re-banner-media card-banner-media">
+            <figure className="re-banner-media">
               <img
-                src="/assets/recruitment/recruitment-crm-hero.webp"
-                alt="Recruiter working with the TracktCRM AI assistant, with candidate profiles, interviews and messages in one dashboard"
-                width={1280}
-                height={721}
+                src="/assets/contact-banner.png"
+                alt="Front-desk and patient-relations team working together in a bright modern office"
+                width={1024}
+                height={576}
                 fetchPriority="high"
                 decoding="async"
               />
@@ -152,20 +153,20 @@ export default function RecruitmentCrmPage() {
         <section className="section re-band reveal" id="problem">
           <div className="re-split">
             <div className="re-split-copy">
-              <p className="kicker">THE RECRUITER&apos;S PROBLEM</p>
+              <p className="kicker">THE FRONT-DESK PROBLEM</p>
               <h2 className="h2">
-                Recruiting runs on conversations, and conversations get lost
+                A patient who waits for a reply often books somewhere else
               </h2>
               <p className="re-section-intro">
-                Recruiters juggle two relationships at once: the candidates they
-                place and the clients they place them with. Without one shared
-                system, the usual results are:
+                People choose a provider quickly and compare several. When
+                enquiries are tracked in registers, phone diaries and chat
+                threads, the usual results are:
               </p>
             </div>
             <figure className="re-photo re-photo-contain">
               <img
                 src="/assets/leadmanage.png"
-                alt="TracktCRM pipeline board keeping candidates and clients in one view"
+                alt="TracktCRM pipeline board keeping every patient enquiry in one view"
                 width={1383}
                 height={695}
                 loading="lazy"
@@ -190,7 +191,7 @@ export default function RecruitmentCrmPage() {
             <figure className="re-photo re-photo-contain">
               <img
                 src="/assets/AI-CRM-actually.jpg"
-                alt="Recruitment CRM record with the full history of calls, messages and notes"
+                alt="Healthcare CRM patient record with the full history of calls, messages and notes"
                 width={1645}
                 height={802}
                 loading="lazy"
@@ -198,20 +199,21 @@ export default function RecruitmentCrmPage() {
               />
             </figure>
             <div className="re-split-copy">
-              <p className="kicker">RECRUITMENT CRM SOFTWARE</p>
-              <h2 className="h2">What does a recruitment CRM actually do?</h2>
+              <p className="kicker">HEALTHCARE CRM SOFTWARE</p>
+              <h2 className="h2">What does a healthcare CRM actually do?</h2>
               <p className="re-section-intro">
-                A recruitment CRM is CRM software built around the relationships
-                recruiting depends on. Unlike a one-time sales pipeline, a CRM
-                for recruitment has to handle people you engage over months, and
-                companies you serve repeatedly.
+                A healthcare CRM is CRM software built around the relationship
+                between a provider and the people it serves: the enquiry, the
+                appointment, the visit and the follow-up. It is not a clinical
+                system.
               </p>
               <p className="re-section-intro">
-                TracktCRM is built around these relationships rather than
-                adapted from a one-time-sale pipeline. Whether you run a
-                recruitment agency, an in-house talent team or a solo desk, the
-                job is the same: candidate relationship management, with a
-                talent pipeline you can actually see. See the full{" "}
+                TracktCRM is built around this cycle rather than adapted from a
+                one-time-sale pipeline. Whether you need a clinic CRM for one
+                practice, a CRM for hospitals with several departments, or
+                patient relationship management for a diagnostic chain, the
+                need is the same: patient enquiry management that does not
+                depend on a front-desk register. See the full{" "}
                 <a href="/crm-software">CRM software</a> overview.
               </p>
             </div>
@@ -226,18 +228,17 @@ export default function RecruitmentCrmPage() {
           </div>
         </section>
 
-        <section className="section re-band reveal" id="crm-vs-ats">
+        <section className="section re-band reveal" id="crm-vs-ehr">
           <div className="re-section-head is-wide">
-            <p className="kicker">CRM VS ATS</p>
+            <p className="kicker">CRM VS EHR</p>
             <h2 className="h2">
-              Recruitment CRM vs applicant tracking system: what is the
+              Healthcare CRM vs electronic health record: what is the
               difference?
             </h2>
             <p className="re-section-intro industry-wide-intro">
-              The two are often confused. An applicant tracking system handles
-              applications to specific job openings. A recruitment CRM handles
-              the relationships: the candidates you are building over time, and
-              the clients you recruit for.
+              The two are often confused. An electronic health record holds
+              clinical information. A healthcare CRM manages communication and
+              follow-up around it. Most providers use both.
             </p>
           </div>
           <div className="compare-table-wrap cs-compare-wrap industry-compare-wrap">
@@ -245,15 +246,15 @@ export default function RecruitmentCrmPage() {
               <thead>
                 <tr>
                   <th aria-label="Comparison" />
-                  <th>Applicant tracking system</th>
-                  <th>Recruitment CRM</th>
+                  <th>Electronic health record (EHR)</th>
+                  <th>Healthcare CRM</th>
                 </tr>
               </thead>
               <tbody>
-                {ATS_COMPARE_ROWS.map((row) => (
+                {EHR_COMPARE_ROWS.map((row) => (
                   <tr key={row.label}>
                     <th scope="row">{row.label}</th>
-                    <td>{row.ats}</td>
+                    <td>{row.ehr}</td>
                     <td>{row.crm}</td>
                   </tr>
                 ))}
@@ -265,7 +266,7 @@ export default function RecruitmentCrmPage() {
         <section className="section reveal" id="features">
           <div className="re-section-head is-wide">
             <p className="kicker">FEATURES</p>
-            <h2 className="h2">What recruiters get with TracktCRM</h2>
+            <h2 className="h2">What healthcare teams get with TracktCRM</h2>
           </div>
           <div className="re-feature-grid industry-feature-grid">
             {FEATURES.map((feature) => {
@@ -291,45 +292,10 @@ export default function RecruitmentCrmPage() {
           </div>
         </section>
 
-        <section className="section re-band reveal" id="two-pipelines">
-          <div className="re-split">
-            <figure className="re-photo">
-              <img
-                src="/assets/real-estate/broker-handshake.jpg"
-                alt="Recruiter and client agreeing on a placement"
-                width={1152}
-                height={864}
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <div className="re-split-copy">
-              <p className="kicker">CANDIDATES AND CLIENTS</p>
-              <h2 className="h2">
-                Work your candidates and your clients side by side
-              </h2>
-              <p className="re-section-intro">
-                Recruitment is a two-sided business, and most tools only cover
-                one side well. With TracktCRM you can run both:
-              </p>
-              <div className="re-mini-points">
-                {PIPELINE_POINTS.map((point) => (
-                  <div className="re-mini-point" key={point}>
-                    <span className="re-point-check" aria-hidden="true">
-                      <CheckIcon size={13} />
-                    </span>
-                    <p>{point}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section reveal" id="process">
+        <section className="section re-band reveal" id="process">
           <div className="re-section-head">
             <p className="kicker">HOW IT WORKS</p>
-            <h2 className="h2">How a candidate moves through TracktCRM</h2>
+            <h2 className="h2">How an enquiry moves through TracktCRM</h2>
           </div>
           <div className="re-process-grid">
             {PROCESS_STEPS.map((step) => (
@@ -337,19 +303,14 @@ export default function RecruitmentCrmPage() {
                 <b>{step.n}</b>
                 <h3>{step.title}</h3>
                 <p>{step.body}</p>
-                {step.href ? (
-                  <a className="industry-process-link" href={step.href}>
-                    {step.linkLabel}
-                  </a>
-                ) : null}
               </article>
             ))}
           </div>
         </section>
 
-        <section className="section re-band reveal" id="choosing">
+        <section className="section reveal" id="choosing">
           <p className="kicker">BUYER&apos;S GUIDE</p>
-          <h2 className="h2">What to look for in a recruitment CRM</h2>
+          <h2 className="h2">What to look for in a CRM for clinics</h2>
           <div className="re-choose-grid">
             {CHOOSING_POINTS.map((item) => (
               <article className="re-choose-card" key={item.title}>
@@ -362,7 +323,9 @@ export default function RecruitmentCrmPage() {
 
         <section className="section re-int-band reveal" id="integrations">
           <p className="kicker">INTEGRATIONS</p>
-          <h2 className="h2">Connects with the tools recruiters already use</h2>
+          <h2 className="h2">
+            Connects with the tools healthcare teams already use
+          </h2>
           <div className="re-int-list">
             {INTEGRATIONS.map((item) => (
               <article className="re-int-card" key={item.title}>
@@ -382,7 +345,7 @@ export default function RecruitmentCrmPage() {
           <figure className="re-shot re-shot-wide">
             <img
               src="/assets/leadmanage.png"
-              alt="TracktCRM candidate pipeline with sourced, contacted, screened, interviewing, offer and placed stages beside a client pipeline"
+              alt="TracktCRM clinic pipeline with enquiry, appointment booked, visited and follow-up due stages"
               width={1383}
               height={695}
               loading="lazy"
@@ -394,7 +357,7 @@ export default function RecruitmentCrmPage() {
         <section className="section reveal" id="testimonial">
           <p className="kicker is-centered">SOCIAL PROOF</p>
           <h2 className="h2 is-centered">
-            Recruiters keeping candidates and clients in TracktCRM
+            Clinics keeping every enquiry and follow-up in TracktCRM
           </h2>
           <div className="re-testimonial-grid">
             {TESTIMONIALS.map((item) => (
@@ -406,13 +369,13 @@ export default function RecruitmentCrmPage() {
           </div>
         </section>
 
-        <RelatedIndustries current="recruitment" />
+        <RelatedIndustries current="healthcare" />
 
         <section className="section faq reveal" id="faq">
           <p className="kicker is-centered">FAQ</p>
           <h2 className="h2 is-centered">Frequently asked questions</h2>
           <div className="faq-list re-faq-list">
-            {RECRUITMENT_FAQS.map((item, index) => (
+            {HEALTHCARE_FAQS.map((item, index) => (
               <details className="faq-item" key={item.q} open={index === 0}>
                 <summary>
                   {item.q}
@@ -427,10 +390,11 @@ export default function RecruitmentCrmPage() {
         <section className="cta-section reveal" id="demo">
           <div className="cta">
             <div>
-              <h2>See TracktCRM on your own candidate pipeline</h2>
+              <h2>See TracktCRM on your own enquiry pipeline</h2>
               <p>
                 Start a free 1 month trial, or book a demo and we will walk
-                through your candidates and clients inside TracktCRM.
+                through your enquiries, appointments and follow-ups inside
+                TracktCRM.
               </p>
             </div>
             <div className="cta-actions">

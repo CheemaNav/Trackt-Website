@@ -1,75 +1,81 @@
 export const PROBLEM_POINTS = [
   {
     title: "Every channel in one place",
-    body: "Enquiries from ads, your website, portals and WhatsApp all land in one place — no manual copy-paste between systems.",
+    body: "Enquiries from ads, your website, education portals and WhatsApp land in one lead management inbox. No copy-paste between systems.",
   },
   {
     title: "Every enquiry has an owner",
-    body: "Every enquiry is assigned to a counsellor automatically, so nothing sits unowned.",
+    body: "Each enquiry is assigned to a counsellor automatically, so nothing sits unowned.",
   },
   {
     title: "Follow-ups that don't depend on memory",
-    body: "Follow-up reminders mean an applicant is never lost because a counsellor got busy.",
+    body: "Follow-up reminders mean an applicant is not lost because a counsellor got busy.",
   },
   {
     title: "Fee status on the student record",
-    body: "Fee-payment status is tracked against each student, not chased manually.",
+    body: "Fee payment status is tracked against each student instead of being chased by hand.",
   },
 ];
 
 export const WHAT_IS_POINTS = [
   {
-    title: "Multi-channel capture",
-    body: "Capture enquiries from ad campaigns, portals, your website and WhatsApp automatically.",
+    title: "Admission stages",
+    body: "Enquiry, follow-up, campus visit, application, admitted and enrolled, instead of sales stages.",
   },
   {
     title: "Counsellor assignment",
-    body: "Assign each enquiry to a counsellor by course, campus or rotation.",
+    body: "Each enquiry goes to a counsellor by course, campus or rotation.",
   },
   {
-    title: "Admission-stage pipeline",
-    body: "Track admission stage — enquiry, follow-up, campus visit, application, admitted, enrolled — in one pipeline.",
-  },
-  {
-    title: "Fee tracking",
-    body: "Track fee status and send payment reminders.",
-  },
-  {
-    title: "Full communication history",
-    body: "Keep a full communication history against each applicant, visible to any counsellor who picks up the conversation.",
+    title: "Fee and document tracking",
+    body: "Fees and documents are tracked on the student record.",
   },
 ];
 
 export const FEATURES = [
   {
     icon: "capture",
-    title: "Multi-Channel Enquiry Capture",
-    body: "Enquiries from Meta and Google ad campaigns, your website, education portals and WhatsApp are captured automatically and logged with source and course interest attached.",
+    title: "Multi-channel enquiry capture",
+    body: "Enquiries from Meta and Google ads, your website, education portals and WhatsApp are captured automatically and logged with the source and course of interest attached.",
   },
   {
     icon: "assignment",
-    title: "Counsellor Assignment & Rotation",
-    body: "Route enquiries to the right counsellor automatically, by course, campus or team rotation, so ownership is clear from the first message.",
+    title: "Counsellor assignment and rotation",
+    body: "Route each enquiry to the right counsellor by course, campus or team rotation, so ownership is clear from the first message.",
   },
   {
     icon: "pipeline",
-    title: "Admission-Stage Pipeline",
-    body: "Track every applicant through enquiry, follow-up, campus visit, application, admitted and enrolled — with the whole team seeing the same stage.",
+    title: "Admission-stage pipeline",
+    body: "Track every applicant through enquiry, follow-up, campus visit, application, admitted and enrolled. The whole team sees the same stage.",
+  },
+  {
+    icon: "reminders",
+    title: "Follow-up reminders and WhatsApp automation",
+    body: "Reminders keep counsellors on top of follow-ups, and WhatsApp messages go out automatically at the right stage.",
+    href: "/features/whatsapp-crm",
+    linkLabel: "See WhatsApp CRM",
+  },
+  {
+    icon: "ai",
+    title: "Instant AI reply to new enquiries",
+    body: "New enquiries get a reply within seconds, including at night and on weekends, before a counsellor is free.",
+    href: "/industries/ai-crm",
+    linkLabel: "See how the AI CRM works",
   },
   {
     icon: "fee",
-    title: "Fee Tracking & Reminders",
-    body: "See fee-payment status against each student and send automated reminders for pending payments.",
+    title: "Fee tracking and reminders",
+    body: "See fee payment status against each student and send automated reminders for pending payments.",
   },
   {
     icon: "history",
-    title: "Communication History",
-    body: "Every call, message and note is logged against the applicant, so any counsellor can pick up a conversation with full context.",
+    title: "Full communication history",
+    body: "Every call, message and note is logged on the applicant, so any counsellor can pick up with full context.",
   },
   {
     icon: "reporting",
-    title: "Reporting by Counsellor and Source",
-    body: "See which counsellors are converting, and which ad campaigns or channels are producing the best enquiries — without a manual spreadsheet pull.",
+    title: "Reporting by counsellor, source and campaign",
+    body: "See which counsellors convert, and which campaigns and channels bring the best enquiries, without a manual spreadsheet pull.",
   },
 ];
 
@@ -77,57 +83,82 @@ export const PROCESS_STEPS = [
   {
     n: "01",
     title: "Enquiry captured",
-    body: "A prospective student enquires via an ad, your website, a portal or WhatsApp, and is logged automatically with course interest attached.",
+    body: "A prospective student enquires through an ad, your website, a portal or WhatsApp and is logged automatically with their course interest.",
   },
   {
     n: "02",
     title: "Counsellor assigned",
-    body: "The enquiry routes to the right counsellor by course, campus or rotation.",
+    body: "The enquiry goes to the right counsellor by course, campus or rotation.",
   },
   {
     n: "03",
-    title: "Follow-up & campus visit",
-    body: "Reminders keep the counsellor on top of follow-ups; a campus visit can be scheduled directly from the conversation.",
+    title: "Follow-up and campus visit",
+    body: "Reminders keep follow-ups on track, and a campus visit can be scheduled from the conversation.",
   },
   {
     n: "04",
     title: "Application submitted",
-    body: "The applicant's stage updates, and required documents or steps are tracked against their record.",
+    body: "The applicant's stage updates, and required documents or steps are tracked on their record.",
   },
   {
     n: "05",
     title: "Admitted",
-    body: "The applicant moves to “Admitted,” with fee status now tracked alongside it.",
+    body: "The applicant moves to Admitted, and fee status is tracked next to it.",
   },
   {
     n: "06",
     title: "Enrolled",
-    body: "Once fees and paperwork are complete, the record is marked enrolled and communication history stays attached for reference.",
+    body: "Once fees and paperwork are complete, the record is marked Enrolled and the communication history stays attached.",
+  },
+];
+
+export const AUDIENCES = [
+  {
+    title: "Schools",
+    body: "Manage admission drives and open house enquiries, and keep parent follow-ups from slipping between staff.",
+  },
+  {
+    title: "Colleges and universities",
+    body: "Handle undergraduate and postgraduate enquiries across programmes and campuses, with each applicant's stage visible to the whole team.",
+  },
+  {
+    title: "Coaching institutes and test-prep centres",
+    body: "Answer high volumes of enquiries quickly, assign them to counsellors, and follow up on demo classes and batch interest.",
+  },
+  {
+    title: "Ed-tech and study-abroad consultants",
+    body: "Keep every counsellor call, message and next step on one record, so a lead is never handled twice or dropped.",
   },
 ];
 
 export const CHOOSING_POINTS = [
   {
     title: "Built for admissions, not adapted from sales",
-    body: "Check whether admission stages, counsellor assignment and fee tracking are built in, or whether you would need to configure a generic sales pipeline to approximate them.",
+    body: "Check that admission stages, counsellor assignment and fee tracking are built in, rather than configured to approximate them.",
   },
   {
     title: "Handles enquiry spikes",
-    body: "Admission season brings sudden volume. The CRM should capture and assign enquiries automatically, without a counsellor needing to process them one by one.",
+    body: "Admission season brings sudden volume, so capture and assignment should be automatic.",
   },
   {
     title: "WhatsApp-native",
-    body: "If parents and students message on WhatsApp, the CRM should handle that natively, not as an afterthought.",
+    body: "Parents and students message on WhatsApp, so the CRM should too.",
     href: "/features/whatsapp-crm",
     linkLabel: "See WhatsApp CRM",
   },
   {
     title: "Clear counsellor accountability",
-    body: "You should be able to see which counsellor owns which enquiry, and how each is converting, without building a manual report.",
+    body: "You should see who owns each enquiry and how each counsellor converts.",
   },
   {
     title: "Works for one campus or several",
-    body: "Whether you run a single institute or multiple campuses, the CRM should scale without needing separate systems.",
+    body: "One CRM should cover a single campus or several, without separate systems.",
+  },
+  {
+    title: "Clear pricing",
+    body: "You should know what you will pay before you commit.",
+    href: "/pricing",
+    linkLabel: "See TracktCRM pricing",
   },
 ];
 
@@ -135,16 +166,16 @@ export const INTEGRATIONS = [
   {
     brand: "WhatsApp",
     title: "WhatsApp Business",
-    body: "Capture and respond to enquiries in-chat.",
+    body: "Capture and reply to enquiries in the chat.",
   },
   {
     brand: "Meta & Google Ads",
-    title: "Meta & Google Ads",
+    title: "Meta and Google Ads",
     body: "Ad enquiries flow straight into the pipeline.",
   },
   {
-    brand: "Gmail",
-    title: "Email & SMS",
+    brand: "Email & SMS",
+    title: "Email and SMS",
     body: "Automated follow-ups across channels.",
   },
   {
@@ -159,21 +190,8 @@ export const INTEGRATIONS = [
   },
   {
     brand: "Webhooks",
-    title: "Zapier & open API",
+    title: "Zapier and open API",
     body: "Connect anything else your institution runs on.",
-  },
-];
-
-export const TESTIMONIALS = [
-  {
-    quote:
-      "Admission season used to mean lost enquiries and no idea which counsellor was following up on what. Now every enquiry has an owner from day one.",
-    attribution: "Name, Title, Institution",
-  },
-  {
-    quote:
-      "We finally have one view across all our campuses, instead of five different spreadsheets.",
-    attribution: "Name, Title, Institution",
   },
 ];
 
@@ -181,15 +199,27 @@ export const TESTIMONIALS = [
 export const EDU_FAQS = [
   {
     q: "What is an education CRM?",
-    a: "An education CRM is customer relationship management software built for admissions and enquiry management. It captures enquiries from every channel, assigns them to counsellors, and tracks each applicant from first contact through to enrolment — instead of enquiries living across spreadsheets, WhatsApp chats and a shared inbox.",
+    a: "An education CRM is customer relationship management software built for admissions and enquiry management. It captures enquiries from every channel, assigns them to counsellors, and tracks each applicant from first contact through to enrolment, instead of enquiries living across spreadsheets, WhatsApp chats and a shared inbox.",
+  },
+  {
+    q: "How does a CRM help with admissions?",
+    a: "It captures every enquiry, assigns it to a counsellor, reminds the team to follow up, and shows where each applicant stands, so fewer enquiries are lost before they apply.",
   },
   {
     q: "Is TracktCRM a good CRM for educational institutions?",
     a: "Yes. TracktCRM is built for the way educational institutions actually manage admissions: multi-channel enquiry capture, counsellor assignment, and a visible admission-stage pipeline, whether you run one campus or several.",
   },
   {
+    q: "Which is the best CRM for schools, colleges and coaching institutes?",
+    a: "Look for admission stages, counsellor assignment, WhatsApp support, fee tracking and clear pricing. TracktCRM is built around that workflow.",
+  },
+  {
     q: "Does TracktCRM work as a student management CRM?",
     a: "Yes. Alongside admissions, TracktCRM tracks each student's stage, assigned counsellor, fee status and communication history in one record, so nothing depends on one person's memory or inbox.",
+  },
+  {
+    q: "Is an education CRM the same as an ERP or student information system?",
+    a: "No. A CRM manages enquiries, follow-ups, applications and fees up to enrolment. An ERP or student information system manages academics after that.",
   },
   {
     q: "Can I assign enquiries to specific counsellors?",
@@ -208,7 +238,11 @@ export const EDU_FAQS = [
     a: "Yes. WhatsApp is a core channel in TracktCRM, so enquiries and follow-ups over WhatsApp are captured and tracked the same way as email or phone.",
   },
   {
+    q: "How much does an education CRM cost?",
+    a: "TracktCRM plans are priced by seats, channels and volume, with quotes in INR or USD. Start with a free 1 month trial with no credit card needed, or book a demo to get a quote for your institute.",
+  },
+  {
     q: "Can I try TracktCRM before committing?",
-    a: "Yes, TracktCRM offers a 30-day free trial, so your admissions team can try the full enquiry-to-enrolment flow before committing.",
+    a: "Yes, TracktCRM offers a free 1 month trial, so your admissions team can try the full enquiry-to-enrolment flow before committing.",
   },
 ];

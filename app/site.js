@@ -32,7 +32,7 @@ export const CONTACT = {
 export const SEO = {
   title: "AI CRM Software That Answers Every Lead | TracktCRM",
   description:
-    "TracktCRM is an AI CRM that replies to every lead in seconds, automates follow-ups and tracks your pipeline. Start your free 1-month trial.",
+    "TracktCRM is an AI CRM that replies to every lead in seconds, automates follow-ups and tracks your pipeline. Start your free 1 month trial.",
   ogTitle: "TracktCRM - AI CRM Software That Answers Every Lead",
   ogDescription:
     "AI-powered lead management, sales pipeline tracking and automated follow-ups - for real estate teams, agencies, consultants and freelancers.",

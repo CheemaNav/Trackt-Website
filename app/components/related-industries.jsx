@@ -2,7 +2,10 @@ import Link from "next/link";
 import {
   AgencyIcon,
   ArrowIcon,
+  AutomotiveIcon,
   EducationIcon,
+  HealthcareIcon,
+  InsuranceIcon,
   RealEstateIcon,
   RecruitmentIcon,
 } from "../icons";
@@ -13,6 +16,9 @@ export const INDUSTRY_ICONS = {
   education: EducationIcon,
   agency: AgencyIcon,
   recruitment: RecruitmentIcon,
+  insurance: InsuranceIcon,
+  automotive: AutomotiveIcon,
+  healthcare: HealthcareIcon,
 };
 
 /** Cross-links to the other live industry pages, plus a link back to the hub. */

@@ -67,7 +67,7 @@ export default function JsonLd() {
       url: `${SITE_URL}/pricing`,
       priceCurrency: "INR",
       price: "0",
-      description: "1-month free trial - no credit card required. Paid plans after trial.",
+      description: "Free 1 month trial - no credit card required. Paid plans after trial.",
       category: "FreeTrial",
     },
     url: SITE_URL,
@@ -80,6 +80,27 @@ export default function JsonLd() {
       <SchemaScript id="schema-software" data={software} />
     </>
   );
+}
+
+function industrySoftware({ name, path, features }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: `${SITE_NAME} ${name}`,
+    applicationCategory: "BusinessApplication",
+    applicationSubCategory: `${name} Software`,
+    operatingSystem: "Web",
+    url: `${SITE_URL}${path}`,
+    featureList: features.map((item) => item.title),
+    offers: {
+      "@type": "Offer",
+      url: `${SITE_URL}/pricing`,
+      priceCurrency: "INR",
+      price: "0",
+      description: "Free 1 month trial, no credit card required.",
+      category: "FreeTrial",
+    },
+  };
 }
 
 export function BreadcrumbJsonLd({ items }) {
@@ -117,8 +138,8 @@ export function HomeFaqJsonLd() {
   return <SchemaScript id="schema-home-faq" data={faqPage} />;
 }
 
-/** Real-estate page FAQ + Service schema. */
-export function RealEstateJsonLd({ faqs }) {
+/** Real-estate page FAQ + Service + SoftwareApplication schema. */
+export function RealEstateJsonLd({ faqs, features }) {
   const faqPage = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -143,14 +164,21 @@ export function RealEstateJsonLd({ faqs }) {
     },
     areaServed: "Worldwide",
     description:
-      "TracktCRM is a real estate CRM that captures enquiries from every portal and WhatsApp, books site visits instantly, and tracks every broker, unit and deal.",
+      "TracktCRM is real estate CRM software that captures leads from 99acres, MagicBricks and WhatsApp, books site visits, and tracks brokers, inventory and bookings.",
     url: `${SITE_URL}/industries/real-estate-crm`,
   };
+
+  const software = industrySoftware({
+    name: "Real Estate CRM",
+    path: "/industries/real-estate-crm",
+    features,
+  });
 
   return (
     <>
       <SchemaScript id="schema-re-faq" data={faqPage} />
       <SchemaScript id="schema-re-service" data={service} />
+      <SchemaScript id="schema-re-software" data={software} />
     </>
   );
 }
@@ -193,8 +221,8 @@ export function AiCrmJsonLd({ faqs }) {
   );
 }
 
-/** Education CRM page FAQ + Service schema. */
-export function EducationCrmJsonLd({ faqs }) {
+/** Education CRM page FAQ + Service + SoftwareApplication schema. */
+export function EducationCrmJsonLd({ faqs, features }) {
   const faqPage = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -219,14 +247,21 @@ export function EducationCrmJsonLd({ faqs }) {
     },
     areaServed: "Worldwide",
     description:
-      "TracktCRM is an education CRM that captures student enquiries from every channel, assigns them to counsellors, and tracks each applicant to enrolment.",
+      "TracktCRM is an education CRM for schools, colleges and coaching institutes that captures enquiries from ads, portals and WhatsApp, assigns counsellors, and tracks admissions and fees.",
     url: `${SITE_URL}/industries/education-crm`,
   };
+
+  const software = industrySoftware({
+    name: "Education CRM",
+    path: "/industries/education-crm",
+    features,
+  });
 
   return (
     <>
       <SchemaScript id="schema-edu-faq" data={faqPage} />
       <SchemaScript id="schema-edu-service" data={service} />
+      <SchemaScript id="schema-edu-software" data={software} />
     </>
   );
 }
@@ -307,6 +342,120 @@ export function RecruitmentCrmJsonLd({ faqs }) {
   );
 }
 
+/** Insurance CRM page FAQ + Service schema. */
+export function InsuranceCrmJsonLd({ faqs }) {
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Insurance CRM Software",
+    provider: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    areaServed: "Worldwide",
+    description:
+      "TracktCRM is an insurance CRM that captures leads, chases quotes and tracks policy renewals, with WhatsApp and instant AI replies.",
+    url: `${SITE_URL}/industries/crm-for-insurance`,
+  };
+
+  return (
+    <>
+      <SchemaScript id="schema-insurance-faq" data={faqPage} />
+      <SchemaScript id="schema-insurance-service" data={service} />
+    </>
+  );
+}
+
+/** Automotive CRM page FAQ + Service schema. */
+export function AutomotiveCrmJsonLd({ faqs }) {
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Automotive CRM Software",
+    provider: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    areaServed: "Worldwide",
+    description:
+      "TracktCRM is an automotive CRM that captures enquiries, books test drives and follows up to delivery, with WhatsApp and AI replies.",
+    url: `${SITE_URL}/industries/crm-for-automotive`,
+  };
+
+  return (
+    <>
+      <SchemaScript id="schema-automotive-faq" data={faqPage} />
+      <SchemaScript id="schema-automotive-service" data={service} />
+    </>
+  );
+}
+
+/** Healthcare CRM page FAQ + Service schema. */
+export function HealthcareCrmJsonLd({ faqs }) {
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Healthcare CRM Software",
+    provider: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    areaServed: "Worldwide",
+    description:
+      "TracktCRM is a healthcare CRM that captures patient enquiries, books appointments and follows up, with WhatsApp and AI replies.",
+    url: `${SITE_URL}/industries/crm-for-healthcare`,
+  };
+
+  return (
+    <>
+      <SchemaScript id="schema-healthcare-faq" data={faqPage} />
+      <SchemaScript id="schema-healthcare-service" data={service} />
+    </>
+  );
+}
+
 /** Industries hub: CollectionPage with an ItemList of live industry pages, plus FAQ. */
 export function IndustriesHubJsonLd({ industries, faqs }) {
   const collection = {
@@ -314,7 +463,7 @@ export function IndustriesHubJsonLd({ industries, faqs }) {
     "@type": "CollectionPage",
     name: "CRM by Industry",
     description:
-      "Find the TracktCRM built for your industry: real estate, education, agencies and recruitment.",
+      "Find the TracktCRM built for your industry: real estate, education, agencies, recruitment, insurance, automotive and healthcare.",
     url: `${SITE_URL}/industries`,
     mainEntity: {
       "@type": "ItemList",

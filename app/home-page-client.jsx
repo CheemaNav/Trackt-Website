@@ -63,11 +63,14 @@ export default function HomePageClient() {
             <span className="pulse" />
             AI CRM software for sales teams
           </div>
-          <h1 className="h1">
-            <span className="hero-line">The AI CRM that answers</span>
-            <br className="hero-break" />
-            <span className="hero-line">your leads&nbsp;–</span>
-            <span className="hero-line hero-line-rotate" aria-hidden="true">
+          <div className="h1 hero-title">
+            <h1>
+              The AI CRM that answers{" "}
+              <br className="hero-break" />
+              your leads
+            </h1>
+            <span className="hero-line-rotate" aria-hidden="true">
+              &nbsp;–
               <span className="hero-word-wrap">
                 {HERO_WORDS.map((word) => (
                   <span className="hero-word-sizer" key={`size-${word}`}>
@@ -82,7 +85,7 @@ export default function HomePageClient() {
                 </span>
               </span>
             </span>
-          </h1>
+          </div>
           <p className="lead">
             TracktCRM is AI-powered{" "}
             <a href="/crm-software">CRM software</a> that captures every lead,

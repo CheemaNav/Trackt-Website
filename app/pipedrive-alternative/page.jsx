@@ -107,7 +107,7 @@ export default function PipedriveAlternativePage() {
                 <td>Evaluation</td>
                 <td>Paid plans by seats/features</td>
                 <td>
-                  <Link href="/pricing">1-month free trial</Link>, then quote
+                  <Link href="/pricing">Free 1 month trial</Link>, then quote
                 </td>
               </tr>
             </tbody>

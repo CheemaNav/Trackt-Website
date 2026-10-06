@@ -56,6 +56,48 @@ export const LIVE_INDUSTRIES = [
     ],
     cta: "See the recruitment CRM",
   },
+  {
+    id: "insurance",
+    name: "Insurance CRM",
+    href: "/industries/crm-for-insurance",
+    icon: "insurance",
+    body: "An insurance CRM that captures leads, chases quotes and reminds agents before each policy comes up for renewal.",
+    points: [
+      "Lead capture from every source",
+      "Quote follow-up reminders",
+      "Policy renewal tracking",
+      "WhatsApp, email and SMS in one thread",
+    ],
+    cta: "See the insurance CRM",
+  },
+  {
+    id: "automotive",
+    name: "Automotive CRM",
+    href: "/industries/crm-for-automotive",
+    icon: "automotive",
+    body: "An automotive CRM that captures dealership enquiries, books test drives and follows each buyer up to delivery and after-sales.",
+    points: [
+      "Enquiry capture from every source",
+      "Test drive scheduling",
+      "Enquiry ownership by rotation or rule",
+      "After-sales follow-up reminders",
+    ],
+    cta: "See the automotive CRM",
+  },
+  {
+    id: "healthcare",
+    name: "Healthcare CRM",
+    href: "/industries/crm-for-healthcare",
+    icon: "healthcare",
+    body: "A healthcare CRM that answers patient enquiries in seconds, books appointments and reminds your team when a follow-up is due.",
+    points: [
+      "Patient enquiry capture from every source",
+      "Appointment scheduling",
+      "Ownership by department or rule",
+      "Follow-up reminders",
+    ],
+    cta: "See the healthcare CRM",
+  },
 ];
 
 export const WHY_POINTS = [
@@ -63,13 +105,13 @@ export const WHY_POINTS = [
   "Education teams need counsellor assignment and admission stages",
   "Agencies need proposals and retainer renewals",
   "Recruiters need candidates and client roles tracked side by side",
+  "Insurance agents need quote follow-up and renewal reminders",
+  "Car dealerships need fast replies, test drives and after-sales follow-up",
+  "Clinics need fast replies, appointments and follow-up reminders",
 ];
 
 /** Not linked until each page is live. */
 export const COMING_SOON = [
-  "Insurance CRM",
-  "Automotive CRM",
-  "Healthcare CRM",
   "Consulting CRM (CRM for consultants)",
   "Freelancers and solopreneurs",
   "Ecommerce",
@@ -119,7 +161,7 @@ export const STEPS = [
   {
     n: "02",
     title: "Start your free trial",
-    body: "Start your free 30-day trial and set up the pipeline stages you use.",
+    body: "Start your free 1 month trial and set up the pipeline stages you use.",
   },
   {
     n: "03",
@@ -131,7 +173,7 @@ export const STEPS = [
 export const HUB_FAQS = [
   {
     q: "Does TracktCRM have a CRM for my industry?",
-    a: "TracktCRM has dedicated pages and workflows for real estate, education, agencies and recruitment, with insurance, automotive, healthcare and consulting setups on the way. If your industry is not listed, the pipeline stages are customizable, so you can adapt TracktCRM to the way your business sells.",
+    a: "TracktCRM has dedicated pages and workflows for real estate, education, agencies, recruitment, insurance, automotive and healthcare, with a consulting setup on the way. If your industry is not listed, the pipeline stages are customizable, so you can adapt TracktCRM to the way your business sells.",
   },
   {
     q: "How is an industry CRM different from a generic CRM?",
@@ -151,6 +193,6 @@ export const HUB_FAQS = [
   },
   {
     q: "Can I try TracktCRM before choosing an industry setup?",
-    a: "Yes, TracktCRM offers a 30-day free trial, so you can try the pipeline for your industry before committing.",
+    a: "Yes, TracktCRM offers a free 1 month trial, so you can try the pipeline for your industry before committing.",
   },
 ];

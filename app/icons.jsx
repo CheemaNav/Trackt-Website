@@ -11,6 +11,7 @@ import {
   LuBriefcase,
   LuBuilding2,
   LuCalendarCheck,
+  LuCar,
   LuChartColumn,
   LuCheck,
   LuChevronDown,
@@ -28,8 +29,11 @@ import {
   LuPhone,
   LuPlus,
   LuRefreshCw,
+  LuShieldCheck,
+  LuSignature,
   LuSmartphone,
   LuSparkles,
+  LuStethoscope,
   LuType,
   LuUserCheck,
   LuUserSearch,
@@ -67,6 +71,8 @@ const BRAND_LOGOS = {
 
 const BRAND_ICONS = {
   Calling: LuPhone,
+  "Email & SMS": LuMail,
+  "Payments & e-sign": LuSignature,
 };
 
 export function BrandMark({ name }) {
@@ -241,6 +247,18 @@ export function AgencyIcon({ size = 22 }) {
 
 export function RecruitmentIcon({ size = 22 }) {
   return <LuUserSearch size={size} strokeWidth={2} />;
+}
+
+export function InsuranceIcon({ size = 22 }) {
+  return <LuShieldCheck size={size} strokeWidth={2} />;
+}
+
+export function AutomotiveIcon({ size = 22 }) {
+  return <LuCar size={size} strokeWidth={2} />;
+}
+
+export function HealthcareIcon({ size = 22 }) {
+  return <LuStethoscope size={size} strokeWidth={2} />;
 }
 
 export function MobileIcon({ size = 22 }) {

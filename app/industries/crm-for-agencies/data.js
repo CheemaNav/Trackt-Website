@@ -199,6 +199,6 @@ export const AGENCY_FAQS = [
   },
   {
     q: "Can I try TracktCRM before committing?",
-    a: "Yes, TracktCRM offers a 30-day free trial, so your agency can try the full pitch-to-renewal flow before committing.",
+    a: "Yes, TracktCRM offers a free 1 month trial, so your agency can try the full pitch-to-renewal flow before committing.",
   },
 ];

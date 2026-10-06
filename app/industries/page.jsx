@@ -35,14 +35,14 @@ const FEATURE_ICONS = {
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
 const ogTitle = "TracktCRM - A CRM Built for Your Industry";
 const ogDescription =
-  "Real estate, education, agencies and recruitment, each with its own pipeline, AI replies and WhatsApp.";
+  "Real estate, education, agencies, recruitment, insurance, automotive and healthcare, each with its own pipeline, AI replies and WhatsApp.";
 
 export const metadata = {
   title: {
     absolute: "CRM by Industry: Real Estate, Education & More | TracktCRM",
   },
   description:
-    "Find the TracktCRM built for your industry: real estate, education, agencies and recruitment, each with its own pipeline, AI replies and WhatsApp.",
+    "Find the TracktCRM built for your industry: real estate, education, agencies, recruitment, insurance, automotive and healthcare, each with its own pipeline, AI replies and WhatsApp.",
   alternates: {
     canonical: "/industries",
   },
@@ -58,7 +58,7 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "TracktCRM industry CRM for real estate, education, agencies and recruitment",
+        alt: "TracktCRM industry CRM for real estate, education, agencies, recruitment, insurance, automotive and healthcare",
       },
     ],
   },
@@ -100,8 +100,8 @@ export default function IndustriesHubPage() {
             INDUSTRIES
           </div>
           <h1 className="hub-hero-title">
-            CRM Software Built for the Way
-            <span> Your Industry Sells</span>
+            CRM Software Built for the Way{" "}
+            <span>Your Industry Sells</span>
           </h1>
           <p className="hub-hero-sub">
             Every industry has its own stages, its own conversations and its own
@@ -124,7 +124,7 @@ export default function IndustriesHubPage() {
             <BookDemoButton className="btn btn-outline">Book a Demo</BookDemoButton>
           </div>
           <p className="hub-hero-trust">
-            30-day free trial · AI replies and WhatsApp included in every
+            Free 1 month trial · AI replies and WhatsApp included in every
             industry setup
           </p>
           <ul className="hub-hero-jump" aria-label="Jump to an industry">
@@ -300,7 +300,7 @@ export default function IndustriesHubPage() {
           <h2 className="h2 is-centered">Frequently asked questions</h2>
           <div className="faq-list re-faq-list">
             {HUB_FAQS.map((item, index) => (
-              <details className="faq-item" key={item.q} defaultOpen={index === 0}>
+              <details className="faq-item" key={item.q} open={index === 0}>
                 <summary>
                   {item.q}
                   <span className="faq-toggle" aria-hidden="true" />
@@ -316,7 +316,7 @@ export default function IndustriesHubPage() {
             <div>
               <h2>Find the CRM that fits your industry</h2>
               <p>
-                Start a free 30-day trial, or book a demo and we will set up the
+                Start a free 1 month trial, or book a demo and we will set up the
                 pipeline for your industry with you.
               </p>
             </div>

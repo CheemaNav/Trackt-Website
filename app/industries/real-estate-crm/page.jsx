@@ -5,8 +5,10 @@ import {
   BrokerIcon,
   CaptureIcon,
   CheckIcon,
+  ConversationIcon,
   InventoryIcon,
   ProjectPipelineIcon,
+  ReportIcon,
   SiteVisitIcon,
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
@@ -14,8 +16,10 @@ import RelatedIndustries from "../../components/related-industries";
 import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
 import { BreadcrumbJsonLd, RealEstateJsonLd } from "../../json-ld";
 import {
+  AUDIENCES,
   BROKER_POINTS,
   CHOOSING_POINTS,
+  COMPARE_ROWS,
   FEATURES,
   INTEGRATIONS,
   PROBLEM_POINTS,
@@ -32,14 +36,20 @@ const FEATURE_ICONS = {
   inventory: InventoryIcon,
   pipeline: ProjectPipelineIcon,
   ai: AiLeadIcon,
+  whatsapp: ConversationIcon,
+  reporting: ReportIcon,
 };
 
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const pageTitle = "Real Estate CRM: Leads, Site Visits & Brokers | TracktCRM";
+const pageDescription =
+  "Real estate CRM that captures leads from 99acres, MagicBricks and WhatsApp, books site visits, and tracks brokers, inventory and bookings. Free 1 month trial.";
 
 export const metadata = {
-  title: "Real Estate CRM: Capture & Close Property Leads",
-  description:
-    "Real estate CRM that captures leads from every portal and WhatsApp, books site visits and tracks brokers, units and deals. Start a free trial.",
+  title: {
+    absolute: pageTitle,
+  },
+  description: pageDescription,
   alternates: {
     canonical: "/industries/real-estate-crm",
   },
@@ -48,15 +58,14 @@ export const metadata = {
     locale: "en_IN",
     url: `${SITE_URL}/industries/real-estate-crm`,
     siteName: SITE_NAME,
-    title: "Real Estate CRM: Capture & Close Property Leads | TracktCRM",
-    description:
-      "Capture leads from every portal, book site visits instantly, and manage brokers, units and deals in one real estate CRM.",
+    title: pageTitle,
+    description: pageDescription,
     images: [
       {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "TracktCRM real estate CRM for property leads",
+        alt: "TracktCRM real estate CRM",
       },
     ],
   },
@@ -73,9 +82,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Real Estate CRM: Capture & Close Property Leads | TracktCRM",
-    description:
-      "Capture leads from every portal, book site visits instantly, and manage brokers, units and deals in one real estate CRM.",
+    title: pageTitle,
+    description: pageDescription,
     images: [ogImage],
   },
 };
@@ -83,7 +91,7 @@ export const metadata = {
 export default function RealEstateCrmPage() {
   return (
     <div className="home">
-      <RealEstateJsonLd faqs={RE_FAQS} />
+      <RealEstateJsonLd faqs={RE_FAQS} features={FEATURES} />
       <BreadcrumbJsonLd
         items={[
           { name: "Home", href: "/" },
@@ -102,14 +110,15 @@ export default function RealEstateCrmPage() {
               REAL ESTATE CRM
             </div>
             <h1 className="re-banner-title">
-              Real Estate CRM Built for
-              <span>How Property Actually Sells</span>
+              Real Estate CRM for Property Teams{" "}
+              <span>That Handles Leads, Site Visits and Brokers</span>
             </h1>
             <p className="re-banner-sub">
-              Property enquiries land from a dozen portals, WhatsApp and
-              walk-ins - all at once. TracktCRM is a real estate CRM that
-              captures every lead instantly, books the site visit, and keeps
-              every broker, unit and deal in one pipeline.
+              Property enquiries arrive from 99acres, MagicBricks, Housing.com,
+              Meta and Google ads, WhatsApp and walk-ins, all at the same time.
+              TracktCRM is real estate CRM software that captures each lead the
+              moment it arrives, books the site visit, and keeps every broker,
+              unit and deal in one pipeline.
             </p>
             <div className="re-banner-ctas">
               <a className="btn btn-primary" href="/contact">
@@ -128,14 +137,13 @@ export default function RealEstateCrmPage() {
               </a>
             </div>
             <p className="re-banner-trust">
-              Used by real estate teams managing 500+ live listings · No setup
-              fee
+              Free 1 month trial · No setup fee
             </p>
           </div>
           <figure className="re-banner-media">
             <img
               src="/assets/Property-enquiries.png"
-              alt="Bright modern apartment interior overlooking a city skyline and park"
+              alt=""
               width={1552}
               height={1013}
               fetchPriority="high"
@@ -150,18 +158,19 @@ export default function RealEstateCrmPage() {
           <div className="re-split-copy">
             <p className="kicker">THE REAL ESTATE PROBLEM</p>
             <h2 className="h2">
-              Your leads are scattered across a dozen portals - your pipeline
-              shouldn&apos;t be
+              Property Leads Are Scattered Across Portals. Your Pipeline
+              Shouldn&apos;t Be
             </h2>
             <p className="re-section-intro">
-              A generic CRM makes you build real estate workflows from scratch.
-              TracktCRM comes with them built in.
+              A generic sales CRM leaves you to build real estate workflows
+              yourself: projects, towers, site visits, brokers. TracktCRM comes
+              with them built in.
             </p>
           </div>
           <figure className="re-photo re-photo-contain">
             <img
               src="/assets/real-estate/for-real-estate.jpg"
-              alt="TracktCRM pipeline board organizing real estate leads by stage"
+              alt="TracktCRM pipeline board organising real estate leads by stage"
               width={1386}
               height={698}
               loading="lazy"
@@ -187,7 +196,7 @@ export default function RealEstateCrmPage() {
           <figure className="re-photo re-photo-contain">
             <img
               src="/assets/real-estate/real-estate-CRM-organizes.jpg"
-              alt="TracktCRM organizing real estate leads from portals, WhatsApp and ads in one pipeline"
+              alt="TracktCRM organising real estate leads from portals, WhatsApp and ads in one pipeline"
               width={1600}
               height={900}
               loading="lazy"
@@ -196,23 +205,21 @@ export default function RealEstateCrmPage() {
           </figure>
           <div className="re-split-copy">
             <p className="kicker">REAL ESTATE CRM SOFTWARE</p>
-            <h2 className="h2">
-              What is a CRM for real estate, and why do you need one?
-            </h2>
+            <h2 className="h2">What Is a Real Estate CRM?</h2>
             <p className="re-section-intro">
-              A real estate CRM is software that organizes every buyer, seller,
-              tenant and broker relationship your business manages - along with
-              the property details, conversations and paperwork attached to each
-              one. Instead of leads living across WhatsApp chats, spreadsheets
-              and a dozen portal inboxes, a real estate CRM gives your whole
-              team one shared view of every deal, from first enquiry to signed
-              paperwork.
+              A real estate CRM is software that captures property leads, tracks
+              each enquiry through site visit, negotiation and booking, and
+              keeps buyers, brokers, inventory and paperwork in one place.
+              Unlike a generic CRM, it understands projects, towers and units,
+              and it gives channel partners their own access.
             </p>
             <p className="re-section-intro">
-              For real estate specifically, a good CRM needs to do more than
-              store contacts. TracktCRM is built around exactly this workflow -
-              not adapted from a generic sales CRM. See the full{" "}
-              <a href="/crm-software">CRM software</a> overview.
+              Instead of leads living across WhatsApp chats, spreadsheets and a
+              dozen portal inboxes, your whole team works from one shared view
+              of every deal, from first enquiry to signed paperwork. TracktCRM
+              is built around this workflow, not adapted from a generic sales
+              CRM. See the full <a href="/crm-software">CRM software</a>{" "}
+              overview.
             </p>
           </div>
         </div>
@@ -229,9 +236,11 @@ export default function RealEstateCrmPage() {
       <section className="section reveal" id="features">
         <div className="re-section-head is-wide">
           <p className="kicker">FEATURES</p>
-          <h2 className="h2">Everything a real estate sales team needs</h2>
+          <h2 className="h2">
+            Real Estate CRM Features for Builders, Brokers and Agents
+          </h2>
         </div>
-        <div className="re-feature-grid">
+        <div className="re-feature-grid is-balanced">
           {FEATURES.map((feature) => {
             const Icon = FEATURE_ICONS[feature.icon];
             return (
@@ -258,7 +267,9 @@ export default function RealEstateCrmPage() {
       <section className="section re-band reveal" id="process">
         <div className="re-section-head">
           <p className="kicker">FROM ENQUIRY TO KEYS</p>
-          <h2 className="h2">How a deal moves through TracktCRM, start to finish</h2>
+          <h2 className="h2">
+            From Enquiry to Possession: How a Deal Moves Through TracktCRM
+          </h2>
         </div>
         <div className="re-process-grid">
           {PROCESS_STEPS.map((step) => (
@@ -271,7 +282,22 @@ export default function RealEstateCrmPage() {
         </div>
       </section>
 
-      <section className="section reveal" id="brokers">
+      <section className="section reveal" id="audience">
+        <p className="kicker">WHO IT&apos;S FOR</p>
+        <h2 className="h2">
+          Real Estate CRM for Builders, Developers, Brokers and Agents
+        </h2>
+        <div className="re-choose-grid is-three">
+          {AUDIENCES.map((item) => (
+            <article className="re-choose-card" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section re-band reveal" id="brokers">
         <div className="re-split">
           <figure className="re-photo">
             <img
@@ -286,12 +312,11 @@ export default function RealEstateCrmPage() {
           <div className="re-split-copy">
             <p className="kicker">CHANNEL PARTNERS</p>
             <h2 className="h2">
-              Built for how channel partners actually work with you
+              Channel Partner Management Software for Property Sales
             </h2>
             <p className="re-section-intro">
-              Real estate deals rarely close through a single agent - most run
-              through a network of brokers and channel partners. TracktCRM gives
-              each partner:
+              Most property deals run through a network of brokers and channel
+              partners, not a single agent. TracktCRM gives each partner:
             </p>
             <div className="re-mini-points">
               {BROKER_POINTS.map((point) => (
@@ -307,8 +332,8 @@ export default function RealEstateCrmPage() {
               ))}
             </div>
             <p className="re-section-intro">
-              This turns broker relationships from a WhatsApp-group free-for-all
-              into a trackable, accountable channel.
+              The result is a broker channel you can track and hold to account,
+              instead of a WhatsApp group.
             </p>
           </div>
         </div>
@@ -316,34 +341,75 @@ export default function RealEstateCrmPage() {
 
       <section className="section reveal" id="choosing">
         <p className="kicker">BUYER&apos;S GUIDE</p>
-        <h2 className="h2">What to look for in a real estate CRM</h2>
-        <p className="re-section-intro">
-          Not every CRM is built for how property actually sells. Here&apos;s what
-          matters most:
-        </p>
+        <h2 className="h2">What to Look For in a Real Estate CRM</h2>
         <div className="re-choose-grid">
           {CHOOSING_POINTS.map((item) => (
             <article className="re-choose-card" key={item.title}>
               <h3>{item.title}</h3>
-              <p>{item.body}</p>
+              <p>
+                {item.body}
+                {item.href ? (
+                  <>
+                    {" "}
+                    <a href={item.href}>{item.linkLabel}</a>.
+                  </>
+                ) : null}
+              </p>
             </article>
           ))}
         </div>
       </section>
 
+      <section className="section re-band reveal" id="comparison">
+        <div className="re-section-head is-wide">
+          <p className="kicker">COMPARISON</p>
+          <h2 className="h2">Real Estate CRM vs a Generic Sales CRM</h2>
+        </div>
+        <div className="compare-table-wrap cs-compare-wrap industry-compare-wrap">
+          <table className="compare-table cs-compare-table">
+            <thead>
+              <tr>
+                <th aria-label="Comparison" />
+                <th>Generic sales CRM</th>
+                <th>TracktCRM</th>
+              </tr>
+            </thead>
+            <tbody>
+              {COMPARE_ROWS.map((row) => (
+                <tr key={row.label}>
+                  <th scope="row">{row.label}</th>
+                  <td>{row.generic}</td>
+                  <td>{row.tracktcrm}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <section className="section re-int-band reveal" id="integrations">
         <p className="kicker">INTEGRATIONS</p>
-        <h2 className="h2">Connects with the tools you already use</h2>
+        <h2 className="h2">
+          Real Estate CRM Integrations: 99acres, MagicBricks, Housing.com,
+          WhatsApp and Ads
+        </h2>
+        <p className="re-section-intro">
+          Connect the tools your sales team already uses.
+        </p>
         <div className="re-int-list">
           {INTEGRATIONS.map((item) => (
             <article className="re-int-card" key={item.title}>
-              {item.brand ? (
-                <span className="re-int-logo">
-                  <BrandMark name={item.brand} />
+              {item.brands.length > 1 ? (
+                <span className="re-int-logo-stack">
+                  {item.brands.map((brand) => (
+                    <span className="re-int-logo" key={brand}>
+                      <BrandMark name={brand} />
+                    </span>
+                  ))}
                 </span>
               ) : (
-                <span className="re-int-fallback" aria-hidden="true">
-                  {item.title.slice(0, 1)}
+                <span className="re-int-logo">
+                  <BrandMark name={item.brands[0]} />
                 </span>
               )}
               <div>
@@ -353,21 +419,26 @@ export default function RealEstateCrmPage() {
             </article>
           ))}
         </div>
+        <p className="re-section-intro re-int-more">
+          <a href="/integrations">Browse all CRM integrations</a>
+        </p>
       </section>
 
       <section className="section reveal" id="pipeline-preview">
         <p className="kicker is-centered">SEE IT IN ACTION</p>
-        <h2 className="h2 is-centered">One pipeline, from enquiry to registration</h2>
+        <h2 className="h2 is-centered">
+          See One Pipeline From Enquiry to Registration
+        </h2>
         <p className="re-section-intro is-centered">
-          Every project gets its own pipeline - stages, units and deals stay
-          organized from the first enquiry to the signed sale deed.{" "}
+          Every project gets its own pipeline, so stages, units and deals stay
+          organised from the first enquiry to the signed sale deed.{" "}
           <a href="/contact">Book a 30-minute demo</a> to see your listings
           inside TracktCRM.
         </p>
         <figure className="re-shot re-shot-wide">
           <img
             src="/assets/leadmanage.png"
-            alt="TracktCRM real estate sales pipeline from enquiry to registration"
+            alt="TracktCRM pipeline board with lead cards grouped by stage, each showing the owner, phone number and last activity"
             width={1600}
             height={900}
             loading="lazy"
@@ -378,7 +449,9 @@ export default function RealEstateCrmPage() {
 
       <section className="section reveal" id="testimonial">
         <p className="kicker is-centered">SOCIAL PROOF</p>
-        <h2 className="h2 is-centered">Teams closing property deals with TracktCRM</h2>
+        <h2 className="h2 is-centered">
+          Real Estate Teams Closing Deals With TracktCRM
+        </h2>
         <div className="re-testimonial-grid">
           {TESTIMONIALS.map((item) => (
             <div className="re-testimonial" key={item.quote}>
@@ -393,10 +466,10 @@ export default function RealEstateCrmPage() {
 
       <section className="section faq reveal" id="faq">
         <p className="kicker is-centered">FAQ</p>
-        <h2 className="h2 is-centered">Frequently asked questions</h2>
+        <h2 className="h2 is-centered">Real Estate CRM FAQs</h2>
         <div className="faq-list re-faq-list">
           {RE_FAQS.map((item, index) => (
-            <details className="faq-item" key={item.q} defaultOpen={index === 0}>
+            <details className="faq-item" key={item.q} open={index === 0}>
               <summary>
                 {item.q}
                 <span className="faq-toggle" aria-hidden="true" />
@@ -410,10 +483,11 @@ export default function RealEstateCrmPage() {
       <section className="cta-section reveal" id="demo">
         <div className="cta">
           <div>
-            <h2>See TracktCRM on your own property portfolio</h2>
+            <h2>See TracktCRM on Your Own Property Portfolio</h2>
             <p>
-              Book a 30-minute demo and we&apos;ll show you how your current
-              listings and leads would look inside TracktCRM.
+              Book a 30-minute demo and we will show how your listings and
+              leads would look inside TracktCRM, or start a free 1 month trial.
+              No credit card, no lock-in.
             </p>
           </div>
           <div className="cta-actions">

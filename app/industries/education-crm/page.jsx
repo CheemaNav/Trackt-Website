@@ -7,19 +7,21 @@ import {
   FieldMessageIcon,
   InventoryIcon,
   ProjectPipelineIcon,
+  ReminderIcon,
+  ReportIcon,
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
 import RelatedIndustries from "../../components/related-industries";
 import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
 import { BreadcrumbJsonLd, EducationCrmJsonLd } from "../../json-ld";
 import {
+  AUDIENCES,
   CHOOSING_POINTS,
   EDU_FAQS,
   FEATURES,
   INTEGRATIONS,
   PROBLEM_POINTS,
   PROCESS_STEPS,
-  TESTIMONIALS,
   WHAT_IS_POINTS,
 } from "./data";
 
@@ -27,19 +29,23 @@ const FEATURE_ICONS = {
   capture: CaptureIcon,
   assignment: BrokerIcon,
   pipeline: ProjectPipelineIcon,
+  reminders: ReminderIcon,
+  ai: AiLeadIcon,
   fee: InventoryIcon,
   history: FieldMessageIcon,
-  reporting: AiLeadIcon,
+  reporting: ReportIcon,
 };
 
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const pageTitle = "Education CRM Software for Admissions | TracktCRM";
+const pageDescription =
+  "Education CRM for schools, colleges and coaching institutes: capture enquiries from ads, portals and WhatsApp, assign counsellors, track admissions and fees. Free 1 month trial.";
 
 export const metadata = {
   title: {
-    absolute: "Education CRM Software for Admissions | TracktCRM",
+    absolute: pageTitle,
   },
-  description:
-    "TracktCRM is an education CRM that captures student enquiries from every channel, assigns them to counsellors, and tracks each applicant to enrolment.",
+  description: pageDescription,
   alternates: {
     canonical: "/industries/education-crm",
   },
@@ -48,9 +54,8 @@ export const metadata = {
     locale: "en_IN",
     url: `${SITE_URL}/industries/education-crm`,
     siteName: SITE_NAME,
-    title: "TracktCRM — The CRM Built for How Admissions Teams Work",
-    description:
-      "Capture enquiries from every channel, assign them to counsellors, and track every applicant to enrolment.",
+    title: pageTitle,
+    description: pageDescription,
     images: [
       {
         url: ogImage,
@@ -73,9 +78,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TracktCRM — The CRM Built for How Admissions Teams Work",
-    description:
-      "Capture enquiries from every channel, assign them to counsellors, and track every applicant to enrolment.",
+    title: pageTitle,
+    description: pageDescription,
     images: [ogImage],
   },
 };
@@ -83,7 +87,7 @@ export const metadata = {
 export default function EducationCrmPage() {
   return (
     <div className="home edu-layout">
-      <EducationCrmJsonLd faqs={EDU_FAQS} />
+      <EducationCrmJsonLd faqs={EDU_FAQS} features={FEATURES} />
       <BreadcrumbJsonLd
         items={[
           { name: "Home", href: "/" },
@@ -102,15 +106,15 @@ export default function EducationCrmPage() {
                 EDUCATION CRM
               </div>
               <h1 className="re-banner-title">
-                The CRM Built for How Admissions Teams
-                <span>Actually Work</span>
+                Education CRM for Schools, Colleges and Institutes{" "}
+                <span>That Takes Every Enquiry to Enrolment</span>
               </h1>
               <p className="re-banner-sub">
-                Enquiries arrive from ad campaigns, portals, walk-ins and
-                WhatsApp — often all at once during admission season. TracktCRM
-                is an education CRM that captures every enquiry, assigns it to a
-                counsellor, and tracks each applicant from first contact to
-                enrolment.
+                Enquiries reach an admissions team from ad campaigns, education
+                portals, walk-ins, calls and WhatsApp, often all at once during
+                admission season. TracktCRM is education CRM software that
+                captures every enquiry, assigns it to a counsellor, and tracks
+                each applicant from first contact to enrolment.
               </p>
               <div className="re-banner-ctas">
                 <a className="btn btn-primary" href="/contact">
@@ -129,7 +133,7 @@ export default function EducationCrmPage() {
                 </a>
               </div>
               <p className="re-banner-trust">
-                No credit card required · Free 1 month trial · No setup fee
+                Free 1 month trial · No credit card required
               </p>
             </div>
             <figure className="re-banner-media edu-banner-media">
@@ -146,12 +150,12 @@ export default function EducationCrmPage() {
         </section>
 
         <section className="edu-why reveal" id="problem">
-          <h2>Enquiries are scattered, and follow-ups depend on memory</h2>
+          <h2>Admission Enquiries Are Scattered and Follow-Ups Depend on Memory</h2>
           <p>
-            During peak admission season, enquiries come in faster than any
-            spreadsheet or shared inbox can track. A generic CRM does not
-            solve this on its own — TracktCRM comes with the admissions
-            workflow built in.
+            In peak admission season, enquiries arrive faster than a spreadsheet
+            or a shared inbox can track. A generic sales CRM does not fix that
+            on its own. TracktCRM comes with the admissions workflow already
+            built in.
           </p>
           <div className="edu-why-points">
             {PROBLEM_POINTS.map((point) => (
@@ -165,22 +169,35 @@ export default function EducationCrmPage() {
 
         <section className="edu-canvas reveal" id="what-is">
           <div className="edu-card">
-            <h2>What does an education CRM actually do?</h2>
+            <h2>What Is an Education CRM?</h2>
             <p>
-              An education CRM is CRM software built specifically for
-              admissions and enquiry management, rather than general sales. A
-              CRM for education is different from a generic CRM because of a
-              few specific things a CRM for educational institutions needs to
-              handle.
+              An education CRM is software that helps schools, colleges,
+              universities and coaching institutes manage admission enquiries.
+              It captures leads from every channel, assigns each one to a
+              counsellor, tracks follow-ups, and follows every applicant from
+              first enquiry to enrolment.
             </p>
             <p>
-              TracktCRM is built around this workflow directly, rather than
-              adapted from a generic sales CRM. Whether your team searches for
-              an education CRM, crm education software, or admissions
-              software, the requirement is the same one this page addresses. See
-              the full <a href="/crm-software">CRM software</a> overview.
+              A generic sales CRM treats a student like a deal. An education CRM
+              treats them as an applicant moving through admission stages, with
+              fees and documents attached. Three things set it apart:
             </p>
           </div>
+
+          <div className="edu-capabilities">
+            {WHAT_IS_POINTS.map((point) => (
+              <article key={point.title}>
+                <h3>{point.title}</h3>
+                <p>{point.body}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="edu-lede edu-what-note">
+            TracktCRM is built around this workflow, not adapted from a generic
+            sales CRM. See the full <a href="/crm-software">CRM software</a>{" "}
+            overview.
+          </p>
 
           <figure className="edu-product">
             <img
@@ -193,18 +210,9 @@ export default function EducationCrmPage() {
             />
           </figure>
 
-          <div className="edu-capabilities">
-            {WHAT_IS_POINTS.map((point) => (
-              <article key={point.title}>
-                <h3>{point.title}</h3>
-                <p>{point.body}</p>
-              </article>
-            ))}
-          </div>
-
           <div className="edu-card edu-card-tight" id="features">
             <p className="kicker is-centered">FEATURES</p>
-            <h2>Everything an admissions team needs</h2>
+            <h2>Education CRM Features for Admissions Teams</h2>
           </div>
 
           <div className="edu-mods">
@@ -216,7 +224,15 @@ export default function EducationCrmPage() {
                     <Icon />
                   </div>
                   <h3>{feature.title}</h3>
-                  <p>{feature.body}</p>
+                  <p>
+                    {feature.body}
+                    {feature.href ? (
+                      <>
+                        {" "}
+                        <a href={feature.href}>{feature.linkLabel}</a>.
+                      </>
+                    ) : null}
+                  </p>
                 </article>
               );
             })}
@@ -226,17 +242,12 @@ export default function EducationCrmPage() {
         <section className="edu-pipe reveal" id="process">
           <p className="kicker is-centered">HOW IT WORKS</p>
           <h2 className="h2 is-centered">
-            How an enquiry becomes an enrolled student
+            From Enquiry to Enrolment: How an Admission Moves Through TracktCRM
           </h2>
-          <p className="edu-lede">
-            See applicants moving from enquiry through campus visit,
-            application, admitted and enrolled, with counsellor names and fee
-            status visible.
-          </p>
           <figure className="edu-pipe-shot">
             <img
               src="/assets/leadmanage.png"
-              alt="TracktCRM admission-stage pipeline showing applicants from enquiry to enrolled"
+              alt="TracktCRM pipeline board with lead cards grouped by stage, each showing the owner, phone number and last activity"
               width={1600}
               height={900}
               loading="lazy"
@@ -254,16 +265,42 @@ export default function EducationCrmPage() {
           </div>
         </section>
 
-        <section className="edu-more reveal" id="choosing">
-          <p className="kicker is-centered">WHAT&apos;S MORE</p>
+        <section className="edu-more edu-plain reveal" id="audience">
+          <p className="kicker is-centered">WHO IT&apos;S FOR</p>
           <h2 className="h2 is-centered">
-            What to look for in a CRM for educational institutions
+            Education CRM for Schools, Colleges, Universities and Coaching
+            Institutes
+          </h2>
+          <div className="edu-more-grid">
+            {AUDIENCES.map((item) => (
+              <article key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="edu-more reveal" id="crm-vs-erp">
+          <p className="kicker is-centered">CRM VS ERP</p>
+          <h2 className="h2 is-centered">
+            Education CRM vs ERP, LMS and Student Information Systems
           </h2>
           <p className="edu-lede">
-            Choosing a CRM for education is less about generic sales features
-            and more about whether admissions work is built in. Here is what
-            matters most:
+            A CRM manages the journey up to and around admission: enquiry,
+            follow-up, application and fees. An ERP or student information
+            system runs academics after enrolment, such as timetables,
+            attendance and exams. An LMS delivers the courses. TracktCRM is
+            built for the enquiry-to-enrolment side and can connect to your
+            other systems through its API and webhooks.
           </p>
+        </section>
+
+        <section className="edu-more edu-plain reveal" id="choosing">
+          <p className="kicker is-centered">BUYER&apos;S GUIDE</p>
+          <h2 className="h2 is-centered">
+            What to Look For in a CRM for Educational Institutions
+          </h2>
           <div className="edu-more-grid">
             {CHOOSING_POINTS.map((item) => (
               <article key={item.title}>
@@ -285,20 +322,18 @@ export default function EducationCrmPage() {
         <section className="edu-int reveal" id="integrations">
           <p className="kicker is-centered">INTEGRATIONS</p>
           <h2 className="h2 is-centered">
-            Connects with the tools admissions teams already use
+            Education CRM Integrations: WhatsApp, Meta Ads, Google Ads,
+            Calendar and Payments
           </h2>
+          <p className="edu-lede">
+            Connect the tools your admissions team already uses.
+          </p>
           <div className="edu-int-list">
             {INTEGRATIONS.map((item) => (
               <article key={item.title}>
-                {item.brand ? (
-                  <span className="edu-int-logo">
-                    <BrandMark name={item.brand} />
-                  </span>
-                ) : (
-                  <span className="edu-int-fallback" aria-hidden="true">
-                    {item.title.slice(0, 1)}
-                  </span>
-                )}
+                <span className="edu-int-logo">
+                  <BrandMark name={item.brand} />
+                </span>
                 <div>
                   <h3>{item.title}</h3>
                   <p>{item.body}</p>
@@ -306,31 +341,33 @@ export default function EducationCrmPage() {
               </article>
             ))}
           </div>
+          <p className="edu-lede">
+            <a href="/integrations">Browse all CRM integrations</a>
+          </p>
         </section>
 
-        <section className="edu-quotes reveal" id="testimonial">
-          <p className="kicker is-centered">SOCIAL PROOF</p>
+        <section className="edu-more edu-plain reveal" id="privacy">
+          <p className="kicker is-centered">STUDENT DATA</p>
           <h2 className="h2 is-centered">
-            Admissions teams replacing spreadsheets with one pipeline
+            Student Data, Parent Consent and Privacy
           </h2>
-          <div className="edu-quote-grid">
-            {TESTIMONIALS.map((item) => (
-              <blockquote key={item.quote}>
-                <p>&ldquo;{item.quote}&rdquo;</p>
-                <cite>- {item.attribution}</cite>
-              </blockquote>
-            ))}
-          </div>
+          <p className="edu-lede">
+            Admission data often belongs to minors. The Digital Personal Data
+            Protection Act, 2023 treats anyone under 18 as a child
+            and expects verifiable parental consent before their data is
+            processed. WhatsApp messaging also needs opt-in. With TracktCRM, you
+            decide the scripts and messages that go out.
+          </p>
         </section>
 
         <RelatedIndustries current="education" />
 
         <section className="edu-faq reveal" id="faq">
           <p className="kicker is-centered">FAQ</p>
-          <h2 className="h2 is-centered">Frequently asked questions</h2>
+          <h2 className="h2 is-centered">Education CRM FAQs</h2>
           <p className="edu-lede">
-            Common questions about a CRM for education, student management CRM
-            and how TracktCRM fits admissions teams.
+            Answers to common questions about admissions CRM software for
+            schools, colleges and coaching institutes.
           </p>
           <div className="faq-list edu-faq-list">
             {EDU_FAQS.map((item) => (
@@ -346,10 +383,11 @@ export default function EducationCrmPage() {
         </section>
 
         <section className="edu-close reveal" id="demo">
-          <h2>See TracktCRM on your own admissions pipeline</h2>
+          <h2>See TracktCRM on Your Own Admissions Pipeline</h2>
           <p>
-            Book a 20-minute demo and we&apos;ll show you how your current
-            enquiries and courses would look inside TracktCRM.
+            Book a demo and we will show how your enquiries and courses would
+            look inside TracktCRM, or start a free 1 month trial. No credit
+            card, no lock-in.
           </p>
           <div className="edu-close-actions">
             <a className="btn btn-primary edu-hero-cta" href="/contact">

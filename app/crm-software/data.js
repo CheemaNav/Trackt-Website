@@ -196,6 +196,24 @@ export const AUDIENCES = [
     linkLabel: "See CRM for recruitment",
   },
   {
+    title: "Insurance agents and brokers",
+    body: "Capture leads, chase quotes and get reminded before each policy renewal.",
+    href: "/industries/crm-for-insurance",
+    linkLabel: "See CRM for insurance",
+  },
+  {
+    title: "Car dealerships",
+    body: "Reply to enquiries in seconds, book test drives and follow up after delivery.",
+    href: "/industries/crm-for-automotive",
+    linkLabel: "See CRM for automotive",
+  },
+  {
+    title: "Clinics and healthcare teams",
+    body: "Answer patient enquiries in seconds, book appointments and follow up on time.",
+    href: "/industries/crm-for-healthcare",
+    linkLabel: "See CRM for healthcare",
+  },
+  {
     title: "Education",
     body: "Assign enquiries to counsellors and track every admission stage.",
     href: "/industries/education-crm",
@@ -252,7 +270,7 @@ export const CS_FAQS = [
   },
   {
     q: "How much does TracktCRM cost?",
-    a: "TracktCRM starts with a 30-day free trial. After the trial, your company moves to a per-user plan billed at the company level, so team members never pay separately.",
+    a: "TracktCRM starts with a free 1 month trial. After the trial, your company moves to a per-user plan billed at the company level, so team members never pay separately.",
   },
   {
     q: "Does TracktCRM have mobile access?",

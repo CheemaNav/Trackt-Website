@@ -44,7 +44,7 @@ export const metadata = {
     absolute: "CRM Software for Leads, Pipeline & Follow-Ups | TracktCRM",
   },
   description:
-    "TracktCRM is simple, AI-powered CRM software that captures leads, replies in seconds and tracks every deal in one pipeline. Start your 30-day free trial.",
+    "TracktCRM is simple, AI-powered CRM software that captures leads, replies in seconds and tracks every deal in one pipeline. Start your free 1 month trial.",
   alternates: {
     canonical: "/crm-software",
   },
@@ -105,7 +105,7 @@ export default function CrmSoftwarePage() {
               CRM SOFTWARE
             </div>
             <h1 className="h1">
-              Simple CRM Software That Captures Every Lead
+              Simple CRM Software That Captures Every Lead{" "}
               <span className="cs-hero-accent">and Closes More Deals</span>
             </h1>
             <p className="lead">
@@ -138,7 +138,7 @@ export default function CrmSoftwarePage() {
                 <span className="trust-check" aria-hidden="true">
                   <CheckIcon size={11} />
                 </span>
-                30-day free trial
+                Free 1 month trial
               </span>
               <span className="trust-item">
                 <span className="trust-check" aria-hidden="true">
@@ -346,8 +346,8 @@ export default function CrmSoftwarePage() {
               </a>
             </h2>
             <p className="re-section-intro">
-              Dedicated setups for real estate, education, agencies and
-              recruitment. <a href="/industries">See every industry TracktCRM
+              Dedicated setups for real estate, education, agencies,
+              recruitment, insurance, automotive and healthcare. <a href="/industries">See every industry TracktCRM
               supports</a>.
             </p>
           </div>
@@ -371,7 +371,7 @@ export default function CrmSoftwarePage() {
               Affordable CRM software with one company-level plan
             </h2>
             <p className="re-section-intro">
-              Start with a 30-day free trial. After the trial, your company
+              Start with a free 1 month trial. After the trial, your company
               moves to a per-user plan billed at the company level, so team
               members never pay separately. It is affordable CRM software
               designed for teams that are still growing.
@@ -472,7 +472,7 @@ export default function CrmSoftwarePage() {
         <section className="cta-section reveal" id="demo">
           <div className="cta">
             <div>
-              <h2>Try TracktCRM free for 30 days</h2>
+              <h2>Try TracktCRM with a free 1 month trial</h2>
               <p>
                 Set up your pipeline, capture your first leads and see AI reply
                 in seconds. Or book a demo and we will walk through it with your

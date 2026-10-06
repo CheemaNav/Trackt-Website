@@ -213,9 +213,9 @@ export default function TermsPage() {
             <Link href="/pricing">pricing</Link>, or in your plan.
           </li>
           <li>
-            Free trials are available for evaluation (for example a 1-month
-            trial where offered). Trial access converts to a paid plan after the
-            trial unless you cancel or we agree otherwise in writing.
+            Free trials are available for evaluation (for example a free 1
+            month trial where offered). Trial access converts to a paid plan
+            after the trial unless you cancel or we agree otherwise in writing.
           </li>
           <li>
             Prices may be billed per user and per billing period (for example

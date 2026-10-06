@@ -102,7 +102,7 @@ export default function AiCrmPage() {
               AI SALES ASSISTANT
             </div>
             <h1 className="re-banner-title">
-              An AI Sales Assistant That Answers Your Leads,
+              An AI Sales Assistant That Answers Your Leads,{" "}
               <span>Not Just Analyzes Them</span>
             </h1>
             <p className="re-banner-sub">

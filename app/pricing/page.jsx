@@ -8,7 +8,7 @@ const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
 const FAQS = [
   {
     q: "Is there a free trial?",
-    a: "Yes. Every feature is available on a free 1-month trial with no credit card required.",
+    a: "Yes. Every feature is available on a free 1 month trial with no credit card required.",
   },
   {
     q: "Do you publish fixed list prices?",
@@ -22,18 +22,18 @@ const FAQS = [
 
 export const metadata = {
   title: {
-    absolute: "TracktCRM Pricing | Free 1-Month Trial",
+    absolute: "TracktCRM Pricing | Free 1 month trial",
   },
   description:
-    "Start a free 1-month TracktCRM trial with no credit card. Get transparent CRM pricing for your team in INR or USD after a short demo.",
+    "Start your free 1 month trial of TracktCRM with no credit card. Get transparent CRM pricing for your team in INR or USD after a short demo.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     locale: "en_IN",
     url: `${SITE_URL}/pricing`,
     siteName: SITE_NAME,
-    title: "TracktCRM Pricing | Free 1-Month Trial",
+    title: "TracktCRM Pricing | Free 1 month trial",
     description:
-      "Free 1-month trial of TracktCRM. Talk to sales for seat-based plans in INR or USD.",
+      "Free 1 month trial of TracktCRM. Talk to sales for seat-based plans in INR or USD.",
     images: [{ url: ogImage, width: 1200, height: 630, alt: "TracktCRM pricing" }],
   },
 };
@@ -51,7 +51,7 @@ export default function PricingPage() {
       url: `${SITE_URL}/pricing`,
       priceCurrency: "INR",
       price: "0",
-      description: "1-month free trial, then paid subscription plans",
+      description: "Free 1 month trial, then paid subscription plans",
       availability: "https://schema.org/InStock",
       category: "FreeTrial",
     },
@@ -61,7 +61,7 @@ export default function PricingPage() {
     <ContentPage
       badge="PRICING"
       title="Simple trial. Clear next step."
-      lead="Start free for one month. When you are ready to continue, we share seat-based plans in INR or USD that match your channels and volume."
+      lead="Start with a free 1 month trial. When you are ready to continue, we share seat-based plans in INR or USD that match your channels and volume."
       breadcrumbs={[
         { name: "Home", href: "/" },
         { name: "Pricing", href: "/pricing" },
@@ -80,7 +80,7 @@ export default function PricingPage() {
       <div className="pricing-grid">
         <article className="pricing-card is-featured">
           <p className="pricing-eyebrow">Start here</p>
-          <h2>Free 1-month trial</h2>
+          <h2>Free 1 month trial</h2>
           <p className="pricing-price">
             ₹0 <span>/ first month</span>
           </p>

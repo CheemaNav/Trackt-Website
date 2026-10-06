@@ -387,7 +387,9 @@ export const FOOTER_COLS = [
       { label: "Education CRM", href: "/industries/education-crm" },
       { label: "Agency CRM", href: "/industries/crm-for-agencies" },
       { label: "Recruitment CRM", href: "/industries/crm-for-recruitment" },
-      { label: "All industries", href: "/industries" },
+      { label: "Insurance CRM", href: "/industries/crm-for-insurance" },
+      { label: "Automotive CRM", href: "/industries/crm-for-automotive" },
+      { label: "Healthcare CRM", href: "/industries/crm-for-healthcare" },
     ],
   },
   {

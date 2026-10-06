@@ -89,6 +89,66 @@ const nextConfig = {
         destination: "/industries/crm-for-recruitment",
         permanent: true,
       },
+      {
+        source: "/crm-for-insurance",
+        destination: "/industries/crm-for-insurance",
+        permanent: true,
+      },
+      {
+        source: "/crm-for-insurance/",
+        destination: "/industries/crm-for-insurance",
+        permanent: true,
+      },
+      {
+        source: "/insurance-crm",
+        destination: "/industries/crm-for-insurance",
+        permanent: true,
+      },
+      {
+        source: "/insurance-crm/",
+        destination: "/industries/crm-for-insurance",
+        permanent: true,
+      },
+      {
+        source: "/crm-for-automotive",
+        destination: "/industries/crm-for-automotive",
+        permanent: true,
+      },
+      {
+        source: "/crm-for-automotive/",
+        destination: "/industries/crm-for-automotive",
+        permanent: true,
+      },
+      {
+        source: "/automotive-crm",
+        destination: "/industries/crm-for-automotive",
+        permanent: true,
+      },
+      {
+        source: "/automotive-crm/",
+        destination: "/industries/crm-for-automotive",
+        permanent: true,
+      },
+      {
+        source: "/crm-for-healthcare",
+        destination: "/industries/crm-for-healthcare",
+        permanent: true,
+      },
+      {
+        source: "/crm-for-healthcare/",
+        destination: "/industries/crm-for-healthcare",
+        permanent: true,
+      },
+      {
+        source: "/healthcare-crm",
+        destination: "/industries/crm-for-healthcare",
+        permanent: true,
+      },
+      {
+        source: "/healthcare-crm/",
+        destination: "/industries/crm-for-healthcare",
+        permanent: true,
+      },
       // Short aliases that would otherwise 404
       {
         source: "/whatsapp",

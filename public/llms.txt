@@ -14,6 +14,9 @@ Use the links below for the main product pages and crawlable site metadata.
 - [Education CRM](https://tracktcrm.com/industries/education-crm): Student enquiry capture, counsellor assignment and admission-stage pipeline
 - [Agency CRM](https://tracktcrm.com/industries/crm-for-agencies): Proposal pipeline, retainer renewal tracking and client conversation history for agencies and consultants
 - [Recruitment CRM](https://tracktcrm.com/industries/crm-for-recruitment): Candidate and client pipelines, WhatsApp outreach and follow-up reminders for recruiters
+- [Insurance CRM](https://tracktcrm.com/industries/crm-for-insurance): Lead capture, quote follow-up and policy renewal reminders for insurance agents and brokers
+- [Automotive CRM](https://tracktcrm.com/industries/crm-for-automotive): Enquiry capture, test drive scheduling and after-sales follow-up for car dealerships
+- [Healthcare CRM](https://tracktcrm.com/industries/crm-for-healthcare): Patient enquiry capture, appointment scheduling and follow-up reminders for clinics and hospitals
 - [WhatsApp CRM](https://tracktcrm.com/features/whatsapp-crm): Capture, chat and close on WhatsApp
 - [Integrations](https://tracktcrm.com/integrations): Apps connected to TracktCRM
 - [Contact](https://tracktcrm.com/contact): Phone, WhatsApp, office address and contact form
