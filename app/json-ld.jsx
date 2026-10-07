@@ -619,6 +619,36 @@ export function WebPageJsonLd({ name, description, path, dateModified }) {
   return <SchemaScript id="schema-webpage" data={page} />;
 }
 
+/** Pricing plans as SoftwareApplication offers, in USD per user per month. */
+export function PricingJsonLd({ plans }) {
+  const software = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: SITE_NAME,
+    applicationCategory: "BusinessApplication",
+    applicationSubCategory: "CRM Software",
+    operatingSystem: "Web",
+    url: `${SITE_URL}/pricing`,
+    offers: plans.map((plan) => ({
+      "@type": "Offer",
+      name: `${SITE_NAME} ${plan.name}`,
+      description: plan.tagline,
+      url: `${SITE_URL}/pricing`,
+      price: String(plan.monthly),
+      priceCurrency: "USD",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: String(plan.monthly),
+        priceCurrency: "USD",
+        unitText: "user per month",
+        billingDuration: "P1M",
+      },
+    })),
+  };
+
+  return <SchemaScript id="schema-pricing" data={software} />;
+}
+
 export function FaqJsonLd({ id = "schema-faq", faqs }) {
   const faqPage = {
     "@context": "https://schema.org",
