@@ -1482,10 +1482,18 @@ select {
   color: var(--tc-dim);
 }
 
-.pricing-card h2 {
+.pricing-card h2,
+.pricing-card h3 {
   margin: 0;
   font-size: 24px;
   color: var(--tc-ink);
+}
+
+.pricing-heading {
+  margin: 0 0 18px;
+  color: var(--tc-ink);
+  font-size: clamp(22px, 2.4vw, 28px);
+  letter-spacing: -0.02em;
 }
 
 .pricing-price {
@@ -1816,6 +1824,10 @@ select {
   flex-direction: column;
   justify-content: center;
   animation: fadeUp 0.45s var(--tc-ease) both;
+}
+
+.product-copy[hidden] {
+  display: none;
 }
 
 .product-copy h3 {
@@ -3486,6 +3498,8 @@ select {
 }
 
 .industry-card {
+  display: block;
+  text-decoration: none;
   border-radius: 18px;
   padding: 26px 22px;
   border: 1px solid var(--tc-line);
@@ -3540,29 +3554,6 @@ select {
 
 .industry-card:hover ul {
   color: #d7dce2;
-}
-
-.industry-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 16px;
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--tc-cta);
-  transition: color 0.12s linear;
-}
-
-.industry-card:hover .industry-link {
-  color: #fff;
-}
-
-.industry-link svg {
-  transition: transform 0.12s linear;
-}
-
-.industry-link:hover svg {
-  transform: translateX(3px);
 }
 
 /* Real Estate CRM page */
@@ -9758,10 +9749,6 @@ select {
   object-position: 80% center;
 }
 
-.industry-compare-wrap {
-  max-width: 900px;
-}
-
 .industry-process-link {
   display: inline-block;
   margin-top: 8px;
@@ -10211,5 +10198,282 @@ select {
 
   .hub-industry-card {
     padding: 24px 20px;
+  }
+}
+
+/* Homepage SEO layout */
+
+.hero .h1.hero-title {
+  max-width: 17em;
+  font-size: clamp(30px, 3.8vw, 50px);
+}
+
+.hero-made-for {
+  margin: 16px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--tc-ink);
+}
+
+.home-wa-section {
+  background: #f0faf4;
+  padding: 64px 24px;
+}
+
+@media (max-width: 640px) {
+  .home-wa-section {
+    padding: 48px 16px;
+  }
+}
+
+.home-wa {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.home-wa-visual {
+  margin: 0;
+}
+
+.home-wa-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.home-wa-more {
+  margin: 22px 0 0;
+}
+
+.home-wa-more a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 650;
+  color: var(--tc-ink);
+}
+
+.home-wa-more a:hover {
+  color: var(--tc-cta);
+}
+
+.home-wa-more a:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+.int-center h2 {
+  font-size: clamp(17px, 2.05vw, 27px);
+}
+
+.int-center .int-sub {
+  margin: 10px auto 0;
+  max-width: 30ch;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--tc-muted);
+}
+
+@media (min-width: 981px) {
+  .ai-features-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 1120px;
+  }
+}
+
+@media (max-width: 980px) {
+  .home-wa {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Comparison content pages */
+
+.prose-block h2[id] {
+  scroll-margin-top: 110px;
+}
+
+.prose-block h3 {
+  margin: 6px 0 -6px;
+  color: var(--tc-ink);
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+
+.prose-block ul {
+  list-style: disc;
+}
+
+.prose-block ol {
+  list-style: decimal;
+}
+
+.prose-block li::marker {
+  color: var(--tc-cta);
+  font-weight: 650;
+}
+
+.prose-block .compare-table th[scope="row"] {
+  color: var(--tc-ink);
+  font-weight: 650;
+  text-align: left;
+}
+
+.prose-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.prose-block .prose-ctas .btn-primary {
+  color: #fff;
+}
+
+.prose-block .prose-ctas .btn-outline {
+  color: var(--tc-cta);
+}
+
+.prose-sources {
+  font-size: 14.5px;
+}
+
+.prose-cta {
+  margin-top: 48px;
+}
+
+.prose-cta .cta p a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* WhatsApp CRM page */
+
+.wa-bento-card a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.wa-bento-card:last-child:nth-child(3n + 1) {
+  grid-column: 1 / -1;
+}
+
+.wa-rules-grid {
+  margin-top: 0;
+}
+
+.wa-rules-grid a {
+  color: var(--tc-ink);
+  font-weight: 600;
+}
+
+.wa-app-api {
+  background: var(--wa-soft);
+}
+
+.industry-page-links.wa-int-text {
+  margin: 28px auto 0;
+  text-align: center;
+}
+
+/* Integrations page */
+
+.int-page-updated {
+  margin: 14px 0 0;
+  color: var(--tc-faint);
+  font-size: 13.5px;
+}
+
+.int-page-card {
+  scroll-margin-top: 140px;
+}
+
+.int-page-card:target {
+  border-color: var(--tc-blue);
+  box-shadow: 0 0 0 3px rgba(59, 91, 255, 0.15);
+}
+
+.int-page-links,
+.industry-page-links {
+  margin: 28px 0 0;
+  max-width: 72ch;
+  color: var(--tc-muted);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+.int-page-links a,
+.industry-page-links a {
+  color: var(--tc-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.int-page-links a:hover,
+.industry-page-links a:hover {
+  color: var(--tc-blue);
+}
+
+/* CRM software page */
+
+.cs-int-lines {
+  list-style: none;
+  max-width: 1080px;
+  margin: 8px auto 0;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 28px;
+  color: var(--tc-muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.cs-int-lines strong {
+  color: var(--tc-ink);
+  font-weight: 650;
+}
+
+.cs-int-lines + .int-note {
+  margin-top: 22px;
+}
+
+.cs-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.cs-demo-grid .re-shot {
+  max-width: none;
+  margin: 36px 0 0;
+}
+
+@media (max-width: 980px) {
+  .cs-int-lines {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cs-demo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .cs-int-lines {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+
+  .cs-demo-grid .re-shot {
+    margin-top: 24px;
   }
 }

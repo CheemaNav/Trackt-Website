@@ -37,9 +37,9 @@ const FEATURE_ICONS = {
 };
 
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
-const pageTitle = "Education CRM Software for Admissions | TracktCRM";
+const pageTitle = "Education CRM Software India for Admissions | TracktCRM";
 const pageDescription =
-  "Education CRM for schools, colleges and coaching institutes: capture enquiries from ads, portals and WhatsApp, assign counsellors, track admissions and fees. Free 1 month trial.";
+  "Education CRM for Indian institutes: capture enquiries from ads, portals and WhatsApp, assign counsellors, track admissions and fees. Free 1 month trial.";
 
 export const metadata = {
   title: {
@@ -61,7 +61,7 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "TracktCRM education CRM for admissions teams",
+        alt: "TracktCRM education CRM for admissions teams in India",
       },
     ],
   },
@@ -106,7 +106,7 @@ export default function EducationCrmPage() {
                 EDUCATION CRM
               </div>
               <h1 className="re-banner-title">
-                Education CRM for Schools, Colleges and Institutes{" "}
+                Education CRM for Indian Institutes{" "}
                 <span>That Takes Every Enquiry to Enrolment</span>
               </h1>
               <p className="re-banner-sub">
@@ -352,8 +352,8 @@ export default function EducationCrmPage() {
             Student Data, Parent Consent and Privacy
           </h2>
           <p className="edu-lede">
-            Admission data often belongs to minors. The Digital Personal Data
-            Protection Act, 2023 treats anyone under 18 as a child
+            Admission data often belongs to minors. India&apos;s Digital
+            Personal Data Protection Act, 2023 treats anyone under 18 as a child
             and expects verifiable parental consent before their data is
             processed. WhatsApp messaging also needs opt-in. With TracktCRM, you
             decide the scripts and messages that go out.
@@ -367,7 +367,7 @@ export default function EducationCrmPage() {
           <h2 className="h2 is-centered">Education CRM FAQs</h2>
           <p className="edu-lede">
             Answers to common questions about admissions CRM software for
-            schools, colleges and coaching institutes.
+            Indian institutes.
           </p>
           <div className="faq-list edu-faq-list">
             {EDU_FAQS.map((item) => (

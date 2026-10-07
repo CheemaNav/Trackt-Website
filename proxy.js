@@ -24,7 +24,7 @@ const REDIRECTS = new Map([
   ["/terms-conditions", "/terms"],
 ]);
 
-export function middleware(request) {
+export function proxy(request) {
   const pathname = request.nextUrl.pathname.replace(/\/+$/, "") || "/";
   const destination = REDIRECTS.get(pathname);
 

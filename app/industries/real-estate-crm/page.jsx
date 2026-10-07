@@ -41,9 +41,9 @@ const FEATURE_ICONS = {
 };
 
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
-const pageTitle = "Real Estate CRM: Leads, Site Visits & Brokers | TracktCRM";
+const pageTitle = "Real Estate CRM India: Leads, Site Visits | TracktCRM";
 const pageDescription =
-  "Real estate CRM that captures leads from 99acres, MagicBricks and WhatsApp, books site visits, and tracks brokers, inventory and bookings. Free 1 month trial.";
+  "Real estate CRM for India: capture leads from 99acres, MagicBricks and WhatsApp, book site visits, track brokers, inventory and bookings. Free 1 month trial.";
 
 export const metadata = {
   title: {
@@ -65,7 +65,7 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "TracktCRM real estate CRM",
+        alt: "TracktCRM real estate CRM for India",
       },
     ],
   },
@@ -110,7 +110,7 @@ export default function RealEstateCrmPage() {
               REAL ESTATE CRM
             </div>
             <h1 className="re-banner-title">
-              Real Estate CRM for Property Teams{" "}
+              Real Estate CRM for India{" "}
               <span>That Handles Leads, Site Visits and Brokers</span>
             </h1>
             <p className="re-banner-sub">

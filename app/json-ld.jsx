@@ -61,13 +61,13 @@ export default function JsonLd() {
     applicationSubCategory: "CRM Software",
     operatingSystem: "Web",
     description:
-      "AI-powered CRM software that captures leads across WhatsApp, email and SMS, automates follow-ups, and manages sales pipelines - built for real estate, agencies, consultants and freelancers.",
+      "AI-powered CRM software that captures leads across WhatsApp, email and SMS, automates follow-ups, and manages sales pipelines for real estate, education, agencies, consultants and freelancers.",
     offers: {
       "@type": "Offer",
       url: `${SITE_URL}/pricing`,
       priceCurrency: "INR",
       price: "0",
-      description: "Free 1 month trial - no credit card required. Paid plans after trial.",
+      description: "Free 1 month trial, no credit card required. Paid plans after trial.",
       category: "FreeTrial",
     },
     url: SITE_URL,
@@ -162,9 +162,12 @@ export function RealEstateJsonLd({ faqs, features }) {
       name: SITE_NAME,
       url: SITE_URL,
     },
-    areaServed: "Worldwide",
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
     description:
-      "TracktCRM is real estate CRM software that captures leads from 99acres, MagicBricks and WhatsApp, books site visits, and tracks brokers, inventory and bookings.",
+      "TracktCRM is real estate CRM software for India that captures leads from 99acres, MagicBricks and WhatsApp, books site visits, and tracks brokers, inventory and bookings.",
     url: `${SITE_URL}/industries/real-estate-crm`,
   };
 
@@ -183,8 +186,8 @@ export function RealEstateJsonLd({ faqs, features }) {
   );
 }
 
-/** AI CRM page FAQ + Service schema. */
-export function AiCrmJsonLd({ faqs }) {
+/** AI CRM page FAQ + Service + SoftwareApplication schema. */
+export function AiCrmJsonLd({ faqs, features }) {
   const faqPage = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -201,22 +204,32 @@ export function AiCrmJsonLd({ faqs }) {
   const service = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "AI Sales Assistant",
+    serviceType: "AI CRM Software",
     provider: {
       "@type": "Organization",
       name: SITE_NAME,
       url: SITE_URL,
     },
-    areaServed: "Worldwide",
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
     description:
-      "TracktCRM's AI sales assistant answers every lead in seconds across WhatsApp, email and SMS, then automates follow-ups and reporting.",
+      "TracktCRM is AI CRM software with a built-in AI sales assistant that replies to every lead in seconds on WhatsApp, email and SMS, places follow-up calls and hands over to reps with full context.",
     url: `${SITE_URL}/industries/ai-crm`,
   };
+
+  const software = industrySoftware({
+    name: "AI CRM",
+    path: "/industries/ai-crm",
+    features,
+  });
 
   return (
     <>
       <SchemaScript id="schema-ai-faq" data={faqPage} />
       <SchemaScript id="schema-ai-service" data={service} />
+      <SchemaScript id="schema-ai-software" data={software} />
     </>
   );
 }
@@ -245,9 +258,12 @@ export function EducationCrmJsonLd({ faqs, features }) {
       name: SITE_NAME,
       url: SITE_URL,
     },
-    areaServed: "Worldwide",
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
     description:
-      "TracktCRM is an education CRM for schools, colleges and coaching institutes that captures enquiries from ads, portals and WhatsApp, assigns counsellors, and tracks admissions and fees.",
+      "TracktCRM is an education CRM for Indian institutes that captures enquiries from ads, portals and WhatsApp, assigns counsellors, and tracks admissions and fees.",
     url: `${SITE_URL}/industries/education-crm`,
   };
 
@@ -267,7 +283,7 @@ export function EducationCrmJsonLd({ faqs, features }) {
 }
 
 /** Agency CRM page FAQ + Service schema. */
-export function AgencyCrmJsonLd({ faqs }) {
+export function AgencyCrmJsonLd({ faqs, features }) {
   const faqPage = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -290,22 +306,32 @@ export function AgencyCrmJsonLd({ faqs }) {
       name: SITE_NAME,
       url: SITE_URL,
     },
-    areaServed: "Worldwide",
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
     description:
-      "TracktCRM is an agency CRM that tracks proposals, retainer renewals and client conversations in one pipeline.",
+      "Agency CRM for Indian agencies: track pitches, proposals and retainer renewals, and keep client chats on WhatsApp in one pipeline.",
     url: `${SITE_URL}/industries/crm-for-agencies`,
   };
+
+  const software = industrySoftware({
+    name: "Agency CRM",
+    path: "/industries/crm-for-agencies",
+    features,
+  });
 
   return (
     <>
       <SchemaScript id="schema-agency-faq" data={faqPage} />
       <SchemaScript id="schema-agency-service" data={service} />
+      <SchemaScript id="schema-agency-software" data={software} />
     </>
   );
 }
 
 /** Recruitment CRM page FAQ + Service schema. */
-export function RecruitmentCrmJsonLd({ faqs }) {
+export function RecruitmentCrmJsonLd({ faqs, features }) {
   const faqPage = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -328,16 +354,26 @@ export function RecruitmentCrmJsonLd({ faqs }) {
       name: SITE_NAME,
       url: SITE_URL,
     },
-    areaServed: "Worldwide",
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
     description:
-      "TracktCRM is a recruitment CRM that tracks candidates and client roles in one pipeline, reaches candidates on WhatsApp and reminds recruiters to follow up.",
+      "Recruitment CRM for Indian recruiters: track candidates and client roles, reach candidates on WhatsApp and get follow-up reminders.",
     url: `${SITE_URL}/industries/crm-for-recruitment`,
   };
+
+  const software = industrySoftware({
+    name: "Recruitment CRM",
+    path: "/industries/crm-for-recruitment",
+    features,
+  });
 
   return (
     <>
       <SchemaScript id="schema-recruitment-faq" data={faqPage} />
       <SchemaScript id="schema-recruitment-service" data={service} />
+      <SchemaScript id="schema-recruitment-software" data={software} />
     </>
   );
 }
@@ -486,7 +522,7 @@ export function IndustriesHubJsonLd({ industries, faqs }) {
 }
 
 /** WhatsApp CRM page FAQ + Service schema. */
-export function WhatsAppCrmJsonLd({ faqs }) {
+export function WhatsAppCrmJsonLd({ faqs, features }) {
   const faqPage = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -509,16 +545,26 @@ export function WhatsAppCrmJsonLd({ faqs }) {
       name: SITE_NAME,
       url: SITE_URL,
     },
-    areaServed: "Worldwide",
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
     description:
-      "TracktCRM is a WhatsApp CRM that captures leads, automates replies and tracks every deal — right inside the WhatsApp chats your customers already use.",
+      "WhatsApp CRM for Indian teams: capture every WhatsApp enquiry as a lead, reply from a shared inbox, automate follow-ups and track deals.",
     url: `${SITE_URL}/features/whatsapp-crm`,
   };
+
+  const software = industrySoftware({
+    name: "WhatsApp CRM",
+    path: "/features/whatsapp-crm",
+    features,
+  });
 
   return (
     <>
       <SchemaScript id="schema-wa-faq" data={faqPage} />
       <SchemaScript id="schema-wa-service" data={service} />
+      <SchemaScript id="schema-wa-software" data={software} />
     </>
   );
 }
@@ -549,6 +595,30 @@ export function ContactPageJsonLd() {
   return <SchemaScript id="schema-contact" data={contactPage} />;
 }
 
+export function WebPageJsonLd({ name, description, path, dateModified }) {
+  const page = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name,
+    description,
+    url: `${SITE_URL}${path}`,
+    dateModified,
+    inLanguage: "en-IN",
+    author: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  };
+
+  return <SchemaScript id="schema-webpage" data={page} />;
+}
+
 export function FaqJsonLd({ id = "schema-faq", faqs }) {
   const faqPage = {
     "@context": "https://schema.org",
@@ -566,7 +636,7 @@ export function FaqJsonLd({ id = "schema-faq", faqs }) {
   return <SchemaScript id={id} data={faqPage} />;
 }
 
-/** CRM software pillar page FAQ + SoftwareApplication schema. */
+/** CRM software pillar page FAQ schema; SoftwareApplication comes from the layout. */
 export function CrmSoftwareJsonLd({ faqs }) {
   const faqPage = {
     "@context": "https://schema.org",
@@ -581,39 +651,30 @@ export function CrmSoftwareJsonLd({ faqs }) {
     })),
   };
 
-  const software = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: SITE_NAME,
-    applicationCategory: "BusinessApplication",
-    applicationSubCategory: "CRM Software",
-    operatingSystem: "Web, iOS, Android",
-    description:
-      "AI-powered CRM software that captures leads, replies in seconds across WhatsApp, email and SMS, and tracks every deal in one pipeline.",
-    url: `${SITE_URL}/crm-software`,
-  };
-
-  return (
-    <>
-      <SchemaScript id="schema-cs-faq" data={faqPage} />
-      <SchemaScript id="schema-cs-software" data={software} />
-    </>
-  );
+  return <SchemaScript id="schema-cs-faq" data={faqPage} />;
 }
 
-export function IntegrationsJsonLd({ apps }) {
-  const itemList = {
+export function IntegrationsJsonLd({ apps, name, description, dateModified }) {
+  const page = {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "TracktCRM CRM integrations",
-    itemListElement: apps.map((app, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: app.name,
-      description: app.body,
-      url: app.href ? `${SITE_URL}${app.href}` : `${SITE_URL}/integrations`,
-    })),
+    "@type": "CollectionPage",
+    name,
+    description,
+    url: `${SITE_URL}/integrations`,
+    dateModified,
+    mainEntity: {
+      "@type": "ItemList",
+      name: "TracktCRM CRM integrations",
+      numberOfItems: apps.length,
+      itemListElement: apps.map((app, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: app.name,
+        description: app.body,
+        url: `${SITE_URL}/integrations#${app.slug}`,
+      })),
+    },
   };
 
-  return <SchemaScript id="schema-integrations" data={itemList} />;
+  return <SchemaScript id="schema-integrations" data={page} />;
 }

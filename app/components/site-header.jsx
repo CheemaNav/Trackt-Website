@@ -7,6 +7,7 @@ import { CloseIcon, FieldDropdownIcon, MenuIcon } from "../icons";
 import { APP_LOGIN_URL, APP_REGISTER_URL } from "../site";
 
 const INDUSTRY_LINKS = [
+  { label: "AI CRM", href: "/industries/ai-crm" },
   { label: "Real Estate CRM", href: "/industries/real-estate-crm" },
   { label: "Education CRM", href: "/industries/education-crm" },
   { label: "Agency CRM", href: "/industries/crm-for-agencies" },
@@ -18,7 +19,6 @@ const INDUSTRY_LINKS = [
 
 const FEATURE_LINKS = [
   { label: "CRM Software", href: "/crm-software" },
-  { label: "AI CRM", href: "/industries/ai-crm" },
   { label: "WhatsApp CRM", href: "/features/whatsapp-crm" },
 ];
 
@@ -229,6 +229,9 @@ export default function SiteHeader() {
           </Link>
           <Link href="/integrations" onClick={closeMenu}>
             Integrations
+          </Link>
+          <Link href="/pricing" onClick={closeMenu}>
+            Pricing
           </Link>
           <Link href="/contact" onClick={closeMenu}>
             Contact Us

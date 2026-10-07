@@ -8,7 +8,9 @@ import {
   CheckIcon,
   FieldMessageIcon,
   InventoryIcon,
-  ProjectPipelineIcon,
+  OwnerIcon,
+  ReportIcon,
+  SiteVisitIcon,
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
 import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
@@ -16,12 +18,12 @@ import { AiCrmJsonLd, BreadcrumbJsonLd } from "../../json-ld";
 import {
   AI_FAQS,
   CHOOSING_POINTS,
-  COMPARE_POINTS,
+  COMPARE_ROWS,
   FEATURES,
+  INDUSTRIES,
   INTEGRATIONS,
   PROBLEM_POINTS,
   PROCESS_STEPS,
-  TESTIMONIALS,
   WHAT_IS_POINTS,
 } from "./data";
 
@@ -29,17 +31,23 @@ const FEATURE_ICONS = {
   channels: ChannelWhatsAppIcon,
   calls: ChannelCallIcon,
   summaries: FieldMessageIcon,
-  reporting: ProjectPipelineIcon,
+  routing: OwnerIcon,
+  booking: SiteVisitIcon,
+  reporting: ReportIcon,
   catalog: InventoryIcon,
   control: AiLeadIcon,
 };
 
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const pageTitle = "AI CRM with AI Sales Assistant for India | TracktCRM";
+const pageDescription =
+  "AI CRM that replies to every lead on WhatsApp, email and SMS in seconds, calls to follow up and hands over to your rep with full context. Try it free for 1 month.";
 
 export const metadata = {
-  title: "AI Sales Assistant: Instant Lead Response",
-  description:
-    "See how TracktCRM's AI answers leads on WhatsApp, email and SMS, places follow-up calls and hands off to reps with full context. Book a demo.",
+  title: {
+    absolute: pageTitle,
+  },
+  description: pageDescription,
   alternates: {
     canonical: "/industries/ai-crm",
   },
@@ -48,15 +56,14 @@ export const metadata = {
     locale: "en_IN",
     url: `${SITE_URL}/industries/ai-crm`,
     siteName: SITE_NAME,
-    title: "AI Sales Assistant: Instant Lead Response | TracktCRM",
-    description:
-      "Instant multi-channel lead response, automated follow-up calls, and AI-powered reporting - not just another AI dashboard.",
+    title: pageTitle,
+    description: pageDescription,
     images: [
       {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "TracktCRM AI sales assistant answering leads",
+        alt: "TracktCRM AI CRM with an AI sales assistant answering leads",
       },
     ],
   },
@@ -73,9 +80,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Sales Assistant: Instant Lead Response | TracktCRM",
-    description:
-      "Instant multi-channel lead response, automated follow-up calls, and AI-powered reporting - not just another AI dashboard.",
+    title: pageTitle,
+    description: pageDescription,
     images: [ogImage],
   },
 };
@@ -83,12 +89,12 @@ export const metadata = {
 export default function AiCrmPage() {
   return (
     <div className="home">
-      <AiCrmJsonLd faqs={AI_FAQS} />
+      <AiCrmJsonLd faqs={AI_FAQS} features={FEATURES} />
       <BreadcrumbJsonLd
         items={[
           { name: "Home", href: "/" },
           { name: "Industries", href: "/industries" },
-          { name: "AI Sales Assistant", href: "/industries/ai-crm" },
+          { name: "AI CRM", href: "/industries/ai-crm" },
         ]}
       />
       <RevealInit />
@@ -99,17 +105,19 @@ export default function AiCrmPage() {
           <div className="re-banner-copy">
             <div className="badge re-banner-badge">
               <span className="pulse" aria-hidden="true" />
-              AI SALES ASSISTANT
+              AI CRM
             </div>
             <h1 className="re-banner-title">
-              An AI Sales Assistant That Answers Your Leads,{" "}
-              <span>Not Just Analyzes Them</span>
+              AI CRM with an AI Sales Assistant{" "}
+              <span>That Replies to Leads in Seconds</span>
             </h1>
             <p className="re-banner-sub">
-              Most &quot;AI CRM&quot; tools stop at smart dashboards.
-              TracktCRM&apos;s AI responds to every lead within seconds across
-              WhatsApp, email and SMS, places automated follow-up calls, and
-              hands your reps a fully-briefed conversation - not a cold lead.
+              TracktCRM is AI CRM software for sales teams in India. When an
+              enquiry arrives from a website form, a Meta or Google ad, 99acres
+              or WhatsApp, the built-in AI sales assistant sends a WhatsApp
+              message and an email within seconds, follows up by SMS, and places
+              a call while the lead is still warm. Your rep then picks up with
+              the whole conversation in front of them.
             </p>
             <div className="re-banner-ctas">
               <a
@@ -128,14 +136,14 @@ export default function AiCrmPage() {
               </a>
             </div>
             <p className="re-banner-trust">
-              No credit card required · Free 1 month trial · Every response
-              logged automatically
+              No credit card required · Free 1 month trial · Every response is
+              logged on the lead record
             </p>
           </div>
           <figure className="re-banner-media ai-banner-media">
             <img
               src="/assets/AI-CRM.png"
-              alt="TracktCRM AI CRM responding to leads across WhatsApp, email and SMS"
+              alt="TracktCRM AI CRM replying to leads across WhatsApp, email and SMS"
               width={1600}
               height={1000}
               fetchPriority="high"
@@ -147,15 +155,15 @@ export default function AiCrmPage() {
 
       <section className="section re-band reveal" id="problem">
         <div className="re-section-head is-wide">
-          <p className="kicker">THE &quot;AI-WASHING&quot; PROBLEM</p>
-          <h2 className="h2">
-            Most AI CRMs just report on leads. TracktCRM&apos;s AI acts on them.
-          </h2>
+          <p className="kicker">SPEED TO LEAD</p>
+          <h2 className="h2">Why Most AI CRMs Only Report on Leads</h2>
           <p className="re-section-intro">
-            A lot of CRMs bolt on a chatbot or a smart-sounding report and call
-            it &quot;AI.&quot; That&apos;s not automation - it&apos;s a dashboard
-            with a new label. TracktCRM&apos;s AI is built to actually do the
-            work of the first five minutes after a lead comes in:
+            Many CRMs add a chatbot or a smart report and call it AI. That helps
+            you understand what already happened, but the first few minutes
+            after an enquiry are where deals are usually lost. Research on speed
+            to lead keeps pointing the same way: the faster the first reply, the
+            better the chance of a real conversation. TracktCRM is built for
+            that window.
           </p>
         </div>
         <div className="re-point-grid">
@@ -176,7 +184,7 @@ export default function AiCrmPage() {
           <figure className="re-photo re-photo-contain">
             <img
               src="/assets/AI-CRM-actually.jpg"
-              alt="TracktCRM AI CRM pipeline board organizing leads by stage"
+              alt="TracktCRM lead record with the full history of calls, messages and notes"
               width={1600}
               height={900}
               loading="lazy"
@@ -185,21 +193,17 @@ export default function AiCrmPage() {
           </figure>
           <div className="re-split-copy">
             <p className="kicker">AI CRM SOFTWARE</p>
-            <h2 className="h2">
-              What does &quot;AI CRM&quot; actually mean, and what should it do?
-            </h2>
+            <h2 className="h2">What Is an AI CRM?</h2>
             <p className="re-section-intro">
               An AI CRM is customer relationship management software that uses
-              artificial intelligence to act on your leads and deals - not just
-              organize them. The term gets used loosely, so here&apos;s what
-              separates a genuine AI CRM from a regular CRM with a chatbot
-              bolted on.
+              AI to act on leads, not just store them. It replies to new
+              enquiries, schedules follow-ups, summarises calls and updates the
+              pipeline automatically. A regular CRM waits for your team to do
+              these things.
             </p>
             <p className="re-section-intro">
-              TracktCRM is built around this definition, not adapted from a
-              regular CRM with an AI feature added on top. See how it sits
-              inside TracktCRM&apos;s{" "}
-              <a href="/crm-software">CRM software</a>.
+              A real AI CRM should do the five things below. See how this sits
+              inside our <a href="/crm-software">CRM software</a>.
             </p>
           </div>
         </div>
@@ -216,9 +220,9 @@ export default function AiCrmPage() {
       <section className="section reveal" id="features">
         <div className="re-section-head is-wide">
           <p className="kicker">FEATURES</p>
-          <h2 className="h2">What TracktCRM&apos;s AI actually does</h2>
+          <h2 className="h2">AI Sales Assistant Features Inside TracktCRM</h2>
         </div>
-        <div className="re-feature-grid">
+        <div className="re-feature-grid is-balanced">
           {FEATURES.map((feature) => {
             const Icon = FEATURE_ICONS[feature.icon] || CaptureIcon;
             return (
@@ -238,7 +242,7 @@ export default function AiCrmPage() {
         <div className="re-section-head">
           <p className="kicker">FROM ENQUIRY TO REP</p>
           <h2 className="h2">
-            How a lead moves from AI response to a human conversation
+            How Speed to Lead Works: From Enquiry to Rep Handover
           </h2>
         </div>
         <div className="re-process-grid">
@@ -252,67 +256,21 @@ export default function AiCrmPage() {
         </div>
       </section>
 
-      <section className="section reveal" id="compare">
-        <div className="re-section-head is-wide">
-          <p className="kicker">HOW IT COMPARES</p>
-          <h2 className="h2">
-            How TracktCRM&apos;s AI differs from other CRM AI features
-          </h2>
-          <p className="re-section-intro">
-            Several CRMs now offer an AI feature - here&apos;s a factual look at
-            how they differ, so you can judge what fits your team:
-          </p>
-          <p className="content-meta">
-            Last verified: September 2026 · Based on publicly documented product
-            features. Always confirm current pricing and capabilities with each
-            vendor.
-          </p>
-        </div>
-        <div className="ai-compare-grid">
-          {COMPARE_POINTS.map((item) => (
-            <article
-              className={`ai-compare-card${item.highlight ? " is-highlight" : ""}`}
-              key={item.title}
-            >
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section reveal" id="choosing">
-        <p className="kicker">BUYER&apos;S GUIDE</p>
-        <h2 className="h2">What to look for in an AI CRM</h2>
-        <p className="re-section-intro">
-          &quot;AI CRM&quot; is used loosely across the market. Here&apos;s what
-          actually matters when evaluating one:
-        </p>
-        <div className="re-choose-grid">
-          {CHOOSING_POINTS.map((item) => (
-            <article className="re-choose-card" key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="section re-int-band reveal" id="integrations">
-        <p className="kicker">INTEGRATIONS</p>
-        <h2 className="h2">Works across the channels your leads already use</h2>
+        <p className="kicker">CHANNELS AND INTEGRATIONS</p>
+        <h2 className="h2">AI CRM for WhatsApp, Email, SMS and Voice Calls</h2>
+        <p className="re-section-intro">
+          Most Indian leads start on WhatsApp, so the AI works there first. Use
+          our <a href="/features/whatsapp-crm">WhatsApp CRM</a> to keep every
+          chat tied to a lead record. Email and SMS run independently, so the AI
+          also works for teams that do not use WhatsApp.
+        </p>
         <div className="re-int-list">
           {INTEGRATIONS.map((item) => (
             <article className="re-int-card" key={item.title}>
-              {item.brand ? (
-                <span className="re-int-logo">
-                  <BrandMark name={item.brand} />
-                </span>
-              ) : (
-                <span className="re-int-fallback" aria-hidden="true">
-                  {item.title.slice(0, 1)}
-                </span>
-              )}
+              <span className="re-int-logo">
+                <BrandMark name={item.brand} />
+              </span>
               <div>
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
@@ -320,21 +278,123 @@ export default function AiCrmPage() {
             </article>
           ))}
         </div>
+        <p className="re-section-intro re-int-more">
+          <a href="/integrations">Browse all CRM integrations</a>
+        </p>
+      </section>
+
+      <section className="section reveal" id="industries">
+        <p className="kicker">BY INDUSTRY</p>
+        <h2 className="h2">
+          AI CRM for Real Estate, Education, Automotive and Agencies
+        </h2>
+        <div className="re-choose-grid">
+          {INDUSTRIES.map((item) => (
+            <article className="re-choose-card" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>
+                {item.body} <a href={item.href}>{item.linkLabel}</a>.
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section re-band reveal" id="compare">
+        <div className="re-section-head is-wide">
+          <p className="kicker">HOW IT COMPARES</p>
+          <h2 className="h2">TracktCRM vs Chatbots and Reporting-Only AI CRMs</h2>
+        </div>
+        <div className="compare-table-wrap cs-compare-wrap industry-compare-wrap">
+          <table className="compare-table cs-compare-table">
+            <thead>
+              <tr>
+                <th aria-label="Comparison" />
+                <th>Chatbot on a website</th>
+                <th>CRM with AI reports</th>
+                <th>TracktCRM</th>
+              </tr>
+            </thead>
+            <tbody>
+              {COMPARE_ROWS.map((row) => (
+                <tr key={row.label}>
+                  <th scope="row">{row.label}</th>
+                  <td>{row.chatbot}</td>
+                  <td>{row.reports}</td>
+                  <td>{row.tracktcrm}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="re-section-intro">
+          Comparing TracktCRM with a specific CRM? See the{" "}
+          <a href="/pipedrive-alternative">Pipedrive alternative</a> page.
+        </p>
+      </section>
+
+      <section className="section reveal" id="choosing">
+        <p className="kicker">BUYER&apos;S GUIDE</p>
+        <h2 className="h2">What to Look For in an AI CRM</h2>
+        <div className="re-choose-grid">
+          {CHOOSING_POINTS.map((item) => (
+            <article className="re-choose-card" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>
+                {item.body}
+                {item.href ? (
+                  <>
+                    {" "}
+                    <a href={item.href}>{item.linkLabel}</a>.
+                  </>
+                ) : null}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section re-band reveal" id="privacy">
+        <div className="re-split">
+          <div className="re-split-copy">
+            <p className="kicker">CONSENT AND PRIVACY</p>
+            <h2 className="h2">Consent, Data Privacy and Control</h2>
+            <p className="re-section-intro">
+              Automated messages and calls should respect consent. WhatsApp
+              Business messaging needs opt-in, and India&apos;s Digital Personal
+              Data Protection Act, 2023 applies to how you store lead data. You
+              set the scripts and can disclose AI involvement as clearly as you
+              like.
+            </p>
+            <p className="re-section-intro">
+              Read how we handle data in our{" "}
+              <a href="/privacy-policy">privacy policy</a>.
+            </p>
+          </div>
+          <figure className="re-photo">
+            <img
+              src="/assets/ai/ai-crm-consent-privacy.webp"
+              alt="Illustration of WhatsApp opt-in consent, AI disclosure and protected lead data around a security shield"
+              width={1152}
+              height={864}
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
       </section>
 
       <section className="section reveal" id="proof">
         <p className="kicker is-centered">SEE IT IN ACTION</p>
-        <h2 className="h2 is-centered">
-          From enquiry to AI response to a briefed hand-off
-        </h2>
+        <h2 className="h2 is-centered">See the AI Sales Assistant in Action</h2>
         <p className="re-section-intro is-centered">
-          Lead arrives, WhatsApp / email / SMS go out, a follow-up call is
-          placed, and your rep picks up with a summarized conversation attached.
+          A lead arrives, WhatsApp and email go out, a follow-up call is placed,
+          and your rep opens a summarised conversation.
         </p>
         <figure className="re-shot re-shot-wide">
           <img
             src="/assets/AI-response.png"
-            alt="TracktCRM AI CRM reporting dashboard from enquiry response to hand-off"
+            alt="TracktCRM lead record showing AI reply, call transcript and summary before rep handover"
             width={1600}
             height={900}
             loading="lazy"
@@ -343,24 +403,9 @@ export default function AiCrmPage() {
         </figure>
       </section>
 
-      <section className="section reveal" id="testimonial">
-        <p className="kicker is-centered">SOCIAL PROOF</p>
-        <h2 className="h2 is-centered">
-          Teams using TracktCRM&apos;s AI to answer every lead
-        </h2>
-        <div className="re-testimonial-grid">
-          {TESTIMONIALS.map((item) => (
-            <div className="re-testimonial" key={item.quote}>
-              <blockquote>&ldquo;{item.quote}&rdquo;</blockquote>
-              <cite>- {item.attribution}</cite>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section className="section faq reveal" id="faq">
         <p className="kicker is-centered">FAQ</p>
-        <h2 className="h2 is-centered">Frequently asked questions</h2>
+        <h2 className="h2 is-centered">AI CRM FAQs</h2>
         <div className="faq-list re-faq-list">
           {AI_FAQS.map((item) => (
             <details className="faq-item" key={item.q}>
@@ -377,11 +422,10 @@ export default function AiCrmPage() {
       <section className="cta-section reveal" id="demo">
         <div className="cta">
           <div>
-            <h2>See TracktCRM&apos;s AI respond to a lead in real time</h2>
+            <h2>Try TracktCRM&apos;s AI CRM Free for 1 Month</h2>
             <p>
-              Start a free 1 month trial, or book a live demo to see instant
-              response, automated follow-up calls, and the AI hand-off with your
-              own scripts.
+              Start free or book a live demo to see instant response, follow-up
+              calls and handover on your own leads. No credit card, no lock-in.
             </p>
           </div>
           <div className="cta-actions">

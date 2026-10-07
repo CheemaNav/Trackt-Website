@@ -1,8 +1,20 @@
 export const PROBLEM_POINTS = [
-  "Proposals sent by email with no clear view of which are still waiting for an answer",
-  "Retainer renewal dates tracked in a spreadsheet, or in someone's head",
-  "Client conversations split between WhatsApp groups, email threads and calls",
-  "New-business follow-ups that slip because delivery work takes over",
+  {
+    title: "Proposals with no clear status",
+    body: "Proposals go out by email, and nobody can say which ones are still waiting for an answer.",
+  },
+  {
+    title: "Renewals in a spreadsheet",
+    body: "Retainer dates live in a sheet or in someone's head.",
+  },
+  {
+    title: "Conversations everywhere",
+    body: "Client chats are split between WhatsApp groups, email threads and calls.",
+  },
+  {
+    title: "New business that slips",
+    body: "Follow-ups on pitches get dropped when delivery work takes over.",
+  },
 ];
 
 export const WHAT_IS_POINTS = [
@@ -20,7 +32,7 @@ export const WHAT_IS_POINTS = [
   },
   {
     title: "Visibility",
-    body: "Let the whole team see who owns which pitch or client, and what happens next.",
+    body: "Show who owns each pitch or client, and what happens next.",
   },
 ];
 
@@ -33,36 +45,59 @@ export const FEATURES = [
   {
     icon: "renewal",
     title: "Retainer Renewal Tracking",
-    body: "Keep active retainer clients visible next to new business, with renewal dates and reminders so a renewal is never a surprise.",
+    body: "Keep active retainer clients next to new business, with renewal dates and reminders.",
   },
   {
     icon: "history",
     title: "Full Client Conversation History",
-    body: "Every call, message and note is logged against the client, so anyone on your team can pick up a conversation without asking around.",
+    body: "Every call, message and note is logged on the client, so anyone on the team can pick up a conversation without asking around.",
   },
   {
     icon: "capture",
     title: "Lead Capture and Instant Replies",
-    body: "Enquiries from your website, referrals and WhatsApp are captured automatically, and TracktCRM's AI can reply within seconds so a new prospect is never left waiting while the team is busy on delivery.",
+    body: "Enquiries from your website, referrals and WhatsApp are captured automatically, and the AI can reply within seconds while your team is busy on delivery.",
     href: "/industries/ai-crm",
-    linkLabel: "See how TracktCRM's AI CRM works",
+    linkLabel: "See how the AI CRM works",
   },
   {
     icon: "automation",
     title: "Follow-Up Automation",
-    body: "Automated reminders keep proposals and renewals moving, so follow-ups do not depend on anyone remembering.",
+    body: "Reminders keep proposals and renewals moving, so follow-ups do not depend on anyone remembering.",
   },
   {
     icon: "reporting",
     title: "Reporting",
-    body: "See win rates, pipeline value and response times without building a report by hand.",
+    body: "See deals won and lost, pipeline value and response times without building a report by hand.",
+  },
+];
+
+export const AGENCY_TYPES = [
+  {
+    title: "Digital marketing and ad agencies",
+    body: "Track retainers, ad-led enquiries and monthly renewals in one place. Leads from your own campaigns flow into the pipeline.",
+  },
+  {
+    title: "Creative and design studios",
+    body: "Proposal-heavy work needs a clear view of what is out, what is won and what is stalled.",
+  },
+  {
+    title: "PR and communications firms",
+    body: "Keep client chats and decision history on the client record, even when the conversation moves to WhatsApp.",
+  },
+  {
+    title: "Web and software agencies",
+    body: "Follow up on quotes quickly and see which projects are likely to turn into maintenance retainers.",
+  },
+  {
+    title: "Consultants and freelancers",
+    body: "Your cycle is the same: enquiry, proposal, engagement, repeat work. Start with one simple pipeline and grow from there.",
   },
 ];
 
 export const MULTI_CLIENT_POINTS = [
   "Separate pipelines for different clients or service lines",
-  "A single rolled-up view across everything the agency is working on",
-  "Clear owners on every pitch and every client, so responsibility is never ambiguous",
+  "One rolled-up view of everything the agency is working on",
+  "A clear owner on every pitch and every client",
 ];
 
 export const PROCESS_STEPS = [
@@ -74,22 +109,22 @@ export const PROCESS_STEPS = [
   {
     n: "02",
     title: "Instant reply",
-    body: "TracktCRM's AI responds within seconds, so the prospect is acknowledged even if your team is mid-project.",
+    body: "The AI responds within seconds, so the prospect is acknowledged even if the team is mid-project.",
   },
   {
     n: "03",
     title: "Proposal sent",
-    body: "The deal moves to your proposal stage, with the owner and next follow-up date attached.",
+    body: "The deal moves to your proposal stage with an owner and a follow-up date.",
   },
   {
     n: "04",
     title: "Won",
-    body: "The client moves into your retainer or active-client stage, and the full conversation history stays with the record.",
+    body: "The client moves into your retainer or active-client stage, with the conversation history attached.",
   },
   {
     n: "05",
     title: "Retainer tracked",
-    body: "Renewal dates are visible and reminders go out before a renewal is due.",
+    body: "Renewal dates are visible and reminders go out before they are due.",
   },
   {
     n: "06",
@@ -100,31 +135,37 @@ export const PROCESS_STEPS = [
 
 export const CHOOSING_POINTS = [
   {
-    title: "Does it cover both new business and retainers?",
+    title: "Covers new business and retainers",
     body: "Many CRMs stop at the closed deal. An agency needs to see what happens after the win too.",
   },
   {
-    title: "Can it keep client conversations in one place?",
-    body: "If clients talk to you on WhatsApp and email, the CRM should log both against the client, not in someone's phone.",
+    title: "Keeps client conversations in one place",
+    body: "If clients talk to you on WhatsApp and email, the CRM should log both on the client, not in someone's phone.",
   },
   {
-    title: "Is it quick to set up?",
-    body: "A small agency cannot spend weeks configuring software. Look for a pipeline you can adapt to your own stages quickly.",
+    title: "Quick to set up",
+    body: "A small agency cannot spend weeks configuring software. Look for stages you can adapt in minutes.",
   },
   {
-    title: "Does it automate follow-ups?",
-    body: "When delivery is busy, follow-ups are the first thing to slip. Reminders and automation protect your pipeline.",
+    title: "Automates follow-ups",
+    body: "When delivery is busy, follow-ups are the first thing to slip. Reminders protect your pipeline.",
   },
   {
-    title: "Will it grow with the team?",
+    title: "Grows with the team",
     body: "The right tool works for two people today and twenty later, without a migration.",
+  },
+  {
+    title: "Clear pricing",
+    body: "You should know what each user costs before you commit.",
+    href: "/pricing",
+    linkLabel: "See TracktCRM pricing",
   },
 ];
 
 export const INTEGRATIONS = [
   {
     title: "WhatsApp Business",
-    body: "Capture and reply to client conversations in-chat.",
+    body: "Capture and reply to client conversations.",
     brand: "WhatsApp",
     href: "/features/whatsapp-crm",
     linkLabel: "See WhatsApp CRM",
@@ -136,69 +177,72 @@ export const INTEGRATIONS = [
   },
   {
     title: "Google Calendar",
-    body: "Pitch meetings and check-ins sync automatically.",
+    body: "Pitch meetings and check-ins sync.",
     brand: "Google Calendar",
   },
   {
     title: "Meta and Google Ads",
-    body: "Enquiries from your own campaigns flow into the pipeline.",
+    body: "Enquiries from your campaigns flow into the pipeline.",
     brand: "Google Ads",
   },
   {
-    title: "Zapier and open API",
-    body: "Connect project management, invoicing or anything else.",
+    title: "Webhooks and custom forms",
+    body: "Bring enquiries in from your website and other tools.",
     brand: "Webhooks",
-  },
-];
-
-export const TESTIMONIALS = [
-  {
-    quote:
-      "Proposals, renewals and client chats used to live in three different places. Now one pipeline shows what needs attention this week.",
-    attribution: "Name, Title, Agency",
-  },
-  {
-    quote:
-      "We stopped missing renewal dates, and new enquiries get a reply even when the whole team is heads-down on delivery.",
-    attribution: "Name, Title, Agency",
   },
 ];
 
 export const AGENCY_FAQS = [
   {
     q: "What is an agency CRM?",
-    a: "An agency CRM is customer relationship management software built around how agencies sell and serve clients: pitches and proposals, retainer renewals, and ongoing client conversations. It keeps all of it in one place instead of scattered across email, WhatsApp groups and spreadsheets.",
+    a: "An agency CRM is software built around how agencies sell and serve clients: pitches and proposals, retainer renewals and ongoing client conversations. It keeps all of it in one place instead of spread across email, WhatsApp groups and spreadsheets.",
   },
   {
     q: "What is the best CRM for agencies?",
-    a: "The best CRM for agencies is one that tracks the whole client lifecycle, from first pitch to proposal to retainer renewal, without needing weeks of setup. TracktCRM is built for that: a customizable proposal pipeline, renewal tracking, and full conversation history on every client.",
+    a: "Look for one that tracks the whole client lifecycle, from first pitch to proposal to retainer renewal, without weeks of set-up. TracktCRM is built for that, with a proposal pipeline you can adapt, renewal tracking and the conversation history on every client.",
   },
   {
     q: "Can I run separate pipelines per client?",
-    a: "Yes. You can set up separate pipelines for different clients or service lines, and still see everything rolled up in one view.",
+    a: "Yes. Set up separate pipelines for different clients or service lines, and still see everything rolled up in one view.",
   },
   {
     q: "Can I track retainer renewals?",
-    a: "Yes. TracktCRM tracks retainer clients alongside new business, so you can see when each renewal is coming up and get reminded before it does.",
+    a: "TracktCRM keeps retainer clients alongside new business, so you can see when each renewal is coming up and get a reminder before it does.",
   },
   {
     q: "Is TracktCRM suitable for a 2-person agency as well as a 20-person one?",
-    a: "Yes. TracktCRM works for a founder-led agency of two just as it does for a team of twenty. Start simple with one pipeline and add stages, owners and pipelines as the agency grows.",
+    a: "It works for a founder-led agency of two and for a team of twenty. Start with one pipeline and add stages, owners and pipelines as the agency grows.",
   },
   {
     q: "Does TracktCRM work as a CRM for consultants?",
-    a: "Yes. Consultants run the same cycle as agencies: enquiry, proposal, engagement, repeat work. TracktCRM tracks that cycle and keeps every client conversation attached to the record.",
+    a: "Consultants run the same cycle as agencies: enquiry, proposal, engagement, repeat work. TracktCRM tracks that cycle and keeps each client conversation on the record.",
   },
   {
     q: "Is TracktCRM a good CRM for marketing agencies?",
-    a: "Yes. Marketing agencies juggle new-business pitches, active retainers and ongoing client conversations at the same time. TracktCRM keeps each in its own stage so nothing gets lost between them.",
+    a: "Marketing agencies juggle new-business pitches, active retainers and client conversations at once. TracktCRM gives each its own stage, so the team can see what needs attention this week.",
   },
   {
     q: "Can I manage client conversations from WhatsApp and email in one place?",
-    a: "Yes. WhatsApp, email and SMS conversations are logged against each client record, so anyone on your team can pick up a thread with full context.",
+    a: "WhatsApp, email and SMS conversations are logged on each client record, so anyone on your team can pick up a thread with context.",
   },
   {
     q: "Can I try TracktCRM before committing?",
-    a: "Yes, TracktCRM offers a free 1 month trial, so your agency can try the full pitch-to-renewal flow before committing.",
+    a: "TracktCRM has a free 1 month trial with no credit card needed, so your agency can run the full pitch-to-renewal flow before you decide.",
+  },
+  {
+    q: "How much does an agency CRM cost in India?",
+    a: "TracktCRM charges per user, with plans in INR or USD billed at company level. It starts with a free 1 month trial and no credit card is needed. See the pricing page for current plans.",
+  },
+  {
+    q: "Can I track retainer value and monthly recurring revenue?",
+    a: "Record each retainer fee as the deal value and use the expected close date for the renewal. Each stage shows the total value of its deals, so you can see what your active retainers are worth.",
+  },
+  {
+    q: "Does TracktCRM work with project management tools?",
+    a: "TracktCRM runs alongside tools such as Asana or ClickUp. Webhooks and custom forms bring enquiries into TracktCRM from your website and other tools. Talk to us about connecting the delivery tools you use.",
+  },
+  {
+    q: "How is an agency CRM different from project management software?",
+    a: "A CRM manages pitches, proposals, renewals and client conversations. A project management tool manages delivery tasks and deadlines. Most agencies use both.",
   },
 ];

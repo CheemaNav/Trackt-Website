@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa6";
 import { LuClock, LuMail, LuMapPin, LuPhone } from "react-icons/lu";
@@ -79,7 +80,7 @@ export default function ContactPageClient() {
           <nav className="breadcrumbs" aria-label="Breadcrumb">
             <ol>
               <li>
-                <a href="/">Home</a>
+                <Link href="/">Home</Link>
               </li>
               <li>
                 <span aria-current="page">Contact</span>

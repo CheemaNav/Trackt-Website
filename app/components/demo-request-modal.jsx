@@ -17,6 +17,11 @@ const INITIAL = {
 export const DEMO_REQUESTED_KEY = "tc-demo-requested";
 
 export default function DemoRequestModal({ open, auto = false, onClose }) {
+  if (!open) return null;
+  return <DemoRequestDialog auto={auto} onClose={onClose} />;
+}
+
+function DemoRequestDialog({ auto, onClose }) {
   const titleId = useId();
   const dialogRef = useRef(null);
   const firstFieldRef = useRef(null);
@@ -26,8 +31,6 @@ export default function DemoRequestModal({ open, auto = false, onClose }) {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (!open) return undefined;
-
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     // Focusing an input on an unrequested popup would open the phone keyboard.
@@ -46,18 +49,7 @@ export default function DemoRequestModal({ open, auto = false, onClose }) {
       window.clearTimeout(timer);
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [open, auto, onClose]);
-
-  useEffect(() => {
-    if (!open) {
-      setForm(INITIAL);
-      setSent(false);
-      setSubmitting(false);
-      setError("");
-    }
-  }, [open]);
-
-  if (!open) return null;
+  }, [auto, onClose]);
 
   function onChange(event) {
     const { name, value } = event.target;

@@ -15,13 +15,13 @@ import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
 import { AgencyCrmJsonLd, BreadcrumbJsonLd } from "../../json-ld";
 import {
   AGENCY_FAQS,
+  AGENCY_TYPES,
   CHOOSING_POINTS,
   FEATURES,
   INTEGRATIONS,
   MULTI_CLIENT_POINTS,
   PROBLEM_POINTS,
   PROCESS_STEPS,
-  TESTIMONIALS,
   WHAT_IS_POINTS,
 } from "./data";
 
@@ -35,13 +35,15 @@ const FEATURE_ICONS = {
 };
 
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const pageTitle = "Agency CRM India: Pitches, Proposals, Retainers | TracktCRM";
+const pageDescription =
+  "Agency CRM for Indian agencies: track pitches, proposals and retainer renewals, and keep client chats on WhatsApp in one pipeline. Free 1 month trial.";
 
 export const metadata = {
   title: {
-    absolute: "Agency CRM Software for Pitches & Retainers | TracktCRM",
+    absolute: pageTitle,
   },
-  description:
-    "TracktCRM is an agency CRM that tracks proposals, retainer renewals and client conversations in one pipeline, so nothing gets lost in a WhatsApp thread.",
+  description: pageDescription,
   alternates: {
     canonical: "/industries/crm-for-agencies",
   },
@@ -50,9 +52,8 @@ export const metadata = {
     locale: "en_IN",
     url: `${SITE_URL}/industries/crm-for-agencies`,
     siteName: SITE_NAME,
-    title: "TracktCRM — The CRM for Agencies Juggling Pitches and Retainers",
-    description:
-      "Track proposals, retainer renewals and client conversations in one dashboard.",
+    title: pageTitle,
+    description: pageDescription,
     images: [
       {
         url: ogImage,
@@ -75,9 +76,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TracktCRM — The CRM for Agencies Juggling Pitches and Retainers",
-    description:
-      "Track proposals, retainer renewals and client conversations in one dashboard.",
+    title: pageTitle,
+    description: pageDescription,
     images: [ogImage],
   },
 };
@@ -85,7 +85,7 @@ export const metadata = {
 export default function AgencyCrmPage() {
   return (
     <div className="home agency-page">
-      <AgencyCrmJsonLd faqs={AGENCY_FAQS} />
+      <AgencyCrmJsonLd faqs={AGENCY_FAQS} features={FEATURES} />
       <BreadcrumbJsonLd
         items={[
           { name: "Home", href: "/" },
@@ -104,14 +104,15 @@ export default function AgencyCrmPage() {
                 AGENCY CRM
               </div>
               <h1 className="re-banner-title">
-                The CRM for Agencies Juggling{" "}
-                <span>Pitches, Retainers and Client Chats</span>
+                Agency CRM for Pitches, Proposals,{" "}
+                <span>Retainers and Client Chats</span>
               </h1>
               <p className="re-banner-sub">
-                Proposals sit in one inbox, retainer renewals in a spreadsheet,
-                and client conversations in a WhatsApp group. TracktCRM is an
-                agency CRM that keeps pitches, retainers and every client
-                conversation in one pipeline.
+                Proposals sit in one inbox, renewals in a spreadsheet, and
+                client conversations in a WhatsApp group. TracktCRM is agency
+                CRM software that keeps new business, active retainers and every
+                client conversation in one pipeline, with reminders so a renewal
+                never catches you by surprise.
               </p>
               <div className="re-banner-ctas">
                 <a
@@ -130,7 +131,8 @@ export default function AgencyCrmPage() {
                 </a>
               </div>
               <p className="re-banner-trust">
-                Built for agencies of two people or twenty · Free 1 month trial
+                Built for agencies of two people or twenty · Free 1 month trial ·
+                No credit card required
               </p>
             </div>
             <figure className="re-banner-media agency-banner-media">
@@ -147,35 +149,24 @@ export default function AgencyCrmPage() {
         </section>
 
         <section className="section re-band reveal" id="problem">
-          <div className="re-split">
-            <div className="re-split-copy">
-              <p className="kicker">THE AGENCY PROBLEM</p>
-              <h2 className="h2">
-                Your agency&apos;s pipeline lives in too many places
-              </h2>
-              <p className="re-section-intro">
-                Agencies sell and serve at the same time, and a generic sales
-                CRM only handles half of that. The usual result:
-              </p>
-            </div>
-            <figure className="re-photo re-photo-contain">
-              <img
-                src="/assets/leadmanage.png"
-                alt="TracktCRM pipeline board bringing an agency's pitches and clients into one view"
-                width={1383}
-                height={695}
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
+          <div className="re-section-head is-wide">
+            <p className="kicker">THE AGENCY PROBLEM</p>
+            <h2 className="h2">
+              Your Agency&apos;s Pipeline Lives in Too Many Places
+            </h2>
+            <p className="re-section-intro">
+              Agencies sell and serve at the same time, and a generic sales CRM
+              only handles half of that. The usual result:
+            </p>
           </div>
           <div className="re-point-grid">
             {PROBLEM_POINTS.map((point) => (
-              <article className="re-point-card industry-point-card" key={point}>
+              <article className="re-point-card" key={point.title}>
                 <span className="re-point-check" aria-hidden="true">
                   <CheckIcon size={14} />
                 </span>
-                <p>{point}</p>
+                <h3>{point.title}</h3>
+                <p>{point.body}</p>
               </article>
             ))}
           </div>
@@ -186,7 +177,7 @@ export default function AgencyCrmPage() {
             <figure className="re-photo re-photo-contain">
               <img
                 src="/assets/AI-CRM-actually.jpg"
-                alt="Agency CRM client record with full conversation history, deal value and next steps"
+                alt="TracktCRM record with deal value, expected close date and a timeline of calls, notes and messages"
                 width={1645}
                 height={802}
                 loading="lazy"
@@ -195,20 +186,18 @@ export default function AgencyCrmPage() {
             </figure>
             <div className="re-split-copy">
               <p className="kicker">AGENCY CRM SOFTWARE</p>
-              <h2 className="h2">What does an agency CRM actually do?</h2>
+              <h2 className="h2">What Is an Agency CRM?</h2>
               <p className="re-section-intro">
-                An agency CRM is CRM software shaped around how agencies work:
-                winning new clients through pitches and proposals, then keeping
-                them through retainers and ongoing relationships. A CRM for
-                agency teams needs to cover both sides.
+                An agency CRM is software that helps agencies win clients
+                through pitches and proposals, then keep them through retainers
+                and ongoing relationships. It tracks each proposal, each renewal
+                date and every client conversation in one place, so the sales
+                side and the client side of the agency are never separate.
               </p>
               <p className="re-section-intro">
-                TracktCRM is built around this cycle rather than adapted from a
-                one-time-sale pipeline. Teams that search for a marketing CRM or
-                client management software are usually after the same thing:
-                one place where pitches, active clients and conversations all
-                live. See the full <a href="/crm-software">CRM software</a>{" "}
-                overview.
+                TracktCRM is built around this cycle, not adapted from a
+                one-time-sale pipeline. See the full{" "}
+                <a href="/crm-software">CRM software</a> overview.
               </p>
             </div>
           </div>
@@ -225,7 +214,7 @@ export default function AgencyCrmPage() {
         <section className="section reveal" id="features">
           <div className="re-section-head is-wide">
             <p className="kicker">FEATURES</p>
-            <h2 className="h2">What agencies get with TracktCRM</h2>
+            <h2 className="h2">Agency CRM Features for Pitches and Retainers</h2>
           </div>
           <div className="re-feature-grid">
             {FEATURES.map((feature) => {
@@ -251,25 +240,47 @@ export default function AgencyCrmPage() {
           </div>
         </section>
 
-        <section className="section re-band reveal" id="multi-client">
+        <section className="section re-band reveal" id="agency-types">
+          <p className="kicker">AGENCY TYPES</p>
+          <h2 className="h2">
+            Agency CRM for Digital Marketing, Creative, PR and Web Agencies
+          </h2>
+          <div className="re-choose-grid is-three">
+            {AGENCY_TYPES.map((item) => (
+              <article className="re-choose-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
+          <p className="industry-page-links">
+            Comparing tools? See TracktCRM as a{" "}
+            <a href="/pipedrive-alternative">Pipedrive alternative</a>. Hiring
+            for clients instead? See the{" "}
+            <a href="/industries/crm-for-recruitment">recruitment CRM</a>.
+          </p>
+        </section>
+
+        <section className="section reveal" id="multi-client">
           <div className="re-split">
-            <figure className="re-photo">
+            <figure className="re-photo re-photo-contain">
               <img
-                src="/assets/real-estate/broker-handshake.jpg"
-                alt="Agency team closing a new client relationship"
-                width={1152}
-                height={864}
+                src="/assets/leadmanage.png"
+                alt="TracktCRM pipeline board with a pipeline switcher and deals grouped by stage, each with an owner and value"
+                width={1383}
+                height={695}
                 loading="lazy"
                 decoding="async"
               />
             </figure>
             <div className="re-split-copy">
               <p className="kicker">MULTI-CLIENT</p>
-              <h2 className="h2">Run several client relationships in parallel</h2>
+              <h2 className="h2">
+                Separate Pipelines for Each Client or Service Line
+              </h2>
               <p className="re-section-intro">
-                Agencies rarely have just one relationship to manage. TracktCRM
-                lets you keep new-business pipelines and active-client tracking
-                side by side:
+                Agencies rarely have just one relationship to manage. Keep
+                new-business pipelines and active-client tracking side by side:
               </p>
               <div className="re-mini-points">
                 {MULTI_CLIENT_POINTS.map((point) => (
@@ -285,10 +296,12 @@ export default function AgencyCrmPage() {
           </div>
         </section>
 
-        <section className="section reveal" id="process">
-          <div className="re-section-head">
+        <section className="section re-band reveal" id="process">
+          <div className="re-section-head is-wide">
             <p className="kicker">HOW IT WORKS</p>
-            <h2 className="h2">How a client moves through TracktCRM</h2>
+            <h2 className="h2">
+              From First Pitch to Renewal: How a Client Moves Through TracktCRM
+            </h2>
           </div>
           <div className="re-process-grid">
             {PROCESS_STEPS.map((step) => (
@@ -301,29 +314,36 @@ export default function AgencyCrmPage() {
           </div>
         </section>
 
-        <section className="section re-band reveal" id="consultants">
+        <section className="section reveal" id="crm-vs-project-tools">
           <div className="re-section-head is-wide">
-            <p className="kicker">FOR CONSULTANTS</p>
-            <h2 className="h2">The same pipeline works for consultants</h2>
+            <p className="kicker">CRM VS PROJECT TOOLS</p>
+            <h2 className="h2">Agency CRM vs Project Management Software</h2>
             <p className="re-section-intro industry-wide-intro">
-              A consultant&apos;s cycle looks a lot like an agency&apos;s: an
-              enquiry, a proposal, an engagement, then repeat work. If you are
-              looking for a CRM for consultants, the same proposal pipeline,
-              renewal tracking and conversation history apply, without paying
-              for features built for large sales teams. Solo consultants can
-              start with a single simple pipeline and grow from there.
+              A project management tool such as Asana or ClickUp runs delivery:
+              tasks, deadlines and approvals. An agency CRM runs the
+              relationship: pitches, proposals, renewals and conversations. Most
+              agencies need both. TracktCRM covers the sales and client side,
+              next to the tools you already use for delivery.
             </p>
           </div>
         </section>
 
-        <section className="section reveal" id="choosing">
+        <section className="section re-band reveal" id="choosing">
           <p className="kicker">BUYER&apos;S GUIDE</p>
-          <h2 className="h2">What to look for in the best CRM for agencies</h2>
-          <div className="re-choose-grid">
+          <h2 className="h2">What to Look For in the Best CRM for Agencies</h2>
+          <div className="re-choose-grid is-three">
             {CHOOSING_POINTS.map((item) => (
               <article className="re-choose-card" key={item.title}>
                 <h3>{item.title}</h3>
-                <p>{item.body}</p>
+                <p>
+                  {item.body}
+                  {item.href ? (
+                    <>
+                      {" "}
+                      <a href={item.href}>{item.linkLabel}</a>.
+                    </>
+                  ) : null}
+                </p>
               </article>
             ))}
           </div>
@@ -331,7 +351,9 @@ export default function AgencyCrmPage() {
 
         <section className="section re-int-band reveal" id="integrations">
           <p className="kicker">INTEGRATIONS</p>
-          <h2 className="h2">Connects with the tools your agency already uses</h2>
+          <h2 className="h2">
+            Agency CRM Integrations: WhatsApp, Email, Calendar and Ads
+          </h2>
           <div className="re-int-list">
             {INTEGRATIONS.map((item) => (
               <article className="re-int-card" key={item.title}>
@@ -355,41 +377,33 @@ export default function AgencyCrmPage() {
               </article>
             ))}
           </div>
+          <p className="re-section-intro re-int-more">
+            <a href="/integrations">Browse all CRM integrations</a>
+          </p>
         </section>
 
         <section className="section reveal" id="pipeline-preview">
+          <p className="kicker is-centered">SEE IT IN ACTION</p>
+          <h2 className="h2 is-centered">
+            See an Agency Pipeline From Pitch to Retainer
+          </h2>
           <figure className="re-shot re-shot-wide">
             <img
-              src="/assets/leadmanage.png"
-              alt="TracktCRM agency pipeline with pitch, proposal sent, negotiation, won and retainer-active stages"
-              width={1383}
-              height={695}
+              src="/assets/dashboard.png"
+              alt="TracktCRM dashboard with deals by stage, a deals trend chart and leads won and lost per owner"
+              width={1381}
+              height={407}
               loading="lazy"
               decoding="async"
             />
           </figure>
         </section>
 
-        <section className="section reveal" id="testimonial">
-          <p className="kicker is-centered">SOCIAL PROOF</p>
-          <h2 className="h2 is-centered">
-            Agencies running pitches and retainers in TracktCRM
-          </h2>
-          <div className="re-testimonial-grid">
-            {TESTIMONIALS.map((item) => (
-              <div className="re-testimonial" key={item.quote}>
-                <blockquote>&ldquo;{item.quote}&rdquo;</blockquote>
-                <cite>- {item.attribution}</cite>
-              </div>
-            ))}
-          </div>
-        </section>
-
         <RelatedIndustries current="agencies" />
 
         <section className="section faq reveal" id="faq">
           <p className="kicker is-centered">FAQ</p>
-          <h2 className="h2 is-centered">Frequently asked questions</h2>
+          <h2 className="h2 is-centered">Agency CRM FAQs</h2>
           <div className="faq-list re-faq-list">
             {AGENCY_FAQS.map((item, index) => (
               <details className="faq-item" key={item.q} open={index === 0}>
@@ -406,7 +420,7 @@ export default function AgencyCrmPage() {
         <section className="cta-section reveal" id="demo">
           <div className="cta">
             <div>
-              <h2>See TracktCRM on your own agency pipeline</h2>
+              <h2>See TracktCRM on Your Own Agency Pipeline</h2>
               <p>
                 Start a free 1 month trial, or book a demo and we will walk
                 through your pitches and retainers inside TracktCRM.

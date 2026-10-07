@@ -14,6 +14,8 @@ import {
   INTEGRATION_FAQS,
   INTEGRATION_POPULAR,
   INTEGRATION_STEPS,
+  LAST_UPDATED,
+  integrationSlug,
 } from "./data";
 
 function matchesQuery(app, query) {
@@ -85,15 +87,21 @@ export default function IntegrationsPageClient() {
           </nav>
           <div className="badge">
             <span className="pulse" aria-hidden="true" />
-            {INTEGRATION_APPS.length} integrations · no code required
+            {INTEGRATION_APPS.length} integrations · No code required
           </div>
           <h1 className="h1">
-            Connect TracktCRM to WhatsApp and everything else you run on
+            Connect TracktCRM to WhatsApp, Lead Portals, Ads and the Tools You
+            Already Use
           </h1>
           <p className="lead">
-            Lead sources, ads, payments, Google Workspace and shipping — search
-            your stack and plug it into one CRM. Need a custom integration or
-            other custom work? We can build that too.
+            TracktCRM connects to {INTEGRATION_APPS.length} apps, from WhatsApp
+            and Meta ads to 99acres, IndiaMART, Gmail and Razorpay, so every
+            lead lands in one pipeline. Search your tools below. If yours is not
+            listed, we can build the integration for you.
+          </p>
+          <p className="int-page-updated">
+            Last updated:{" "}
+            <time dateTime={LAST_UPDATED.iso}>{LAST_UPDATED.label}</time>
           </p>
 
           <form className="int-page-search" onSubmit={onSearchSubmit}>
@@ -165,7 +173,7 @@ export default function IntegrationsPageClient() {
             <div className="int-page-empty reveal">
               <h2>No integrations match that search.</h2>
               <p>
-                Try another keyword — or ask us for a custom integration. If
+                Try another keyword, or ask us for a custom integration. If
                 your tool is not listed, we can still connect it.
               </p>
               <Link className="btn btn-primary" href="/contact">
@@ -197,6 +205,7 @@ export default function IntegrationsPageClient() {
                       <CardTag
                         className="int-page-card"
                         key={app.name}
+                        id={integrationSlug(app.name)}
                         {...cardProps}
                       >
                         <span className="int-page-logo" aria-hidden="true">
@@ -221,10 +230,10 @@ export default function IntegrationsPageClient() {
       </section>
 
       <section className="section reveal" id="how">
-        <h2 className="h2-sm">How integrations work</h2>
+        <h2 className="h2-sm">How CRM Integrations Work in Three Steps</h2>
         <p className="int-page-section-lead">
-          No developers, no downtime. Connect your tools in three steps and
-          leads start flowing into your pipeline.
+          Connect your tools in three steps and leads start flowing into your
+          pipeline.
         </p>
         <div className="step-grid stagger">
           {INTEGRATION_STEPS.map((step) => (
@@ -235,17 +244,30 @@ export default function IntegrationsPageClient() {
             </div>
           ))}
         </div>
+        <p className="int-page-links">
+          Every connected source feeds the same pipeline in our{" "}
+          <Link href="/crm-software">CRM software</Link>, and new leads can get
+          an instant reply from the{" "}
+          <Link href="/industries/ai-crm">AI sales assistant</Link>. Agencies
+          use ad and form integrations in the{" "}
+          <Link href="/industries/crm-for-agencies">agency CRM</Link>, and
+          recruiters bring website applications into the{" "}
+          <Link href="/industries/crm-for-recruitment">recruitment CRM</Link>.
+          See <Link href="/pricing">pricing</Link> for plans after the free
+          trial.
+        </p>
       </section>
 
       <section className="section int-page-custom reveal" id="custom">
         <p className="kicker is-centered">CUSTOM WORK</p>
         <h2 className="h2-sm is-centered">
-          Need a custom integration? We can do that too.
+          Need a Custom Integration? We Can Build It
         </h2>
         <p className="int-page-section-lead is-centered">
-          If you want a custom integration, a one-off workflow, or other custom
-          work around TracktCRM, tell us what you use. We map the fields,
-          connect the source, and keep every lead in your pipeline.
+          If your tool is not in the catalogue, tell us what you use. We can
+          connect it, build a one-off workflow or map custom forms and webhooks
+          to your pipeline. Contact us with your requirements and we will send
+          a quote and a timeline.
         </p>
         <div className="int-page-custom-grid">
           {CUSTOM_WORK.map((item) => (
@@ -312,7 +334,7 @@ export default function IntegrationsPageClient() {
       <section className="section faq reveal" id="faq">
         <div className="faq-layout">
           <div className="faq-aside">
-            <h2 className="h2">Frequently asked questions</h2>
+            <h2 className="h2">CRM Integration FAQs</h2>
           </div>
           <div className="faq-list">
             {INTEGRATION_FAQS.map((item) => (
@@ -331,10 +353,10 @@ export default function IntegrationsPageClient() {
       <section className="cta-section reveal" id="demo">
         <div className="cta">
           <div>
-            <h2>Your next lead is already waiting.</h2>
+            <h2>Connect Your Tools and Start Free</h2>
             <p>
-              Start free today, or get a 30-minute walkthrough of the
-              integrations your team actually uses. No credit card, no lock-in.
+              Start a free 1 month trial, or book a 30-minute walkthrough of the
+              integrations your team uses. No credit card, no lock-in.
             </p>
           </div>
           <div className="cta-actions">

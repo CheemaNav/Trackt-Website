@@ -2,10 +2,14 @@ import {
   ArrowIcon,
   BrandMark,
   BrokerIcon,
+  CaptureIcon,
   CheckIcon,
   ClientIcon,
   ConversationIcon,
+  InventoryIcon,
   OwnerIcon,
+  ProjectPipelineIcon,
+  ProposalIcon,
   ReminderIcon,
   ReportIcon,
   SiteVisitIcon,
@@ -16,6 +20,7 @@ import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
 import { BreadcrumbJsonLd, RecruitmentCrmJsonLd } from "../../json-ld";
 import {
   ATS_COMPARE_ROWS,
+  AUDIENCES,
   CHOOSING_POINTS,
   FEATURES,
   INTEGRATIONS,
@@ -23,7 +28,6 @@ import {
   PROBLEM_POINTS,
   PROCESS_STEPS,
   RECRUITMENT_FAQS,
-  TESTIMONIALS,
   WHAT_IS_POINTS,
 } from "./data";
 
@@ -34,17 +38,23 @@ const FEATURE_ICONS = {
   reminders: ReminderIcon,
   ownership: OwnerIcon,
   calendar: SiteVisitIcon,
+  source: CaptureIcon,
+  files: ProposalIcon,
+  labels: InventoryIcon,
+  placement: ProjectPipelineIcon,
   reporting: ReportIcon,
 };
 
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const pageTitle = "Recruitment CRM India: Candidates & Clients | TracktCRM";
+const pageDescription =
+  "Recruitment CRM for Indian recruiters: track candidates and client roles, reach candidates on WhatsApp and get follow-up reminders. Free 1 month trial.";
 
 export const metadata = {
   title: {
-    absolute: "Recruitment CRM Software for Recruiters | TracktCRM",
+    absolute: pageTitle,
   },
-  description:
-    "TracktCRM is a recruitment CRM that tracks candidates and client roles in one pipeline, reaches candidates on WhatsApp and reminds recruiters to follow up.",
+  description: pageDescription,
   alternates: {
     canonical: "/industries/crm-for-recruitment",
   },
@@ -53,9 +63,8 @@ export const metadata = {
     locale: "en_IN",
     url: `${SITE_URL}/industries/crm-for-recruitment`,
     siteName: SITE_NAME,
-    title: "TracktCRM — The CRM for Recruiters Working Candidates and Clients",
-    description:
-      "Track candidates and client roles in one pipeline, and never let a conversation go quiet.",
+    title: pageTitle,
+    description: pageDescription,
     images: [
       {
         url: ogImage,
@@ -78,9 +87,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TracktCRM — The CRM for Recruiters Working Candidates and Clients",
-    description:
-      "Track candidates and client roles in one pipeline, and never let a conversation go quiet.",
+    title: pageTitle,
+    description: pageDescription,
     images: [ogImage],
   },
 };
@@ -88,7 +96,7 @@ export const metadata = {
 export default function RecruitmentCrmPage() {
   return (
     <div className="home recruitment-page">
-      <RecruitmentCrmJsonLd faqs={RECRUITMENT_FAQS} />
+      <RecruitmentCrmJsonLd faqs={RECRUITMENT_FAQS} features={FEATURES} />
       <BreadcrumbJsonLd
         items={[
           { name: "Home", href: "/" },
@@ -107,14 +115,15 @@ export default function RecruitmentCrmPage() {
                 RECRUITMENT CRM
               </div>
               <h1 className="re-banner-title">
-                The CRM for Recruiters Working{" "}
+                Recruitment CRM for Recruiters Who Work{" "}
                 <span>Candidates and Clients at Once</span>
               </h1>
               <p className="re-banner-sub">
                 Candidates in one spreadsheet, client roles in another, and half
-                the conversations on WhatsApp. TracktCRM is a recruitment CRM
-                that keeps every candidate, every client and every conversation
-                in one pipeline, with reminders so nobody goes quiet.
+                the conversations on WhatsApp. TracktCRM is recruitment CRM
+                software that keeps every candidate, every client and every
+                conversation in one pipeline, with reminders so nobody goes
+                quiet.
               </p>
               <div className="re-banner-ctas">
                 <a
@@ -150,36 +159,25 @@ export default function RecruitmentCrmPage() {
         </section>
 
         <section className="section re-band reveal" id="problem">
-          <div className="re-split">
-            <div className="re-split-copy">
-              <p className="kicker">THE RECRUITER&apos;S PROBLEM</p>
-              <h2 className="h2">
-                Recruiting runs on conversations, and conversations get lost
-              </h2>
-              <p className="re-section-intro">
-                Recruiters juggle two relationships at once: the candidates they
-                place and the clients they place them with. Without one shared
-                system, the usual results are:
-              </p>
-            </div>
-            <figure className="re-photo re-photo-contain">
-              <img
-                src="/assets/leadmanage.png"
-                alt="TracktCRM pipeline board keeping candidates and clients in one view"
-                width={1383}
-                height={695}
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
+          <div className="re-section-head is-wide">
+            <p className="kicker">THE RECRUITER&apos;S PROBLEM</p>
+            <h2 className="h2">
+              Recruiting Runs on Conversations, and Conversations Get Lost
+            </h2>
+            <p className="re-section-intro">
+              Recruiters juggle two relationships at once: the candidates they
+              place and the clients they place them with. Without one shared
+              system, the usual results are:
+            </p>
           </div>
           <div className="re-point-grid">
             {PROBLEM_POINTS.map((point) => (
-              <article className="re-point-card industry-point-card" key={point}>
+              <article className="re-point-card" key={point.title}>
                 <span className="re-point-check" aria-hidden="true">
                   <CheckIcon size={14} />
                 </span>
-                <p>{point}</p>
+                <h3>{point.title}</h3>
+                <p>{point.body}</p>
               </article>
             ))}
           </div>
@@ -190,7 +188,7 @@ export default function RecruitmentCrmPage() {
             <figure className="re-photo re-photo-contain">
               <img
                 src="/assets/AI-CRM-actually.jpg"
-                alt="Recruitment CRM record with the full history of calls, messages and notes"
+                alt="TracktCRM record with a timeline of calls, notes, files, email and WhatsApp messages"
                 width={1645}
                 height={802}
                 loading="lazy"
@@ -199,20 +197,16 @@ export default function RecruitmentCrmPage() {
             </figure>
             <div className="re-split-copy">
               <p className="kicker">RECRUITMENT CRM SOFTWARE</p>
-              <h2 className="h2">What does a recruitment CRM actually do?</h2>
+              <h2 className="h2">What Is a Recruitment CRM?</h2>
               <p className="re-section-intro">
-                A recruitment CRM is CRM software built around the relationships
-                recruiting depends on. Unlike a one-time sales pipeline, a CRM
-                for recruitment has to handle people you engage over months, and
-                companies you serve repeatedly.
+                A recruitment CRM is software that helps recruiters manage the
+                relationships their work depends on: candidates they engage over
+                months, and client companies they serve again and again. It
+                keeps every conversation, owner and next step in one place, and
+                reminds you when a conversation has gone quiet.
               </p>
               <p className="re-section-intro">
-                TracktCRM is built around these relationships rather than
-                adapted from a one-time-sale pipeline. Whether you run a
-                recruitment agency, an in-house talent team or a solo desk, the
-                job is the same: candidate relationship management, with a
-                talent pipeline you can actually see. See the full{" "}
-                <a href="/crm-software">CRM software</a> overview.
+                See the full <a href="/crm-software">CRM software</a> overview.
               </p>
             </div>
           </div>
@@ -230,14 +224,13 @@ export default function RecruitmentCrmPage() {
           <div className="re-section-head is-wide">
             <p className="kicker">CRM VS ATS</p>
             <h2 className="h2">
-              Recruitment CRM vs applicant tracking system: what is the
-              difference?
+              Recruitment CRM vs Applicant Tracking System: What Is the
+              Difference?
             </h2>
             <p className="re-section-intro industry-wide-intro">
-              The two are often confused. An applicant tracking system handles
-              applications to specific job openings. A recruitment CRM handles
-              the relationships: the candidates you are building over time, and
-              the clients you recruit for.
+              The two are often confused. An applicant tracking system (ATS)
+              handles applications for specific job openings. A recruitment CRM
+              handles the relationships around them.
             </p>
           </div>
           <div className="compare-table-wrap cs-compare-wrap industry-compare-wrap">
@@ -265,9 +258,9 @@ export default function RecruitmentCrmPage() {
         <section className="section reveal" id="features">
           <div className="re-section-head is-wide">
             <p className="kicker">FEATURES</p>
-            <h2 className="h2">What recruiters get with TracktCRM</h2>
+            <h2 className="h2">Recruitment CRM Features for Recruiters</h2>
           </div>
-          <div className="re-feature-grid industry-feature-grid">
+          <div className="re-feature-grid industry-feature-grid is-balanced">
             {FEATURES.map((feature) => {
               const Icon = FEATURE_ICONS[feature.icon];
               return (
@@ -291,14 +284,53 @@ export default function RecruitmentCrmPage() {
           </div>
         </section>
 
+        <section className="section re-band reveal" id="who-its-for">
+          <p className="kicker">WHO IT IS FOR</p>
+          <h2 className="h2">
+            Recruitment CRM for Agencies, Staffing Firms, Headhunters and
+            In-House Teams
+          </h2>
+          <div className="re-choose-grid">
+            {AUDIENCES.map((item) => (
+              <article className="re-choose-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
+          <p className="industry-page-links">
+            Running a marketing or consulting agency instead? See the{" "}
+            <a href="/industries/crm-for-agencies">agency CRM</a>. Moving from
+            Pipedrive? Compare TracktCRM as a{" "}
+            <a href="/pipedrive-alternative">Pipedrive alternative</a>.
+          </p>
+        </section>
+
+        <section className="section reveal" id="candidate-data">
+          <div className="re-section-head is-wide">
+            <p className="kicker">CONSENT AND PRIVACY</p>
+            <h2 className="h2">Candidate Data, Consent and Privacy</h2>
+            <p className="re-section-intro">
+              Candidate details such as CVs, phone numbers and conversation
+              history are personal data. India&apos;s Digital Personal Data
+              Protection Act, 2023 expects you to collect and keep it with
+              consent and for a clear purpose. WhatsApp also expects candidates
+              to have agreed to hear from you, and limits free-form replies to
+              24 hours after their last message. TracktCRM keeps a full record
+              of each conversation and who owns it, which helps you show what
+              was sent and when.
+            </p>
+          </div>
+        </section>
+
         <section className="section re-band reveal" id="two-pipelines">
           <div className="re-split">
-            <figure className="re-photo">
+            <figure className="re-photo re-photo-contain">
               <img
-                src="/assets/real-estate/broker-handshake.jpg"
-                alt="Recruiter and client agreeing on a placement"
-                width={1152}
-                height={864}
+                src="/assets/leadmanage.png"
+                alt="TracktCRM pipeline board with a pipeline switcher and records grouped by stage, each with an owner"
+                width={1383}
+                height={695}
                 loading="lazy"
                 decoding="async"
               />
@@ -306,7 +338,7 @@ export default function RecruitmentCrmPage() {
             <div className="re-split-copy">
               <p className="kicker">CANDIDATES AND CLIENTS</p>
               <h2 className="h2">
-                Work your candidates and your clients side by side
+                Work Your Candidates and Your Clients Side by Side
               </h2>
               <p className="re-section-intro">
                 Recruitment is a two-sided business, and most tools only cover
@@ -329,7 +361,7 @@ export default function RecruitmentCrmPage() {
         <section className="section reveal" id="process">
           <div className="re-section-head">
             <p className="kicker">HOW IT WORKS</p>
-            <h2 className="h2">How a candidate moves through TracktCRM</h2>
+            <h2 className="h2">How a Candidate Moves Through TracktCRM</h2>
           </div>
           <div className="re-process-grid">
             {PROCESS_STEPS.map((step) => (
@@ -349,12 +381,20 @@ export default function RecruitmentCrmPage() {
 
         <section className="section re-band reveal" id="choosing">
           <p className="kicker">BUYER&apos;S GUIDE</p>
-          <h2 className="h2">What to look for in a recruitment CRM</h2>
-          <div className="re-choose-grid">
+          <h2 className="h2">What to Look For in a Recruitment CRM</h2>
+          <div className="re-choose-grid is-three">
             {CHOOSING_POINTS.map((item) => (
               <article className="re-choose-card" key={item.title}>
                 <h3>{item.title}</h3>
-                <p>{item.body}</p>
+                <p>
+                  {item.body}
+                  {item.href ? (
+                    <>
+                      {" "}
+                      <a href={item.href}>{item.linkLabel}</a>.
+                    </>
+                  ) : null}
+                </p>
               </article>
             ))}
           </div>
@@ -362,7 +402,9 @@ export default function RecruitmentCrmPage() {
 
         <section className="section re-int-band reveal" id="integrations">
           <p className="kicker">INTEGRATIONS</p>
-          <h2 className="h2">Connects with the tools recruiters already use</h2>
+          <h2 className="h2">
+            Recruitment CRM Integrations: WhatsApp, Email, Calendar and Ads
+          </h2>
           <div className="re-int-list">
             {INTEGRATIONS.map((item) => (
               <article className="re-int-card" key={item.title}>
@@ -376,41 +418,33 @@ export default function RecruitmentCrmPage() {
               </article>
             ))}
           </div>
+          <p className="re-section-intro re-int-more">
+            <a href="/integrations">Browse all CRM integrations</a>
+          </p>
         </section>
 
         <section className="section reveal" id="pipeline-preview">
+          <p className="kicker is-centered">SEE IT IN ACTION</p>
+          <h2 className="h2 is-centered">
+            See Candidate and Client Pipelines in One View
+          </h2>
           <figure className="re-shot re-shot-wide">
             <img
-              src="/assets/leadmanage.png"
-              alt="TracktCRM candidate pipeline with sourced, contacted, screened, interviewing, offer and placed stages beside a client pipeline"
-              width={1383}
-              height={695}
+              src="/assets/dashboard.png"
+              alt="TracktCRM dashboard with deals by stage, a deals trend chart and leads won and lost per owner"
+              width={1381}
+              height={407}
               loading="lazy"
               decoding="async"
             />
           </figure>
         </section>
 
-        <section className="section reveal" id="testimonial">
-          <p className="kicker is-centered">SOCIAL PROOF</p>
-          <h2 className="h2 is-centered">
-            Recruiters keeping candidates and clients in TracktCRM
-          </h2>
-          <div className="re-testimonial-grid">
-            {TESTIMONIALS.map((item) => (
-              <div className="re-testimonial" key={item.quote}>
-                <blockquote>&ldquo;{item.quote}&rdquo;</blockquote>
-                <cite>- {item.attribution}</cite>
-              </div>
-            ))}
-          </div>
-        </section>
-
         <RelatedIndustries current="recruitment" />
 
         <section className="section faq reveal" id="faq">
           <p className="kicker is-centered">FAQ</p>
-          <h2 className="h2 is-centered">Frequently asked questions</h2>
+          <h2 className="h2 is-centered">Recruitment CRM FAQs</h2>
           <div className="faq-list re-faq-list">
             {RECRUITMENT_FAQS.map((item, index) => (
               <details className="faq-item" key={item.q} open={index === 0}>
@@ -427,7 +461,7 @@ export default function RecruitmentCrmPage() {
         <section className="cta-section reveal" id="demo">
           <div className="cta">
             <div>
-              <h2>See TracktCRM on your own candidate pipeline</h2>
+              <h2>See TracktCRM on Your Own Candidate Pipeline</h2>
               <p>
                 Start a free 1 month trial, or book a demo and we will walk
                 through your candidates and clients inside TracktCRM.

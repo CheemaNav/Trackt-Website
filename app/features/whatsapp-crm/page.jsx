@@ -6,6 +6,7 @@ import {
   ChannelWhatsAppIcon,
   CheckIcon,
   FieldMessageIcon,
+  LabelIcon,
   ProjectPipelineIcon,
   AiLeadIcon,
 } from "../../icons";
@@ -15,12 +16,13 @@ import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
 import { BreadcrumbJsonLd, WhatsAppCrmJsonLd } from "../../json-ld";
 import { INTEGRATIONS as HOME_INTEGRATIONS } from "../../home-data";
 import {
+  APP_VS_API_ROWS,
   CHOOSING_POINTS,
   FEATURES,
   PROBLEM_POINTS,
   PROCESS_STEPS,
-  TESTIMONIALS,
   WA_FAQS,
+  WA_RULES,
   WHAT_IS_POINTS,
 } from "./data";
 
@@ -31,17 +33,19 @@ const FEATURE_ICONS = {
   history: ProjectPipelineIcon,
   reminders: ChannelSnoozeIcon,
   inbox: AiLeadIcon,
+  labels: LabelIcon,
 };
 
 const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const pageTitle = "WhatsApp CRM India: Capture, Reply & Track Leads | TracktCRM";
+const pageDescription =
+  "WhatsApp CRM for Indian teams: capture every WhatsApp enquiry as a lead, reply from a shared inbox, automate follow-ups and track deals. Free 1 month trial.";
 
 export const metadata = {
   title: {
-    absolute:
-      "WhatsApp CRM Software — Capture, Chat & Close on WhatsApp | TracktCRM",
+    absolute: pageTitle,
   },
-  description:
-    "TracktCRM is a WhatsApp CRM that captures leads, automates replies and tracks every deal — right inside the WhatsApp chats your customers already use.",
+  description: pageDescription,
   alternates: {
     canonical: "/features/whatsapp-crm",
   },
@@ -50,9 +54,8 @@ export const metadata = {
     locale: "en_IN",
     url: `${SITE_URL}/features/whatsapp-crm`,
     siteName: SITE_NAME,
-    title: "TracktCRM — The CRM Built Around WhatsApp, Not Bolted Onto It",
-    description:
-      "Capture leads, automate replies, and manage your whole pipeline without ever leaving WhatsApp.",
+    title: pageTitle,
+    description: pageDescription,
     images: [
       {
         url: ogImage,
@@ -75,9 +78,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TracktCRM — The CRM Built Around WhatsApp, Not Bolted Onto It",
-    description:
-      "Capture leads, automate replies, and manage your whole pipeline without ever leaving WhatsApp.",
+    title: pageTitle,
+    description: pageDescription,
     images: [ogImage],
   },
 };
@@ -85,11 +87,10 @@ export const metadata = {
 export default function WhatsAppCrmPage() {
   return (
     <div className="home wa-page">
-      <WhatsAppCrmJsonLd faqs={WA_FAQS} />
+      <WhatsAppCrmJsonLd faqs={WA_FAQS} features={FEATURES} />
       <BreadcrumbJsonLd
         items={[
           { name: "Home", href: "/" },
-          { name: "Features", href: "/features/whatsapp-crm" },
           { name: "WhatsApp CRM", href: "/features/whatsapp-crm" },
         ]}
       />
@@ -104,14 +105,17 @@ export default function WhatsAppCrmPage() {
                 WHATSAPP CRM
               </div>
               <h1 className="h1">
-                The CRM Built Around WhatsApp —{" "}
-                <span className="wa-hero-accent">Not Bolted Onto It</span>
+                WhatsApp CRM for India:{" "}
+                <span className="wa-hero-accent">
+                  Capture, Reply to and Track Every Lead in One Place
+                </span>
               </h1>
               <p className="lead">
                 Your customers already message you on WhatsApp. TracktCRM is a
-                WhatsApp CRM that captures every enquiry, replies automatically,
-                and tracks the full deal — without you or your team ever
-                switching apps.
+                WhatsApp CRM that turns every enquiry into a lead, lets your team
+                reply from a shared inbox, sends automatic first replies and
+                keeps the whole conversation on the deal. Nobody has to switch
+                between WhatsApp and the CRM.
               </p>
               <div className="hero-ctas">
                 <a
@@ -146,7 +150,7 @@ export default function WhatsAppCrmPage() {
                   <span className="trust-check" aria-hidden="true">
                     <CheckIcon size={11} />
                   </span>
-                  Works with WhatsApp Business API
+                  Works with the WhatsApp Business API
                 </span>
               </div>
             </div>
@@ -155,7 +159,7 @@ export default function WhatsAppCrmPage() {
               <img
                 className="wa-hero-banner"
                 src="/assets/whatsapp/whatsapp-crm-hero.png"
-                alt="TracktCRM WhatsApp CRM on desktop and mobile — chats and contact details in one place"
+                alt="TracktCRM WhatsApp CRM on desktop and mobile, with chats and contact details in one place"
                 width={1400}
                 height={1000}
                 fetchPriority="high"
@@ -169,12 +173,12 @@ export default function WhatsAppCrmPage() {
           <div className="wrap wa-problem-grid">
             <div className="wa-problem-intro">
               <p className="kicker">THE WHATSAPP PROBLEM</p>
-              <h2 className="h2">Most CRMs treat WhatsApp as an afterthought</h2>
+              <h2 className="h2">Why Most CRMs Handle WhatsApp Badly</h2>
               <p className="lead">
-                Plenty of CRMs offer a WhatsApp &quot;integration&quot; — a
-                basic connector bolted onto software built for email and forms.
-                That&apos;s not the same as a CRM designed around how WhatsApp
-                conversations actually work:
+                Many CRMs offer a WhatsApp &quot;integration&quot; that sits on
+                top of software built for email and forms. That is not the same
+                as a CRM designed around how WhatsApp conversations work. Four
+                problems show up again and again:
               </p>
             </div>
             <ol className="wa-problem-list">
@@ -196,25 +200,29 @@ export default function WhatsAppCrmPage() {
             <div className="wa-what-layout">
               <div className="wa-what-head">
                 <p className="kicker">WHATSAPP CRM SOFTWARE</p>
-                <h2 className="h2">What makes a CRM a genuine WhatsApp CRM?</h2>
+                <h2 className="h2">What Is a WhatsApp CRM?</h2>
                 <p className="lead">
                   A WhatsApp CRM is customer relationship management software
-                  built around WhatsApp as a primary channel — not just connected
-                  to it as an add-on. TracktCRM is built around this definition
-                  from the ground up — WhatsApp isn&apos;t a plug-in, it&apos;s
-                  the core channel. Pair it with our{" "}
-                  <a href="/industries/ai-crm">AI sales assistant</a>, browse our{" "}
-                  <a href="/crm-software">CRM software</a>, or see how{" "}
-                  <a href="/industries/real-estate-crm">real estate teams</a> use WhatsApp
-                  for site-visit follow-ups, or how{" "}
-                  <a href="/industries/education-crm">admissions teams</a> capture
-                  student enquiries.
+                  built around WhatsApp as a main channel, not added on as an
+                  extra. It turns each WhatsApp message into a lead, lets your
+                  team reply from one shared inbox, and keeps every conversation
+                  on the lead or deal record.
+                </p>
+                <p className="lead">
+                  Use it with our{" "}
+                  <a href="/industries/ai-crm">AI sales assistant</a>, explore
+                  our <a href="/crm-software">CRM software</a>, or see how{" "}
+                  <a href="/industries/real-estate-crm">real estate teams</a>,{" "}
+                  <a href="/industries/education-crm">admissions teams</a>,{" "}
+                  <a href="/industries/crm-for-agencies">agencies</a> and{" "}
+                  <a href="/industries/crm-for-recruitment">recruiters</a> use
+                  WhatsApp.
                 </p>
               </div>
               <figure className="wa-what-visual">
                 <img
                   src="/assets/whatsapp/whatsapp-banner.png"
-                  alt="WhatsApp and TracktCRM sync — messages flow both ways into the CRM"
+                  alt="WhatsApp and TracktCRM sync, with messages flowing both ways into the CRM"
                   width={1200}
                   height={900}
                   loading="lazy"
@@ -240,7 +248,7 @@ export default function WhatsAppCrmPage() {
           <div className="wrap">
             <div className="wa-section-head">
               <p className="kicker">FEATURES</p>
-              <h2 className="h2">Everything you need to sell over WhatsApp</h2>
+              <h2 className="h2">WhatsApp CRM Features for Sales Teams</h2>
             </div>
             <div className="wa-bento">
               {FEATURES.map((feature, index) => {
@@ -254,10 +262,88 @@ export default function WhatsAppCrmPage() {
                       <Icon size={22} />
                     </div>
                     <h3>{feature.title}</h3>
-                    <p>{feature.body}</p>
+                    <p>
+                      {feature.body}
+                      {feature.href ? (
+                        <>
+                          {" "}
+                          <a href={feature.href}>{feature.linkLabel}</a>.
+                        </>
+                      ) : null}
+                    </p>
                   </article>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        <section className="wa-section reveal" id="whatsapp-rules">
+          <div className="wrap">
+            <div className="wa-section-head">
+              <p className="kicker">WHATSAPP RULES</p>
+              <h2 className="h2">
+                WhatsApp Business Rules Every Sales Team Should Know
+              </h2>
+              <p className="lead">
+                WhatsApp has its own rules, and a good WhatsApp CRM helps you
+                follow them. In plain terms:
+              </p>
+            </div>
+            <div className="re-point-grid wa-rules-grid">
+              {WA_RULES.map((rule) => (
+                <article className="re-point-card" key={rule.title}>
+                  <span className="re-point-check" aria-hidden="true">
+                    <CheckIcon size={14} />
+                  </span>
+                  <h3>{rule.title}</h3>
+                  <p>
+                    {rule.body}
+                    {rule.href ? (
+                      <>
+                        {" "}
+                        <a href={rule.href} target="_blank" rel="noopener noreferrer">
+                          {rule.linkLabel}
+                        </a>
+                        .
+                      </>
+                    ) : null}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="wa-section wa-app-api reveal" id="app-vs-api">
+          <div className="wrap">
+            <div className="wa-section-head">
+              <p className="kicker">APP VS API</p>
+              <h2 className="h2">
+                WhatsApp Business App vs WhatsApp Business API vs TracktCRM
+              </h2>
+            </div>
+            <div className="compare-table-wrap cs-compare-wrap industry-compare-wrap">
+              <table className="compare-table cs-compare-table">
+                <thead>
+                  <tr>
+                    <th aria-label="Comparison" />
+                    <th>WhatsApp Business app</th>
+                    <th>WhatsApp Business API</th>
+                    <th>TracktCRM</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {APP_VS_API_ROWS.map((row) => (
+                    <tr key={row.label}>
+                      <th scope="row">{row.label}</th>
+                      <td>{row.app}</td>
+                      <td>{row.api}</td>
+                      <td>{row.tracktcrm}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
@@ -267,7 +353,7 @@ export default function WhatsAppCrmPage() {
             <div className="wa-section-head is-center">
               <p className="kicker is-centered">HOW IT WORKS</p>
               <h2 className="h2 is-centered">
-                How a WhatsApp conversation becomes a tracked deal
+                How a WhatsApp Conversation Becomes a Tracked Deal
               </h2>
             </div>
             <div className="wa-timeline">
@@ -286,11 +372,10 @@ export default function WhatsAppCrmPage() {
           <div className="wrap wa-choose-layout">
             <div className="wa-choose-intro">
               <p className="kicker">BUYER&apos;S GUIDE</p>
-              <h2 className="h2">What to look for in a WhatsApp CRM</h2>
+              <h2 className="h2">What to Look For in a WhatsApp CRM</h2>
               <p className="lead">
-                Not every &quot;WhatsApp Business CRM&quot; is built the same.
-                Here is what actually matters when you evaluate WhatsApp CRM
-                software and CRM with WhatsApp integration:
+                Not every WhatsApp CRM is built the same. Check these five
+                things:
               </p>
             </div>
             <div className="wa-choose-list">
@@ -311,8 +396,11 @@ export default function WhatsAppCrmPage() {
           <div className="int-wrap">
             <div className="int-center">
               <h2>
-                <span className="accent int-cap">WhatsApp</span>, and everything{" "}
-                <span className="orange int-cap">around it</span>
+                <span className="accent int-cap">WhatsApp CRM</span>{" "}
+                Integrations:{" "}
+                <span className="orange int-cap">
+                  Ads, Portals, Gmail and Payments
+                </span>
               </h2>
               <a
                 className="int-cta"
@@ -338,10 +426,16 @@ export default function WhatsAppCrmPage() {
               ))}
             </div>
           </div>
+          <p className="industry-page-links wa-int-text">
+            WhatsApp works with the rest of your stack: Meta and Google Ads,
+            99acres and Housing.com, Gmail and Google Calendar, Shopify and
+            Razorpay. <a href="/integrations">Browse all CRM integrations</a> or
+            see <a href="/pricing">TracktCRM pricing</a>.
+          </p>
           <p className="int-note">
             Don&apos;t see your tool?{" "}
             <a href="/contact">
-              Let us know — we&apos;ll integrate it for you
+              Let us know and we&apos;ll integrate it for you
               <span className="int-note-arrow" aria-hidden="true">
                 <ArrowIcon />
               </span>
@@ -354,12 +448,12 @@ export default function WhatsAppCrmPage() {
             <div className="wa-section-head is-center">
               <p className="kicker is-centered">SEE IT IN ACTION</p>
               <h2 className="h2 is-centered">
-                WhatsApp lead management next to your pipeline
+                See WhatsApp Lead Management Next to Your Pipeline
               </h2>
               <p className="lead is-centered">
-                A live conversation thread beside the lead&apos;s deal stage and
-                notes — so WhatsApp lead management stays inside the CRM, not in
-                a separate phone inbox.
+                A live conversation sits beside the lead&apos;s stage and notes,
+                so WhatsApp lead management stays inside the CRM and not in a
+                phone inbox.
               </p>
             </div>
             <figure className="wa-proof-frame">
@@ -375,30 +469,11 @@ export default function WhatsAppCrmPage() {
           </div>
         </section>
 
-        <section className="wa-section wa-quotes reveal" id="testimonial">
-          <div className="wrap">
-            <div className="wa-section-head is-center">
-              <p className="kicker is-centered">SOCIAL PROOF</p>
-              <h2 className="h2 is-centered">
-                Teams that stopped losing WhatsApp leads
-              </h2>
-            </div>
-            <div className="wa-quote-row">
-              {TESTIMONIALS.map((item) => (
-                <blockquote className="wa-quote" key={item.quote}>
-                  <p>&ldquo;{item.quote}&rdquo;</p>
-                  <cite>{item.attribution}</cite>
-                </blockquote>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="wa-section reveal" id="faq">
           <div className="wrap wa-faq-wrap">
             <div className="wa-section-head is-center">
               <p className="kicker is-centered">FAQ</p>
-              <h2 className="h2 is-centered">Frequently asked questions</h2>
+              <h2 className="h2 is-centered">WhatsApp CRM FAQs</h2>
             </div>
             <div className="wa-faq-list">
               {WA_FAQS.map((item) => (
@@ -417,11 +492,10 @@ export default function WhatsAppCrmPage() {
         <section className="wa-cta reveal" id="demo">
           <div className="wrap wa-cta-inner">
             <div>
-              <h2>Turn your WhatsApp into a real sales pipeline</h2>
+              <h2>Turn Your WhatsApp Into a Sales Pipeline</h2>
               <p className="lead">
                 Start a free 1 month trial and connect your WhatsApp Business
-                number in minutes — or book a demo to see it with your own
-                conversations.
+                number, or book a demo to see it with your own conversations.
               </p>
             </div>
             <div className="hero-ctas">

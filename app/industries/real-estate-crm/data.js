@@ -300,7 +300,7 @@ export const RE_FAQS = [
     a: "Yes. TracktCRM's pipelines and inventory tracking work for residential units, commercial spaces and land. You define the project types that match your business.",
   },
   {
-    q: "How much does a real estate CRM cost?",
+    q: "How much does a real estate CRM cost in India?",
     a: "TracktCRM plans are priced by seats, channels and volume, with quotes in INR or USD. Start with a free 1 month trial with no credit card needed, or book a demo to get a quote for your team.",
   },
   {

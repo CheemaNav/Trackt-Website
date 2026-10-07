@@ -3,7 +3,7 @@ export const FEATURES = [
     id: "pipeline",
     label: "Sales Pipeline Management",
     title: "Sales Pipeline Management",
-    body: "Customise your stages to match how you actually close deals. See every deal, every owner and every next step in one pipeline view.",
+    body: "Set up stages the way your team actually closes deals. Every deal, owner and next step is visible on one drag-and-drop board.",
     chips: ["Custom stages", "Drag & drop", "Deal forecasting"],
     screen: "TracktCRM sales pipeline view",
     metrics: [
@@ -44,7 +44,7 @@ export const FEATURES = [
     id: "leads",
     label: "Lead Management Software",
     title: "Lead Management Software",
-    body: "Manage and organise every lead in one place. Website forms, WhatsApp, ads, calls and referrals are captured automatically, de-duplicated and assigned to the right rep - so no enquiry is missed.",
+    body: "Leads from forms, WhatsApp, ads and missed calls land in one dashboard. They are assigned to the right person and scored on arrival, so nothing sits unnoticed.",
     chips: ["Auto-assignment", "Lead scoring", "Source tracking"],
     screen: "TracktCRM lead management dashboard",
     metrics: [
@@ -85,7 +85,7 @@ export const FEATURES = [
     id: "automation",
     label: "Sales Automation",
     title: "Sales Automation",
-    body: "Automated follow-ups, reminders and multi-channel outreach keep every lead moving - without a rep having to remember to chase it.",
+    body: "Instant replies, follow-up reminders and task scheduling run on their own. Your team spends time talking to buyers instead of chasing spreadsheets.",
     chips: ["Automated follow-ups", "Task reminders", "Workflow rules"],
     screen: "TracktCRM sales automation workflow",
     metrics: [
@@ -125,8 +125,8 @@ export const FEATURES = [
   {
     id: "reports",
     label: "Reporting & Analytics",
-    title: "Reporting & Analytics",
-    body: "Live rep scorecards, source-level ROI and pipeline health - no manual spreadsheet pulls at month-end.",
+    title: "Reporting and Analytics",
+    body: "See performance by rep, lead source and pipeline stage. It is easy to spot where deals are getting stuck.",
     chips: ["Live dashboards", "Revenue tracking", "Source ROI"],
     screen: "TracktCRM reporting and analytics dashboard",
     metrics: [
@@ -166,8 +166,8 @@ export const FEATURES = [
   {
     id: "forms",
     label: "Custom Forms",
-    title: "Custom Forms",
-    body: "Build branded lead forms without a developer. Drag fields into place, they map to your CRM automatically, then embed the form on any site.",
+    title: "Custom Lead Forms",
+    body: "Build a form, choose the pipeline and owner, and embed it on any website. Submissions go straight into your CRM.",
     chips: ["Drag & drop builder", "Auto field mapping", "Embed anywhere"],
     screen: "TracktCRM form builder",
   },
@@ -175,7 +175,7 @@ export const FEATURES = [
     id: "integrations",
     label: "Integrations",
     title: "CRM Integrations",
-    body: "Connects with WhatsApp, Gmail, Google Calendar, Meta & Google Ads, 99acres, Housing.com, OLX, Shopify, Shiprocket and an open API.",
+    body: "Connect WhatsApp, Gmail, Google Calendar, Meta and Google Ads, 99acres, Housing.com, Shopify and Razorpay.",
     chips: ["WhatsApp API", "Portals & ads", "Open API"],
     screen: "TracktCRM integrations settings",
     metrics: [
@@ -225,15 +225,13 @@ export const FEATURES = [
 ];
 
 export const HERO_WORDS = [
-  "real estate",
+  "real estate teams",
   "education",
   "automotive",
   "insurance",
-  "retail",
   "SaaS",
-  "events",
+  "agencies",
   "freelancers",
-  "and more",
 ];
 
 export const LOGO_ROW = [
@@ -247,29 +245,29 @@ export const LOGO_ROW = [
 ];
 
 export const SPEED_POINTS = [
-  "You set the tone, script and hand-off rules - the AI sales assistant never goes off-script.",
-  "Calls are recorded, transcribed and summarised straight onto the lead record.",
-  "Reps pick up mid-conversation with full context, not a cold trail.",
+  "You decide the tone, script and hand-off rules.",
+  "Calls are recorded, transcribed and summarised on the lead record.",
+  "Reps start with context, not a blank screen.",
 ];
 
 export const TIMELINE = [
-  { at: "0s", title: "Lead arrives", sub: "Form, WhatsApp, ad or missed call - captured and scored" },
-  { at: "2s", title: "WhatsApp + email out", sub: "Personalised with the enquiry details" },
+  { at: "0s", title: "Lead arrives", sub: "From a form, WhatsApp, an ad or a missed call" },
+  { at: "2s", title: "WhatsApp and email sent", sub: "Personalised with the enquiry details" },
   { at: "8s", title: "SMS backup", sub: "For leads who never open email" },
-  { at: "45s", title: "Follow-up call placed", sub: "While the enquiry is still warm" },
-  { at: "2m", title: "Handed to a rep", sub: "With transcript, source and next action attached" },
+  { at: "45s", title: "Follow-up call", sub: "While the buyer is still interested" },
+  { at: "2m", title: "Handed to a rep", sub: "With the transcript and lead source attached" },
 ];
 
 export const INDUSTRIES = [
   {
-    name: "Real Estate CRM",
-    body: "Property enquiries arrive from a dozen portals at once. TracktCRM is a real estate CRM that captures each lead instantly, books the site visit and tracks every broker, unit and deal in one sales pipeline.",
+    name: "Real Estate CRM in India",
+    body: "Property enquiries come from many portals at once. TracktCRM pulls them into one place, books site visits, tracks channel partners and keeps inventory visible.",
     points: ["Site-visit scheduling", "Channel-partner tracking", "Inventory & availability"],
     href: "/industries/real-estate-crm",
   },
   {
-    name: "Education CRM",
-    body: "Admissions teams lose applicants to slow replies. TracktCRM assigns each enquiry to a counsellor, automates follow-ups and shows every applicant's admission stage live.",
+    name: "CRM for Education",
+    body: "Assign each enquiry to a counsellor, follow every admission stage and remind families about fees.",
     points: ["Counsellor allocation", "Admission-stage pipeline", "Fee follow-up reminders"],
     href: "/industries/education-crm",
   },
@@ -324,22 +322,27 @@ export const INTEGRATIONS = [
 
 export const AI_FEATURES = [
   {
-    title: "AI Catalog Design",
-    body: "Create stunning product catalogs from your images in seconds, not hours. Just upload, pick a style, and let AI do the rest",
-    icon: "/assets/ai/ai-icon-catalog.svg",
+    title: "AI Lead Response",
+    body: "Every new enquiry gets a personalised reply within seconds, using the details the lead submitted.",
+    icon: "/assets/ai/ai-icon-reply.svg",
+  },
+  {
+    title: "AI Call Summaries",
+    body: "Calls are recorded, transcribed and summarised on the lead, so nobody has to write notes by hand.",
+    icon: "/assets/ai/ai-icon-call.svg",
   },
   {
     title: "AI-Powered Reports",
-    body: "Get instant insights and smart summaries across your sales, inventory & tasks. No manual number-crunching needed",
+    body: "Get quick summaries of sales, pipeline movement and team activity without building reports yourself.",
     icon: "/assets/ai/ai-icon-reports.svg",
   },
 ];
 
 export const STEPS = [
-  { n: "01", title: "Book a demo", body: "A 30-minute call where we map your current lead flow." },
-  { n: "02", title: "We configure it", body: "Pipelines, stages, sources and rules set up for your process." },
+  { n: "01", title: "Book a demo", body: "A 30-minute call to map how your leads come in today." },
+  { n: "02", title: "We set it up", body: "Pipelines, stages, sources and rules built around your process." },
   { n: "03", title: "Onboard your team", body: "Training for reps and managers, plus data migration." },
-  { n: "04", title: "Watch it compound", body: "Faster replies, cleaner data, better forecasts every month." },
+  { n: "04", title: "Go live", body: "Most teams are working in TracktCRM within a week." },
 ];
 
 export const FAQS = [
@@ -349,8 +352,11 @@ export const FAQS = [
   { q: "Does TracktCRM offer a free trial?", a: "Yes. Every feature is available on a free 1 month trial with no credit card required. You can import your existing leads, run your real sales pipeline, and decide afterwards." },
   { q: "What integrations does TracktCRM support?", a: "TracktCRM connects with WhatsApp, Gmail, Google Calendar, Meta and Google Ads, India marketplaces, Shopify, Razorpay, shipping tools and webhooks. Browse the full catalogue on the integrations page, or ask us to add a tool you do not see." },
   { q: "How do I get started with TracktCRM?", a: "Start your free trial or book a demo and our team maps your current lead flow. We set up your pipeline stages, sources and users, migrate your spreadsheet or old CRM data, and most teams are live within a week." },
-  { q: "Is TracktCRM a good Pipedrive alternative?", a: "Yes. TracktCRM includes AI-powered lead response, WhatsApp automation and industry-ready pipelines that Pipedrive doesn't offer natively - at a lower price point, with data migration support if you're switching." },
+  { q: "Is TracktCRM a good Pipedrive alternative?", a: "Yes. TracktCRM offers built-in WhatsApp automation, AI lead replies and pipelines made for Indian businesses at a lower price, with data migration support if you are switching." },
   { q: "Does TracktCRM work as a real estate CRM?", a: "Yes. TracktCRM includes ready-made pipelines for site-visit scheduling, channel-partner tracking and unit/inventory management - built specifically for how real estate teams sell." },
+  { q: "What is a WhatsApp CRM?", a: "A WhatsApp CRM connects your WhatsApp chats to lead records. It automates replies and follow-ups and gives the whole team one shared inbox, so conversations are not stuck on one person's phone." },
+  { q: "Which is the best CRM for a small business in India?", a: "Look for one that is quick to set up, works with WhatsApp and Indian portals like 99acres, and does not need a large budget or a consultant. TracktCRM is built for that kind of team." },
+  { q: "How much does CRM software cost in India?", a: "TracktCRM plans are priced by seats, channels and volume, with quotes in INR or USD. Every feature is free for the first month, with no credit card needed." },
 ];
 
 export const FOOTER_COLS = [

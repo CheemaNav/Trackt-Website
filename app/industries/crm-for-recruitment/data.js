@@ -1,26 +1,38 @@
 export const PROBLEM_POINTS = [
-  "Strong candidates forgotten because nobody followed up after the first call",
-  "Client roles tracked in a spreadsheet that is out of date by Friday",
-  "Candidate and client chats scattered across WhatsApp, email and personal phones",
-  "Two recruiters unknowingly contacting the same person",
+  {
+    title: "Candidates forgotten",
+    body: "Strong candidates are lost because nobody followed up after the first call.",
+  },
+  {
+    title: "Out-of-date role lists",
+    body: "Client roles are tracked in a spreadsheet that is wrong by Friday.",
+  },
+  {
+    title: "Scattered chats",
+    body: "Candidate and client conversations sit in WhatsApp, email and personal phones.",
+  },
+  {
+    title: "Double contact",
+    body: "Two recruiters unknowingly contact the same person.",
+  },
 ];
 
 export const WHAT_IS_POINTS = [
   {
     title: "Candidates",
-    body: "Capture, organize and follow up with candidates across every channel, so a good one is never lost.",
+    body: "Capture, organise and follow up with candidates across every channel.",
   },
   {
     title: "Clients",
-    body: "Track each client company and their open roles through your own stages.",
+    body: "Track each client company and its open roles through your own stages.",
   },
   {
     title: "Conversations",
-    body: "Keep the full history of every call, message and note on the record.",
+    body: "Keep the full history of every call, message and note.",
   },
   {
     title: "Follow-ups",
-    body: "Remind recruiters when a conversation has gone quiet.",
+    body: "Get reminded when a conversation goes quiet.",
   },
 ];
 
@@ -31,7 +43,7 @@ export const ATS_COMPARE_ROWS = [
     crm: "Ongoing relationships with candidates and clients",
   },
   {
-    label: "Typical question it answers",
+    label: "Question it answers",
     ats: "Who applied for this role?",
     crm: "Who should I be talking to this week?",
   },
@@ -50,40 +62,79 @@ export const ATS_COMPARE_ROWS = [
 export const FEATURES = [
   {
     icon: "candidates",
-    title: "A Candidate Pipeline With Your Own Stages",
-    body: "Set up the stages you actually use, for example sourced, contacted, screened, interviewing, offer and placed, and see every candidate and their next step in one view.",
+    title: "Candidate Pipeline With Your Own Stages",
+    body: "Set up the stages you use, for example sourced, contacted, screened, interviewing, offer and placed, and see each candidate and their next step in one view.",
   },
   {
     icon: "clients",
-    title: "A Client Pipeline Next to It",
-    body: "Track client companies and their open roles through their own stages, so you know which clients need attention and which roles are moving.",
+    title: "Client Pipeline Next to It",
+    body: "Track client companies and their open roles through their own stages, so you know which clients need attention.",
   },
   {
     icon: "channels",
     title: "WhatsApp, Email and SMS in One Thread",
-    body: "Reach candidates where they actually respond. Every message is logged against the record, so any recruiter can continue the conversation with full context.",
+    body: "Reach candidates where they respond. Every message is logged on the record.",
     href: "/features/whatsapp-crm",
     linkLabel: "See WhatsApp CRM",
   },
   {
     icon: "reminders",
     title: "Follow-Up Reminders",
-    body: "When a candidate or client conversation goes quiet, TracktCRM reminds the owner, so good candidates are not lost to silence.",
+    body: "When a candidate or client conversation goes quiet, the owner is reminded, so good candidates are not lost to silence.",
   },
   {
     icon: "ownership",
     title: "Clear Ownership",
-    body: "Every record has an owner and a history, so teams avoid contacting the same person twice.",
+    body: "Every record has an owner and a history, so teams do not contact the same person twice.",
   },
   {
     icon: "calendar",
     title: "Interview Scheduling With Your Calendar",
-    body: "Connect Google Calendar so interviews and client calls sync automatically.",
+    body: "Connect Google Calendar so interviews and client calls sync.",
+  },
+  {
+    icon: "source",
+    title: "Candidate Source Tracking",
+    body: "See which referral, campaign, form or channel each candidate came from.",
+  },
+  {
+    icon: "files",
+    title: "CV and Resume Storage",
+    body: "Attach CVs and documents to the candidate record, including files from Google Drive, so everything sits in one place.",
+  },
+  {
+    icon: "labels",
+    title: "Skills Labels and Search",
+    body: "Label candidates by skill or location and search your talent pool by name, email or company.",
+  },
+  {
+    icon: "placement",
+    title: "Placement and Fee Tracking",
+    body: "Record each placement against the client role, with the fee as the deal value.",
   },
   {
     icon: "reporting",
     title: "Reporting",
     body: "See activity, response times and pipeline health without building a report by hand.",
+  },
+];
+
+export const AUDIENCES = [
+  {
+    title: "Recruitment agencies and staffing firms",
+    body: "Run candidate and client pipelines side by side, with a clear owner on each record.",
+  },
+  {
+    title: "Headhunters and executive search",
+    body: "Keep long-running conversations with senior candidates and decision makers on record.",
+  },
+  {
+    title: "In-house talent teams",
+    body: "Build a talent pool and stay in touch with candidates between openings.",
+  },
+  {
+    title: "Solo recruiters",
+    body: "Start with one simple pipeline and grow stages and users as your desk grows.",
   },
 ];
 
@@ -102,14 +153,14 @@ export const PROCESS_STEPS = [
   {
     n: "02",
     title: "Acknowledged",
-    body: "TracktCRM's AI can reply within seconds, so a strong candidate is never left waiting.",
+    body: "The AI can reply within seconds, so a strong candidate is never left waiting.",
     href: "/industries/ai-crm",
-    linkLabel: "See how TracktCRM's AI CRM works",
+    linkLabel: "See how the AI CRM works",
   },
   {
     n: "03",
     title: "Assigned",
-    body: "The record gets an owner, and the conversation history starts building.",
+    body: "The record gets an owner and the conversation history starts building.",
   },
   {
     n: "04",
@@ -119,114 +170,127 @@ export const PROCESS_STEPS = [
   {
     n: "05",
     title: "Matched",
-    body: "You link the candidate to a client conversation and keep both histories in view.",
+    body: "You link the candidate to a client role and keep both histories in view.",
   },
   {
     n: "06",
     title: "Placed",
-    body: "The outcome is recorded, and the relationship stays in your system for the next role.",
+    body: "The outcome is recorded and the relationship stays in your system for the next role.",
   },
 ];
 
 export const CHOOSING_POINTS = [
   {
-    title: "Does it cover candidates and clients?",
+    title: "Covers both candidates and clients",
     body: "A tool that only tracks candidates leaves your client side in a spreadsheet, and the reverse.",
   },
   {
-    title: "Does it work on the channels candidates use?",
-    body: "Candidates respond on WhatsApp far more readily than on a formal email. The CRM should log those chats.",
+    title: "Works on the channels candidates use",
+    body: "Candidates reply on WhatsApp more readily than on formal email. The CRM should log those chats, with consent in mind.",
   },
   {
-    title: "Does it remind you to follow up?",
-    body: "Most lost candidates are lost to silence, not rejection. Reminders protect your talent pool.",
+    title: "Reminds you to follow up",
+    body: "Most candidates are lost to silence, not rejection. Reminders protect your talent pool.",
   },
   {
-    title: "Is it quick to set up?",
+    title: "Quick to set up",
     body: "A small firm cannot spend weeks configuring software. Look for stages you can adapt in minutes.",
   },
   {
-    title: "Does it fit alongside your ATS?",
-    body: "If you already use an applicant tracking system, the CRM should complement it for outreach and relationships rather than force a replacement.",
+    title: "Fits alongside your ATS",
+    body: "If you already use an applicant tracking system, the CRM should handle outreach and relationships instead of forcing a replacement.",
+  },
+  {
+    title: "Clear pricing",
+    body: "You should know what each recruiter costs before you commit.",
+    href: "/pricing",
+    linkLabel: "See TracktCRM pricing",
   },
 ];
 
 export const INTEGRATIONS = [
   {
     title: "WhatsApp Business",
-    body: "Message candidates and clients in-chat.",
+    body: "Message candidates and clients.",
     brand: "WhatsApp",
   },
   {
     title: "Email and SMS",
-    body: "Keep every channel in one thread per person.",
+    body: "One thread per person.",
     brand: "Gmail",
   },
   {
     title: "Google Calendar",
-    body: "Interviews and client calls sync automatically.",
+    body: "Interviews and client calls sync.",
     brand: "Google Calendar",
   },
   {
     title: "Meta and Google Ads",
-    body: "Enquiries from your own campaigns flow into the pipeline.",
+    body: "Enquiries from your campaigns flow in.",
     brand: "Google Ads",
   },
   {
-    title: "Zapier and open API",
-    body: "Connect other sources and the rest of your stack.",
+    title: "Webhooks and custom forms",
+    body: "Connect job boards and your career page.",
     brand: "Webhooks",
-  },
-];
-
-export const TESTIMONIALS = [
-  {
-    quote:
-      "We used to lose good candidates the moment a conversation went quiet. Now the reminder shows up before they do.",
-    attribution: "Name, Title, Firm",
-  },
-  {
-    quote:
-      "Candidates and clients finally live in one place, and the whole team can see the history.",
-    attribution: "Name, Title, Firm",
   },
 ];
 
 export const RECRUITMENT_FAQS = [
   {
     q: "What is a recruitment CRM?",
-    a: "A recruitment CRM is customer relationship management software for recruiters. It keeps every candidate and every client company in one place, shows where each conversation stands, and reminds recruiters when to follow up, instead of relying on spreadsheets, inboxes and memory.",
+    a: "A recruitment CRM is software that helps recruiters manage candidates and the client companies they hire for. It keeps every conversation, owner and next step in one place and reminds you when a conversation has gone quiet, instead of relying on spreadsheets, inboxes and memory.",
   },
   {
     q: "What is the difference between a recruitment CRM and an ATS?",
-    a: "An applicant tracking system (ATS) manages applications for specific job openings. A recruitment CRM manages the relationships around them: candidates you are building over time, and the client companies you hire for. Many recruiters use a CRM for outreach and relationships, and an ATS for the application workflow.",
+    a: "An applicant tracking system (ATS) manages applications for specific job openings. A recruitment CRM manages the relationships around them: candidates you engage over time and the client companies you hire for. Many recruiters use a CRM for outreach and relationships, and an ATS for the application workflow.",
   },
   {
     q: "Is TracktCRM a good CRM for recruitment agencies?",
-    a: "Yes. Recruitment agencies work two pipelines at once, candidates and client companies, and TracktCRM lets you track both with your own stages, owners and reminders, so no candidate or client goes quiet.",
+    a: "It is built for the way agencies work, with two pipelines running at once. You track candidates and client companies with your own stages, owners and reminders, so neither side goes quiet.",
   },
   {
     q: "Can I track both candidates and client companies?",
-    a: "Yes. You can set up one pipeline for candidates and another for client companies or open roles, and keep every conversation attached to the right record.",
+    a: "Yes. Set up one pipeline for candidates and another for client companies or open roles. Every conversation stays attached to the right record.",
   },
   {
     q: "Can I reach candidates on WhatsApp?",
-    a: "Yes. WhatsApp is a core channel in TracktCRM, so candidate conversations are logged against each record along with email and SMS, and any recruiter can pick up a thread with full context.",
+    a: "WhatsApp is a core channel in TracktCRM. Candidate chats are logged on each record alongside email and SMS, so any recruiter can pick up a thread with full context.",
   },
   {
     q: "Can TracktCRM remind recruiters to follow up?",
-    a: "Yes. Automated reminders prompt a recruiter when a candidate or client conversation has gone quiet, so follow-ups do not depend on memory.",
+    a: "Automated reminders prompt the owner when a candidate or client conversation goes quiet, so follow-ups do not depend on memory.",
   },
   {
     q: "Is TracktCRM suitable for an in-house recruiter or a small recruitment firm?",
-    a: "Yes. TracktCRM works for a solo recruiter, an in-house talent team or a growing agency. Start with one simple pipeline and add stages, owners and pipelines as your hiring grows.",
+    a: "TracktCRM works for a solo recruiter, an in-house talent team or a growing agency. Start with one simple pipeline and add stages, users and pipelines as your hiring grows.",
   },
   {
     q: "Can several recruiters work from the same pipeline without duplicating outreach?",
-    a: "Yes. Every candidate and client record has a clear owner and a full conversation history, so two recruiters do not contact the same person without knowing.",
+    a: "Every candidate and client record has one owner and a full conversation history, so two recruiters do not contact the same person without knowing.",
   },
   {
     q: "Can I try TracktCRM before committing?",
-    a: "Yes, TracktCRM offers a free 1 month trial, so your team can try the full candidate and client workflow before committing.",
+    a: "TracktCRM has a free 1 month trial with no credit card needed, so your team can run the full candidate and client workflow before you decide.",
+  },
+  {
+    q: "Can I store CVs and resumes in TracktCRM?",
+    a: "Each candidate record has a files section where you can attach CVs and other documents, including files from Google Drive, so the CV sits next to the conversation history.",
+  },
+  {
+    q: "Can I capture candidates from job boards like Naukri or LinkedIn?",
+    a: "Candidates reach TracktCRM through webhooks, a custom form on your career page or job post, WhatsApp and your Meta or Google ad campaigns. If a job board or tool can send data to a webhook, you can map its fields to the candidate record. Talk to us about the sources you use.",
+  },
+  {
+    q: "Does TracktCRM track placement fees?",
+    a: "Record each placement against the client role with the fee as the deal value, then mark it won. Each stage shows the total value of its deals, so fees stay visible in your pipeline.",
+  },
+  {
+    q: "Do I need candidate consent to message them on WhatsApp?",
+    a: "Yes. Candidates should agree to receive your messages, and WhatsApp limits free-form replies to 24 hours after their last message. TracktCRM keeps a record of each conversation, so you can show what was sent and when.",
+  },
+  {
+    q: "How much does a recruitment CRM cost in India?",
+    a: "TracktCRM charges per user, with plans in INR or USD billed at company level. It starts with a free 1 month trial and no credit card is needed. See the pricing page for current plans.",
   },
 ];

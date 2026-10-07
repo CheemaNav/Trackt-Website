@@ -63,14 +63,17 @@ export default function HomePageClient() {
             <span className="pulse" />
             AI CRM software for sales teams
           </div>
-          <div className="h1 hero-title">
-            <h1>
-              The AI CRM that answers{" "}
-              <br className="hero-break" />
-              your leads
-            </h1>
+          <h1 className="h1 hero-title">
+            AI CRM Software for Indian Businesses That Replies to Every Lead in
+            Seconds
+          </h1>
+          <p className="hero-made-for">
+            <span className="sr-only">
+              Made for real estate teams, education, automotive, insurance,
+              SaaS, agencies and freelancers.
+            </span>
             <span className="hero-line-rotate" aria-hidden="true">
-              &nbsp;–
+              Made for
               <span className="hero-word-wrap">
                 {HERO_WORDS.map((word) => (
                   <span className="hero-word-sizer" key={`size-${word}`}>
@@ -85,15 +88,13 @@ export default function HomePageClient() {
                 </span>
               </span>
             </span>
-          </div>
+          </p>
           <p className="lead">
-            TracktCRM is AI-powered{" "}
-            <a href="/crm-software">CRM software</a> that captures every lead,
-            responds in seconds over WhatsApp, email and SMS, and keeps your
-            sales pipeline organized - built for how agencies, consultants and freelancers actually sell.{" "}
-            <a href="/industries/ai-crm">See the AI sales assistant</a> or explore our{" "}
-            <a href="/industries/real-estate-crm">real estate CRM</a> and{" "}
-            <a href="/industries/education-crm">education CRM</a>.
+            TracktCRM captures every enquiry, replies on WhatsApp, email and SMS
+            within seconds, and keeps your whole{" "}
+            <a href="/crm-software">sales pipeline</a> in one place. Setup takes
+            days, not weeks, and the <a href="/pricing">pricing</a> suits small
+            teams.
           </p>
           <div className="hero-ctas">
             <a
@@ -124,12 +125,6 @@ export default function HomePageClient() {
               </span>
               Free 1 month trial
             </span>
-            <span className="trust-item">
-              <span className="trust-check" aria-hidden="true">
-                <CheckIcon size={11} />
-              </span>
-              Trusted by 500+ businesses
-            </span>
           </div>
         </div>
 
@@ -143,7 +138,7 @@ export default function HomePageClient() {
       </section>
 
       <section className="marquee-section reveal">
-        <p className="marquee-kicker">TRUSTED BY 500+ SALES TEAMS</p>
+        <p className="marquee-kicker">TRUSTED BY GROWING SALES TEAMS</p>
         <div className="marquee">
           {logos.map((logo, index) => (
             <span className="marquee-logo" key={`${logo.name}-${index}`}>
@@ -165,12 +160,13 @@ export default function HomePageClient() {
           <div>
             <p className="kicker">CRM FEATURES</p>
             <h2 className="h2">
-              Everything your sales CRM should do, in one place
+              Lead Management Software and Sales Pipeline Tool in One CRM
             </h2>
           </div>
           <p className="section-side">
-            Lead management, sales pipeline, automation, reporting and
-            integrations - all included on every plan.
+            Lead management, pipeline tracking, automation, reporting and
+            integrations are all included in every plan. No add-ons to buy
+            later.
           </p>
         </div>
         <div className="tabs">
@@ -193,17 +189,23 @@ export default function HomePageClient() {
           ))}
         </div>
         <div className={`product-grid${tab === "leads" || tab === "pipeline" || tab === "integrations" || tab === "forms" ? " is-leads" : ""}`}>
-          <div className="product-copy" key={tab}>
-            <h3>{active.title}</h3>
-            <p>{active.body}</p>
-            <div className="chips">
-              {active.chips.map((chip) => (
-                <span className="chip" key={chip}>
-                  {chip}
-                </span>
-              ))}
+          {FEATURES.map((feature) => (
+            <div
+              className="product-copy"
+              key={feature.id}
+              hidden={feature.id !== tab}
+            >
+              <h3>{feature.title}</h3>
+              <p>{feature.body}</p>
+              <div className="chips">
+                {feature.chips.map((chip) => (
+                  <span className="chip" key={chip}>
+                    {chip}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          ))}
           <div className="product-preview">
             {tab === "leads" ? (
               <img
@@ -407,16 +409,14 @@ export default function HomePageClient() {
           <div>
             <p className="kicker">AI SALES AUTOMATION</p>
             <h2 className="h2">
-              An AI CRM that answers every lead in seconds - not just an
-              AI-powered dashboard
+              AI Sales Assistant That Replies to Every Lead in Seconds
             </h2>
             <p className="speed-copy">
-              Most &quot;AI CRM&quot; tools stop at smart reporting. TracktCRM&apos;s AI
-              actually acts on your leads: the moment an enquiry lands, our AI
-              sales assistant sends a WhatsApp message, an email and an SMS -
-              then places an automated follow-up call while the lead is still
-              warm. Your rep picks up mid-conversation with the full history
-              attached, never a cold trail.
+              Many AI CRMs only make reports look smarter. TracktCRM acts on the
+              lead. The moment an enquiry arrives, it sends a WhatsApp message,
+              an email and an SMS, then places a follow-up call while the buyer
+              is still interested. Your rep picks up the conversation with the
+              full history in front of them.
             </p>
             <div className="speed-points">
               {SPEED_POINTS.map((point) => (
@@ -451,11 +451,47 @@ export default function HomePageClient() {
         </div>
       </section>
 
+      <section className="home-wa-section reveal" id="whatsapp">
+        <div className="re-split home-wa">
+          <div className="re-split-copy">
+            <p className="kicker">WHATSAPP CRM</p>
+            <h2 className="h2">
+              WhatsApp CRM to Capture, Chat and Follow Up With Every Lead
+            </h2>
+            <p className="re-section-intro">
+              In India, most enquiries start on WhatsApp. TracktCRM ties every
+              chat to a lead record, sends automated replies, and schedules
+              follow-ups. Your team works from one shared inbox instead of
+              personal phones.
+            </p>
+            <p className="home-wa-more">
+              <Link href="/features/whatsapp-crm">
+                See WhatsApp CRM features
+                <span className="btn-arrow" aria-hidden="true">
+                  <ArrowIcon />
+                </span>
+              </Link>
+            </p>
+          </div>
+          <figure className="home-wa-visual">
+            <img
+              src="/assets/whatsapp/whatsapp-crm-hero.png"
+              alt="WhatsApp chat on a phone synced to the TracktCRM inbox and the lead's contact record"
+              width={1683}
+              height={935}
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      </section>
+
       <section className="section industries reveal" id="industries">
         <p className="kicker">INDUSTRY CRM SOLUTIONS</p>
         <h2 className="h2">
           <Link className="industries-head-link" href="/industries">
-            A CRM built around how your industry sells
+            CRM Software for Every Industry: Real Estate, Education, Agencies
+            and More
           </Link>
         </h2>
         <p>
@@ -464,7 +500,11 @@ export default function HomePageClient() {
         </p>
         <div className="industry-grid stagger">
           {INDUSTRIES.map((industry) => (
-            <div className="industry-card" key={industry.name}>
+            <Link
+              className="industry-card"
+              href={industry.href}
+              key={industry.name}
+            >
               <h3>{industry.name}</h3>
               <p>{industry.body}</p>
               <ul>
@@ -472,10 +512,7 @@ export default function HomePageClient() {
                   <li key={point}>- {point}</li>
                 ))}
               </ul>
-              <Link className="industry-link" href={industry.href}>
-                Learn more <ArrowIcon size={13} />
-              </Link>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="industries-view-all">
@@ -490,17 +527,25 @@ export default function HomePageClient() {
 
       <section className="section compare-section reveal" id="compare">
         <p className="kicker">WHY TEAMS SWITCH</p>
-        <h2 className="h2">An easy-to-use, affordable Pipedrive alternative</h2>
+        <h2 className="h2">
+          Affordable Pipedrive Alternative for Small Businesses in India
+        </h2>
         <p className="compare-intro">
-        Most{" "}
-        <Link href="/crm-software">CRM software</Link> including tools like Pipedrive is priced and built for enterprise teams. TracktCRM gives small businesses, agencies, and freelancers powerful lead management and sales pipeline tools, plus AI-powered automation, at a fraction of the cost. See why teams choose TracktCRM as a{" "}
-        <Link href="/pipedrive-alternative">Pipedrive alternative</Link>.
+          Most <Link href="/crm-software">CRM tools</Link> are priced and built
+          for large teams. TracktCRM gives small businesses, agencies and
+          freelancers lead management, a visual pipeline, built-in WhatsApp
+          automation and AI replies at a lower cost. If you are moving from
+          Pipedrive or a spreadsheet, we help migrate your data.{" "}
+          <Link href="/pipedrive-alternative">
+            Compare TracktCRM with Pipedrive
+          </Link>
+          .
         </p>
         <div className="compare-board">
           <article className="compare-card compare-card-old">
             <header className="compare-card-head">
               <span className="compare-pill compare-pill-old">The old way</span>
-              <h3>Spreadsheets & bloated CRMs</h3>
+              <h3>Spreadsheets and heavy CRMs</h3>
             </header>
             <ul>
               {COMPARE.map((row) => (
@@ -539,11 +584,14 @@ export default function HomePageClient() {
         <div className="forms-layout">
           <div className="forms-copy">
             <p className="kicker">CUSTOM FORMS</p>
-            <h2 className="h2">Build a form. Route every lead. Embed anywhere.</h2>
+            <h2 className="h2">
+              Custom Lead Capture Forms That Feed Your CRM Pipeline
+            </h2>
             <p>
-              Drag fields into place, map them to your CRM, pick a pipeline and
-              stage, then drop the link or iframe on any website. Submissions
-              land in TracktCRM ready for your team.
+              Drag in the fields you need and map them to name, email and phone.
+              Pick the pipeline, stage and owner. Copy the link or iframe onto
+              any website. Each submission appears in TracktCRM already
+              assigned.
             </p>
             <ol className="forms-steps">
               <li>
@@ -653,11 +701,14 @@ export default function HomePageClient() {
         <div className="int-wrap">
           <div className="int-center">
             <h2>
-              <span className="accent int-cap">Connects</span> with the{" "}
-              <span className="orange int-cap">tools</span>
-              <br />
-              you already use
+              <span className="accent int-cap">CRM Integrations</span>:
+              WhatsApp, Gmail, Meta Ads, 99acres,{" "}
+              <span className="orange int-cap">Shopify</span> and More
             </h2>
+            <p className="int-sub">
+              Connect the tools your team already uses. If one is missing, tell
+              us and we will build the integration.
+            </p>
             <a
               className="int-cta"
               href={APP_REGISTER_URL}
@@ -684,7 +735,7 @@ export default function HomePageClient() {
         </div>
         <p className="int-note">
           <a href="/integrations">
-            Browse all integrations
+            Browse all CRM integrations
             <span className="int-note-arrow" aria-hidden="true">
               <ArrowIcon />
             </span>
@@ -705,9 +756,10 @@ export default function HomePageClient() {
           <div className="ai-features">
             <div className="ai-features-header">
               <h2>
-                Supercharged with <span className="ai-accent">AI</span>
+                <span className="ai-accent">AI</span> Features Built Into
+                TracktCRM
               </h2>
-              <p>Smart tools built into every product to save your time</p>
+              <p>Smart tools that save your sales team time on every lead</p>
             </div>
             <div className="ai-features-grid">
               {AI_FEATURES.map((feature) => (
@@ -725,7 +777,7 @@ export default function HomePageClient() {
       </section>
 
       <section className="section reveal">
-        <h2 className="h2-sm">How to get started with TracktCRM</h2>
+        <h2 className="h2-sm">How to Get Started With TracktCRM in 4 Steps</h2>
         <div className="step-grid stagger">
           {STEPS.map((step) => (
             <div className="step" key={step.n}>
@@ -740,7 +792,7 @@ export default function HomePageClient() {
       <section className="section faq reveal" id="faq">
         <div className="faq-layout">
           <div className="faq-aside">
-            <h2 className="h2">Frequently asked questions</h2>
+            <h2 className="h2">CRM Software FAQs</h2>
             <div className="faq-art" aria-hidden="true">
               <span className="faq-bubble faq-bubble-outline">
                 <i />
@@ -767,9 +819,9 @@ export default function HomePageClient() {
       <section className="cta-section reveal" id="demo">
         <div className="cta">
           <div>
-            <h2>Your next lead is already waiting.</h2>
+            <h2>Start Your Free 1 Month CRM Trial Today</h2>
             <p>
-              Start free today, or get a 30-minute walkthrough tailored to your
+              Start free, or book a 30-minute walkthrough built around your
               sales process. No credit card, no lock-in.
             </p>
           </div>

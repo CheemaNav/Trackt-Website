@@ -34,6 +34,7 @@ import {
   LuSmartphone,
   LuSparkles,
   LuStethoscope,
+  LuTag,
   LuType,
   LuUserCheck,
   LuUserSearch,
@@ -215,6 +216,10 @@ export function RenewalIcon({ size = 22 }) {
 
 export function ConversationIcon({ size = 22 }) {
   return <LuMessageSquare size={size} strokeWidth={2} />;
+}
+
+export function LabelIcon({ size = 22 }) {
+  return <LuTag size={size} strokeWidth={2} />;
 }
 
 export function ReminderIcon({ size = 22 }) {
