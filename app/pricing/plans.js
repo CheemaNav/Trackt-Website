@@ -17,7 +17,6 @@ export const PLANS = [
       { text: "1 pipeline, unlimited records" },
       { text: "Contacts, deals & activities" },
       { text: "Email + WhatsApp lead response" },
-      { text: "Mobile app (iOS & Android)" },
       { text: "AI follow-up calls", excluded: true },
       { text: "Team pipelines & roles", excluded: true },
     ],
