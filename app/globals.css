@@ -1336,6 +1336,28 @@ select {
   line-height: 1.45;
 }
 
+.field-req {
+  margin-left: 3px;
+  color: #e5484d;
+  font-style: normal;
+}
+
+.demo-form .field {
+  align-content: start;
+}
+
+.field-error {
+  color: #c62828;
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.input[aria-invalid="true"],
+.contact-phone.react-international-phone-input-container.is-invalid {
+  border-color: #e5484d;
+  background: #fff7f7;
+}
+
 .contact-sent-cta {
   margin-top: 18px;
 }
@@ -10568,8 +10590,8 @@ select {
 }
 
 .pr-card.is-popular {
-  border: 2px solid var(--tc-ink);
-  padding: 17px 21px 25px;
+  border: 1.5px solid var(--tc-ink);
+  padding: 17.5px 21.5px 25.5px;
   box-shadow: 0 24px 48px -28px rgba(28, 31, 59, 0.55);
 }
 
@@ -10586,22 +10608,61 @@ select {
 .pr-ai {
   display: inline-flex;
   align-items: center;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
   white-space: nowrap;
 }
 
 .pr-popular {
-  background: var(--tc-ink);
-  color: #fff;
+  gap: 5px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tc-ink);
+}
+
+.pr-popular-star {
+  color: #00a862;
+  font-size: 14px;
 }
 
 .pr-ai {
   margin-left: auto;
-  background: linear-gradient(135deg, rgba(97, 97, 255, 0.14), rgba(255, 80, 24, 0.12));
-  color: var(--tc-blue);
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #d3f5c2 0%, #f9cfe6 100%);
+  color: var(--tc-ink);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.pr-ai-box {
+  position: relative;
+  margin-top: 22px;
+  padding: 26px 16px 18px;
+  border: 1px solid rgba(240, 160, 210, 0.45);
+  border-radius: 14px;
+  background: linear-gradient(140deg, #f5fbef 0%, #faf3f2 55%, #fbe1ef 100%);
+  text-align: left;
+}
+
+.pr-ai-badge {
+  position: absolute;
+  top: -14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border: 1px solid #f3d9a8;
+  border-radius: 999px;
+  background: #fffaf0;
+  color: var(--tc-ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pr-ai-badge span {
+  color: #b06bff;
 }
 
 .pr-card h3 {

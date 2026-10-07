@@ -9,7 +9,7 @@ import { PLANS, PRICING_PERKS, YEARLY_SAVING } from "./plans";
 const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "CRM Pricing in India: Plans, Free Trial | TracktCRM";
 const pageDescription =
-  "TracktCRM pricing: a Free plan, then Growth, Team and Scale per-user plans shown in your local currency. Free 1 month trial, no credit card, cancel anytime.";
+  "TracktCRM pricing: a Free plan, then Pro, Premium and All-in-One per-user plans shown in your local currency. Free 1 month trial, no credit card, cancel anytime.";
 
 const BREADCRUMBS = [
   { name: "Home", href: "/" },
@@ -19,11 +19,11 @@ const BREADCRUMBS = [
 const FAQS = [
   {
     q: "Is there a free trial?",
-    a: "Yes. Growth and Team come with a free 1 month trial, with no credit card required. There is also a Free plan for one user.",
+    a: "Yes. Pro and Premium come with a free 1 month trial, with no credit card required. There is also a Free plan for one user.",
   },
   {
     q: "How much does TracktCRM cost?",
-    a: `There is a Free plan for one user. Paid plans are Growth, Team and Scale, priced per user per month. Paying yearly saves up to ${YEARLY_SAVING}. Prices on this page are shown in your local currency.`,
+    a: `There is a Free plan for one user. Paid plans are Pro, Premium and All-in-One, priced per user per month. Paying yearly saves up to ${YEARLY_SAVING}. Prices on this page are shown in your local currency.`,
   },
   {
     q: "Why are prices shown in my currency?",
@@ -31,7 +31,7 @@ const FAQS = [
   },
   {
     q: "Are features gated by plan?",
-    a: "The Free plan covers one user with core CRM and email and WhatsApp lead response. Every paid plan includes full AI response on email, WhatsApp and SMS plus AI follow-up calls. Higher plans add automations, roles and dashboards.",
+    a: "Free covers a single pipeline, unlimited records, 3 automations, WhatsApp integration and a standard dashboard. Pro adds more pipelines and automations, file storage, ad and email integrations and a dedicated onboarding specialist. Premium and All-in-One add AI features such as email reply suggestions, email drafting and record summaries, with monthly AI credits.",
   },
   {
     q: "What counts as a record?",
@@ -202,15 +202,20 @@ export default function PricingPage() {
                 <h2>All our paid plans include:</h2>
                 <ul>
                   <li>
-                    AI lead response on email, WhatsApp and SMS, plus AI
-                    follow-up calls. See the{" "}
-                    <Link href="/industries/ai-crm">AI CRM</Link>.
+                    Google Ads, Meta Ads, Gmail, Google Sheets, Outlook and X
+                    integrations. See all{" "}
+                    <Link href="/integrations">integrations</Link>.
                   </li>
                   <li>
-                    A WhatsApp shared team inbox. See the{" "}
+                    WhatsApp integration. See the{" "}
                     <Link href="/features/whatsapp-crm">WhatsApp CRM</Link>.
                   </li>
-                  <li>Onboarding help and a 30-minute walkthrough of your set-up.</li>
+                  <li>A dedicated onboarding specialist to set up your account.</li>
+                  <li>Custom website forms that send leads straight to your pipeline.</li>
+                  <li>
+                    AI features on Premium and All-in-One. See the{" "}
+                    <Link href="/industries/ai-crm">AI CRM</Link>.
+                  </li>
                   <li>Help moving your data from another CRM, including Pipedrive.</li>
                   <li>
                     Upgrade, downgrade or cancel from your dashboard, with no
@@ -275,10 +280,11 @@ export default function PricingPage() {
                 <span className="pr-icon" aria-hidden="true">
                   <Icon name="phone" />
                 </span>
-                <h3>SMS and AI call minutes</h3>
+                <h3>SMS and extra AI credits</h3>
                 <p>
-                  SMS credits and AI follow-up call minutes can depend on your
-                  volume. We confirm them with you before you buy.
+                  SMS credits, and AI credits beyond your plan&apos;s monthly
+                  allowance, can depend on your volume. We confirm them with you
+                  before you buy.
                 </p>
               </article>
               <article className="pr-box">
@@ -324,8 +330,9 @@ export default function PricingPage() {
               <h2>How TracktCRM Pricing Compares</h2>
               <p>
                 Pipedrive and other global CRMs publish dollar prices per user.
-                TracktCRM can be billed in rupees and includes WhatsApp
-                workflows and AI lead response on every paid plan.
+                TracktCRM can be billed in rupees, includes WhatsApp
+                integration on every plan, and adds AI features on Premium and
+                All-in-One.
               </p>
               <div className="pr-panel-actions">
                 <Link className="btn btn-primary" href="/pipedrive-alternative">

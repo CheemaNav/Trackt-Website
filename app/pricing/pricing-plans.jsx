@@ -122,7 +122,13 @@ export default function PricingPlans() {
               className={`pr-card${plan.popular ? " is-popular" : ""}`}
             >
               <div className="pr-card-tags">
-                {plan.popular ? <span className="pr-popular">★ Most popular</span> : <span />}
+                {plan.popular ? (
+                  <span className="pr-popular">
+                    <span className="pr-popular-star" aria-hidden="true">★</span> Most popular
+                  </span>
+                ) : (
+                  <span />
+                )}
                 {plan.ai ? <span className="pr-ai">Powered by AI</span> : null}
               </div>
               <h3>{plan.name}</h3>
@@ -152,6 +158,23 @@ export default function PricingPlans() {
                   </li>
                 ))}
               </ul>
+              {plan.aiFeatures ? (
+                <div className="pr-ai-box">
+                  <span className="pr-ai-badge">
+                    AI <span aria-hidden="true">✦</span>
+                  </span>
+                  <ul className="pr-features">
+                    {plan.aiFeatures.map((text) => (
+                      <li key={text}>
+                        <span className="pr-mark" aria-hidden="true">
+                          <CheckMark />
+                        </span>
+                        {text}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
             </article>
           );
         })}
