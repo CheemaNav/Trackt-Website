@@ -1,4 +1,4 @@
-export const BASE_CURRENCY = "USD";
+export const BASE_CURRENCY = "INR";
 
 const COUNTRY_CURRENCY_TABLE =
   "AD:EUR AE:AED AF:AFN AG:XCD AI:XCD AL:ALL AM:AMD AO:AOA AR:ARS AS:USD AT:EUR AU:AUD AW:AWG AX:EUR AZ:AZN " +
@@ -145,10 +145,10 @@ export function currencyForCountry(country) {
   return (country && COUNTRY_CURRENCY[country.toUpperCase()]) || BASE_CURRENCY;
 }
 
-/** Converts a USD price and rounds it to a tidy local amount. */
-export function convertPrice(usd, rate) {
-  if (!usd) return 0;
-  const value = usd * rate;
+/** Converts a base-currency price and rounds it to a tidy local amount. */
+export function convertPrice(price, rate) {
+  if (!price) return 0;
+  const value = price * rate;
   if (value < 10) return Math.round(value * 10) / 10;
   if (value < 1000) return Math.round(value);
   const step = 10 ** (Math.floor(Math.log10(value)) - 2);

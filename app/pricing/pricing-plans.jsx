@@ -59,7 +59,10 @@ export default function PricingPlans() {
         const country =
           data.country || (await ipCountry) || countryFromTimezone() || countryFromLocale();
         const next = currencyForCountry(country);
-        if (!cancelled && data.rates[next]) setLocal({ currency: next, rate: data.rates[next] });
+        const base = data.rates[BASE_CURRENCY];
+        if (!cancelled && base && data.rates[next]) {
+          setLocal({ currency: next, rate: data.rates[next] / base });
+        }
       })
       .catch(() => {});
     return () => {
@@ -111,8 +114,8 @@ export default function PricingPlans() {
 
       <div className="pr-grid">
         {PLANS.map((plan) => {
-          const usd = billing === "yearly" ? plan.yearly : plan.monthly;
-          const { symbol, value } = formatPrice(convertPrice(usd, rate), currency);
+          const price = billing === "yearly" ? plan.yearly : plan.monthly;
+          const { symbol, value } = formatPrice(convertPrice(price, rate), currency);
           const note =
             plan.note ||
             (billing === "yearly" ? "/user/month, billed yearly" : "/user/month, billed monthly");

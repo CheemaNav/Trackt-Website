@@ -619,7 +619,7 @@ export function WebPageJsonLd({ name, description, path, dateModified }) {
   return <SchemaScript id="schema-webpage" data={page} />;
 }
 
-/** Pricing plans as SoftwareApplication offers, in USD per user per month. */
+/** Pricing plans as SoftwareApplication offers, in INR per user per month. */
 export function PricingJsonLd({ plans }) {
   const software = {
     "@context": "https://schema.org",
@@ -635,11 +635,11 @@ export function PricingJsonLd({ plans }) {
       description: plan.tagline,
       url: `${SITE_URL}/pricing`,
       price: String(plan.monthly),
-      priceCurrency: "USD",
+      priceCurrency: "INR",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
         price: String(plan.monthly),
-        priceCurrency: "USD",
+        priceCurrency: "INR",
         unitText: "user per month",
         billingDuration: "P1M",
       },

@@ -27,7 +27,7 @@ const FAQS = [
   },
   {
     q: "Why are prices shown in my currency?",
-    a: "Plans are priced in US dollars. This page converts them to the currency of the country you are browsing from at the current exchange rate and rounds them.",
+    a: "Plans are priced in Indian rupees. This page converts them to the currency of the country you are browsing from at the current exchange rate and rounds them.",
   },
   {
     q: "Are features gated by plan?",
@@ -92,7 +92,7 @@ const BILLING = [
   {
     icon: "globe",
     title: "Your local currency",
-    text: "Prices are set in US dollars and shown in your currency. Indian teams can be billed in rupees.",
+    text: "Prices are set in Indian rupees and shown in your local currency everywhere else.",
   },
   {
     icon: "switch",
@@ -224,7 +224,7 @@ export default function PricingPage() {
                   <li>Your data is never sold or used for ad targeting.</li>
                 </ul>
                 <p className="pr-footnote">
-                  Prices are set in US dollars and shown in your local currency
+                  Prices are set in Indian rupees and shown in your local currency
                   at the current exchange rate, rounded. Taxes may apply
                   depending on where you are. WhatsApp message charges from Meta
                   are separate.

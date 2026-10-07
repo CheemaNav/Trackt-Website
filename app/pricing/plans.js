@@ -9,7 +9,7 @@ const AI_FEATURES = [
   "AI-powered upsell & cross-sell suggestions",
 ];
 
-/** Prices are per user per month in USD and converted for each visitor. */
+/** Prices are per user per month in INR and converted for each visitor. */
 export const PLANS = [
   {
     id: "free",
@@ -35,8 +35,8 @@ export const PLANS = [
     id: "pro",
     name: "Pro",
     tagline: "For growing teams that need more pipelines and integrations.",
-    monthly: 24,
-    yearly: 19,
+    monthly: 399,
+    yearly: 319,
     cta: { label: "Start free", href: APP_REGISTER_URL, external: true },
     demo: true,
     featuresLabel: "Everything in Free, plus",
@@ -55,8 +55,8 @@ export const PLANS = [
     id: "premium",
     name: "Premium",
     tagline: "For sales teams that want AI help on every deal.",
-    monthly: 49,
-    yearly: 39,
+    monthly: 699,
+    yearly: 559,
     ai: true,
     popular: true,
     cta: { label: "Start free", href: APP_REGISTER_URL, external: true },
@@ -77,8 +77,8 @@ export const PLANS = [
     id: "all-in-one",
     name: "All-in-One",
     tagline: "For businesses that want CRM, AI and a website in one plan.",
-    monthly: 85,
-    yearly: 69,
+    monthly: 999,
+    yearly: 799,
     ai: true,
     cta: { label: "Talk to sales", href: "/contact" },
     demo: true,
