@@ -36,7 +36,7 @@ const FEATURE_ICONS = {
   reporting: ReportIcon,
 };
 
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "Education CRM Software India for Admissions | TracktCRM";
 const pageDescription =
   "Education CRM for Indian institutes: capture enquiries from ads, portals and WhatsApp, assign counsellors, track admissions and fees. Free 1 month trial.";

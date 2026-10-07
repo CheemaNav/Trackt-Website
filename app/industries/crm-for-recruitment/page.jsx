@@ -45,7 +45,7 @@ const FEATURE_ICONS = {
   reporting: ReportIcon,
 };
 
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "Recruitment CRM India: Candidates & Clients | TracktCRM";
 const pageDescription =
   "Recruitment CRM for Indian recruiters: track candidates and client roles, reach candidates on WhatsApp and get follow-up reminders. Free 1 month trial.";

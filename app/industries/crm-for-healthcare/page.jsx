@@ -36,7 +36,7 @@ const FEATURE_ICONS = {
   reporting: ReportIcon,
 };
 
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 
 export const metadata = {
   title: {

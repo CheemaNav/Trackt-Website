@@ -6,7 +6,7 @@ import { APP_REGISTER_URL, CONTACT, SITE_NAME, SITE_URL } from "../site";
 import PricingPlans from "./pricing-plans";
 import { PLANS, PRICING_PERKS, YEARLY_SAVING } from "./plans";
 
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "CRM Pricing in India: Plans, Free Trial | TracktCRM";
 const pageDescription =
   "TracktCRM pricing: a Free plan, then Growth, Team and Scale per-user plans shown in your local currency. Free 1 month trial, no credit card, cancel anytime.";

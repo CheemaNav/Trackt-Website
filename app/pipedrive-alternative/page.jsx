@@ -4,7 +4,7 @@ import { ArrowIcon } from "../icons";
 import { FaqJsonLd, WebPageJsonLd } from "../json-ld";
 import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../site";
 
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "Pipedrive Alternative in India: AI Lead Response | TracktCRM";
 const pageDescription =
   "Looking for a Pipedrive alternative in India? Compare TracktCRM for WhatsApp, AI lead response, rupee pricing and local support. Free 1 month trial.";

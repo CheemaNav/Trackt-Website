@@ -34,7 +34,7 @@ const FEATURE_ICONS = {
   reporting: ReportIcon,
 };
 
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "Agency CRM India: Pitches, Proposals, Retainers | TracktCRM";
 const pageDescription =
   "Agency CRM for Indian agencies: track pitches, proposals and retainer renewals, and keep client chats on WhatsApp in one pipeline. Free 1 month trial.";

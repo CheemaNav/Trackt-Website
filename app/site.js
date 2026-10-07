@@ -35,5 +35,5 @@ export const SEO = {
     "AI CRM software for Indian businesses. Reply to every lead on WhatsApp, email and SMS in seconds, automate follow-ups and track your pipeline. Free 1 month trial.",
   ogTitle: "AI CRM Software India: Lead & Sales Pipeline | TracktCRM",
   ogDescription:
-    "AI CRM software for Indian businesses. Reply to every lead on WhatsApp, email and SMS in seconds, automate follow-ups and track your pipeline. Free 1 month trial.",
+    "TracktCRM is an AI-powered CRM that captures leads, automates follow-ups, and helps teams close more deals.",
 };

@@ -16,7 +16,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 const GA_MEASUREMENT_ID = "G-947EJKYD0S";
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),

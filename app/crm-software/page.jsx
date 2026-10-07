@@ -41,7 +41,7 @@ const FEATURE_ICONS = {
   mobile: MobileIcon,
 };
 
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "CRM Software India: Leads, Pipeline & Follow-Ups | TracktCRM";
 const pageDescription =
   "CRM software for Indian teams: capture leads from WhatsApp and ads, reply in seconds with AI, and track every deal in one pipeline. Free 1 month trial.";

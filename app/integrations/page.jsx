@@ -8,7 +8,7 @@ import {
   integrationSlug,
 } from "./data";
 
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "CRM Integrations India: WhatsApp, 99acres, Ads | TracktCRM";
 const pageDescription = `Connect TracktCRM to WhatsApp, 99acres, IndiaMART, Justdial, Meta and Google Ads, Gmail, Shopify and Razorpay. ${INTEGRATION_APPS.length} integrations, no code needed.`;
 

@@ -36,7 +36,7 @@ const FEATURE_ICONS = {
   labels: LabelIcon,
 };
 
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "WhatsApp CRM India: Capture, Reply & Track Leads | TracktCRM";
 const pageDescription =
   "WhatsApp CRM for Indian teams: capture every WhatsApp enquiry as a lead, reply from a shared inbox, automate follow-ups and track deals. Free 1 month trial.";

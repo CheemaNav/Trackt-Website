@@ -38,7 +38,7 @@ const FEATURE_ICONS = {
   control: AiLeadIcon,
 };
 
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "AI CRM with AI Sales Assistant for India | TracktCRM";
 const pageDescription =
   "AI CRM that replies to every lead on WhatsApp, email and SMS in seconds, calls to follow up and hands over to your rep with full context. Try it free for 1 month.";

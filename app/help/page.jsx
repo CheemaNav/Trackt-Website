@@ -3,7 +3,7 @@ import ContentPage from "../components/content-page";
 import { FaqJsonLd } from "../json-ld";
 import { APP_LOGIN_URL, APP_REGISTER_URL, CONTACT, SITE_NAME, SITE_URL } from "../site";
 
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 
 const FAQS = [
   {

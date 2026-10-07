@@ -2,7 +2,7 @@ import Link from "next/link";
 import ContentPage from "../components/content-page";
 import { CONTACT, SITE_NAME, SITE_URL } from "../site";
 
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 
 export const metadata = {
   title: {

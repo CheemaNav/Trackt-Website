@@ -32,7 +32,7 @@ const FEATURE_ICONS = {
   mobile: MobileIcon,
 };
 
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const ogTitle = "TracktCRM - A CRM Built for Your Industry";
 const ogDescription =
   "Real estate, education, agencies, recruitment, insurance, automotive and healthcare, each with its own pipeline, AI replies and WhatsApp.";

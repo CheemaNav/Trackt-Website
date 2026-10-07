@@ -2,7 +2,7 @@ import ContactPageClient from "./contact-page-client";
 import { ContactPageJsonLd, BreadcrumbJsonLd } from "../json-ld";
 import { SITE_NAME, SITE_URL } from "../site";
 
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 
 export const metadata = {
   title: {

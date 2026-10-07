@@ -40,7 +40,7 @@ const FEATURE_ICONS = {
   reporting: ReportIcon,
 };
 
-const ogImage = `${SITE_URL}/TracktCRM-Og.jpg`;
+const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "Real Estate CRM India: Leads, Site Visits | TracktCRM";
 const pageDescription =
   "Real estate CRM for India: capture leads from 99acres, MagicBricks and WhatsApp, book site visits, track brokers, inventory and bookings. Free 1 month trial.";
