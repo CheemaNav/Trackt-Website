@@ -6,6 +6,7 @@ import { BookDemoButton } from "../components/demo-request-provider";
 import {
   BASE_CURRENCY,
   convertPrice,
+  countryFromIp,
   countryFromLocale,
   countryFromTimezone,
   currencyForCountry,
@@ -50,13 +51,15 @@ export default function PricingPlans() {
 
   useEffect(() => {
     let cancelled = false;
+    const ipCountry = countryFromIp();
     fetch("/api/pricing-rates")
       .then((response) => response.json())
-      .then((data) => {
-        if (cancelled || !data?.rates) return;
-        const country = data.country || countryFromTimezone() || countryFromLocale();
+      .then(async (data) => {
+        if (!data?.rates) return;
+        const country =
+          data.country || (await ipCountry) || countryFromTimezone() || countryFromLocale();
         const next = currencyForCountry(country);
-        if (data.rates[next]) setLocal({ currency: next, rate: data.rates[next] });
+        if (!cancelled && data.rates[next]) setLocal({ currency: next, rate: data.rates[next] });
       })
       .catch(() => {});
     return () => {

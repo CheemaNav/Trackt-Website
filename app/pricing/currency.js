@@ -112,6 +112,24 @@ export function countryFromTimezone() {
   }
 }
 
+// Called from the browser so the lookup sees the visitor's own IP, including a VPN exit.
+const IP_LOOKUPS = [
+  ["https://get.geojs.io/v1/ip/country.json", (data) => data?.country],
+  ["https://api.country.is/", (data) => data?.country],
+];
+
+export async function countryFromIp() {
+  for (const [url, pick] of IP_LOOKUPS) {
+    try {
+      const response = await fetch(url, { cache: "no-store", signal: AbortSignal.timeout(2500) });
+      if (!response.ok) continue;
+      const country = String(pick(await response.json()) || "").toUpperCase();
+      if (/^[A-Z]{2}$/.test(country)) return country;
+    } catch {}
+  }
+  return null;
+}
+
 export function countryFromLocale() {
   if (typeof navigator === "undefined") return null;
   for (const tag of navigator.languages || [navigator.language]) {
