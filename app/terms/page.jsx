@@ -3,7 +3,10 @@ import ContentPage from "../components/content-page";
 import { APP_BASE_URL, CONTACT, SITE_NAME, SITE_URL } from "../site";
 
 const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
-const LAST_UPDATED = "23 September 2026";
+const LAST_UPDATED = "8 October 2026";
+
+const GOOGLE_POLICY_URL =
+  "https://developers.google.com/terms/api-services-user-data-policy";
 
 export const metadata = {
   title: {
@@ -55,11 +58,9 @@ export default function TermsPage() {
         <p>
           <strong>Operator:</strong> {SITE_NAME}
           <br />
-          Email:{" "}
-          <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+          Email: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
           <br />
-          Phone:{" "}
-          <a href={`tel:${CONTACT.phoneTel}`}>{CONTACT.phoneDisplay}</a>
+          Phone: <a href={`tel:${CONTACT.phoneTel}`}>{CONTACT.phoneDisplay}</a>
           <br />
           Address: {CONTACT.address}
         </p>
@@ -102,9 +103,9 @@ export default function TermsPage() {
             AI-assisted response, follow-up calls, summaries, and reporting;
           </li>
           <li>
-            integrations including Google Workspace (Gmail, Calendar, Meet,
-            Drive, Sheets, Forms where enabled), Meta &amp; Google Ads, property
-            portals, and other third-party apps you choose to connect.
+            integrations including Google (Gmail and Google Calendar, including
+            Google Meet links, where enabled), Meta &amp; Google Ads lead forms,
+            property portals, and other third-party apps you choose to connect.
           </li>
         </ul>
         <p>
@@ -174,28 +175,32 @@ export default function TermsPage() {
         <ul>
           <li>
             you authorize TracktCRM to access only the Google user data needed
-            for the feature you enable (for example Gmail, Calendar, Meet,
-            Drive, Sheets, or Forms);
+            for the feature you enable: reading and sending Gmail, and creating
+            and managing Google Calendar events (including Google Meet links);
           </li>
           <li>
             that data is used only to provide the requested CRM feature, as
-            described in our{" "}
-            <Link href="/privacy-policy">Privacy Policy</Link>;
+            described in our <Link href="/privacy-policy">Privacy Policy</Link>;
           </li>
           <li>
-            our use of Google user data complies with the{" "}
+            TracktCRM&apos;s use and transfer to any other app of information
+            received from Google APIs will adhere to the{" "}
+            <a href={GOOGLE_POLICY_URL} target="_blank" rel="noopener noreferrer">
+              Google API Services User Data Policy
+            </a>
+            , including the Limited Use requirements;
+          </li>
+          <li>
+            you can disconnect Google at any time from TracktCRM → Integrations,
+            or remove TracktCRM&apos;s access at{" "}
             <a
-              href="https://developers.google.com/terms/api-services-user-data-policy"
+              href="https://myaccount.google.com/permissions"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Google API Services User Data Policy
+              myaccount.google.com/permissions
             </a>
-            , including Limited Use;
-          </li>
-          <li>
-            you can disconnect an integration at any time from TracktCRM account
-            / integration settings;
+            ;
           </li>
           <li>
             Google, Meta, Microsoft, and other providers remain independent
@@ -273,8 +278,7 @@ export default function TermsPage() {
         <ul>
           <li>
             You may stop using the Service and request account closure by
-            contacting{" "}
-            <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
+            contacting <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
           </li>
           <li>
             We may suspend or terminate access if you breach these Terms, create
