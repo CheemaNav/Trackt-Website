@@ -20,7 +20,7 @@ export const CONTACT = {
   phoneE164: "916239520057",
   phoneDisplay: "+91 62395 20057",
   phoneTel: "+916239520057",
-  email: "traktcrm@gmail.com",
+  email: "support@tracktcrm.com",
   whatsappUrl: "https://wa.me/916239520057",
   supportHours: "Mon–Fri, 10:00–19:00 IST",
   address:
