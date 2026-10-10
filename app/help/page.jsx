@@ -52,7 +52,7 @@ export default function HelpPage() {
           Open app login
         </Link>
         <Link href={APP_REGISTER_URL} target="_blank" rel="noopener noreferrer">
-          Start free trial
+          Try the CRM free
         </Link>
         <Link href="/pricing">Pricing &amp; trial</Link>
         <Link href="/contact">Book a demo</Link>

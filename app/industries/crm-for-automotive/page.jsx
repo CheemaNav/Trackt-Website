@@ -43,7 +43,7 @@ export const metadata = {
     absolute: "Automotive CRM Software for Car Dealerships | TracktCRM",
   },
   description:
-    "TracktCRM is an automotive CRM that captures enquiries, books test drives and follows up to delivery, with WhatsApp and AI replies. Free 1 month trial.",
+    "TracktCRM is an automotive CRM that captures enquiries, books test drives and follows up to delivery, with WhatsApp and AI replies. Try the CRM free.",
   alternates: {
     canonical: "/industries/crm-for-automotive",
   },
@@ -123,7 +123,7 @@ export default function AutomotiveCrmPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Start Free Trial
+                  Try the CRM free
                   <span className="btn-arrow" aria-hidden="true">
                     <ArrowIcon />
                   </span>
@@ -133,7 +133,7 @@ export default function AutomotiveCrmPage() {
                 </a>
               </div>
               <p className="re-banner-trust">
-                Built for showrooms and dealership groups · Free 1 month trial
+                Built for showrooms and dealership groups · Try the CRM free
               </p>
             </div>
             <figure className="re-banner-media agency-banner-media automotive-banner-media">
@@ -393,7 +393,7 @@ export default function AutomotiveCrmPage() {
             <div>
               <h2>See TracktCRM on your own showroom pipeline</h2>
               <p>
-                Start a free 1 month trial, or book a demo and we will walk
+                Try the CRM free, or book a demo and we will walk
                 through your enquiries, test drives and deliveries inside
                 TracktCRM.
               </p>
@@ -405,7 +405,7 @@ export default function AutomotiveCrmPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Free Trial
+                Try the CRM free
               </a>
               <a className="btn-ghost" href="/contact">
                 Book a Demo

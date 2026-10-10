@@ -67,7 +67,7 @@ export default function JsonLd() {
       url: `${SITE_URL}/pricing`,
       priceCurrency: "INR",
       price: "0",
-      description: "Free 1 month trial, no credit card required. Paid plans after trial.",
+      description: "Try the CRM free, no credit card required. Paid plans available.",
       category: "FreeTrial",
     },
     url: SITE_URL,
@@ -97,7 +97,7 @@ function industrySoftware({ name, path, features }) {
       url: `${SITE_URL}/pricing`,
       priceCurrency: "INR",
       price: "0",
-      description: "Free 1 month trial, no credit card required.",
+      description: "Try the CRM free, no credit card required.",
       category: "FreeTrial",
     },
   };

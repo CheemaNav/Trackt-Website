@@ -173,7 +173,7 @@ export const CHOOSING_POINTS = [
   },
   {
     title: "Clear pricing",
-    body: "TracktCRM has a free 1 month trial and clear plans.",
+    body: "Try the CRM free, then pick a clear plan.",
     href: "/pricing",
     linkLabel: "See the pricing page",
   },
@@ -301,10 +301,10 @@ export const RE_FAQS = [
   },
   {
     q: "How much does a real estate CRM cost in India?",
-    a: "TracktCRM plans are priced by seats, channels and volume, with quotes in INR or USD. Start with a free 1 month trial with no credit card needed, or book a demo to get a quote for your team.",
+    a: "TracktCRM plans are priced by seats, channels and volume, with quotes in INR or USD. Try the CRM free with no credit card needed, or book a demo to get a quote for your team.",
   },
   {
     q: "Can I try TracktCRM before committing?",
-    a: "Yes, TracktCRM offers a free 1 month trial with no credit card required, or you can book a live demo with your own listings.",
+    a: "Yes, you can try the CRM free with no credit card required, or you can book a live demo with your own listings.",
   },
 ];

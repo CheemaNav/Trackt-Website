@@ -161,7 +161,7 @@ export const STEPS = [
   {
     n: "02",
     title: "Start your free trial",
-    body: "Start your free 1 month trial and set up the pipeline stages you use.",
+    body: "Try the CRM free and set up the pipeline stages you use.",
   },
   {
     n: "03",
@@ -193,6 +193,6 @@ export const HUB_FAQS = [
   },
   {
     q: "Can I try TracktCRM before choosing an industry setup?",
-    a: "Yes, TracktCRM offers a free 1 month trial, so you can try the pipeline for your industry before committing.",
+    a: "Yes, you can try the CRM free and test the pipeline for your industry before committing.",
   },
 ];

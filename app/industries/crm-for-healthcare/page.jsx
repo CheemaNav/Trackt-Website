@@ -43,7 +43,7 @@ export const metadata = {
     absolute: "Healthcare CRM Software for Clinics & Hospitals | TracktCRM",
   },
   description:
-    "TracktCRM is a healthcare CRM that captures patient enquiries, books appointments and follows up, with WhatsApp and AI replies. Free 1 month trial.",
+    "TracktCRM is a healthcare CRM that captures patient enquiries, books appointments and follows up, with WhatsApp and AI replies. Try the CRM free.",
   alternates: {
     canonical: "/industries/crm-for-healthcare",
   },
@@ -123,7 +123,7 @@ export default function HealthcareCrmPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Start Free Trial
+                  Try the CRM free
                   <span className="btn-arrow" aria-hidden="true">
                     <ArrowIcon />
                   </span>
@@ -392,7 +392,7 @@ export default function HealthcareCrmPage() {
             <div>
               <h2>See TracktCRM on your own enquiry pipeline</h2>
               <p>
-                Start a free 1 month trial, or book a demo and we will walk
+                Try the CRM free, or book a demo and we will walk
                 through your enquiries, appointments and follow-ups inside
                 TracktCRM.
               </p>
@@ -404,7 +404,7 @@ export default function HealthcareCrmPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Free Trial
+                Try the CRM free
               </a>
               <a className="btn-ghost" href="/contact">
                 Book a Demo

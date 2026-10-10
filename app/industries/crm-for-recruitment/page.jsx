@@ -48,7 +48,7 @@ const FEATURE_ICONS = {
 const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "Recruitment CRM India: Candidates & Clients | TracktCRM";
 const pageDescription =
-  "Recruitment CRM for Indian recruiters: track candidates and client roles, reach candidates on WhatsApp and get follow-up reminders. Free 1 month trial.";
+  "Recruitment CRM for Indian recruiters: track candidates and client roles, reach candidates on WhatsApp and get follow-up reminders. Try the CRM free.";
 
 export const metadata = {
   title: {
@@ -132,7 +132,7 @@ export default function RecruitmentCrmPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Start Free Trial
+                  Try the CRM free
                   <span className="btn-arrow" aria-hidden="true">
                     <ArrowIcon />
                   </span>
@@ -142,7 +142,7 @@ export default function RecruitmentCrmPage() {
                 </a>
               </div>
               <p className="re-banner-trust">
-                Built for solo recruiters, in-house teams and agencies · Free 1 month trial
+                Built for solo recruiters, in-house teams and agencies · Try the CRM free
               </p>
             </div>
             <figure className="re-banner-media card-banner-media">
@@ -463,7 +463,7 @@ export default function RecruitmentCrmPage() {
             <div>
               <h2>See TracktCRM on Your Own Candidate Pipeline</h2>
               <p>
-                Start a free 1 month trial, or book a demo and we will walk
+                Try the CRM free, or book a demo and we will walk
                 through your candidates and clients inside TracktCRM.
               </p>
             </div>
@@ -474,7 +474,7 @@ export default function RecruitmentCrmPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Free Trial
+                Try the CRM free
               </a>
               <a className="btn-ghost" href="/contact">
                 Book a Demo

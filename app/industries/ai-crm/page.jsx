@@ -41,7 +41,7 @@ const FEATURE_ICONS = {
 const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "AI CRM with AI Sales Assistant for India | TracktCRM";
 const pageDescription =
-  "AI CRM that replies to every lead on WhatsApp, email and SMS in seconds, calls to follow up and hands over to your rep with full context. Try it free for 1 month.";
+  "AI CRM that replies to every lead on WhatsApp, email and SMS in seconds, calls to follow up and hands over to your rep with full context. Try the CRM free.";
 
 export const metadata = {
   title: {
@@ -126,7 +126,7 @@ export default function AiCrmPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Free Trial
+                Try the CRM free
                 <span className="btn-arrow" aria-hidden="true">
                   <ArrowIcon />
                 </span>
@@ -136,7 +136,7 @@ export default function AiCrmPage() {
               </a>
             </div>
             <p className="re-banner-trust">
-              No credit card required · Free 1 month trial · Every response is
+              No credit card required · Try the CRM free · Every response is
               logged on the lead record
             </p>
           </div>
@@ -422,7 +422,7 @@ export default function AiCrmPage() {
       <section className="cta-section reveal" id="demo">
         <div className="cta">
           <div>
-            <h2>Try TracktCRM&apos;s AI CRM Free for 1 Month</h2>
+            <h2>Try TracktCRM&apos;s AI CRM Free</h2>
             <p>
               Start free or book a live demo to see instant response, follow-up
               calls and handover on your own leads. No credit card, no lock-in.
@@ -435,7 +435,7 @@ export default function AiCrmPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Start Free Trial
+              Try the CRM free
             </a>
             <a className="btn-ghost" href="/contact">
               Book a Demo

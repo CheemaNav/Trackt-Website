@@ -43,7 +43,7 @@ const FEATURE_ICONS = {
 const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "Real Estate CRM India: Leads, Site Visits | TracktCRM";
 const pageDescription =
-  "Real estate CRM for India: capture leads from 99acres, MagicBricks and WhatsApp, book site visits, track brokers, inventory and bookings. Free 1 month trial.";
+  "Real estate CRM for India: capture leads from 99acres, MagicBricks and WhatsApp, book site visits, track brokers, inventory and bookings. Try the CRM free.";
 
 export const metadata = {
   title: {
@@ -133,11 +133,11 @@ export default function RealEstateCrmPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Free Trial
+                Try the CRM free
               </a>
             </div>
             <p className="re-banner-trust">
-              Free 1 month trial · No setup fee
+              Try the CRM free · No setup fee
             </p>
           </div>
           <figure className="re-banner-media">
@@ -486,7 +486,7 @@ export default function RealEstateCrmPage() {
             <h2>See TracktCRM on Your Own Property Portfolio</h2>
             <p>
               Book a 30-minute demo and we will show how your listings and
-              leads would look inside TracktCRM, or start a free 1 month trial.
+              leads would look inside TracktCRM, or try the CRM free.
               No credit card, no lock-in.
             </p>
           </div>
@@ -500,7 +500,7 @@ export default function RealEstateCrmPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Start Free Trial
+              Try the CRM free
             </a>
           </div>
         </div>

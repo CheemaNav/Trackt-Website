@@ -355,7 +355,7 @@ export default function IntegrationsPageClient() {
           <div>
             <h2>Connect Your Tools and Start Free</h2>
             <p>
-              Start a free 1 month trial, or book a 30-minute walkthrough of the
+              Try the CRM free, or book a 30-minute walkthrough of the
               integrations your team uses. No credit card, no lock-in.
             </p>
           </div>

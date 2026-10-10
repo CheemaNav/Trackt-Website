@@ -271,7 +271,7 @@ export const RECRUITMENT_FAQS = [
   },
   {
     q: "Can I try TracktCRM before committing?",
-    a: "TracktCRM has a free 1 month trial with no credit card needed, so your team can run the full candidate and client workflow before you decide.",
+    a: "You can try the CRM free with no credit card needed, so your team can run the full candidate and client workflow before you decide.",
   },
   {
     q: "Can I store CVs and resumes in TracktCRM?",
@@ -291,6 +291,6 @@ export const RECRUITMENT_FAQS = [
   },
   {
     q: "How much does a recruitment CRM cost in India?",
-    a: "TracktCRM charges per user, with plans in INR or USD billed at company level. It starts with a free 1 month trial and no credit card is needed. See the pricing page for current plans.",
+    a: "TracktCRM charges per user, with plans in INR or USD billed at company level. You can try the CRM free, and no credit card is needed. See the pricing page for current plans.",
   },
 ];

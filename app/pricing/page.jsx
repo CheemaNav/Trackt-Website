@@ -9,7 +9,7 @@ import { PLANS, PRICING_PERKS, YEARLY_SAVING } from "./plans";
 const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "CRM Pricing in India: Plans, Free Trial | TracktCRM";
 const pageDescription =
-  "TracktCRM pricing: a Free plan, then Pro, Premium and All-in-One per-user plans shown in your local currency. Free 1 month trial, no credit card, cancel anytime.";
+  "TracktCRM pricing: a Free plan, then Pro, Premium and All-in-One per-user plans shown in your local currency. Try the CRM free, no credit card, cancel anytime.";
 
 const BREADCRUMBS = [
   { name: "Home", href: "/" },
@@ -19,7 +19,7 @@ const BREADCRUMBS = [
 const FAQS = [
   {
     q: "Is there a free trial?",
-    a: "Yes. Pro and Premium come with a free 1 month trial, with no credit card required. There is also a Free plan for one user.",
+    a: "Yes. You can try the CRM free on Pro and Premium, with no credit card required. There is also a Free plan for one user.",
   },
   {
     q: "How much does TracktCRM cost?",
@@ -391,7 +391,7 @@ export default function PricingPage() {
             <div>
               <h2>Start Free, Then Pick a Plan</h2>
               <p>
-                Start a free 1 month trial with no credit card, or talk to us
+                Try the CRM free with no credit card, or talk to us
                 about your team size and channels. Email{" "}
                 <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> with any
                 questions.
@@ -404,7 +404,7 @@ export default function PricingPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Free Trial
+                Try the CRM free
               </a>
               <Link className="btn-ghost" href="/contact">
                 Talk to Us

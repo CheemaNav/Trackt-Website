@@ -44,7 +44,7 @@ const FEATURE_ICONS = {
 const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "CRM Software India: Leads, Pipeline & Follow-Ups | TracktCRM";
 const pageDescription =
-  "CRM software for Indian teams: capture leads from WhatsApp and ads, reply in seconds with AI, and track every deal in one pipeline. Free 1 month trial.";
+  "CRM software for Indian teams: capture leads from WhatsApp and ads, reply in seconds with AI, and track every deal in one pipeline. Try the CRM free.";
 
 export const metadata = {
   title: {
@@ -125,7 +125,7 @@ export default function CrmSoftwarePage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Free Trial
+                Try the CRM free
                 <span className="btn-arrow" aria-hidden="true">
                   <ArrowIcon />
                 </span>
@@ -142,7 +142,7 @@ export default function CrmSoftwarePage() {
                 <span className="trust-check" aria-hidden="true">
                   <CheckIcon size={11} />
                 </span>
-                Free 1 month trial
+                Try the CRM free
               </span>
               <span className="trust-item">
                 <span className="trust-check" aria-hidden="true">
@@ -415,7 +415,7 @@ export default function CrmSoftwarePage() {
             <p className="kicker">PRICING</p>
             <h2 className="h2">CRM Software Pricing in India</h2>
             <p className="re-section-intro">
-              Start with a free 1 month trial. After the trial, your company
+              Try the CRM free. After that, your company
               moves to a per-user plan billed at the company level, in INR or
               USD, so team members never pay separately. Plans depend on seats,
               channels and volume.
@@ -443,7 +443,7 @@ export default function CrmSoftwarePage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Free Trial
+                Try the CRM free
                 <span className="int-cta-arrow">
                   <ArrowIcon />
                 </span>
@@ -544,7 +544,7 @@ export default function CrmSoftwarePage() {
         <section className="cta-section reveal" id="demo">
           <div className="cta">
             <div>
-              <h2>Try TracktCRM Free for 1 Month</h2>
+              <h2>Try the CRM Free</h2>
               <p>
                 Set up your pipeline, capture your first leads and see the AI
                 reply in seconds. Or book a demo and we will walk through it
@@ -558,7 +558,7 @@ export default function CrmSoftwarePage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Free Trial
+                Try the CRM free
               </a>
               <BookDemoButton className="btn-ghost">Book a Demo</BookDemoButton>
             </div>

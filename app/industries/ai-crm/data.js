@@ -283,6 +283,6 @@ export const AI_FAQS = [
   },
   {
     q: "Can I try the AI features before committing?",
-    a: "Yes. TracktCRM offers a free 1 month trial with no credit card required, so you can see AI response and handover on your own leads.",
+    a: "Yes. You can try the CRM free with no credit card required, so you can see AI response and handover on your own leads.",
   },
 ];

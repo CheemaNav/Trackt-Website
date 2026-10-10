@@ -218,7 +218,7 @@ export const WA_FAQS = [
   },
   {
     q: "Can I try this before committing?",
-    a: "TracktCRM offers a free 1 month trial with no credit card required.",
+    a: "You can try the CRM free with no credit card required.",
   },
   {
     q: "What is a WhatsApp CRM?",

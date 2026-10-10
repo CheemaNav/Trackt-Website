@@ -116,7 +116,7 @@ export default function IndustriesHubPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Start Free Trial
+              Try the CRM free
               <span className="btn-arrow" aria-hidden="true">
                 <ArrowIcon />
               </span>
@@ -124,7 +124,7 @@ export default function IndustriesHubPage() {
             <BookDemoButton className="btn btn-outline">Book a Demo</BookDemoButton>
           </div>
           <p className="hub-hero-trust">
-            Free 1 month trial · AI replies and WhatsApp included in every
+            Try the CRM free · AI replies and WhatsApp included in every
             industry setup
           </p>
           <ul className="hub-hero-jump" aria-label="Jump to an industry">
@@ -316,7 +316,7 @@ export default function IndustriesHubPage() {
             <div>
               <h2>Find the CRM that fits your industry</h2>
               <p>
-                Start a free 1 month trial, or book a demo and we will set up the
+                Try the CRM free, or book a demo and we will set up the
                 pipeline for your industry with you.
               </p>
             </div>
@@ -327,7 +327,7 @@ export default function IndustriesHubPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Free Trial
+                Try the CRM free
               </a>
               <BookDemoButton className="btn-ghost">Book a Demo</BookDemoButton>
             </div>

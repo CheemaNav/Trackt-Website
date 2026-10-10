@@ -96,7 +96,7 @@ export const PLANS = [
 ];
 
 export const PRICING_PERKS = [
-  { text: "Free 1 month trial", highlight: true },
+  { text: "Try the CRM free", highlight: true },
   { text: "No credit card required" },
   { text: "No forced contracts" },
   { text: "Cancel anytime" },

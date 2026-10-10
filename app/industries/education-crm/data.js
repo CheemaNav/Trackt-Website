@@ -239,10 +239,10 @@ export const EDU_FAQS = [
   },
   {
     q: "How much does an education CRM cost in India?",
-    a: "TracktCRM plans are priced by seats, channels and volume, with quotes in INR or USD. Start with a free 1 month trial with no credit card needed, or book a demo to get a quote for your institute.",
+    a: "TracktCRM plans are priced by seats, channels and volume, with quotes in INR or USD. Try the CRM free with no credit card needed, or book a demo to get a quote for your institute.",
   },
   {
     q: "Can I try TracktCRM before committing?",
-    a: "Yes, TracktCRM offers a free 1 month trial, so your admissions team can try the full enquiry-to-enrolment flow before committing.",
+    a: "Yes, you can try the CRM free, so your admissions team can test the full enquiry-to-enrolment flow before committing.",
   },
 ];

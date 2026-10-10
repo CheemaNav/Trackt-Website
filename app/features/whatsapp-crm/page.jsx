@@ -39,7 +39,7 @@ const FEATURE_ICONS = {
 const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "WhatsApp CRM India: Capture, Reply & Track Leads | TracktCRM";
 const pageDescription =
-  "WhatsApp CRM for Indian teams: capture every WhatsApp enquiry as a lead, reply from a shared inbox, automate follow-ups and track deals. Free 1 month trial.";
+  "WhatsApp CRM for Indian teams: capture every WhatsApp enquiry as a lead, reply from a shared inbox, automate follow-ups and track deals. Try the CRM free.";
 
 export const metadata = {
   title: {
@@ -124,7 +124,7 @@ export default function WhatsAppCrmPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Start Free Trial
+                  Try the CRM free
                 </a>
                 <BookDemoButton className="btn btn-outline">
                   Book a Demo
@@ -144,7 +144,7 @@ export default function WhatsAppCrmPage() {
                   <span className="trust-check" aria-hidden="true">
                     <CheckIcon size={11} />
                   </span>
-                  Free 1 month trial
+                  Try the CRM free
                 </span>
                 <span className="trust-item">
                   <span className="trust-check" aria-hidden="true">
@@ -408,7 +408,7 @@ export default function WhatsAppCrmPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Free Trial
+                Try the CRM free
                 <span className="int-cta-arrow">
                   <ArrowIcon />
                 </span>
@@ -494,7 +494,7 @@ export default function WhatsAppCrmPage() {
             <div>
               <h2>Turn Your WhatsApp Into a Sales Pipeline</h2>
               <p className="lead">
-                Start a free 1 month trial and connect your WhatsApp Business
+                Try the CRM free and connect your WhatsApp Business
                 number, or book a demo to see it with your own conversations.
               </p>
             </div>
@@ -505,7 +505,7 @@ export default function WhatsAppCrmPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Free Trial
+                Try the CRM free
               </a>
               <BookDemoButton className="btn btn-outline">
                 Book a Demo

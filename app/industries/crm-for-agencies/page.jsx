@@ -37,7 +37,7 @@ const FEATURE_ICONS = {
 const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "Agency CRM India: Pitches, Proposals, Retainers | TracktCRM";
 const pageDescription =
-  "Agency CRM for Indian agencies: track pitches, proposals and retainer renewals, and keep client chats on WhatsApp in one pipeline. Free 1 month trial.";
+  "Agency CRM for Indian agencies: track pitches, proposals and retainer renewals, and keep client chats on WhatsApp in one pipeline. Try the CRM free.";
 
 export const metadata = {
   title: {
@@ -121,7 +121,7 @@ export default function AgencyCrmPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Start Free Trial
+                  Try the CRM free
                   <span className="btn-arrow" aria-hidden="true">
                     <ArrowIcon />
                   </span>
@@ -131,7 +131,7 @@ export default function AgencyCrmPage() {
                 </a>
               </div>
               <p className="re-banner-trust">
-                Built for agencies of two people or twenty · Free 1 month trial ·
+                Built for agencies of two people or twenty · Try the CRM free ·
                 No credit card required
               </p>
             </div>
@@ -422,7 +422,7 @@ export default function AgencyCrmPage() {
             <div>
               <h2>See TracktCRM on Your Own Agency Pipeline</h2>
               <p>
-                Start a free 1 month trial, or book a demo and we will walk
+                Try the CRM free, or book a demo and we will walk
                 through your pitches and retainers inside TracktCRM.
               </p>
             </div>
@@ -433,7 +433,7 @@ export default function AgencyCrmPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Free Trial
+                Try the CRM free
               </a>
               <a className="btn-ghost" href="/contact">
                 Book a Demo

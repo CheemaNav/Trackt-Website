@@ -225,7 +225,7 @@ export const GETTING_STARTED = [
   {
     n: "01",
     title: "Start your free trial",
-    body: "Start your free 1 month trial. No credit card needed.",
+    body: "Try the CRM free. No credit card needed.",
   },
   {
     n: "02",
@@ -310,7 +310,7 @@ export const CS_FAQS = [
   },
   {
     q: "How much does TracktCRM cost?",
-    a: "TracktCRM starts with a free 1 month trial and no credit card. After that, plans are priced per user and billed to your company in INR or USD, based on seats, channels and volume. See the pricing page or book a demo for a quote.",
+    a: "You can try the CRM free with no credit card. After that, plans are priced per user and billed to your company in INR or USD, based on seats, channels and volume. See the pricing page or book a demo for a quote.",
   },
   {
     q: "Does TracktCRM have mobile access?",

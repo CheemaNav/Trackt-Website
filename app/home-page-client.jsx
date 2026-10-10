@@ -103,7 +103,7 @@ export default function HomePageClient() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Start Free Trial
+              Try the CRM free
             </a>
             <BookDemoButton className="btn btn-outline">
               Book a Demo
@@ -123,7 +123,7 @@ export default function HomePageClient() {
               <span className="trust-check" aria-hidden="true">
                 <CheckIcon size={11} />
               </span>
-              Free 1 month trial
+              Try the CRM free
             </span>
           </div>
         </div>
@@ -715,7 +715,7 @@ export default function HomePageClient() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Start Free Trial
+              Try the CRM free
               <span className="int-cta-arrow">
                 <ArrowIcon />
               </span>
@@ -819,7 +819,7 @@ export default function HomePageClient() {
       <section className="cta-section reveal" id="demo">
         <div className="cta">
           <div>
-            <h2>Start Your Free 1 Month CRM Trial Today</h2>
+            <h2>Try the CRM Free Today</h2>
             <p>
               Start free, or book a 30-minute walkthrough built around your
               sales process. No credit card, no lock-in.

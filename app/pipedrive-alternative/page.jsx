@@ -7,7 +7,7 @@ import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../site";
 const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "Pipedrive Alternative in India: AI Lead Response | TracktCRM";
 const pageDescription =
-  "Looking for a Pipedrive alternative in India? Compare TracktCRM for WhatsApp, AI lead response, rupee pricing and local support. Free 1 month trial.";
+  "Looking for a Pipedrive alternative in India? Compare TracktCRM for WhatsApp, AI lead response, rupee pricing and local support. Try the CRM free.";
 const LAST_UPDATED = { iso: "2026-10-07", label: "7 October 2026" };
 
 const SOURCES = [
@@ -71,7 +71,7 @@ const GLANCE_ROWS = [
     pipedrive:
       "Public per-seat plans from US$14 per seat per month billed annually, or US$24 billed monthly. Billing currency depends on your location",
     trackt:
-      "Per-user plans in INR or USD, billed at company level, after a free 1 month trial",
+      "Per-user plans in INR or USD, billed at company level, after you try the CRM free",
   },
   {
     label: "Integrations",
@@ -95,7 +95,7 @@ const FAQS = [
   },
   {
     q: "Is TracktCRM cheaper than Pipedrive?",
-    a: "It depends on your team size and channels. TracktCRM quotes per-user plans in INR or USD, billed at company level, after a free 1 month trial. Pipedrive publishes per-seat plans from US$14 per seat per month billed annually. Compare a quote from us with Pipedrive's current pricing page, since both change.",
+    a: "It depends on your team size and channels. TracktCRM quotes per-user plans in INR or USD, billed at company level, after you try the CRM free. Pipedrive publishes per-seat plans from US$14 per seat per month billed annually. Compare a quote from us with Pipedrive's current pricing page, since both change.",
   },
   {
     q: "Does TracktCRM bill in rupees?",
@@ -103,7 +103,7 @@ const FAQS = [
   },
   {
     q: "Can I try TracktCRM with my own leads?",
-    a: "Yes. The free 1 month trial lets you run live enquiries before you commit. No credit card needed.",
+    a: "Yes. You can try the CRM free and run live enquiries before you commit. No credit card needed.",
   },
   {
     q: "Does TracktCRM have as many integrations as Pipedrive?",
@@ -270,8 +270,8 @@ export default function PipedriveAlternativePage() {
         <h3>Pricing and billing</h3>
         <p>
           Pipedrive publishes per-seat plans, with a lower rate for annual
-          billing. TracktCRM bills per user in INR or USD at company level, with
-          a free 1 month trial. See <Link href="/pricing">TracktCRM pricing</Link>.
+          billing. TracktCRM bills per user in INR or USD at company level, and
+          you can try the CRM free. See <Link href="/pricing">TracktCRM pricing</Link>.
         </p>
         <h3>Set-up and migration</h3>
         <p>
@@ -303,7 +303,7 @@ export default function PipedriveAlternativePage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Start Free Trial
+            Try the CRM free
             <span className="btn-arrow" aria-hidden="true">
               <ArrowIcon />
             </span>
@@ -348,7 +348,7 @@ export default function PipedriveAlternativePage() {
           <div>
             <h2>Try TracktCRM Free Alongside Pipedrive</h2>
             <p>
-              Start a free 1 month trial and run it on live enquiries, or book a
+              Try the CRM free and run it on live enquiries, or book a
               demo and we will show how your pipeline would look. No credit
               card, no lock-in.
             </p>
@@ -360,7 +360,7 @@ export default function PipedriveAlternativePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Start Free Trial
+              Try the CRM free
             </a>
             <Link className="btn-ghost" href="/contact">
               Book a Demo

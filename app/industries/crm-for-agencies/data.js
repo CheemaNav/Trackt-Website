@@ -227,11 +227,11 @@ export const AGENCY_FAQS = [
   },
   {
     q: "Can I try TracktCRM before committing?",
-    a: "TracktCRM has a free 1 month trial with no credit card needed, so your agency can run the full pitch-to-renewal flow before you decide.",
+    a: "You can try the CRM free with no credit card needed, so your agency can run the full pitch-to-renewal flow before you decide.",
   },
   {
     q: "How much does an agency CRM cost in India?",
-    a: "TracktCRM charges per user, with plans in INR or USD billed at company level. It starts with a free 1 month trial and no credit card is needed. See the pricing page for current plans.",
+    a: "TracktCRM charges per user, with plans in INR or USD billed at company level. You can try the CRM free, and no credit card is needed. See the pricing page for current plans.",
   },
   {
     q: "Can I track retainer value and monthly recurring revenue?",

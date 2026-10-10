@@ -204,6 +204,6 @@ export const INSURANCE_FAQS = [
   },
   {
     q: "Can I try TracktCRM before committing?",
-    a: "Yes. Start with a free 1 month trial, so your team can try the full lead-to-renewal workflow before committing.",
+    a: "Yes. Try the CRM free, so your team can run the full lead-to-renewal workflow before committing.",
   },
 ];

@@ -43,7 +43,7 @@ export const metadata = {
     absolute: "Insurance CRM Software for Agents & Brokers | TracktCRM",
   },
   description:
-    "TracktCRM is an insurance CRM that captures leads, chases quotes and tracks policy renewals, with WhatsApp and instant AI replies. Free 1 month trial.",
+    "TracktCRM is an insurance CRM that captures leads, chases quotes and tracks policy renewals, with WhatsApp and instant AI replies. Try the CRM free.",
   alternates: {
     canonical: "/industries/crm-for-insurance",
   },
@@ -123,7 +123,7 @@ export default function InsuranceCrmPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Start Free Trial
+                  Try the CRM free
                   <span className="btn-arrow" aria-hidden="true">
                     <ArrowIcon />
                   </span>
@@ -133,8 +133,8 @@ export default function InsuranceCrmPage() {
                 </a>
               </div>
               <p className="re-banner-trust">
-                Built for agents, brokers and insurance agencies · Free 1 month
-                trial
+                Built for agents, brokers and insurance agencies · Try the CRM
+                free
               </p>
             </div>
             <figure className="re-banner-media agency-banner-media insurance-banner-media">
@@ -389,7 +389,7 @@ export default function InsuranceCrmPage() {
             <div>
               <h2>See TracktCRM on your own policy pipeline</h2>
               <p>
-                Start a free 1 month trial, or book a demo and we will walk
+                Try the CRM free, or book a demo and we will walk
                 through your leads, quotes and renewals inside TracktCRM.
               </p>
             </div>
@@ -400,7 +400,7 @@ export default function InsuranceCrmPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Free Trial
+                Try the CRM free
               </a>
               <a className="btn-ghost" href="/contact">
                 Book a Demo

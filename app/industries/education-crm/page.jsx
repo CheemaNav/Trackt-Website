@@ -39,7 +39,7 @@ const FEATURE_ICONS = {
 const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const pageTitle = "Education CRM Software India for Admissions | TracktCRM";
 const pageDescription =
-  "Education CRM for Indian institutes: capture enquiries from ads, portals and WhatsApp, assign counsellors, track admissions and fees. Free 1 month trial.";
+  "Education CRM for Indian institutes: capture enquiries from ads, portals and WhatsApp, assign counsellors, track admissions and fees. Try the CRM free.";
 
 export const metadata = {
   title: {
@@ -129,11 +129,11 @@ export default function EducationCrmPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Start Free Trial
+                  Try the CRM free
                 </a>
               </div>
               <p className="re-banner-trust">
-                Free 1 month trial · No credit card required
+                Try the CRM free · No credit card required
               </p>
             </div>
             <figure className="re-banner-media edu-banner-media">
@@ -386,7 +386,7 @@ export default function EducationCrmPage() {
           <h2>See TracktCRM on Your Own Admissions Pipeline</h2>
           <p>
             Book a demo and we will show how your enquiries and courses would
-            look inside TracktCRM, or start a free 1 month trial. No credit
+            look inside TracktCRM, or try the CRM free. No credit
             card, no lock-in.
           </p>
           <div className="edu-close-actions">
@@ -402,7 +402,7 @@ export default function EducationCrmPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Start Free Trial
+              Try the CRM free
             </a>
           </div>
         </section>
