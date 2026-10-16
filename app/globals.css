@@ -1024,9 +1024,9 @@ select {
   inset: 0;
   z-index: 1200;
   display: grid;
-  place-items: center;
   padding: 20px 16px;
-  overflow: auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   background: rgba(16, 18, 35, 0.58);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -1040,7 +1040,8 @@ select {
 .demo-modal {
   position: relative;
   width: min(560px, 100%);
-  max-height: min(92vh, 820px);
+  height: max-content;
+  margin: auto;
   overflow: visible;
   background: #fff;
   border: 1px solid var(--tc-line);
@@ -1126,8 +1127,30 @@ select {
   transform: translateY(-1px);
 }
 
-.demo-modal-textarea {
+.demo-modal .demo-modal-textarea {
   min-height: 88px;
+}
+
+@media (max-height: 760px) {
+  .demo-modal {
+    padding: 22px 22px 20px;
+  }
+
+  .demo-modal h2 {
+    margin: 8px 0 4px;
+  }
+
+  .demo-modal > p {
+    margin-bottom: 14px;
+  }
+
+  .demo-modal .demo-form {
+    gap: 10px;
+  }
+
+  .demo-modal .demo-modal-textarea {
+    min-height: 64px;
+  }
 }
 
 .demo-modal .field {
