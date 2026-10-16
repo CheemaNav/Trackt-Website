@@ -11,7 +11,7 @@ import {
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
 import RelatedIndustries from "../../components/related-industries";
-import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
+import { APP_REGISTER_URL } from "../../site";
 import { AgencyCrmJsonLd, BreadcrumbJsonLd } from "../../json-ld";
 import {
   AGENCY_FAQS,
@@ -24,6 +24,7 @@ import {
   PROCESS_STEPS,
   WHAT_IS_POINTS,
 } from "./data";
+import { buildMetadata } from "@/lib/seo";
 
 const FEATURE_ICONS = {
   proposal: ProposalIcon,
@@ -34,53 +35,7 @@ const FEATURE_ICONS = {
   reporting: ReportIcon,
 };
 
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
-const pageTitle = "Agency CRM India: Pitches, Proposals, Retainers | TracktCRM";
-const pageDescription =
-  "Agency CRM for Indian agencies: track pitches, proposals and retainer renewals, and keep client chats on WhatsApp in one pipeline. Try the CRM free.";
-
-export const metadata = {
-  title: {
-    absolute: pageTitle,
-  },
-  description: pageDescription,
-  alternates: {
-    canonical: "/industries/crm-for-agencies",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: `${SITE_URL}/industries/crm-for-agencies`,
-    siteName: SITE_NAME,
-    title: pageTitle,
-    description: pageDescription,
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "TracktCRM agency CRM for pitches, retainers and client conversations",
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
-    images: [ogImage],
-  },
-};
+export const metadata = buildMetadata("/industries/crm-for-agencies");
 
 export default function AgencyCrmPage() {
   return (
@@ -104,13 +59,13 @@ export default function AgencyCrmPage() {
                 AGENCY CRM
               </div>
               <h1 className="re-banner-title">
-                Agency CRM for Pitches, Proposals,{" "}
+                CRM for Agencies: Pitches, Proposals,{" "}
                 <span>Retainers and Client Chats</span>
               </h1>
               <p className="re-banner-sub">
                 Proposals sit in one inbox, renewals in a spreadsheet, and
-                client conversations in a WhatsApp group. TracktCRM is agency
-                CRM software that keeps new business, active retainers and every
+                client conversations in a WhatsApp group. TracktCRM is a CRM for
+                agencies that keeps new business, active retainers and every
                 client conversation in one pipeline, with reminders so a renewal
                 never catches you by surprise.
               </p>
@@ -188,14 +143,14 @@ export default function AgencyCrmPage() {
               <p className="kicker">AGENCY CRM SOFTWARE</p>
               <h2 className="h2">What Is an Agency CRM?</h2>
               <p className="re-section-intro">
-                An agency CRM is software that helps agencies win clients
+                A CRM for agencies is software that helps agencies win clients
                 through pitches and proposals, then keep them through retainers
                 and ongoing relationships. It tracks each proposal, each renewal
                 date and every client conversation in one place, so the sales
                 side and the client side of the agency are never separate.
               </p>
               <p className="re-section-intro">
-                TracktCRM is built around this cycle, not adapted from a
+                TracktCRM is a CRM for agencies built around this cycle, not adapted from a
                 one-time-sale pipeline. See the full{" "}
                 <a href="/crm-software">CRM software</a> overview.
               </p>
@@ -320,7 +275,7 @@ export default function AgencyCrmPage() {
             <h2 className="h2">Agency CRM vs Project Management Software</h2>
             <p className="re-section-intro industry-wide-intro">
               A project management tool such as Asana or ClickUp runs delivery:
-              tasks, deadlines and approvals. An agency CRM runs the
+              tasks, deadlines and approvals. A CRM for agencies runs the
               relationship: pitches, proposals, renewals and conversations. Most
               agencies need both. TracktCRM covers the sales and client side,
               next to the tools you already use for delivery.
@@ -422,7 +377,7 @@ export default function AgencyCrmPage() {
             <div>
               <h2>See TracktCRM on Your Own Agency Pipeline</h2>
               <p>
-                Try the CRM free, or book a demo and we will walk
+                Try this CRM for agencies free, or book a demo and we will walk
                 through your pitches and retainers inside TracktCRM.
               </p>
             </div>

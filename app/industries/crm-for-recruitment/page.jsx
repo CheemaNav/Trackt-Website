@@ -16,7 +16,7 @@ import {
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
 import RelatedIndustries from "../../components/related-industries";
-import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
+import { APP_REGISTER_URL } from "../../site";
 import { BreadcrumbJsonLd, RecruitmentCrmJsonLd } from "../../json-ld";
 import {
   ATS_COMPARE_ROWS,
@@ -30,6 +30,7 @@ import {
   RECRUITMENT_FAQS,
   WHAT_IS_POINTS,
 } from "./data";
+import { buildMetadata } from "@/lib/seo";
 
 const FEATURE_ICONS = {
   candidates: BrokerIcon,
@@ -45,53 +46,7 @@ const FEATURE_ICONS = {
   reporting: ReportIcon,
 };
 
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
-const pageTitle = "Recruitment CRM India: Candidates & Clients | TracktCRM";
-const pageDescription =
-  "Recruitment CRM for Indian recruiters: track candidates and client roles, reach candidates on WhatsApp and get follow-up reminders. Try the CRM free.";
-
-export const metadata = {
-  title: {
-    absolute: pageTitle,
-  },
-  description: pageDescription,
-  alternates: {
-    canonical: "/industries/crm-for-recruitment",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: `${SITE_URL}/industries/crm-for-recruitment`,
-    siteName: SITE_NAME,
-    title: pageTitle,
-    description: pageDescription,
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "TracktCRM recruitment CRM for candidates and client roles",
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
-    images: [ogImage],
-  },
-};
+export const metadata = buildMetadata("/industries/crm-for-recruitment");
 
 export default function RecruitmentCrmPage() {
   return (
@@ -312,9 +267,8 @@ export default function RecruitmentCrmPage() {
             <h2 className="h2">Candidate Data, Consent and Privacy</h2>
             <p className="re-section-intro">
               Candidate details such as CVs, phone numbers and conversation
-              history are personal data. India&apos;s Digital Personal Data
-              Protection Act, 2023 expects you to collect and keep it with
-              consent and for a clear purpose. WhatsApp also expects candidates
+              history are personal data. Data protection laws expect you to
+              collect and keep it with consent and for a clear purpose. WhatsApp also expects candidates
               to have agreed to hear from you, and limits free-form replies to
               24 hours after their last message. TracktCRM keeps a full record
               of each conversation and who owns it, which helps you show what

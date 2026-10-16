@@ -1,14 +1,13 @@
 import Link from "next/link";
 import ContentPage from "../components/content-page";
 import { FaqJsonLd } from "../json-ld";
-import { APP_LOGIN_URL, APP_REGISTER_URL, CONTACT, SITE_NAME, SITE_URL } from "../site";
-
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
+import { APP_LOGIN_URL, APP_REGISTER_URL, CONTACT } from "../site";
+import { PAGE_SEO, buildMetadata } from "@/lib/seo";
 
 const FAQS = [
   {
-    q: "How do I start a trial?",
-    a: "Create an account at https://dashboard.tracktcrm.com/register, or book a 30-minute demo and we will provision access.",
+    q: "How do I get started?",
+    a: "Create a free account at https://dashboard.tracktcrm.com/register. Every new account starts on the Free plan for 1 user, with no credit card. You can also book a 30-minute demo and we will help you set up.",
   },
   {
     q: "Where do I log in?",
@@ -20,27 +19,14 @@ const FAQS = [
   },
 ];
 
-export const metadata = {
-  title: "Help Center",
-  description:
-    "Get help with TracktCRM - login, free trial, demos, integrations and support contact details.",
-  alternates: { canonical: "/help" },
-  openGraph: {
-    locale: "en_IN",
-    url: `${SITE_URL}/help`,
-    siteName: SITE_NAME,
-    title: "Help Center | TracktCRM",
-    description: "TracktCRM support, login and trial help.",
-    images: [{ url: ogImage, width: 1200, height: 630, alt: "TracktCRM help" }],
-  },
-};
+export const metadata = buildMetadata("/help");
 
 export default function HelpPage() {
   return (
     <ContentPage
       badge="HELP CENTER"
-      title="How can we help?"
-      lead="Quick answers for trials, login and support. For everything else, talk to the team."
+      title={PAGE_SEO["/help"].h1}
+      lead="The TracktCRM Help Center has quick answers for sign-up, login and support. For everything else, talk to the team."
       breadcrumbs={[
         { name: "Home", href: "/" },
         { name: "Help", href: "/help" },
@@ -54,7 +40,7 @@ export default function HelpPage() {
         <Link href={APP_REGISTER_URL} target="_blank" rel="noopener noreferrer">
           Try the CRM free
         </Link>
-        <Link href="/pricing">Pricing &amp; trial</Link>
+        <Link href="/pricing">Pricing &amp; plans</Link>
         <Link href="/contact">Book a demo</Link>
         <Link href="/crm-software">CRM software</Link>
         <Link href="/integrations">Integrations</Link>
@@ -79,7 +65,8 @@ export default function HelpPage() {
       <article className="prose-block">
         <h2>Still stuck?</h2>
         <p>
-          Email <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> or
+          If the TracktCRM Help Center does not answer your question, email{" "}
+          <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> or
           message us on <Link href="/contact">the contact form</Link>. We reply
           within one business day.
         </p>

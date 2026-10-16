@@ -265,7 +265,7 @@ export const RE_FAQS = [
   },
   {
     q: "Does it integrate with property portals?",
-    a: "TracktCRM captures leads from 99acres, MagicBricks, Housing.com and other major portals, along with your website forms and WhatsApp, into a single inbox.",
+    a: "TracktCRM captures leads from 99acres, MagicBricks, Housing.com and other major Indian property portals, along with your website forms and WhatsApp, into a single inbox.",
   },
   {
     q: "How does a real estate CRM help with site visits?",
@@ -300,11 +300,11 @@ export const RE_FAQS = [
     a: "Yes. TracktCRM's pipelines and inventory tracking work for residential units, commercial spaces and land. You define the project types that match your business.",
   },
   {
-    q: "How much does a real estate CRM cost in India?",
-    a: "TracktCRM plans are priced by seats, channels and volume, with quotes in INR or USD. Try the CRM free with no credit card needed, or book a demo to get a quote for your team.",
+    q: "How much does a real estate CRM cost?",
+    a: "TracktCRM has a Free plan for 1 user, free forever with no credit card. Pro, Premium and All-in-One are priced per user per month and shown in your local currency, and paying yearly saves up to 20%. See the pricing page for current prices.",
   },
   {
     q: "Can I try TracktCRM before committing?",
-    a: "Yes, you can try the CRM free with no credit card required, or you can book a live demo with your own listings.",
+    a: "Yes. Start on the Free plan with no credit card required, or book a live demo with your own listings.",
   },
 ];

@@ -16,10 +16,10 @@ export const INTEGRATION_CATEGORIES = [
   },
   {
     id: "lead-sources",
-    label: "Lead sources",
+    label: "Regional lead portals",
     title:
-      "Lead Portal Integrations: 99acres, Housing.com, MagicBricks, IndiaMART and More",
-    body: "Enquiries from Indian portals and marketplaces arrive in your pipeline without copy and paste, each tagged with its source.",
+      "Regional Lead Portals: 99acres, Housing.com, MagicBricks, IndiaMART and More",
+    body: "Enquiries from regional property portals and B2B marketplaces arrive in your pipeline without copy and paste, each tagged with its source.",
   },
   {
     id: "ads",
@@ -255,7 +255,7 @@ export const INTEGRATION_FAQS = [
   },
   {
     q: "Can I capture leads from 99acres, Housing.com and Justdial?",
-    a: "Yes. Property portals and Indian marketplaces, including 99acres, Housing.com, MagicBricks, OLX, Justdial and IndiaMART, can send enquiries into your pipeline, each tagged with its source.",
+    a: "Yes. Indian property portals and marketplaces, including 99acres, Housing.com, MagicBricks, OLX, Justdial and IndiaMART, can send enquiries into your pipeline, each tagged with its source.",
   },
   {
     q: "Does TracktCRM connect with Gmail and Google Calendar?",

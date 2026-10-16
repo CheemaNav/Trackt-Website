@@ -1,40 +1,23 @@
 import Link from "next/link";
 import ContentPage from "../components/content-page";
-import { CONTACT, SITE_NAME, SITE_URL } from "../site";
+import { CONTACT } from "../site";
+import { PAGE_SEO, buildMetadata } from "@/lib/seo";
 
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
-
-export const metadata = {
-  title: {
-    absolute: "About TracktCRM | AI CRM Built in Mohali",
-  },
-  description:
-    "TracktCRM builds AI CRM software for sales teams that need instant lead response across WhatsApp, email and SMS. Based in Mohali, Punjab.",
-  alternates: { canonical: "/about" },
-  openGraph: {
-    locale: "en_IN",
-    url: `${SITE_URL}/about`,
-    siteName: SITE_NAME,
-    title: "About TracktCRM | AI CRM Built in Mohali",
-    description:
-      "Meet the team behind TracktCRM - AI CRM software for leads, pipeline and real estate sales teams.",
-    images: [{ url: ogImage, width: 1200, height: 630, alt: "About TracktCRM" }],
-  },
-};
+export const metadata = buildMetadata("/about");
 
 export default function AboutPage() {
   return (
     <ContentPage
       badge="ABOUT US"
-      title="We build CRM software that answers leads, not just stores them"
-      lead="TracktCRM is an AI CRM company based in Mohali, Punjab. We help sales teams reply faster, keep pipelines clean, and stop losing enquiries after hours."
+      title={PAGE_SEO["/about"].h1}
+      lead="TracktCRM is an AI CRM company based in Mohali, Punjab, India. We help sales teams reply faster, keep pipelines clean, and stop losing enquiries after hours."
       breadcrumbs={[
         { name: "Home", href: "/" },
         { name: "About", href: "/about" },
       ]}
     >
       <article className="prose-block">
-        <h2>Our story</h2>
+        <h2>About TracktCRM: Our Story</h2>
         <p>
           Most CRMs are dashboards for deals that already have a human watching
           them. TracktCRM started from a different problem: new leads arrive on
@@ -63,13 +46,13 @@ export default function AboutPage() {
         <ul>
           <li>Speed-to-lead is a product feature, not a training slide.</li>
           <li>WhatsApp, email and SMS should live in one pipeline.</li>
-          <li>Pricing and trial terms should be clear - see our{" "}
-            <Link href="/pricing">pricing page</Link>.</li>
+          <li>Pricing and plan terms should be clear - see our{" "}
+            <Link href="/pricing">CRM software pricing</Link>.</li>
           <li>Customer data deserves privacy controls that match real laws.</li>
         </ul>
 
         <p>
-          Want to partner or join the team?{" "}
+          Want to know more about TracktCRM, partner with us or join the team?{" "}
           <Link href="/contact">Send us a message</Link>.
         </p>
       </article>

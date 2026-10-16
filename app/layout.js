@@ -5,67 +5,32 @@ import SiteHeader from "./components/site-header";
 import SiteFooter from "./components/site-footer";
 import NavigationProgress from "./components/navigation-progress";
 import { DemoRequestProvider } from "./components/demo-request-provider";
-import JsonLd from "./json-ld";
-import { SEO, SITE_NAME, SITE_URL } from "./site";
+import { OrganizationJsonLd } from "./json-ld";
+import { SITE_NAME, SITE_URL } from "./site";
+import { PAGE_SEO } from "@/lib/seo";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-plus-jakarta",
+  display: "swap",
 });
 
 const GA_MEASUREMENT_ID = "G-947EJKYD0S";
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: SEO.title,
+    default: PAGE_SEO["/"].title,
     template: `%s | ${SITE_NAME}`,
   },
-  description: SEO.description,
+  description: PAGE_SEO["/"].description,
   applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
   category: "business",
-  alternates: {
-    canonical: "/",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: SITE_URL,
-    siteName: SITE_NAME,
-    title: SEO.ogTitle,
-    description: SEO.ogDescription,
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: `${SITE_NAME} - AI CRM Software`,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: SEO.ogTitle,
-    description: SEO.ogDescription,
-    images: [ogImage],
-  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -78,7 +43,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en-IN"
+      lang="en-US"
       className={plusJakarta.variable}
       data-scroll-behavior="smooth"
     >
@@ -95,7 +60,7 @@ export default function RootLayout({ children }) {
             gtag('config', '${GA_MEASUREMENT_ID}');
           `}
         </Script>
-        <JsonLd />
+        <OrganizationJsonLd />
         <DemoRequestProvider>
           <NavigationProgress />
           <div className="home site-shell">

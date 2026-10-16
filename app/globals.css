@@ -48,7 +48,8 @@ html {
 #forms,
 #ai,
 #faq,
-#demo {
+#demo,
+#migration {
   scroll-margin-top: calc(var(--header-h) + 16px);
 }
 
@@ -439,6 +440,80 @@ select {
 .nav-dropdown-menu a:hover {
   background: rgba(255, 255, 255, 0.06);
   color: #fff;
+}
+
+.nav-dropdown-menu.nav-mega {
+  left: 0;
+  transform: none;
+  min-width: 560px;
+  max-width: min(640px, calc(100vw - 48px));
+  padding: 18px 16px;
+  border: 1px solid var(--tc-line);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow:
+    0 18px 48px -20px rgba(28, 31, 59, 0.28),
+    0 2px 8px rgba(28, 31, 59, 0.06);
+}
+
+.nav-mega-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 28px;
+}
+
+.nav-mega-item {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 10px !important;
+  border-radius: 12px;
+  color: var(--tc-ink) !important;
+  white-space: normal !important;
+  text-decoration: none;
+  transition:
+    background var(--tc-hover-time) var(--tc-hover),
+    color var(--tc-hover-time) var(--tc-hover);
+}
+
+.nav-mega-item:hover {
+  background: var(--tc-bg-soft) !important;
+  color: var(--tc-ink) !important;
+}
+
+.nav-mega-icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin-top: 1px;
+  color: var(--tc-blue);
+}
+
+.nav-mega-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.nav-mega-copy strong {
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--tc-ink);
+}
+
+.nav-mega-copy span {
+  font-size: 12.5px;
+  font-weight: 450;
+  line-height: 1.4;
+  color: var(--tc-muted);
+}
+
+.nav-mega-item:hover .nav-mega-copy strong {
+  color: var(--tc-ink);
 }
 
 .nav-dropdown-head {
@@ -6365,6 +6440,50 @@ select {
     color: rgba(255, 255, 255, 0.82);
   }
 
+  .nav-dropdown-menu.nav-mega {
+    min-width: 0;
+    max-width: none;
+    margin: 0 0 10px;
+    padding: 6px 0 8px 4px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .nav-mega-grid {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .nav-mega-item {
+    padding: 12px 8px !important;
+    color: #fff !important;
+  }
+
+  .nav-mega-item:hover {
+    background: rgba(255, 255, 255, 0.06) !important;
+    color: #fff !important;
+  }
+
+  .nav-mega-icon {
+    color: var(--tc-blue-soft);
+  }
+
+  .nav-mega-copy strong {
+    font-size: 15px;
+    color: #fff;
+  }
+
+  .nav-mega-copy span {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.62);
+  }
+
+  .nav-mega-item:hover .nav-mega-copy strong {
+    color: #fff;
+  }
+
   .industry-grid,
   .step-grid,
   .footer-cols {
@@ -10330,12 +10449,6 @@ select {
 }
 
 /* Integrations page */
-
-.int-page-updated {
-  margin: 14px 0 0;
-  color: var(--tc-faint);
-  font-size: 13.5px;
-}
 
 .int-page-card {
   scroll-margin-top: 140px;

@@ -12,7 +12,7 @@ import {
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
 import RelatedIndustries from "../../components/related-industries";
-import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
+import { APP_REGISTER_URL } from "../../site";
 import { AutomotiveCrmJsonLd, BreadcrumbJsonLd } from "../../json-ld";
 import {
   AFTER_SALES_POINTS,
@@ -22,9 +22,9 @@ import {
   INTEGRATIONS,
   PROBLEM_POINTS,
   PROCESS_STEPS,
-  TESTIMONIALS,
   WHAT_IS_POINTS,
 } from "./data";
+import { buildMetadata } from "@/lib/seo";
 
 const FEATURE_ICONS = {
   capture: CaptureIcon,
@@ -36,53 +36,7 @@ const FEATURE_ICONS = {
   reporting: ReportIcon,
 };
 
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
-
-export const metadata = {
-  title: {
-    absolute: "Automotive CRM Software for Car Dealerships | TracktCRM",
-  },
-  description:
-    "TracktCRM is an automotive CRM that captures enquiries, books test drives and follows up to delivery, with WhatsApp and AI replies. Try the CRM free.",
-  alternates: {
-    canonical: "/industries/crm-for-automotive",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: `${SITE_URL}/industries/crm-for-automotive`,
-    siteName: SITE_NAME,
-    title: "TracktCRM — The CRM for Car Dealerships",
-    description:
-      "Capture every enquiry, book test drives and follow up until delivery.",
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "TracktCRM automotive CRM for car dealerships",
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "TracktCRM — The CRM for Car Dealerships",
-    description:
-      "Capture every enquiry, book test drives and follow up until delivery.",
-    images: [ogImage],
-  },
-};
+export const metadata = buildMetadata("/industries/crm-for-automotive");
 
 export default function AutomotiveCrmPage() {
   return (
@@ -106,7 +60,7 @@ export default function AutomotiveCrmPage() {
                 AUTOMOTIVE CRM
               </div>
               <h1 className="re-banner-title">
-                The CRM for Car Dealerships{" "}
+                Automotive CRM for Car and Bike Dealers{" "}
                 <span>That Turns Enquiries Into Test Drives</span>
               </h1>
               <p className="re-banner-sub">
@@ -213,6 +167,12 @@ export default function AutomotiveCrmPage() {
                 same: dealership lead management that does not depend on a
                 register. See the full <a href="/crm-software">CRM software</a>{" "}
                 overview.
+              </p>
+              <p className="re-section-intro">
+                The same pipeline works for two-wheeler and bike dealerships:
+                book test rides, set service reminders after delivery, and stay
+                on top of festive-season enquiry spikes without losing buyers in
+                a register.
               </p>
             </div>
           </div>
@@ -355,21 +315,6 @@ export default function AutomotiveCrmPage() {
           </figure>
         </section>
 
-        <section className="section reveal" id="testimonial">
-          <p className="kicker is-centered">SOCIAL PROOF</p>
-          <h2 className="h2 is-centered">
-            Dealerships keeping enquiries and test drives in TracktCRM
-          </h2>
-          <div className="re-testimonial-grid">
-            {TESTIMONIALS.map((item) => (
-              <div className="re-testimonial" key={item.quote}>
-                <blockquote>&ldquo;{item.quote}&rdquo;</blockquote>
-                <cite>- {item.attribution}</cite>
-              </div>
-            ))}
-          </div>
-        </section>
-
         <RelatedIndustries current="automotive" />
 
         <section className="section faq reveal" id="faq">
@@ -395,7 +340,8 @@ export default function AutomotiveCrmPage() {
               <p>
                 Try the CRM free, or book a demo and we will walk
                 through your enquiries, test drives and deliveries inside
-                TracktCRM.
+                TracktCRM. Compare plans on the{" "}
+                <a href="/pricing">CRM software pricing</a> page.
               </p>
             </div>
             <div className="cta-actions">

@@ -12,7 +12,7 @@ import {
 import RevealInit from "../components/reveal-init";
 import { INDUSTRY_ICONS } from "../components/related-industries";
 import { BookDemoButton } from "../components/demo-request-provider";
-import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../site";
+import { APP_REGISTER_URL } from "../site";
 import { BreadcrumbJsonLd, IndustriesHubJsonLd } from "../json-ld";
 import {
   COMING_SOON,
@@ -22,6 +22,7 @@ import {
   STEPS,
   WHY_POINTS,
 } from "./data";
+import { buildMetadata } from "@/lib/seo";
 
 const FEATURE_ICONS = {
   capture: CaptureIcon,
@@ -32,54 +33,7 @@ const FEATURE_ICONS = {
   mobile: MobileIcon,
 };
 
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
-const ogTitle = "TracktCRM - A CRM Built for Your Industry";
-const ogDescription =
-  "Real estate, education, agencies, recruitment, insurance, automotive and healthcare, each with its own pipeline, AI replies and WhatsApp.";
-
-export const metadata = {
-  title: {
-    absolute: "CRM by Industry: Real Estate, Education & More | TracktCRM",
-  },
-  description:
-    "Find the TracktCRM built for your industry: real estate, education, agencies, recruitment, insurance, automotive and healthcare, each with its own pipeline, AI replies and WhatsApp.",
-  alternates: {
-    canonical: "/industries",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: `${SITE_URL}/industries`,
-    siteName: SITE_NAME,
-    title: ogTitle,
-    description: ogDescription,
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "TracktCRM industry CRM for real estate, education, agencies, recruitment, insurance, automotive and healthcare",
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: ogTitle,
-    description: ogDescription,
-    images: [ogImage],
-  },
-};
+export const metadata = buildMetadata("/industries");
 
 export default function IndustriesHubPage() {
   return (
@@ -100,14 +54,14 @@ export default function IndustriesHubPage() {
             INDUSTRIES
           </div>
           <h1 className="hub-hero-title">
-            CRM Software Built for the Way{" "}
-            <span>Your Industry Sells</span>
+            CRM for Every Industry, Built Around{" "}
+            <span>the Way You Sell</span>
           </h1>
           <p className="hub-hero-sub">
             Every industry has its own stages, its own conversations and its own
-            definition of a won deal. TracktCRM gives you an industry CRM with
-            the pipeline, workflows and channels your team already works with,
-            ready to start using.
+            definition of a won deal. TracktCRM is a CRM for every industry,
+            with the pipeline, workflows and channels your team already works
+            with, ready to start using.
           </p>
           <div className="hub-hero-ctas">
             <a

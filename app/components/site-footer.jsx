@@ -3,12 +3,7 @@ import { SOCIALS } from "../icons";
 import { FOOTER_COLS } from "../home-data";
 import { SOCIAL_PROFILES } from "../site";
 
-const SOCIAL_HREFS = {
-  facebook: SOCIAL_PROFILES.facebook,
-  instagram: SOCIAL_PROFILES.instagram,
-  linkedin: SOCIAL_PROFILES.linkedin,
-  google: SOCIAL_PROFILES.google,
-};
+const FOOTER_SOCIALS = SOCIALS.filter(({ id }) => SOCIAL_PROFILES[id]);
 
 export default function SiteFooter() {
   return (
@@ -27,10 +22,10 @@ export default function SiteFooter() {
             Management.
           </p>
           <div className="socials">
-            {SOCIALS.map(({ id, label, Icon }) => (
+            {FOOTER_SOCIALS.map(({ id, label, Icon }) => (
               <a
                 className="social"
-                href={SOCIAL_HREFS[id] || "/contact"}
+                href={SOCIAL_PROFILES[id]}
                 key={id}
                 aria-label={label}
                 target="_blank"

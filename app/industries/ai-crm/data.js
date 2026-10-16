@@ -274,8 +274,8 @@ export const AI_FAQS = [
     a: "Yes. Email and SMS response work independently of WhatsApp. WhatsApp is simply the channel most TracktCRM customers use.",
   },
   {
-    q: "Which is a good AI CRM for a small business in India?",
-    a: "One that is quick to set up, works on WhatsApp, connects to portals like 99acres and does not need a big budget. TracktCRM is built for that.",
+    q: "Which is a good AI CRM for a small business?",
+    a: "One that is quick to set up, works on WhatsApp, connects to the lead portals you use and does not need a big budget. TracktCRM is built for that.",
   },
   {
     q: "Can I use it for real estate or education?",
@@ -283,6 +283,6 @@ export const AI_FAQS = [
   },
   {
     q: "Can I try the AI features before committing?",
-    a: "Yes. You can try the CRM free with no credit card required, so you can see AI response and handover on your own leads.",
+    a: "AI features come with the Premium and All-in-One plans. You can start on the Free plan with no credit card, upgrade to Premium when you want AI response, or book a demo to see it on your own leads first.",
   },
 ];

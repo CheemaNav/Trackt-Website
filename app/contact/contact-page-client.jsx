@@ -7,21 +7,7 @@ import { LuClock, LuMail, LuMapPin, LuPhone } from "react-icons/lu";
 import { PhoneInput } from "react-international-phone";
 import useReveal from "../use-reveal";
 import { CONTACT } from "../site";
-
-const CONTACT_FAQS = [
-  {
-    q: "How quickly do you reply?",
-    a: "We usually reply within one business day. For urgent demos, WhatsApp is the fastest channel.",
-  },
-  {
-    q: "What happens on a demo?",
-    a: "A 30-minute walkthrough where we map your lead flow, show TracktCRM on your use case, and answer pricing questions.",
-  },
-  {
-    q: "Do you support teams outside India?",
-    a: "Yes. TracktCRM supports sales teams worldwide. Support hours are listed below in IST.",
-  },
-];
+import { CONTACT_FAQS } from "./data";
 
 const INITIAL = {
   name: "",
@@ -92,10 +78,10 @@ export default function ContactPageClient() {
             CONTACT US
           </div>
           <h1 className="contact-title">
-            Let&apos;s talk about your sales pipeline
+            Contact TracktCRM About Your Sales Pipeline
           </h1>
           <p className="contact-lead">
-            Book a demo, ask a question, or send us a message. We usually reply
+            Contact TracktCRM to book a demo, ask a question, or send us a message. We usually reply
             within one business day - wherever you are.
           </p>
         </div>
@@ -106,8 +92,8 @@ export default function ContactPageClient() {
           <aside className="contact-info">
             <h2 className="h2 contact-info-title">Get in touch</h2>
             <p className="contact-info-copy">
-              Prefer a quick chat? Call, email or WhatsApp us - or send a
-              message and we&apos;ll follow up.
+              Prefer a quick chat? Contact TracktCRM by call, email or
+              WhatsApp - or send a message and we&apos;ll follow up.
             </p>
 
             <div className="contact-cards">

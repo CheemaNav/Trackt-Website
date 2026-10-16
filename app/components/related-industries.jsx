@@ -8,6 +8,7 @@ import {
   InsuranceIcon,
   RealEstateIcon,
   RecruitmentIcon,
+  TravelIcon,
 } from "../icons";
 import { LIVE_INDUSTRIES } from "../industries/data";
 
@@ -19,6 +20,7 @@ export const INDUSTRY_ICONS = {
   insurance: InsuranceIcon,
   automotive: AutomotiveIcon,
   healthcare: HealthcareIcon,
+  travel: TravelIcon,
 };
 
 /** Cross-links to the other live industry pages, plus a link back to the hub. */

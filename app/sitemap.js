@@ -12,6 +12,7 @@ const SKIP_DIRS = new Set([
   "hooks",
   "node_modules",
 ]);
+const PRIVATE_ROUTE = /^\/(login|register|signup|dashboard|account|admin|checkout|thank-you)(\/|$)/;
 
 /**
  * Walk app/ and collect every route that has a page.* file.
@@ -63,6 +64,10 @@ const PRIORITY = {
   "/industries/crm-for-insurance": 0.9,
   "/industries/crm-for-automotive": 0.9,
   "/industries/crm-for-healthcare": 0.9,
+  "/industries/crm-for-travel": 0.9,
+  "/lead-management-software": 0.9,
+  "/cloud-based-crm": 0.85,
+  "/features/sales-dashboard": 0.85,
   "/features/whatsapp-crm": 0.85,
   "/pipedrive-alternative": 0.85,
   "/pricing": 0.85,

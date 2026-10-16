@@ -210,7 +210,7 @@ export const EDU_FAQS = [
     a: "Yes. TracktCRM is built for the way educational institutions actually manage admissions: multi-channel enquiry capture, counsellor assignment, and a visible admission-stage pipeline, whether you run one campus or several.",
   },
   {
-    q: "Which is the best CRM for schools, colleges and coaching institutes in India?",
+    q: "Which is the best CRM for schools, colleges and coaching institutes?",
     a: "Look for admission stages, counsellor assignment, WhatsApp support, fee tracking and clear pricing. TracktCRM is built around that workflow.",
   },
   {
@@ -238,11 +238,11 @@ export const EDU_FAQS = [
     a: "Yes. WhatsApp is a core channel in TracktCRM, so enquiries and follow-ups over WhatsApp are captured and tracked the same way as email or phone.",
   },
   {
-    q: "How much does an education CRM cost in India?",
-    a: "TracktCRM plans are priced by seats, channels and volume, with quotes in INR or USD. Try the CRM free with no credit card needed, or book a demo to get a quote for your institute.",
+    q: "How much does an education CRM cost?",
+    a: "TracktCRM has a Free plan for 1 user, free forever with no credit card. Pro, Premium and All-in-One are priced per user per month and shown in your local currency, and paying yearly saves up to 20%. See the pricing page for current prices.",
   },
   {
     q: "Can I try TracktCRM before committing?",
-    a: "Yes, you can try the CRM free, so your admissions team can test the full enquiry-to-enrolment flow before committing.",
+    a: "Yes. Start on the Free plan, so your admissions team can test the enquiry-to-enrolment flow before you upgrade.",
   },
 ];

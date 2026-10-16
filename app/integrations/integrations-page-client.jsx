@@ -14,7 +14,6 @@ import {
   INTEGRATION_FAQS,
   INTEGRATION_POPULAR,
   INTEGRATION_STEPS,
-  LAST_UPDATED,
   integrationSlug,
 } from "./data";
 
@@ -90,20 +89,15 @@ export default function IntegrationsPageClient() {
             {INTEGRATION_APPS.length} integrations · No code required
           </div>
           <h1 className="h1">
-            Connect TracktCRM to WhatsApp, Lead Portals, Ads and the Tools You
+            CRM Integrations for WhatsApp, Lead Portals, Ads and the Tools You
             Already Use
           </h1>
           <p className="lead">
-            TracktCRM connects to {INTEGRATION_APPS.length} apps, from WhatsApp
+            TracktCRM&apos;s CRM integrations connect {INTEGRATION_APPS.length} apps, from WhatsApp
             and Meta ads to 99acres, IndiaMART, Gmail and Razorpay, so every
             lead lands in one pipeline. Search your tools below. If yours is not
             listed, we can build the integration for you.
           </p>
-          <p className="int-page-updated">
-            Last updated:{" "}
-            <time dateTime={LAST_UPDATED.iso}>{LAST_UPDATED.label}</time>
-          </p>
-
           <form className="int-page-search" onSubmit={onSearchSubmit}>
             <LuSearch size={18} aria-hidden="true" />
             <label className="sr-only" htmlFor="int-search">
@@ -215,7 +209,7 @@ export default function IntegrationsPageClient() {
                         <p>{app.body}</p>
                         {app.href ? (
                           <span className="int-page-more">
-                            Learn more
+                            {app.name} integration
                             <ArrowIcon />
                           </span>
                         ) : null}
@@ -253,8 +247,8 @@ export default function IntegrationsPageClient() {
           <Link href="/industries/crm-for-agencies">agency CRM</Link>, and
           recruiters bring website applications into the{" "}
           <Link href="/industries/crm-for-recruitment">recruitment CRM</Link>.
-          See <Link href="/pricing">pricing</Link> for plans after the free
-          trial.
+          See <Link href="/pricing">pricing</Link> for what each plan
+          includes.
         </p>
       </section>
 
@@ -334,7 +328,7 @@ export default function IntegrationsPageClient() {
       <section className="section faq reveal" id="faq">
         <div className="faq-layout">
           <div className="faq-aside">
-            <h2 className="h2">CRM Integration FAQs</h2>
+            <h2 className="h2">CRM Integrations FAQs</h2>
           </div>
           <div className="faq-list">
             {INTEGRATION_FAQS.map((item) => (

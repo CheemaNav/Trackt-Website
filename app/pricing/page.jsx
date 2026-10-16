@@ -2,14 +2,12 @@ import Link from "next/link";
 import RevealInit from "../components/reveal-init";
 import { BookDemoButton } from "../components/demo-request-provider";
 import { BreadcrumbJsonLd, FaqJsonLd, PricingJsonLd, WebPageJsonLd } from "../json-ld";
-import { APP_REGISTER_URL, CONTACT, SITE_NAME, SITE_URL } from "../site";
+import { APP_REGISTER_URL, CONTACT } from "../site";
 import PricingPlans from "./pricing-plans";
 import { PLANS, PRICING_PERKS, YEARLY_SAVING } from "./plans";
+import { PAGE_SEO, buildMetadata } from "@/lib/seo";
 
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
-const pageTitle = "CRM Pricing in India: Plans, Free Trial | TracktCRM";
-const pageDescription =
-  "TracktCRM pricing: a Free plan, then Pro, Premium and All-in-One per-user plans shown in your local currency. Try the CRM free, no credit card, cancel anytime.";
+const SEO = PAGE_SEO["/pricing"];
 
 const BREADCRUMBS = [
   { name: "Home", href: "/" },
@@ -19,11 +17,11 @@ const BREADCRUMBS = [
 const FAQS = [
   {
     q: "Is there a free trial?",
-    a: "Yes. You can try the CRM free on Pro and Premium, with no credit card required. There is also a Free plan for one user.",
+    a: "There is no time-limited trial. Every new account starts on the Free plan: 1 user, free forever, with no credit card required. Upgrade to Pro, Premium or All-in-One whenever you need more pipelines, automations, users or AI.",
   },
   {
     q: "How much does TracktCRM cost?",
-    a: `There is a Free plan for one user. Paid plans are Pro, Premium and All-in-One, priced per user per month. Paying yearly saves up to ${YEARLY_SAVING}. Prices on this page are shown in your local currency.`,
+    a: `TracktCRM's CRM software pricing starts with a Free plan for one user. Paid plans are Pro, Premium and All-in-One, priced per user per month. Paying yearly saves up to ${YEARLY_SAVING}. Prices on this page are shown in your local currency.`,
   },
   {
     q: "Why are prices shown in my currency?",
@@ -55,28 +53,7 @@ const FAQS = [
   },
 ];
 
-export const metadata = {
-  title: {
-    absolute: pageTitle,
-  },
-  description: pageDescription,
-  alternates: { canonical: "/pricing" },
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: `${SITE_URL}/pricing`,
-    siteName: SITE_NAME,
-    title: pageTitle,
-    description: pageDescription,
-    images: [{ url: ogImage, width: 1200, height: 630, alt: "TracktCRM pricing" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
-    images: [ogImage],
-  },
-};
+export const metadata = buildMetadata("/pricing");
 
 const BILLING = [
   {
@@ -92,7 +69,7 @@ const BILLING = [
   {
     icon: "globe",
     title: "Your local currency",
-    text: "Prices are set in Indian rupees and shown in your local currency everywhere else.",
+    text: "Prices are set in rupees (INR) and shown in your local currency everywhere else.",
   },
   {
     icon: "switch",
@@ -154,7 +131,7 @@ function PerkCheck() {
 export default function PricingPage() {
   return (
     <>
-      <WebPageJsonLd name={pageTitle} description={pageDescription} path="/pricing" />
+      <WebPageJsonLd name={SEO.title} description={SEO.description} path="/pricing" />
       <PricingJsonLd plans={PLANS} />
       <FaqJsonLd id="schema-pricing-faq" faqs={FAQS} />
       <BreadcrumbJsonLd items={BREADCRUMBS} />
@@ -172,7 +149,7 @@ export default function PricingPage() {
                 </li>
               </ol>
             </nav>
-            <h1 className="pr-title">Simple CRM Pricing, Shown in Your Currency</h1>
+            <h1 className="pr-title">{SEO.h1}</h1>
             <ul className="pr-perks">
               {PRICING_PERKS.map((perk) => (
                 <li key={perk.text} className={perk.highlight ? "is-highlight" : undefined}>
@@ -211,7 +188,11 @@ export default function PricingPage() {
                     <Link href="/features/whatsapp-crm">WhatsApp CRM</Link>.
                   </li>
                   <li>A dedicated onboarding specialist to set up your account.</li>
-                  <li>Custom website forms that send leads straight to your pipeline.</li>
+                  <li>
+                    Custom website forms that send leads straight to your
+                    pipeline. See our{" "}
+                    <Link href="/lead-management-software">lead management software</Link>.
+                  </li>
                   <li>
                     AI features on Premium and All-in-One. See the{" "}
                     <Link href="/industries/ai-crm">AI CRM</Link>.
@@ -224,7 +205,7 @@ export default function PricingPage() {
                   <li>Your data is never sold or used for ad targeting.</li>
                 </ul>
                 <p className="pr-footnote">
-                  Prices are set in Indian rupees and shown in your local currency
+                  Prices are set in rupees (INR) and shown in your local currency
                   at the current exchange rate, rounded. Taxes may apply
                   depending on where you are. WhatsApp message charges from Meta
                   are separate.
@@ -329,10 +310,11 @@ export default function PricingPage() {
               <span className="pr-eyebrow is-light">Compare</span>
               <h2>How TracktCRM Pricing Compares</h2>
               <p>
-                Pipedrive and other global CRMs publish dollar prices per user.
-                TracktCRM can be billed in rupees, includes WhatsApp
-                integration on every plan, and adds AI features on Premium and
-                All-in-One.
+                Pipedrive and other global CRMs publish their CRM software
+                pricing in dollars per user.
+                TracktCRM has a Free plan, shows prices in your local currency,
+                includes WhatsApp integration on every plan, and adds AI
+                features on Premium and All-in-One.
               </p>
               <div className="pr-panel-actions">
                 <Link className="btn btn-primary" href="/pipedrive-alternative">
@@ -368,7 +350,7 @@ export default function PricingPage() {
           <div className="wrap">
             <div className="pr-section-head">
               <span className="pr-eyebrow">FAQs</span>
-              <h2>CRM Pricing FAQs</h2>
+              <h2>CRM Software Pricing FAQs</h2>
             </div>
             <div className="pr-faq-box">
               <div className="faq-list">

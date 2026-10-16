@@ -12,7 +12,7 @@ import {
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
 import RelatedIndustries from "../../components/related-industries";
-import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
+import { APP_REGISTER_URL } from "../../site";
 import { BreadcrumbJsonLd, EducationCrmJsonLd } from "../../json-ld";
 import {
   AUDIENCES,
@@ -24,6 +24,7 @@ import {
   PROCESS_STEPS,
   WHAT_IS_POINTS,
 } from "./data";
+import { buildMetadata } from "@/lib/seo";
 
 const FEATURE_ICONS = {
   capture: CaptureIcon,
@@ -36,53 +37,7 @@ const FEATURE_ICONS = {
   reporting: ReportIcon,
 };
 
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
-const pageTitle = "Education CRM Software India for Admissions | TracktCRM";
-const pageDescription =
-  "Education CRM for Indian institutes: capture enquiries from ads, portals and WhatsApp, assign counsellors, track admissions and fees. Try the CRM free.";
-
-export const metadata = {
-  title: {
-    absolute: pageTitle,
-  },
-  description: pageDescription,
-  alternates: {
-    canonical: "/industries/education-crm",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: `${SITE_URL}/industries/education-crm`,
-    siteName: SITE_NAME,
-    title: pageTitle,
-    description: pageDescription,
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "TracktCRM education CRM for admissions teams in India",
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
-    images: [ogImage],
-  },
-};
+export const metadata = buildMetadata("/industries/education-crm");
 
 export default function EducationCrmPage() {
   return (
@@ -106,7 +61,7 @@ export default function EducationCrmPage() {
                 EDUCATION CRM
               </div>
               <h1 className="re-banner-title">
-                Education CRM for Indian Institutes{" "}
+                Education CRM for Schools, Colleges and Institutes{" "}
                 <span>That Takes Every Enquiry to Enrolment</span>
               </h1>
               <p className="re-banner-sub">
@@ -352,10 +307,9 @@ export default function EducationCrmPage() {
             Student Data, Parent Consent and Privacy
           </h2>
           <p className="edu-lede">
-            Admission data often belongs to minors. India&apos;s Digital
-            Personal Data Protection Act, 2023 treats anyone under 18 as a child
-            and expects verifiable parental consent before their data is
-            processed. WhatsApp messaging also needs opt-in. With TracktCRM, you
+            Admission data often belongs to minors, and many data protection
+            laws expect verifiable parental consent before a child&apos;s data
+            is processed. WhatsApp messaging also needs opt-in. With TracktCRM, you
             decide the scripts and messages that go out.
           </p>
         </section>
@@ -367,7 +321,7 @@ export default function EducationCrmPage() {
           <h2 className="h2 is-centered">Education CRM FAQs</h2>
           <p className="edu-lede">
             Answers to common questions about admissions CRM software for
-            Indian institutes.
+            schools, colleges and institutes.
           </p>
           <div className="faq-list edu-faq-list">
             {EDU_FAQS.map((item) => (

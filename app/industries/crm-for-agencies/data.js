@@ -195,11 +195,11 @@ export const INTEGRATIONS = [
 export const AGENCY_FAQS = [
   {
     q: "What is an agency CRM?",
-    a: "An agency CRM is software built around how agencies sell and serve clients: pitches and proposals, retainer renewals and ongoing client conversations. It keeps all of it in one place instead of spread across email, WhatsApp groups and spreadsheets.",
+    a: "A CRM for agencies is software built around how agencies sell and serve clients: pitches and proposals, retainer renewals and ongoing client conversations. It keeps all of it in one place instead of spread across email, WhatsApp groups and spreadsheets.",
   },
   {
     q: "What is the best CRM for agencies?",
-    a: "Look for one that tracks the whole client lifecycle, from first pitch to proposal to retainer renewal, without weeks of set-up. TracktCRM is built for that, with a proposal pipeline you can adapt, renewal tracking and the conversation history on every client.",
+    a: "Look for one that tracks the whole client lifecycle, from first pitch to proposal to retainer renewal, without weeks of set-up. TracktCRM is a CRM for agencies built for that, with a proposal pipeline you can adapt, renewal tracking and the conversation history on every client.",
   },
   {
     q: "Can I run separate pipelines per client?",
@@ -219,7 +219,7 @@ export const AGENCY_FAQS = [
   },
   {
     q: "Is TracktCRM a good CRM for marketing agencies?",
-    a: "Marketing agencies juggle new-business pitches, active retainers and client conversations at once. TracktCRM gives each its own stage, so the team can see what needs attention this week.",
+    a: "Marketing agencies juggle new-business pitches, active retainers and client conversations at once. As a CRM for agencies, TracktCRM gives each its own stage, so the team can see what needs attention this week.",
   },
   {
     q: "Can I manage client conversations from WhatsApp and email in one place?",
@@ -227,11 +227,11 @@ export const AGENCY_FAQS = [
   },
   {
     q: "Can I try TracktCRM before committing?",
-    a: "You can try the CRM free with no credit card needed, so your agency can run the full pitch-to-renewal flow before you decide.",
+    a: "Yes. Start on the Free plan with no credit card needed, and run your pitch-to-renewal flow before you upgrade.",
   },
   {
-    q: "How much does an agency CRM cost in India?",
-    a: "TracktCRM charges per user, with plans in INR or USD billed at company level. You can try the CRM free, and no credit card is needed. See the pricing page for current plans.",
+    q: "How much does an agency CRM cost?",
+    a: "TracktCRM has a Free plan for 1 user, free forever with no credit card. Pro, Premium and All-in-One are priced per user per month, billed at company level and shown in your local currency, and paying yearly saves up to 20%. See the pricing page for current prices.",
   },
   {
     q: "Can I track retainer value and monthly recurring revenue?",

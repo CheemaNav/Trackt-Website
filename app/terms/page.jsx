@@ -1,35 +1,14 @@
 import Link from "next/link";
 import ContentPage from "../components/content-page";
 import { APP_BASE_URL, CONTACT, SITE_NAME, SITE_URL } from "../site";
+import { buildMetadata } from "@/lib/seo";
 
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const LAST_UPDATED = "8 October 2026";
 
 const GOOGLE_POLICY_URL =
   "https://developers.google.com/terms/api-services-user-data-policy";
 
-export const metadata = {
-  title: {
-    absolute: "Terms & Conditions | TracktCRM",
-  },
-  description:
-    "Terms of use for TracktCRM website and AI CRM software, including accounts, subscriptions, Google integrations and acceptable use.",
-  alternates: { canonical: "/terms" },
-  openGraph: {
-    locale: "en_IN",
-    url: `${SITE_URL}/terms`,
-    siteName: SITE_NAME,
-    title: "Terms & Conditions | TracktCRM",
-    description: "TracktCRM website and product terms of use.",
-    images: [
-      { url: ogImage, width: 1200, height: 630, alt: "TracktCRM terms" },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export const metadata = buildMetadata("/terms");
 
 export default function TermsPage() {
   return (

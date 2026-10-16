@@ -13,7 +13,7 @@ import {
 } from "../icons";
 import RevealInit from "../components/reveal-init";
 import { BookDemoButton } from "../components/demo-request-provider";
-import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../site";
+import { APP_REGISTER_URL } from "../site";
 import { BreadcrumbJsonLd, CrmSoftwareJsonLd } from "../json-ld";
 import { INTEGRATIONS } from "../home-data";
 import {
@@ -29,6 +29,7 @@ import {
   SIMPLE_POINTS,
   WHAT_IS_JOBS,
 } from "./data";
+import { buildMetadata } from "@/lib/seo";
 
 const FEATURE_ICONS = {
   capture: CaptureIcon,
@@ -41,53 +42,7 @@ const FEATURE_ICONS = {
   mobile: MobileIcon,
 };
 
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
-const pageTitle = "CRM Software India: Leads, Pipeline & Follow-Ups | TracktCRM";
-const pageDescription =
-  "CRM software for Indian teams: capture leads from WhatsApp and ads, reply in seconds with AI, and track every deal in one pipeline. Try the CRM free.";
-
-export const metadata = {
-  title: {
-    absolute: pageTitle,
-  },
-  description: pageDescription,
-  alternates: {
-    canonical: "/crm-software",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: `${SITE_URL}/crm-software`,
-    siteName: SITE_NAME,
-    title: pageTitle,
-    description: pageDescription,
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "TracktCRM CRM software for Indian teams: pipeline and shared inbox",
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
-    images: [ogImage],
-  },
-};
+export const metadata = buildMetadata("/crm-software");
 
 export default function CrmSoftwarePage() {
   return (
@@ -109,7 +64,7 @@ export default function CrmSoftwarePage() {
               CRM SOFTWARE
             </div>
             <h1 className="h1">
-              Simple CRM Software for Indian Teams That Captures Every Lead{" "}
+              Simple CRM Software for Growing Teams That Captures Every Lead{" "}
               <span className="cs-hero-accent">and Closes More Deals</span>
             </h1>
             <p className="lead">
@@ -413,12 +368,13 @@ export default function CrmSoftwarePage() {
         <section className="section re-band reveal" id="pricing">
           <div className="re-section-head is-wide">
             <p className="kicker">PRICING</p>
-            <h2 className="h2">CRM Software Pricing in India</h2>
+            <h2 className="h2">CRM Software Pricing</h2>
             <p className="re-section-intro">
-              Try the CRM free. After that, your company
-              moves to a per-user plan billed at the company level, in INR or
-              USD, so team members never pay separately. Plans depend on seats,
-              channels and volume.
+              Start on the Free plan: 1 user, free forever, no credit card.
+              When you need more, upgrade to Pro, Premium or All-in-One. Paid
+              plans are priced per user per month, billed at the company level
+              and shown in your local currency, and paying yearly saves up to
+              20%. AI features come with Premium and All-in-One.
             </p>
             <p className="re-section-intro">
               <a href="/pricing">See the pricing page for details</a>.
@@ -485,9 +441,9 @@ export default function CrmSoftwarePage() {
             <p className="re-section-intro">
               Your leads and customer conversations are business data.
               TracktCRM lets you control who in your team can see what, and you
-              decide which messages go out. India&apos;s Digital Personal Data
-              Protection Act, 2023 applies to the personal data you store, so
-              keep consent records for the people you contact.
+              decide which messages go out. Data protection laws apply to the
+              personal data you store, so keep consent records for the people
+              you contact.
             </p>
           </div>
         </section>

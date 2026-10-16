@@ -91,7 +91,7 @@ export const WA_RULES = [
   },
   {
     title: "Opt-in and consent",
-    body: "Customers should agree to receive your messages and be able to opt out. This also matters under India's Digital Personal Data Protection Act, 2023.",
+    body: "Customers should agree to receive your messages and be able to opt out. This also matters under data protection laws.",
   },
   {
     title: "Meta's message charges",
@@ -218,7 +218,7 @@ export const WA_FAQS = [
   },
   {
     q: "Can I try this before committing?",
-    a: "You can try the CRM free with no credit card required.",
+    a: "Yes. WhatsApp integration is included in the Free plan, with no credit card required.",
   },
   {
     q: "What is a WhatsApp CRM?",

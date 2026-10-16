@@ -2,12 +2,10 @@ import Link from "next/link";
 import ContentPage from "../components/content-page";
 import { ArrowIcon } from "../icons";
 import { FaqJsonLd, WebPageJsonLd } from "../json-ld";
-import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../site";
+import { APP_REGISTER_URL } from "../site";
+import { PAGE_SEO, buildMetadata } from "@/lib/seo";
 
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
-const pageTitle = "Pipedrive Alternative in India: AI Lead Response | TracktCRM";
-const pageDescription =
-  "Looking for a Pipedrive alternative in India? Compare TracktCRM for WhatsApp, AI lead response, rupee pricing and local support. Try the CRM free.";
+const SEO = PAGE_SEO["/pipedrive-alternative"];
 const LAST_UPDATED = { iso: "2026-10-07", label: "7 October 2026" };
 
 const SOURCES = [
@@ -39,7 +37,7 @@ const GLANCE_ROWS = [
     pipedrive:
       "Teams that want a mature, configurable sales pipeline and a large app marketplace",
     trackt:
-      "Teams that sell on WhatsApp, need fast lead response and capture leads from Indian portals",
+      "Teams that sell on WhatsApp, need fast lead response and capture leads from regional lead portals",
   },
   {
     label: "Pipeline",
@@ -60,7 +58,7 @@ const GLANCE_ROWS = [
       "AI replies to new leads in seconds and can place a follow-up call",
   },
   {
-    label: "Indian lead sources",
+    label: "Regional lead portals",
     pipedrive:
       "Check the Pipedrive Marketplace for apps that connect specific portals",
     trackt:
@@ -71,7 +69,7 @@ const GLANCE_ROWS = [
     pipedrive:
       "Public per-seat plans from US$14 per seat per month billed annually, or US$24 billed monthly. Billing currency depends on your location",
     trackt:
-      "Per-user plans in INR or USD, billed at company level, after you try the CRM free",
+      "Free plan for 1 user. Pro, Premium and All-in-One are per-user plans billed at company level and shown in your local currency",
   },
   {
     label: "Integrations",
@@ -83,7 +81,7 @@ const GLANCE_ROWS = [
 const FAQS = [
   {
     q: "Is TracktCRM a good Pipedrive alternative?",
-    a: "It is a good fit for teams that need fast lead response, WhatsApp and Indian portal leads. Pipedrive remains strong for classic pipeline management and has a larger app marketplace.",
+    a: "It is a good fit for teams that need fast lead response, WhatsApp and leads from regional lead portals. Pipedrive remains strong for classic pipeline management and has a larger app marketplace.",
   },
   {
     q: "Can I migrate from Pipedrive?",
@@ -95,60 +93,34 @@ const FAQS = [
   },
   {
     q: "Is TracktCRM cheaper than Pipedrive?",
-    a: "It depends on your team size and channels. TracktCRM quotes per-user plans in INR or USD, billed at company level, after you try the CRM free. Pipedrive publishes per-seat plans from US$14 per seat per month billed annually. Compare a quote from us with Pipedrive's current pricing page, since both change.",
+    a: "It depends on your team size and the plan you need. TracktCRM has a Free plan for 1 user, and Pro, Premium and All-in-One are priced per user per month and shown in your local currency. Pipedrive publishes per-seat plans from US$14 per seat per month billed annually. Compare both pricing pages, since prices change.",
   },
   {
-    q: "Does TracktCRM bill in rupees?",
-    a: "Yes. Plans can be billed in INR, or in USD if you prefer.",
+    q: "Which currency are TracktCRM prices shown in?",
+    a: "The pricing page shows every plan in your local currency, based on where you are browsing from.",
   },
   {
     q: "Can I try TracktCRM with my own leads?",
-    a: "Yes. You can try the CRM free and run live enquiries before you commit. No credit card needed.",
+    a: "Yes. Start on the Free plan and run live enquiries before you upgrade. No credit card needed.",
   },
   {
     q: "Does TracktCRM have as many integrations as Pipedrive?",
-    a: "No. Pipedrive has a much larger marketplace. TracktCRM offers 24 integrations focused on WhatsApp, Indian portals, ads and payments, plus webhooks and custom work.",
+    a: "No. Pipedrive has a much larger marketplace. TracktCRM offers 24 integrations focused on WhatsApp, regional lead portals, ads and payments, plus webhooks and custom work.",
   },
   {
     q: "What about support?",
-    a: "You get onboarding and support from our team in Mohali, Punjab, who help set up your pipeline and move your data.",
+    a: "You get onboarding and support from our team in Mohali, Punjab, India, who help set up your pipeline and move your data.",
   },
 ];
 
-export const metadata = {
-  title: { absolute: pageTitle },
-  description: pageDescription,
-  alternates: { canonical: "/pipedrive-alternative" },
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: `${SITE_URL}/pipedrive-alternative`,
-    siteName: SITE_NAME,
-    title: pageTitle,
-    description: pageDescription,
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "TracktCRM compared with Pipedrive for Indian sales teams",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
-    images: [ogImage],
-  },
-};
+export const metadata = buildMetadata("/pipedrive-alternative");
 
 export default function PipedriveAlternativePage() {
   return (
     <ContentPage
       badge="COMPARE"
-      title="A Pipedrive Alternative for Indian Teams That Sell on WhatsApp"
-      lead="Pipedrive is a strong, mature sales CRM. TracktCRM is built for teams that need to reply to leads in seconds, work from WhatsApp, capture leads from Indian portals and pay in rupees. This page compares the two honestly so you can decide."
+      title={SEO.h1}
+      lead="Pipedrive is a strong, mature sales CRM. TracktCRM is built for teams that need to reply to leads in seconds, work from WhatsApp, capture leads from regional lead portals and start on a free plan. This page compares the two honestly so you can decide."
       breadcrumbs={[
         { name: "Home", href: "/" },
         { name: "Pipedrive alternative", href: "/pipedrive-alternative" },
@@ -156,8 +128,8 @@ export default function PipedriveAlternativePage() {
       schema={
         <>
           <WebPageJsonLd
-            name={pageTitle}
-            description={pageDescription}
+            name={SEO.title}
+            description={SEO.description}
             path="/pipedrive-alternative"
             dateModified={LAST_UPDATED.iso}
           />
@@ -212,7 +184,7 @@ export default function PipedriveAlternativePage() {
             You buy leads from 99acres, IndiaMART, Justdial or similar portals
             and want them in the CRM automatically
           </li>
-          <li>You want to pay in rupees with a clear per-user price</li>
+          <li>You want a free plan to start and a clear per-user price after that</li>
           <li>
             You need <Link href="/industries/real-estate-crm">real estate CRM</Link>{" "}
             or <Link href="/industries/education-crm">education CRM</Link>{" "}
@@ -262,16 +234,16 @@ export default function PipedriveAlternativePage() {
         </p>
         <h3>Integrations</h3>
         <p>
-          Pipedrive has a much larger marketplace. TracktCRM covers Indian
-          portals and marketplaces that many global tools do not, and offers
+          Pipedrive has a much larger marketplace. TracktCRM covers regional
+          lead portals and marketplaces that many global tools do not, and offers
           webhooks and custom integrations. See{" "}
           <Link href="/integrations">all integrations</Link>.
         </p>
         <h3>Pricing and billing</h3>
         <p>
           Pipedrive publishes per-seat plans, with a lower rate for annual
-          billing. TracktCRM bills per user in INR or USD at company level, and
-          you can try the CRM free. See <Link href="/pricing">TracktCRM pricing</Link>.
+          billing. TracktCRM has a Free plan for 1 user, and paid plans are
+          billed per user at company level and shown in your local currency. See <Link href="/pricing">TracktCRM pricing</Link>.
         </p>
         <h3>Set-up and migration</h3>
         <p>
@@ -292,7 +264,7 @@ export default function PipedriveAlternativePage() {
           <li>Import contacts, companies and open deals.</li>
           <li>Connect WhatsApp, email, forms and your ad accounts.</li>
           <li>
-            Run the free trial on live enquiries, then switch your team over.
+            Run TracktCRM on live enquiries, then switch your team over.
           </li>
         </ol>
 

@@ -45,7 +45,7 @@ export const FEATURES = [
   {
     icon: "testDrive",
     title: "Test Drive Scheduling",
-    body: "Move a buyer into a test drive stage and schedule it with your calendar, with a reminder to follow up afterwards. Test drive scheduling stops being a line in a register.",
+    body: "Move a buyer into a test drive or test ride stage and schedule it with your calendar, with a reminder to follow up afterwards. Scheduling stops being a line in a register.",
   },
   {
     icon: "ownership",
@@ -68,6 +68,7 @@ export const FEATURES = [
 
 export const AFTER_SALES_POINTS = [
   "Customers hear from you after delivery, not only before it",
+  "Service reminders for cars and bikes keep the next visit booked",
   "Repeat and referral business starts with a conversation, not a cold call",
   "Each customer keeps an owner and a history, so nothing depends on one salesperson's memory",
 ];
@@ -153,19 +154,6 @@ export const INTEGRATIONS = [
     title: "Zapier and open API",
     body: "Connect other enquiry sources and the rest of your stack.",
     brand: "Webhooks",
-  },
-];
-
-export const TESTIMONIALS = [
-  {
-    quote:
-      "Enquiries used to wait until someone was free. Now every buyer gets a reply within seconds, even on a Saturday.",
-    attribution: "Name, Title, Dealership",
-  },
-  {
-    quote:
-      "I can see who owns every enquiry and which test drives still need a follow-up, without asking anyone.",
-    attribution: "Name, Title, Dealership",
   },
 ];
 

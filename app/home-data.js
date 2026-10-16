@@ -260,7 +260,7 @@ export const TIMELINE = [
 
 export const INDUSTRIES = [
   {
-    name: "Real Estate CRM in India",
+    name: "Real Estate CRM",
     body: "Property enquiries come from many portals at once. TracktCRM pulls them into one place, books site visits, tracks channel partners and keeps inventory visible.",
     points: ["Site-visit scheduling", "Channel-partner tracking", "Inventory & availability"],
     href: "/industries/real-estate-crm",
@@ -346,17 +346,17 @@ export const STEPS = [
 ];
 
 export const FAQS = [
-  { q: "What is TracktCRM?", a: "TracktCRM is AI-powered CRM software for sales teams. It captures leads from every channel, organises them in one lead management dashboard, and tracks each deal through a customisable sales pipeline. Everything - contacts, conversations, tasks and reporting - lives in a single place." },
-  { q: "How does TracktCRM help increase sales?", a: "It removes the two things that lose deals: slow replies and forgotten follow-ups. TracktCRM answers new leads automatically, reminds reps of every next step, and shows exactly which pipeline stage is leaking revenue so you can fix it early." },
-  { q: "Is TracktCRM good for small businesses?", a: "Yes. TracktCRM is built for small businesses, agencies, freelancers and growing sales teams who want proper lead management without enterprise pricing. There is nothing to configure on day one - pick a pipeline template and start selling." },
-  { q: "Does TracktCRM offer a free trial?", a: "Yes. You can try the CRM free with every feature and no credit card required. You can import your existing leads, run your real sales pipeline, and decide afterwards." },
-  { q: "What integrations does TracktCRM support?", a: "TracktCRM connects with WhatsApp, Gmail, Google Calendar, Meta and Google Ads, India marketplaces, Shopify, Razorpay, shipping tools and webhooks. Browse the full catalogue on the integrations page, or ask us to add a tool you do not see." },
-  { q: "How do I get started with TracktCRM?", a: "Start your free trial or book a demo and our team maps your current lead flow. We set up your pipeline stages, sources and users, migrate your spreadsheet or old CRM data, and most teams are live within a week." },
-  { q: "Is TracktCRM a good Pipedrive alternative?", a: "Yes. TracktCRM offers built-in WhatsApp automation, AI lead replies and pipelines made for Indian businesses at a lower price, with data migration support if you are switching." },
+  { q: "What is TracktCRM?", a: "TracktCRM is AI CRM software for sales teams. It captures leads from every channel, organises them in one lead management dashboard, and tracks each deal through a customisable sales pipeline. Everything - contacts, conversations, tasks and reporting - lives in a single place." },
+  { q: "How does TracktCRM help increase sales?", a: "It removes the two things that lose deals: slow replies and forgotten follow-ups. As AI CRM software, TracktCRM answers new leads automatically, reminds reps of every next step, and shows exactly which pipeline stage is leaking revenue so you can fix it early." },
+  { q: "Is TracktCRM good for small businesses?", a: "Yes. TracktCRM is AI CRM software built for small businesses, agencies, freelancers and growing sales teams in India and worldwide who want proper lead management without enterprise pricing. There is nothing to configure on day one - pick a pipeline template and start selling." },
+  { q: "Does TracktCRM have a free plan?", a: "Yes. The Free plan is free forever for 1 user, with no credit card needed. You can import your existing leads and run your real sales pipeline, then upgrade to Pro, Premium or All-in-One when you need more pipelines, automations, users or AI." },
+  { q: "What integrations does TracktCRM support?", a: "TracktCRM connects with WhatsApp, Gmail, Google Calendar, Meta and Google Ads, regional lead portals, Shopify, Razorpay, shipping tools and webhooks. Browse the full catalogue on the integrations page, or ask us to add a tool you do not see." },
+  { q: "How do I get started with TracktCRM?", a: "Sign up on the Free plan or book a demo and our team maps your current lead flow. We set up your pipeline stages, sources and users, migrate your spreadsheet or old CRM data, and most teams are live within a week." },
+  { q: "Is TracktCRM a good Pipedrive alternative?", a: "Yes. TracktCRM offers built-in WhatsApp automation, AI lead replies and pipelines made for growing teams at a lower price, with data migration support if you are switching." },
   { q: "Does TracktCRM work as a real estate CRM?", a: "Yes. TracktCRM includes ready-made pipelines for site-visit scheduling, channel-partner tracking and unit/inventory management - built specifically for how real estate teams sell." },
   { q: "What is a WhatsApp CRM?", a: "A WhatsApp CRM connects your WhatsApp chats to lead records. It automates replies and follow-ups and gives the whole team one shared inbox, so conversations are not stuck on one person's phone." },
-  { q: "Which is the best CRM for a small business in India?", a: "Look for one that is quick to set up, works with WhatsApp and Indian portals like 99acres, and does not need a large budget or a consultant. TracktCRM is built for that kind of team." },
-  { q: "How much does CRM software cost in India?", a: "TracktCRM plans are priced by seats, channels and volume, with quotes in INR or USD. Every feature is free for the first month, with no credit card needed." },
+  { q: "Which is the best CRM for a small business?", a: "Look for one that is quick to set up, works with WhatsApp and the lead portals you already use, and does not need a large budget or a consultant. TracktCRM is AI CRM software built for that kind of team." },
+  { q: "How much does CRM software cost?", a: "TracktCRM has a Free plan for 1 user, free forever with no credit card. Pro, Premium and All-in-One are priced per user per month and shown in your local currency, and paying yearly saves up to 20%. See the pricing page for current prices." },
 ];
 
 export const FOOTER_COLS = [
@@ -373,6 +373,7 @@ export const FOOTER_COLS = [
   {
     title: "Product",
     links: [
+      { label: "AI CRM Software", href: "/" },
       { label: "CRM Software", href: "/crm-software" },
       { label: "Pricing", href: "/pricing" },
       { label: "Integrations", href: "/integrations" },
@@ -384,18 +385,23 @@ export const FOOTER_COLS = [
     links: [
       { label: "AI CRM", href: "/industries/ai-crm" },
       { label: "WhatsApp CRM", href: "/features/whatsapp-crm" },
+      { label: "Lead Management Software", href: "/lead-management-software" },
+      { label: "Sales Dashboard", href: "/features/sales-dashboard" },
+      { label: "Cloud-Based CRM", href: "/cloud-based-crm" },
     ],
   },
   {
     title: "Industries",
     links: [
+      { label: "CRM for Every Industry", href: "/industries" },
       { label: "Real Estate CRM", href: "/industries/real-estate-crm" },
       { label: "Education CRM", href: "/industries/education-crm" },
-      { label: "Agency CRM", href: "/industries/crm-for-agencies" },
+      { label: "CRM for Agencies", href: "/industries/crm-for-agencies" },
       { label: "Recruitment CRM", href: "/industries/crm-for-recruitment" },
       { label: "Insurance CRM", href: "/industries/crm-for-insurance" },
       { label: "Automotive CRM", href: "/industries/crm-for-automotive" },
       { label: "Healthcare CRM", href: "/industries/crm-for-healthcare" },
+      { label: "Travel CRM", href: "/industries/crm-for-travel" },
     ],
   },
   {

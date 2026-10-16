@@ -173,31 +173,18 @@ export const INTEGRATIONS = [
   },
 ];
 
-export const TESTIMONIALS = [
-  {
-    quote:
-      "Every enquiry now gets a reply within seconds, even when the front desk is full. We stopped losing people to the next clinic.",
-    attribution: "Name, Title, Clinic",
-  },
-  {
-    quote:
-      "Follow-ups used to depend on whoever remembered. Now the reminder shows up and the history is right there.",
-    attribution: "Name, Title, Clinic",
-  },
-];
-
 export const HEALTHCARE_FAQS = [
   {
     q: "What is a healthcare CRM?",
-    a: "A healthcare CRM is customer relationship management software for clinics, hospitals and other care providers. It captures patient enquiries, tracks each one through to an appointment and follow-up, and reminds your team when to reach out, instead of relying on front-desk registers, spreadsheets and memory.",
+    a: "Healthcare CRM software is a customer relationship tool for clinics, hospitals and other care providers. It captures patient enquiries, tracks each one through to an appointment and follow-up, and reminds your team when to reach out, instead of relying on front-desk registers, spreadsheets and memory.",
   },
   {
     q: "What is the difference between a healthcare CRM and an EHR?",
-    a: "An electronic health record (EHR) stores clinical information about patients. A healthcare CRM manages the relationship around it: enquiries, appointments and follow-up. Most providers use the two side by side, with the CRM handling communication and the EHR holding clinical records.",
+    a: "An electronic health record (EHR) stores clinical information about patients. Healthcare CRM software manages the relationship around it: enquiries, appointments and follow-up. Most providers use the two side by side, with the CRM handling communication and the EHR holding clinical records.",
   },
   {
     q: "Is TracktCRM a good CRM for clinics?",
-    a: "Yes. TracktCRM helps a clinic answer enquiries quickly, book appointments and follow up, with WhatsApp, email and SMS in one inbox, so the front desk is not the only place information lives.",
+    a: "Yes. TracktCRM is healthcare CRM software that helps a clinic answer enquiries quickly, book appointments and follow up, with WhatsApp, email and SMS in one inbox, so the front desk is not the only place information lives.",
   },
   {
     q: "Can TracktCRM help book appointments?",
@@ -221,6 +208,6 @@ export const HEALTHCARE_FAQS = [
   },
   {
     q: "Can I try TracktCRM before committing?",
-    a: "Yes. Try the CRM free, so your team can run the full enquiry-to-follow-up workflow before committing.",
+    a: "Yes. Try this healthcare CRM software free, so your team can run the full enquiry-to-follow-up workflow before committing.",
   },
 ];

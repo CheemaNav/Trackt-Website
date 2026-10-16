@@ -24,7 +24,14 @@ const AI_CRAWLERS = [
 ];
 
 const PUBLIC_ALLOW = "/";
-const PRIVATE_DISALLOW = ["/admin/", "/account/", "/checkout/", "/api/private/"];
+const PRIVATE_DISALLOW = [
+  "/admin/",
+  "/account/",
+  "/checkout/",
+  "/dashboard/",
+  "/thank-you",
+  "/api/private/",
+];
 
 function allowAllRule(userAgent) {
   return {

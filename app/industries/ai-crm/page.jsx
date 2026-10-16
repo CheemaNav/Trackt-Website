@@ -13,7 +13,7 @@ import {
   SiteVisitIcon,
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
-import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
+import { APP_REGISTER_URL } from "../../site";
 import { AiCrmJsonLd, BreadcrumbJsonLd } from "../../json-ld";
 import {
   AI_FAQS,
@@ -26,6 +26,7 @@ import {
   PROCESS_STEPS,
   WHAT_IS_POINTS,
 } from "./data";
+import { buildMetadata } from "@/lib/seo";
 
 const FEATURE_ICONS = {
   channels: ChannelWhatsAppIcon,
@@ -38,53 +39,7 @@ const FEATURE_ICONS = {
   control: AiLeadIcon,
 };
 
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
-const pageTitle = "AI CRM with AI Sales Assistant for India | TracktCRM";
-const pageDescription =
-  "AI CRM that replies to every lead on WhatsApp, email and SMS in seconds, calls to follow up and hands over to your rep with full context. Try the CRM free.";
-
-export const metadata = {
-  title: {
-    absolute: pageTitle,
-  },
-  description: pageDescription,
-  alternates: {
-    canonical: "/industries/ai-crm",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: `${SITE_URL}/industries/ai-crm`,
-    siteName: SITE_NAME,
-    title: pageTitle,
-    description: pageDescription,
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "TracktCRM AI CRM with an AI sales assistant answering leads",
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
-    images: [ogImage],
-  },
-};
+export const metadata = buildMetadata("/industries/ai-crm");
 
 export default function AiCrmPage() {
   return (
@@ -112,7 +67,7 @@ export default function AiCrmPage() {
               <span>That Replies to Leads in Seconds</span>
             </h1>
             <p className="re-banner-sub">
-              TracktCRM is AI CRM software for sales teams in India. When an
+              TracktCRM is AI CRM software for growing sales teams. When an
               enquiry arrives from a website form, a Meta or Google ad, 99acres
               or WhatsApp, the built-in AI sales assistant sends a WhatsApp
               message and an email within seconds, follows up by SMS, and places
@@ -203,7 +158,9 @@ export default function AiCrmPage() {
             </p>
             <p className="re-section-intro">
               A real AI CRM should do the five things below. See how this sits
-              inside our <a href="/crm-software">CRM software</a>.
+              inside our <a href="/crm-software">CRM software</a>, and how
+              results show up on the{" "}
+              <a href="/features/sales-dashboard">sales dashboard</a>.
             </p>
           </div>
         </div>
@@ -260,7 +217,7 @@ export default function AiCrmPage() {
         <p className="kicker">CHANNELS AND INTEGRATIONS</p>
         <h2 className="h2">AI CRM for WhatsApp, Email, SMS and Voice Calls</h2>
         <p className="re-section-intro">
-          Most Indian leads start on WhatsApp, so the AI works there first. Use
+          Many leads start on WhatsApp, so the AI works there first. Use
           our <a href="/features/whatsapp-crm">WhatsApp CRM</a> to keep every
           chat tied to a lead record. Email and SMS run independently, so the AI
           also works for teams that do not use WhatsApp.
@@ -361,8 +318,8 @@ export default function AiCrmPage() {
             <h2 className="h2">Consent, Data Privacy and Control</h2>
             <p className="re-section-intro">
               Automated messages and calls should respect consent. WhatsApp
-              Business messaging needs opt-in, and India&apos;s Digital Personal
-              Data Protection Act, 2023 applies to how you store lead data. You
+              Business messaging needs opt-in, and data protection laws apply
+              to how you store lead data. You
               set the scripts and can disclose AI involvement as clearly as you
               like.
             </p>

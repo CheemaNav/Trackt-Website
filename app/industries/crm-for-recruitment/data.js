@@ -271,7 +271,7 @@ export const RECRUITMENT_FAQS = [
   },
   {
     q: "Can I try TracktCRM before committing?",
-    a: "You can try the CRM free with no credit card needed, so your team can run the full candidate and client workflow before you decide.",
+    a: "Yes. Start on the Free plan with no credit card needed, and run your candidate and client workflow before you upgrade.",
   },
   {
     q: "Can I store CVs and resumes in TracktCRM?",
@@ -290,7 +290,7 @@ export const RECRUITMENT_FAQS = [
     a: "Yes. Candidates should agree to receive your messages, and WhatsApp limits free-form replies to 24 hours after their last message. TracktCRM keeps a record of each conversation, so you can show what was sent and when.",
   },
   {
-    q: "How much does a recruitment CRM cost in India?",
-    a: "TracktCRM charges per user, with plans in INR or USD billed at company level. You can try the CRM free, and no credit card is needed. See the pricing page for current plans.",
+    q: "How much does a recruitment CRM cost?",
+    a: "TracktCRM has a Free plan for 1 user, free forever with no credit card. Pro, Premium and All-in-One are priced per user per month, billed at company level and shown in your local currency, and paying yearly saves up to 20%. See the pricing page for current prices.",
   },
 ];

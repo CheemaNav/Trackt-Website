@@ -156,19 +156,6 @@ export const INTEGRATIONS = [
   },
 ];
 
-export const TESTIMONIALS = [
-  {
-    quote:
-      "Quotes used to go quiet and renewals crept up on us. Now the reminders show up before the client has to ask.",
-    attribution: "Name, Title, Agency",
-  },
-  {
-    quote:
-      "Every lead gets a reply within seconds, even when we are all with clients.",
-    attribution: "Name, Title, Agency",
-  },
-];
-
 export const INSURANCE_FAQS = [
   {
     q: "What is an insurance CRM?",

@@ -27,6 +27,7 @@ import {
   LuMessageCircle,
   LuMessageSquare,
   LuPhone,
+  LuPlane,
   LuPlus,
   LuRefreshCw,
   LuShieldCheck,
@@ -42,32 +43,33 @@ import {
   LuX,
 } from "react-icons/lu";
 
+/** [src, intrinsic width, intrinsic height] */
 const BRAND_LOGOS = {
-  "Google Ads": "/assets/brands/google-ads.svg",
-  "Meta & Google Ads": "/assets/brands/meta-google-ads.svg",
-  Meta: "/assets/brands/meta.svg",
-  Gmail: "/assets/brands/gmail.svg",
-  "Google Calendar": "/assets/brands/google-calendar.svg",
-  Webhooks: "/assets/brands/webhooks.svg",
-  WhatsApp: "/assets/brands/whatsapp.svg",
-  Justdial: "/assets/brands/justdial.svg",
-  Instagram: "/assets/brands/instagram.svg",
-  TradeIndia: "/assets/brands/tradeindia.svg",
-  IndiaMART: "/assets/brands/indiamart.svg",
-  Shopify: "/assets/brands/shopify.svg",
-  LinkedIn: "/assets/brands/linkedin.svg",
-  WordPress: "/assets/brands/wordpress.svg",
-  Razorpay: "/assets/brands/razorpay.svg",
-  Delhivery: "/assets/brands/delhivery.svg",
-  Shiprocket: "/assets/brands/shiprocket.png",
-  Facebook: "/assets/brands/facebook.svg",
-  "99acres": "/assets/brands/99acres.png",
-  "Housing.com": "/assets/brands/housing.svg",
-  OLX: "/assets/brands/olx.svg",
-  Practo: "/assets/brands/practo.svg",
-  MagicBricks: "/assets/brands/magicbricks.svg",
-  Calendly: "/assets/brands/calendly.svg",
-  "Custom Forms": "/assets/brands/custom-forms.svg",
+  "Google Ads": ["/assets/brands/google-ads.svg", 48, 48],
+  "Meta & Google Ads": ["/assets/brands/meta-google-ads.svg", 96, 40],
+  Meta: ["/assets/brands/meta.svg", 48, 48],
+  Gmail: ["/assets/brands/gmail.svg", 88, 66],
+  "Google Calendar": ["/assets/brands/google-calendar.svg", 200, 200],
+  Webhooks: ["/assets/brands/webhooks.svg", 190, 70],
+  WhatsApp: ["/assets/brands/whatsapp.svg", 190, 70],
+  Justdial: ["/assets/brands/justdial.svg", 190, 70],
+  Instagram: ["/assets/brands/instagram.svg", 190, 70],
+  TradeIndia: ["/assets/brands/tradeindia.svg", 190, 70],
+  IndiaMART: ["/assets/brands/indiamart.svg", 190, 70],
+  Shopify: ["/assets/brands/shopify.svg", 190, 70],
+  LinkedIn: ["/assets/brands/linkedin.svg", 190, 70],
+  WordPress: ["/assets/brands/wordpress.svg", 190, 70],
+  Razorpay: ["/assets/brands/razorpay.svg", 160, 40],
+  Delhivery: ["/assets/brands/delhivery.svg", 120, 40],
+  Shiprocket: ["/assets/brands/shiprocket.png", 96, 96],
+  Facebook: ["/assets/brands/facebook.svg", 190, 70],
+  "99acres": ["/assets/brands/99acres.png", 192, 192],
+  "Housing.com": ["/assets/brands/housing.svg", 48, 48],
+  OLX: ["/assets/brands/olx.svg", 64, 32],
+  Practo: ["/assets/brands/practo.svg", 120, 36],
+  MagicBricks: ["/assets/brands/magicbricks.svg", 48, 48],
+  Calendly: ["/assets/brands/calendly.svg", 48, 48],
+  "Custom Forms": ["/assets/brands/custom-forms.svg", 48, 48],
 };
 
 const BRAND_ICONS = {
@@ -87,11 +89,19 @@ export function BrandMark({ name }) {
       </span>
     );
   }
-  const src = BRAND_LOGOS[name];
-  if (!src) return null;
+  const logo = BRAND_LOGOS[name];
+  if (!logo) return null;
+  const [src, width, height] = logo;
   return (
     <span className="brand-mark">
-      <img src={`${src}?v=6`} alt={name} />
+      <img
+        src={`${src}?v=6`}
+        alt={`${name} logo`}
+        width={width}
+        height={height}
+        loading="lazy"
+        decoding="async"
+      />
     </span>
   );
 }
@@ -264,6 +274,10 @@ export function AutomotiveIcon({ size = 22 }) {
 
 export function HealthcareIcon({ size = 22 }) {
   return <LuStethoscope size={size} strokeWidth={2} />;
+}
+
+export function TravelIcon({ size = 22 }) {
+  return <LuPlane size={size} strokeWidth={2} />;
 }
 
 export function MobileIcon({ size = 22 }) {

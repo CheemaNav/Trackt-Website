@@ -13,7 +13,7 @@ import {
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
 import RelatedIndustries from "../../components/related-industries";
-import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
+import { APP_REGISTER_URL } from "../../site";
 import { BreadcrumbJsonLd, RealEstateJsonLd } from "../../json-ld";
 import {
   AUDIENCES,
@@ -28,6 +28,7 @@ import {
   TESTIMONIALS,
   WHAT_IS_POINTS,
 } from "./data";
+import { buildMetadata } from "@/lib/seo";
 
 const FEATURE_ICONS = {
   capture: CaptureIcon,
@@ -40,53 +41,7 @@ const FEATURE_ICONS = {
   reporting: ReportIcon,
 };
 
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
-const pageTitle = "Real Estate CRM India: Leads, Site Visits | TracktCRM";
-const pageDescription =
-  "Real estate CRM for India: capture leads from 99acres, MagicBricks and WhatsApp, book site visits, track brokers, inventory and bookings. Try the CRM free.";
-
-export const metadata = {
-  title: {
-    absolute: pageTitle,
-  },
-  description: pageDescription,
-  alternates: {
-    canonical: "/industries/real-estate-crm",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: `${SITE_URL}/industries/real-estate-crm`,
-    siteName: SITE_NAME,
-    title: pageTitle,
-    description: pageDescription,
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "TracktCRM real estate CRM for India",
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
-    images: [ogImage],
-  },
-};
+export const metadata = buildMetadata("/industries/real-estate-crm");
 
 export default function RealEstateCrmPage() {
   return (
@@ -110,7 +65,7 @@ export default function RealEstateCrmPage() {
               REAL ESTATE CRM
             </div>
             <h1 className="re-banner-title">
-              Real Estate CRM for India{" "}
+              Real Estate CRM for Agents and Developers{" "}
               <span>That Handles Leads, Site Visits and Brokers</span>
             </h1>
             <p className="re-banner-sub">
@@ -143,7 +98,7 @@ export default function RealEstateCrmPage() {
           <figure className="re-banner-media">
             <img
               src="/assets/Property-enquiries.png"
-              alt=""
+              alt="Real estate sales agent at a laptop with TracktCRM panels showing the property lead list, sales chart and site visit pipeline"
               width={1552}
               height={1013}
               fetchPriority="high"

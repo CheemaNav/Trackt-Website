@@ -64,8 +64,8 @@ export default function HomePageClient() {
             AI CRM software for sales teams
           </div>
           <h1 className="h1 hero-title">
-            AI CRM Software for Indian Businesses That Replies to Every Lead in
-            Seconds
+            AI CRM Software for Growing Businesses That Replies to Every Lead
+            in Seconds
           </h1>
           <p className="hero-made-for">
             <span className="sr-only">
@@ -90,10 +90,10 @@ export default function HomePageClient() {
             </span>
           </p>
           <p className="lead">
-            TracktCRM captures every enquiry, replies on WhatsApp, email and SMS
+            TracktCRM is AI CRM software that captures every enquiry, replies on WhatsApp, email and SMS
             within seconds, and keeps your whole{" "}
             <a href="/crm-software">sales pipeline</a> in one place. Setup takes
-            days, not weeks, and the <a href="/pricing">pricing</a> suits small
+            days, not weeks, and the <a href="/pricing">CRM pricing</a> suits small
             teams.
           </p>
           <div className="hero-ctas">
@@ -164,9 +164,11 @@ export default function HomePageClient() {
             </h2>
           </div>
           <p className="section-side">
-            Lead management, pipeline tracking, automation, reporting and
-            integrations are all included in every plan. No add-ons to buy
-            later.
+            <Link href="/lead-management-software">Lead management software</Link>,
+            pipeline tracking, automation, reporting and integrations are all
+            included in every plan of this{" "}
+            <Link href="/cloud-based-crm">cloud-based CRM</Link>. No add-ons to
+            buy later.
           </p>
         </div>
         <div className="tabs">
@@ -412,7 +414,8 @@ export default function HomePageClient() {
               AI Sales Assistant That Replies to Every Lead in Seconds
             </h2>
             <p className="speed-copy">
-              Many AI CRMs only make reports look smarter. TracktCRM acts on the
+              Many AI CRMs only make reports look smarter. TracktCRM is AI CRM
+              software that acts on the
               lead. The moment an enquiry arrives, it sends a WhatsApp message,
               an email and an SMS, then places a follow-up call while the buyer
               is still interested. Your rep picks up the conversation with the
@@ -430,7 +433,7 @@ export default function HomePageClient() {
             </div>
             <p className="speed-more">
               <Link href="/industries/ai-crm">
-                Explore TracktCRM&apos;s AI CRM
+                Explore TracktCRM&apos;s AI CRM software
                 <span className="btn-arrow" aria-hidden="true">
                   <ArrowIcon />
                 </span>
@@ -459,7 +462,7 @@ export default function HomePageClient() {
               WhatsApp CRM to Capture, Chat and Follow Up With Every Lead
             </h2>
             <p className="re-section-intro">
-              In India, most enquiries start on WhatsApp. TracktCRM ties every
+              For many businesses, enquiries start on WhatsApp. TracktCRM ties every
               chat to a lead record, sends automated replies, and schedules
               follow-ups. Your team works from one shared inbox instead of
               personal phones.
@@ -496,7 +499,11 @@ export default function HomePageClient() {
         </h2>
         <p>
           Ready-made pipelines, fields and follow-up rules for real estate,
-          education, agencies and recruitment - live from day one.
+          education, agencies and recruitment - live from day one. Teams also
+          run TracktCRM as an{" "}
+          <Link href="/industries/crm-for-insurance">insurance CRM</Link>, an{" "}
+          <Link href="/industries/crm-for-automotive">automotive CRM</Link> or a{" "}
+          <Link href="/industries/crm-for-healthcare">healthcare CRM</Link>.
         </p>
         <div className="industry-grid stagger">
           {INDUSTRIES.map((industry) => (
@@ -528,11 +535,11 @@ export default function HomePageClient() {
       <section className="section compare-section reveal" id="compare">
         <p className="kicker">WHY TEAMS SWITCH</p>
         <h2 className="h2">
-          Affordable Pipedrive Alternative for Small Businesses in India
+          Affordable Pipedrive Alternative for Small Businesses
         </h2>
         <p className="compare-intro">
-          Most <Link href="/crm-software">CRM tools</Link> are priced and built
-          for large teams. TracktCRM gives small businesses, agencies and
+          Most <Link href="/crm-software">CRM software</Link> is priced and built
+          for large teams. TracktCRM is AI CRM software that gives small businesses, agencies and
           freelancers lead management, a visual pipeline, built-in WhatsApp
           automation and AI replies at a lower cost. If you are moving from
           Pipedrive or a spreadsheet, we help migrate your data.{" "}
@@ -765,7 +772,7 @@ export default function HomePageClient() {
               {AI_FEATURES.map((feature) => (
                 <article className="ai-feature-card" key={feature.title}>
                   <div className="ai-card-icon">
-                    <img src={feature.icon} alt="" />
+                    <img src={feature.icon} alt="" width={60} height={60} loading="lazy" decoding="async" />
                   </div>
                   <h3 className="ai-card-title">{feature.title}</h3>
                   <p className="ai-card-description">{feature.body}</p>
@@ -821,8 +828,9 @@ export default function HomePageClient() {
           <div>
             <h2>Try the CRM Free Today</h2>
             <p>
-              Start free, or book a 30-minute walkthrough built around your
-              sales process. No credit card, no lock-in.
+              Start free with TracktCRM&apos;s AI CRM software, or book a
+              30-minute walkthrough built around your sales process. No credit
+              card, no lock-in.
             </p>
           </div>
           <div className="cta-actions">

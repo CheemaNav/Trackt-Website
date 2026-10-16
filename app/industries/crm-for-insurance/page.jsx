@@ -12,7 +12,7 @@ import {
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
 import RelatedIndustries from "../../components/related-industries";
-import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
+import { APP_REGISTER_URL } from "../../site";
 import { BreadcrumbJsonLd, InsuranceCrmJsonLd } from "../../json-ld";
 import {
   CHOOSING_POINTS,
@@ -22,9 +22,9 @@ import {
   PROBLEM_POINTS,
   PROCESS_STEPS,
   RENEWAL_POINTS,
-  TESTIMONIALS,
   WHAT_IS_POINTS,
 } from "./data";
+import { buildMetadata } from "@/lib/seo";
 
 const FEATURE_ICONS = {
   capture: CaptureIcon,
@@ -36,53 +36,7 @@ const FEATURE_ICONS = {
   reporting: ReportIcon,
 };
 
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
-
-export const metadata = {
-  title: {
-    absolute: "Insurance CRM Software for Agents & Brokers | TracktCRM",
-  },
-  description:
-    "TracktCRM is an insurance CRM that captures leads, chases quotes and tracks policy renewals, with WhatsApp and instant AI replies. Try the CRM free.",
-  alternates: {
-    canonical: "/industries/crm-for-insurance",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: `${SITE_URL}/industries/crm-for-insurance`,
-    siteName: SITE_NAME,
-    title: "TracktCRM — The CRM for Insurance Agents and Brokers",
-    description:
-      "Capture leads, follow up on quotes and never miss a policy renewal.",
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "TracktCRM insurance CRM for agents and brokers",
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "TracktCRM — The CRM for Insurance Agents and Brokers",
-    description:
-      "Capture leads, follow up on quotes and never miss a policy renewal.",
-    images: [ogImage],
-  },
-};
+export const metadata = buildMetadata("/industries/crm-for-insurance");
 
 export default function InsuranceCrmPage() {
   return (
@@ -106,7 +60,7 @@ export default function InsuranceCrmPage() {
                 INSURANCE CRM
               </div>
               <h1 className="re-banner-title">
-                The CRM for Insurance Agents{" "}
+                Insurance CRM for Agents{" "}
                 <span>Who Can&apos;t Afford to Miss a Renewal</span>
               </h1>
               <p className="re-banner-sub">
@@ -351,21 +305,6 @@ export default function InsuranceCrmPage() {
           </figure>
         </section>
 
-        <section className="section reveal" id="testimonial">
-          <p className="kicker is-centered">SOCIAL PROOF</p>
-          <h2 className="h2 is-centered">
-            Insurance agents keeping quotes and renewals in TracktCRM
-          </h2>
-          <div className="re-testimonial-grid">
-            {TESTIMONIALS.map((item) => (
-              <div className="re-testimonial" key={item.quote}>
-                <blockquote>&ldquo;{item.quote}&rdquo;</blockquote>
-                <cite>- {item.attribution}</cite>
-              </div>
-            ))}
-          </div>
-        </section>
-
         <RelatedIndustries current="insurance" />
 
         <section className="section faq reveal" id="faq">
@@ -391,6 +330,8 @@ export default function InsuranceCrmPage() {
               <p>
                 Try the CRM free, or book a demo and we will walk
                 through your leads, quotes and renewals inside TracktCRM.
+                Compare plans on the{" "}
+                <a href="/pricing">CRM software pricing</a> page.
               </p>
             </div>
             <div className="cta-actions">

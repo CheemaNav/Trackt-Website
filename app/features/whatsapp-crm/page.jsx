@@ -12,7 +12,7 @@ import {
 } from "../../icons";
 import RevealInit from "../../components/reveal-init";
 import { BookDemoButton } from "../../components/demo-request-provider";
-import { APP_REGISTER_URL, SITE_NAME, SITE_URL } from "../../site";
+import { APP_REGISTER_URL } from "../../site";
 import { BreadcrumbJsonLd, WhatsAppCrmJsonLd } from "../../json-ld";
 import { INTEGRATIONS as HOME_INTEGRATIONS } from "../../home-data";
 import {
@@ -25,6 +25,7 @@ import {
   WA_RULES,
   WHAT_IS_POINTS,
 } from "./data";
+import { buildMetadata } from "@/lib/seo";
 
 const FEATURE_ICONS = {
   capture: CaptureIcon,
@@ -36,53 +37,7 @@ const FEATURE_ICONS = {
   labels: LabelIcon,
 };
 
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
-const pageTitle = "WhatsApp CRM India: Capture, Reply & Track Leads | TracktCRM";
-const pageDescription =
-  "WhatsApp CRM for Indian teams: capture every WhatsApp enquiry as a lead, reply from a shared inbox, automate follow-ups and track deals. Try the CRM free.";
-
-export const metadata = {
-  title: {
-    absolute: pageTitle,
-  },
-  description: pageDescription,
-  alternates: {
-    canonical: "/features/whatsapp-crm",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: `${SITE_URL}/features/whatsapp-crm`,
-    siteName: SITE_NAME,
-    title: pageTitle,
-    description: pageDescription,
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "TracktCRM WhatsApp CRM inbox and pipeline",
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
-    images: [ogImage],
-  },
-};
+export const metadata = buildMetadata("/features/whatsapp-crm");
 
 export default function WhatsAppCrmPage() {
   return (
@@ -105,7 +60,7 @@ export default function WhatsAppCrmPage() {
                 WHATSAPP CRM
               </div>
               <h1 className="h1">
-                WhatsApp CRM for India:{" "}
+                WhatsApp CRM for Growing Teams:{" "}
                 <span className="wa-hero-accent">
                   Capture, Reply to and Track Every Lead in One Place
                 </span>
@@ -210,8 +165,9 @@ export default function WhatsAppCrmPage() {
                 </p>
                 <p className="lead">
                   Use it with our{" "}
-                  <a href="/industries/ai-crm">AI sales assistant</a>, explore
-                  our <a href="/crm-software">CRM software</a>, or see how{" "}
+                  <a href="/industries/ai-crm">AI sales assistant</a> and our{" "}
+                  <a href="/lead-management-software">lead management software</a>,
+                  explore our <a href="/crm-software">CRM software</a>, or see how{" "}
                   <a href="/industries/real-estate-crm">real estate teams</a>,{" "}
                   <a href="/industries/education-crm">admissions teams</a>,{" "}
                   <a href="/industries/crm-for-agencies">agencies</a> and{" "}

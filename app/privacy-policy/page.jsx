@@ -1,8 +1,8 @@
 import Link from "next/link";
 import ContentPage from "../components/content-page";
 import { APP_BASE_URL, CONTACT, SITE_NAME, SITE_URL } from "../site";
+import { buildMetadata } from "@/lib/seo";
 
-const ogImage = `${SITE_URL}/tracktcrm-og-image.jpg`;
 const LAST_UPDATED = "8 October 2026";
 
 /*
@@ -16,29 +16,7 @@ const AI_PROVIDER = null; // e.g. "OpenAI" if any Gmail/Calendar content is sent
 const GOOGLE_POLICY_URL =
   "https://developers.google.com/terms/api-services-user-data-policy";
 
-export const metadata = {
-  title: {
-    absolute: "Privacy Policy | TracktCRM",
-  },
-  description:
-    "How TracktCRM collects, uses, stores, shares and deletes information for our website and CRM — including Google user data.",
-  alternates: { canonical: "/privacy-policy" },
-  openGraph: {
-    locale: "en_IN",
-    url: `${SITE_URL}/privacy-policy`,
-    siteName: SITE_NAME,
-    title: "Privacy Policy | TracktCRM",
-    description:
-      "TracktCRM privacy practices for website visitors, CRM customers, and Google integrations.",
-    images: [
-      { url: ogImage, width: 1200, height: 630, alt: "TracktCRM privacy" },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export const metadata = buildMetadata("/privacy-policy");
 
 export default function PrivacyPolicyPage() {
   return (

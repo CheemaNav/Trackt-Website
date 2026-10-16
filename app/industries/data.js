@@ -98,6 +98,20 @@ export const LIVE_INDUSTRIES = [
     ],
     cta: "See the healthcare CRM",
   },
+  {
+    id: "travel",
+    name: "Travel CRM",
+    href: "/industries/crm-for-travel",
+    icon: "travel",
+    body: "A travel CRM that captures trip enquiries from ads, WhatsApp and forms, follows up every quote and brings travellers back for the next holiday.",
+    points: [
+      "Ad, WhatsApp and form enquiries in one inbox",
+      "Itinerary and quote follow-ups",
+      "Package-wise pipelines",
+      "Repeat-traveller reminders",
+    ],
+    cta: "See the travel CRM",
+  },
 ];
 
 export const WHY_POINTS = [
@@ -108,6 +122,7 @@ export const WHY_POINTS = [
   "Insurance agents need quote follow-up and renewal reminders",
   "Car dealerships need fast replies, test drives and after-sales follow-up",
   "Clinics need fast replies, appointments and follow-up reminders",
+  "Travel agencies need quote follow-ups and help with seasonal enquiry spikes",
 ];
 
 /** Not linked until each page is live. */
@@ -160,8 +175,8 @@ export const STEPS = [
   },
   {
     n: "02",
-    title: "Start your free trial",
-    body: "Try the CRM free and set up the pipeline stages you use.",
+    title: "Start on the Free plan",
+    body: "Sign up free and set up the pipeline stages you use.",
   },
   {
     n: "03",
@@ -173,7 +188,7 @@ export const STEPS = [
 export const HUB_FAQS = [
   {
     q: "Does TracktCRM have a CRM for my industry?",
-    a: "TracktCRM has dedicated pages and workflows for real estate, education, agencies, recruitment, insurance, automotive and healthcare, with a consulting setup on the way. If your industry is not listed, the pipeline stages are customizable, so you can adapt TracktCRM to the way your business sells.",
+    a: "Yes. TracktCRM is built as a CRM for every industry, with dedicated pages and workflows for real estate, education, agencies, recruitment, insurance, automotive, healthcare and travel, with a consulting setup on the way. If your industry is not listed, the pipeline stages are customizable, so you can adapt TracktCRM to the way your business sells.",
   },
   {
     q: "How is an industry CRM different from a generic CRM?",
@@ -193,6 +208,6 @@ export const HUB_FAQS = [
   },
   {
     q: "Can I try TracktCRM before choosing an industry setup?",
-    a: "Yes, you can try the CRM free and test the pipeline for your industry before committing.",
+    a: "Yes. Start on the Free plan and test the pipeline for your industry before you upgrade.",
   },
 ];

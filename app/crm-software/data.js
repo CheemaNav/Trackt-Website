@@ -37,6 +37,8 @@ export const FEATURES = [
     icon: "capture",
     title: "Lead and contact management",
     body: "Every enquiry is captured automatically, checked for duplicates and assigned to the right person, so no lead is copied by hand or forgotten in a chat.",
+    href: "/lead-management-software",
+    linkLabel: "See our lead management software",
   },
   {
     icon: "pipeline",
@@ -60,7 +62,7 @@ export const FEATURES = [
     title: "Shared inbox for WhatsApp, email and SMS",
     body: "Reply to customers where they already talk to you and keep every message on the lead.",
     href: "/features/whatsapp-crm",
-    linkLabel: "Read more on our WhatsApp CRM page",
+    linkLabel: "See the WhatsApp CRM features",
   },
   {
     icon: "forms",
@@ -73,11 +75,15 @@ export const FEATURES = [
     icon: "reporting",
     title: "Reporting and analytics",
     body: "A live dashboard shows response times, rep activity and pipeline health, with no manual spreadsheet pulls.",
+    href: "/features/sales-dashboard",
+    linkLabel: "See the sales dashboard",
   },
   {
     icon: "mobile",
     title: "Mobile access",
     body: "Check leads, reply to conversations and update deals from your phone.",
+    href: "/cloud-based-crm",
+    linkLabel: "See how the cloud-based CRM works",
   },
 ];
 
@@ -224,8 +230,8 @@ export const AUDIENCES = [
 export const GETTING_STARTED = [
   {
     n: "01",
-    title: "Start your free trial",
-    body: "Try the CRM free. No credit card needed.",
+    title: "Start on the Free plan",
+    body: "Sign up free for 1 user. No credit card needed.",
   },
   {
     n: "02",
@@ -277,10 +283,6 @@ export const CS_FAQS = [
     a: "The best CRM software for a small business is the one your team will actually use every day: quick to set up, simple to learn, and built around the channels your customers use. TracktCRM is designed for small and growing teams that sell over WhatsApp, email, SMS and phone.",
   },
   {
-    q: "Which is the best CRM software in India for small business?",
-    a: "The one your team will use daily: quick to set up, priced per user in rupees, and built around WhatsApp and the channels your leads use. TracktCRM is built for that.",
-  },
-  {
     q: "What is the best CRM for startups?",
     a: "The best CRM for startups is simple enough to start using immediately and flexible enough to grow with a changing sales process. TracktCRM offers customisable pipeline stages and automated follow-ups, and billing sits at the company level, so new hires do not need separate sign-ups.",
   },
@@ -310,7 +312,7 @@ export const CS_FAQS = [
   },
   {
     q: "How much does TracktCRM cost?",
-    a: "You can try the CRM free with no credit card. After that, plans are priced per user and billed to your company in INR or USD, based on seats, channels and volume. See the pricing page or book a demo for a quote.",
+    a: "TracktCRM has a Free plan for 1 user, free forever with no credit card. Pro, Premium and All-in-One are priced per user per month, billed to your company and shown in your local currency, and paying yearly saves up to 20%. See the pricing page for current prices.",
   },
   {
     q: "Does TracktCRM have mobile access?",
