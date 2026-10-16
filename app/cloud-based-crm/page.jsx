@@ -87,12 +87,12 @@ export default function CloudBasedCrmPage() {
                 No install · Works in your browser · Free plan available
               </p>
             </div>
-            <figure className="re-banner-media">
+            <figure className="re-banner-media re-banner-media-ui">
               <img
-                src="/assets/leadmanage.png"
-                alt="TracktCRM cloud-based CRM pipeline board accessible in a browser"
-                width={1383}
-                height={695}
+                src="/assets/cloud-crm-hero.jpg"
+                alt="TracktCRM AI assistant on a cloud with the same CRM dashboard, pipeline and leads open on a desktop, laptop and phone"
+                width={1280}
+                height={720}
                 fetchPriority="high"
                 decoding="async"
               />

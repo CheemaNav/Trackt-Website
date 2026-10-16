@@ -91,12 +91,12 @@ export default function HealthcareCrmPage() {
                 available
               </p>
             </div>
-            <figure className="re-banner-media">
+            <figure className="re-banner-media re-banner-media-ui">
               <img
-                src="/assets/contact-banner.png"
-                alt="Front-desk and patient-relations team working together in a bright modern office"
-                width={1024}
-                height={576}
+                src="/assets/healthcare-crm-hero.jpg"
+                alt="TracktCRM AI assistant at a clinic front desk with healthcare CRM software showing a patient enquiry booked into an appointment"
+                width={1280}
+                height={720}
                 fetchPriority="high"
                 decoding="async"
               />

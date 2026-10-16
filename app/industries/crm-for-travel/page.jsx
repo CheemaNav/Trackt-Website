@@ -83,12 +83,12 @@ export default function TravelCrmPage() {
                 Built for travel desks · Free plan · WhatsApp included
               </p>
             </div>
-            <figure className="re-banner-media">
+            <figure className="re-banner-media re-banner-media-ui">
               <img
-                src="/assets/contact-banner.png"
-                alt="Travel counsellor using TracktCRM travel CRM to follow up trip enquiries"
-                width={1024}
-                height={576}
+                src="/assets/travel-crm-hero.jpg"
+                alt="TracktCRM AI assistant with a suitcase beside a travel CRM pipeline moving holiday package enquiries from quote to booked"
+                width={1280}
+                height={720}
                 fetchPriority="high"
                 decoding="async"
               />

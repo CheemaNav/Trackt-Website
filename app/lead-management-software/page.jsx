@@ -91,12 +91,12 @@ export default function LeadManagementSoftwarePage() {
                 included
               </p>
             </div>
-            <figure className="re-banner-media">
+            <figure className="re-banner-media re-banner-media-ui">
               <img
-                src="/assets/dashboard.png"
-                alt="TracktCRM lead management software dashboard showing deals, stages and customer report"
-                width={1381}
-                height={407}
+                src="/assets/lead-management-hero.jpg"
+                alt="TracktCRM AI assistant next to the lead management software pipeline with leads in New, Contacted, Qualified, Won and Lost stages"
+                width={1280}
+                height={720}
                 fetchPriority="high"
                 decoding="async"
               />

@@ -89,12 +89,12 @@ export default function SalesDashboardPage() {
                 Pipeline · Scorecards · Source ROI · Free plan available
               </p>
             </div>
-            <figure className="re-banner-media">
+            <figure className="re-banner-media re-banner-media-ui">
               <img
-                src="/assets/dashboard.png"
-                alt="TracktCRM sales dashboard with deals, stages and customer report"
-                width={1381}
-                height={407}
+                src="/assets/sales-dashboard-hero.jpg"
+                alt="TracktCRM AI assistant presenting the sales dashboard with deal totals, leads in stages, deals and revenue won charts"
+                width={1280}
+                height={720}
                 fetchPriority="high"
                 decoding="async"
               />
