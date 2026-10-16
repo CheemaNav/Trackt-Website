@@ -3,7 +3,7 @@ import ContentPage from "../components/content-page";
 import { APP_BASE_URL, CONTACT, SITE_NAME, SITE_URL } from "../site";
 import { buildMetadata } from "@/lib/seo";
 
-const LAST_UPDATED = "8 October 2026";
+const LAST_UPDATED = "16 October 2026";
 
 const GOOGLE_POLICY_URL =
   "https://developers.google.com/terms/api-services-user-data-policy";
@@ -90,8 +90,7 @@ export default function TermsPage() {
         <p>
           Features may vary by subscription plan, region, and configuration. We
           may add, change, or remove features with reasonable notice where
-          practical. Trial access is for evaluation and may be limited or
-          revoked for abuse.
+          practical. Free plan access may be limited or revoked for abuse.
         </p>
 
         <h2>4. Acceptable use</h2>
@@ -192,18 +191,19 @@ export default function TermsPage() {
         <h2>7. Subscriptions, billing, and cancellation</h2>
         <ul>
           <li>
-            Paid features require a subscription. Fees, user limits, and
-            included features are shown at checkout, on{" "}
+            Every account starts on the Free plan: 1 user, free forever, with
+            no credit card required. Free plan features and limits are shown
+            on <Link href="/pricing">pricing</Link>.
+          </li>
+          <li>
+            Paid plans (Pro, Premium and All-in-One) require a subscription.
+            Fees, user limits, and included features are shown at checkout, on{" "}
             <Link href="/pricing">pricing</Link>, or in your plan.
           </li>
           <li>
-            Free trials are available for evaluation (for example a free 1
-            month trial where offered). Trial access converts to a paid plan
-            after the trial unless you cancel or we agree otherwise in writing.
-          </li>
-          <li>
-            Prices may be billed per user and per billing period (for example
-            monthly or yearly), in the currency displayed at purchase.
+            Paid plans are billed per user per billing period (for example
+            monthly or yearly) at company level, in the currency displayed at
+            purchase.
           </li>
           <li>
             Unless a written contract or checkout page says otherwise, fees are
