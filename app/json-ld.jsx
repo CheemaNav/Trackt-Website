@@ -38,7 +38,7 @@ export function OrganizationJsonLd() {
       streetAddress: "3rd Floor, D-231, Phase 8B, Sector 91",
       addressLocality: "Sahibzada Ajit Singh Nagar",
       addressRegion: "Punjab",
-      postalCode: "140308",
+      postalCode: "140307",
       addressCountry: "IN",
     },
   };
@@ -568,7 +568,7 @@ export function ContactPageJsonLd() {
         streetAddress: "3rd Floor, D-231, Phase 8B, Sector 91",
         addressLocality: "Sahibzada Ajit Singh Nagar",
         addressRegion: "Punjab",
-        postalCode: "140308",
+        postalCode: "140307",
         addressCountry: "IN",
       },
     },

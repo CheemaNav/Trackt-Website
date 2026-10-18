@@ -1,3 +1,5 @@
+import { COMPARE_PAGES } from "./compare-data";
+
 export const FEATURES = [
   {
     id: "pipeline",
@@ -406,8 +408,6 @@ export const FOOTER_COLS = [
   },
   {
     title: "Compare",
-    links: [
-      { label: "Pipedrive Alternative", href: "/pipedrive-alternative" },
-    ],
+    links: COMPARE_PAGES,
   },
 ];
