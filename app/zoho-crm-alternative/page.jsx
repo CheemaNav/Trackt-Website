@@ -15,7 +15,7 @@ export const metadata = buildMetadata(ROUTE);
 const FAQS = [
   {
     q: "Is TracktCRM a good alternative to Zoho CRM?",
-    a: "Yes, for small teams that sell on WhatsApp, get leads from ads and portals and want a CRM they can set up themselves. Zoho CRM is a better fit if you need deep customisation, forecasting or other Zoho apps in the same account.",
+    a: "Yes, for small teams that sell on WhatsApp, get leads from ads and website forms and want a CRM they can set up themselves. Zoho CRM is a better fit if you need deep customisation, forecasting or other Zoho apps in the same account.",
   },
   {
     q: "Does Zoho CRM have a free plan?",
@@ -38,8 +38,8 @@ const FAQS = [
     a: "Export your leads, contacts and deals from Zoho CRM, set up your stages in TracktCRM and use the Import button on the pipeline view. On paid plans our team helps you move your data.",
   },
   {
-    q: "Can TracktCRM capture leads from portals like 99acres and IndiaMART?",
-    a: "Yes. TracktCRM lists integrations for 99acres, Housing.com, MagicBricks, IndiaMART, Justdial and TradeIndia, so portal leads land in your pipeline with the source attached.",
+    q: "Can TracktCRM capture leads from my website?",
+    a: "Yes. The Pro plan includes a custom website form, so enquiries land in your pipeline with the source attached. You can also bring in existing leads with a CSV import.",
   },
 ];
 
@@ -49,7 +49,7 @@ const PAGE = {
   brand: "Zoho CRM",
   h1: { lead: "Zoho CRM Alternative for Small Teams", highlight: "That Want Less Set-Up" },
   intro:
-    "Searching for a Zoho CRM alternative? Zoho CRM is a powerful, highly customisable CRM with a large app suite behind it. TracktCRM is a simpler CRM for small teams whose leads arrive on WhatsApp, ads and lead portals, with WhatsApp included on the free plan. Here is a fair comparison.",
+    "Searching for a Zoho CRM alternative? Zoho CRM is a powerful, highly customisable CRM with a large app suite behind it. TracktCRM is a simpler CRM for small teams whose leads arrive on WhatsApp, ads and website forms, with WhatsApp included on the free plan. Here is a fair comparison.",
   trust: COMPARE_TRUST,
   hero: {
     src: "/assets/compare/zoho-crm-alternative-hero.webp",
@@ -100,7 +100,7 @@ const PAGE = {
       "You are a small team and want a CRM you can set up yourself, without an admin or a long project",
       "Your leads start on WhatsApp and you want those chats in the CRM on the free plan",
       "You run Meta or Google lead ads and want those integrations on your first paid plan",
-      "You get enquiries from 99acres, MagicBricks, IndiaMART or Justdial and want them captured automatically",
+      "You want website form enquiries captured automatically, with the source on every lead",
       "You want a person to help you set up stages and move your data",
     ],
     stayTitle: "Who Should Stay With Zoho CRM",
@@ -141,14 +141,14 @@ const PAGE = {
         shot: COMPARE_SHOTS.dashboard,
       },
       {
-        title: "Lead capture from ads and portals",
+        title: "Lead capture from ads and forms",
         body: (
           <>
             Zoho CRM connects Facebook lead ads through LeadChain, which needs a
             separate subscription and a paid CRM edition, and lists Google Ads
             integration from Professional. TracktCRM includes Meta Ads and
-            Google Ads integrations from Pro, and lists integrations for
-            property portals and B2B marketplaces. Our{" "}
+            Google Ads integrations from Pro, plus a custom website form, so
+            each enquiry arrives with its source. Our{" "}
             <Link href="/lead-management-software">lead management software</Link>{" "}
             page explains the follow-up flow.
           </>

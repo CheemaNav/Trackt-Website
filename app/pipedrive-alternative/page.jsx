@@ -15,7 +15,7 @@ export const metadata = buildMetadata(ROUTE);
 const FAQS = [
   {
     q: "Is TracktCRM a good Pipedrive alternative?",
-    a: "Yes, for teams that sell on WhatsApp, get leads from ads and portals and want to start on a free plan. Pipedrive remains strong for highly configurable pipelines and has a much larger app marketplace.",
+    a: "Yes, for teams that sell on WhatsApp, get leads from ads and website forms and want to start on a free plan. Pipedrive remains strong for highly configurable pipelines and has a much larger app marketplace.",
   },
   {
     q: "Does Pipedrive have a free plan?",
@@ -35,7 +35,7 @@ const FAQS = [
   },
   {
     q: "Does TracktCRM have as many integrations as Pipedrive?",
-    a: "No. Pipedrive has a much larger marketplace. TracktCRM offers 24 integrations focused on WhatsApp, lead portals, ads, email and payments, plus webhooks and custom forms.",
+    a: "No. Pipedrive has a much larger marketplace. TracktCRM focuses on the essentials for small sales teams: WhatsApp, Gmail, Google Calendar, Google Ads, Google Sheets and a custom website form.",
   },
   {
     q: "Which TracktCRM plans include AI?",
@@ -53,7 +53,7 @@ const PAGE = {
   brand: "Pipedrive",
   h1: { lead: "Pipedrive Alternative for Teams", highlight: "That Sell on WhatsApp" },
   intro:
-    "Weighing up a Pipedrive alternative? Pipedrive is a strong, mature sales CRM with a configurable pipeline and a large app marketplace. TracktCRM is built for teams that work from WhatsApp, capture leads from ads and lead portals, and want to start on a free plan. Here is an honest comparison.",
+    "Weighing up a Pipedrive alternative? Pipedrive is a strong, mature sales CRM with a configurable pipeline and a large app marketplace. TracktCRM is built for teams that work from WhatsApp, capture leads from ads and website forms, and want to start on a free plan. Here is an honest comparison.",
   trust: COMPARE_TRUST,
   hero: {
     src: "/assets/compare/pipedrive-alternative-hero.webp",
@@ -103,7 +103,7 @@ const PAGE = {
     switch: [
       "Most of your enquiries arrive on WhatsApp and you want those chats in the CRM on a free plan",
       "You run Meta or Google lead ads and want them connected without a third-party connector",
-      "You buy leads from 99acres, IndiaMART, Justdial or similar portals and want them captured automatically",
+      "You want website form enquiries in your pipeline automatically, with the source on every lead",
       "You want a free plan to start and a clear per-user price after that",
       "You want a dedicated onboarding specialist on your first paid plan",
     ],
@@ -139,14 +139,14 @@ const PAGE = {
         shot: COMPARE_SHOTS.pipeline,
       },
       {
-        title: "Lead capture from ads and portals",
+        title: "Lead capture from ads and forms",
         body: (
           <>
             Pipedrive connects Facebook lead ads through Marketplace apps or
             connectors such as Zapier, which needs a paid Zapier plan, and sells
             LeadBooster as an add-on. TracktCRM includes Meta Ads and Google Ads
-            from Pro and lists integrations for 99acres, Housing.com, MagicBricks,
-            IndiaMART, Justdial and TradeIndia. Our{" "}
+            from Pro, plus a custom website form, so each enquiry reaches the
+            pipeline with its source. Our{" "}
             <Link href="/lead-management-software">lead management software</Link>{" "}
             page shows the follow-up flow.
           </>
@@ -156,10 +156,10 @@ const PAGE = {
         title: "Integrations",
         body: (
           <>
-            Pipedrive has a much larger marketplace. TracktCRM offers 24
-            integrations focused on WhatsApp, lead portals, ads, email and
-            payments, plus webhooks and custom forms. See{" "}
-            <Link href="/integrations">all TracktCRM integrations</Link>.
+            Pipedrive has a much larger marketplace. TracktCRM sticks to the
+            essentials for small sales teams: WhatsApp, Gmail, Google Calendar,
+            Google Ads, Google Sheets and a custom website form. See{" "}
+            <Link href="/integrations">TracktCRM integrations</Link>.
           </>
         ),
       },
@@ -188,7 +188,7 @@ const PAGE = {
       { title: "Import your data", body: "Use the Import button on the pipeline view to bring in contacts and open deals." },
       {
         title: "Connect your channels",
-        body: "Connect WhatsApp and your portals, and on Pro or above, your Meta and Google ad accounts.",
+        body: "Connect WhatsApp, and on Pro or above, your Meta and Google ad accounts and website form.",
       },
       { title: "Switch your team", body: "Run TracktCRM on live enquiries for a week, then move everyone over." },
     ],

@@ -23,11 +23,11 @@ const FAQS = [
   },
   {
     q: "When should a small business switch from Excel to a CRM?",
-    a: "Switch when leads start slipping: follow-ups are missed, two people call the same lead, enquiries from ads or portals are copied in by hand, or nobody can say how many deals are open without building a report.",
+    a: "Switch when leads start slipping: follow-ups are missed, two people call the same lead, enquiries from ads or website forms are copied in by hand, or nobody can say how many deals are open without building a report.",
   },
   {
     q: "Can I import my Excel sheet into TracktCRM?",
-    a: "Yes. Clean up your sheet so each row is one lead with the same columns, then use the Import button on the pipeline view. On paid plans our team helps you map your columns and move your data.",
+    a: "Yes. Clean up your sheet so each row is one lead with the same columns, save it as a CSV file, then use the Import button on the pipeline view. You can download an import template there to match the columns. On paid plans our team helps you map your columns and move your data.",
   },
   {
     q: "Is there a free CRM I can use instead of Excel?",
@@ -65,7 +65,7 @@ const PAGE = {
       {
         label: "Lead capture",
         other: "Leads are typed or pasted in by hand, often from emails, chats and portal downloads",
-        trackt: "Leads arrive from WhatsApp, website forms and portals such as 99acres and IndiaMART, plus Meta and Google ads from Pro",
+        trackt: "Leads arrive from WhatsApp and, from Pro, a custom website form and Meta and Google ads",
       },
       {
         label: "Follow-up reminders",
@@ -112,7 +112,7 @@ const PAGE = {
     switch: [
       "A lead went cold because nobody remembered to follow up",
       "Two people called or messaged the same lead without knowing",
-      "You copy leads from ads, portals or WhatsApp into the sheet by hand",
+      "You copy leads from ads, website forms or WhatsApp into the sheet by hand",
       "There are several versions of the sheet and nobody is sure which is current",
       "You cannot see how many deals are open, or at which stage, without building a report",
       "A salesperson left and their leads and chat history went with them",
@@ -161,8 +161,8 @@ const PAGE = {
         body: (
           <>
             Instead of copying leads in, TracktCRM pulls them from WhatsApp,
-            custom website forms and portals such as 99acres, MagicBricks,
-            IndiaMART and Justdial, with Meta and Google ads from Pro. Our{" "}
+            and from Pro, a custom website form and Meta and Google ads, so each
+            lead arrives with its source already filled in. Our{" "}
             <Link href="/lead-management-software">lead management software</Link>{" "}
             page shows the full flow.
           </>
@@ -186,10 +186,13 @@ const PAGE = {
         title: "Set up your stages",
         body: "Create a free TracktCRM account and set up stages that match the status column in your sheet.",
       },
-      { title: "Import your leads", body: "Use the Import button on the pipeline view to bring your rows in." },
+      {
+        title: "Import your leads",
+        body: "Save the sheet as a CSV file, then use the Import button on the pipeline view to bring your rows in.",
+      },
       {
         title: "Connect your sources",
-        body: "Connect WhatsApp and your portals, and on Pro or above, your Meta and Google ad accounts.",
+        body: "Connect WhatsApp, and on Pro or above, your Meta and Google ad accounts and website form.",
       },
       {
         title: "Retire the sheet",
