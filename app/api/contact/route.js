@@ -15,25 +15,21 @@ function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+const SEND_FAILED =
+  "We couldn't send your request right now. Please email support@tracktcrm.com and we'll get back to you.";
+
 export async function POST(request) {
   try {
     const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
-      return Response.json(
-        { error: "Email service is not configured." },
-        { status: 500 },
-      );
-    }
-
     const to = process.env.CONTACT_TO_EMAIL;
     const from =
       process.env.RESEND_FROM_EMAIL || "TracktCRM <onboarding@resend.dev>";
 
-    if (!to) {
-      return Response.json(
-        { error: "Contact inbox is not configured." },
-        { status: 500 },
+    if (!apiKey || !to) {
+      console.error(
+        `[contact] Missing env: ${[!apiKey && "RESEND_API_KEY", !to && "CONTACT_TO_EMAIL"].filter(Boolean).join(", ")}`,
       );
+      return Response.json({ error: SEND_FAILED }, { status: 503 });
     }
 
     const body = await request.json();
@@ -109,17 +105,13 @@ export async function POST(request) {
     });
 
     if (error) {
-      return Response.json(
-        { error: error.message || "Failed to send message." },
-        { status: 502 },
-      );
+      console.error("[contact] Resend error:", error.message || error);
+      return Response.json({ error: SEND_FAILED }, { status: 502 });
     }
 
     return Response.json({ ok: true, id: data?.id });
-  } catch {
-    return Response.json(
-      { error: "Something went wrong. Please try again." },
-      { status: 500 },
-    );
+  } catch (err) {
+    console.error("[contact] Unexpected error:", err);
+    return Response.json({ error: SEND_FAILED }, { status: 500 });
   }
 }
