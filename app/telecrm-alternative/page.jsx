@@ -49,7 +49,7 @@ const PAGE = {
   brand: "TeleCRM",
   h1: { lead: "TeleCRM Alternative With a Free Plan", highlight: "and WhatsApp Included" },
   intro:
-    "Comparing a TeleCRM alternative? TeleCRM is built for telecalling teams, with a dialer, call tracking and call recording. TracktCRM is built for teams that sell on WhatsApp and get leads from ads and website forms, with a free plan to start. Here is an honest look at both.",
+    "Comparing a TeleCRM alternative? TeleCRM is built for telecalling teams, with a dialer, call tracking and call recording. TracktCRM is built for teams that sell on WhatsApp and get leads from ads and portals, with a free plan to start. Here is an honest look at both.",
   trust: COMPARE_TRUST,
   hero: {
     src: "/assets/compare/telecrm-alternative-hero.webp",
@@ -59,7 +59,7 @@ const PAGE = {
   glance: {
     title: "TracktCRM vs TeleCRM at a Glance",
     intro:
-      "Both tools capture leads from ads and website forms. The big differences are the free plan, WhatsApp set-up, calling and lead portals.",
+      "Both tools capture leads from ads and portals. The big differences are the free plan, WhatsApp set-up and calling.",
     rows: [
       { label: "Free plan", other: "No free plan shown on the pricing page", trackt: TRACKT_FACTS.free },
       {
@@ -116,7 +116,7 @@ const PAGE = {
     stay: [
       "Your team makes most sales over the phone and needs a 1-click dialer",
       "You need call tracking and automatic call recording inside the CRM",
-      "You capture leads from portals like IndiaMART, Justdial, 99acres or Sulekha, which TracktCRM does not offer yet",
+      "You capture leads from Sulekha or Tawk, which TracktCRM does not list",
       "Your current set-up works and your team is used to it",
     ],
     stayNote:
@@ -145,14 +145,13 @@ const PAGE = {
         shot: COMPARE_SHOTS.pipeline,
       },
       {
-        title: "Lead capture from ads, forms and portals",
+        title: "Lead capture from ads and portals",
         body: (
           <>
-            Both tools pull in leads from Facebook and Google ads and from your
-            website. TeleCRM also lists lead portals such as IndiaMART, Justdial,
-            99acres, MagicBricks, Housing and Sulekha, which TracktCRM does not
-            offer yet. If portals are a major lead source for you, that is a
-            real point in TeleCRM&apos;s favour. Our{" "}
+            Both tools pull in leads from Facebook and Google ads and from
+            portals such as IndiaMART, Justdial, 99acres and MagicBricks.
+            TeleCRM also lists Sulekha and Tawk. TracktCRM lists Housing.com,
+            OLX, TradeIndia and Practo, plus website forms and webhooks. Our{" "}
             <Link href="/lead-management-software">lead management software</Link>{" "}
             page shows how leads are followed up.
           </>
@@ -180,7 +179,7 @@ const PAGE = {
       { title: "Import your leads", body: "Use the Import button on the pipeline view to bring your leads in." },
       {
         title: "Connect your sources",
-        body: "Connect WhatsApp, and on Pro or above, your Meta and Google ad accounts and website form.",
+        body: "Connect WhatsApp and your lead portals, and on Pro or above, your Meta and Google ad accounts.",
       },
       { title: "Switch your team", body: "Run both tools for a week, then move everyone over." },
     ],

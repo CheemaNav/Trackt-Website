@@ -161,19 +161,18 @@ export default function IndustriesHubPage() {
 
         <section className="section re-band reveal" id="coming-soon">
           <div className="re-section-head is-wide">
-            <p className="kicker">COMING SOON</p>
-            <h2 className="h2">More industry setups are in progress</h2>
+            <p className="kicker">MORE INDUSTRIES</p>
+            <h2 className="h2">TracktCRM works for these industries too</h2>
             <p className="re-section-intro industry-wide-intro">
-              We are building dedicated pages for more industries. In the
-              meantime, TracktCRM&apos;s customizable pipeline already works for
-              them:
+              TracktCRM&apos;s customizable pipeline works for these industries
+              as well:
             </p>
           </div>
           <ul className="hub-soon-list">
             {COMING_SOON.map((name) => (
               <li className="hub-soon-chip" key={name}>
                 {name}
-                <span>Coming soon</span>
+                <span>Custom pipeline</span>
               </li>
             ))}
           </ul>

@@ -721,6 +721,60 @@ export function FeatureSoftwareJsonLd({ id, name, path, description, faqs, featu
   );
 }
 
+const BLOG_ORGANIZATION = {
+  "@type": "Organization",
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
+};
+
+export function BlogPostingJsonLd({ post }) {
+  const url = `${SITE_URL}${post.href}`;
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.metaDescription,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    image: post.heroImage ? [`${SITE_URL}${post.heroImage}`] : undefined,
+    datePublished: post.publishedAt,
+    dateModified: post.updatedAt,
+    inLanguage: "en-US",
+    articleSection: post.category.label,
+    keywords: post.primaryKeyword || undefined,
+    wordCount: post.words,
+    author: BLOG_ORGANIZATION,
+    publisher: BLOG_ORGANIZATION,
+  };
+
+  return <JsonLd id="schema-blogposting" data={data} />;
+}
+
+export function BlogCollectionJsonLd({ name, description, path, posts }) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    description,
+    url: `${SITE_URL}${path}`,
+    inLanguage: "en-US",
+    publisher: BLOG_ORGANIZATION,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: posts.length,
+      itemListElement: posts.map((post, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: post.title,
+        url: `${SITE_URL}${post.href}`,
+      })),
+    },
+  };
+
+  return <JsonLd id="schema-blog-collection" data={data} />;
+}
+
 /** Travel CRM page FAQ + Service schema. */
 export function TravelCrmJsonLd({ faqs }) {
   const service = {

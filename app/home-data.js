@@ -367,6 +367,7 @@ export const FOOTER_COLS = [
     links: [
       { label: "About Us", href: "/about" },
       { label: "Contact", href: "/contact" },
+      { label: "Blog", href: "/blog" },
       { label: "Help Center", href: "/help" },
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms & Conditions", href: "/terms" },

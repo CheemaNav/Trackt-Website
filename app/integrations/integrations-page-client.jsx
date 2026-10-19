@@ -294,7 +294,7 @@ export default function IntegrationsPageClient() {
             <h2 className="h2">Ask us to connect it</h2>
             <p>
               Don&apos;t see your tool? We build custom integrations and other
-              custom work for teams that need a source that is not listed yet.
+              custom work for teams that need a source that is not listed.
               Tell us the app and we will map how it should land in TracktCRM.
             </p>
             <div className="hero-ctas int-page-suggest-ctas">

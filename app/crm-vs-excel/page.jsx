@@ -23,7 +23,7 @@ const FAQS = [
   },
   {
     q: "When should a small business switch from Excel to a CRM?",
-    a: "Switch when leads start slipping: follow-ups are missed, two people call the same lead, enquiries from ads or website forms are copied in by hand, or nobody can say how many deals are open without building a report.",
+    a: "Switch when leads start slipping: follow-ups are missed, two people call the same lead, enquiries from ads or portals are copied in by hand, or nobody can say how many deals are open without building a report.",
   },
   {
     q: "Can I import my Excel sheet into TracktCRM?",
@@ -65,7 +65,7 @@ const PAGE = {
       {
         label: "Lead capture",
         other: "Leads are typed or pasted in by hand, often from emails, chats and portal downloads",
-        trackt: "Leads arrive from WhatsApp and, from Pro, a custom website form and Meta and Google ads",
+        trackt: "Leads arrive from WhatsApp, website forms and portals such as 99acres and IndiaMART, plus Meta and Google ads from Pro",
       },
       {
         label: "Follow-up reminders",
@@ -112,7 +112,7 @@ const PAGE = {
     switch: [
       "A lead went cold because nobody remembered to follow up",
       "Two people called or messaged the same lead without knowing",
-      "You copy leads from ads, website forms or WhatsApp into the sheet by hand",
+      "You copy leads from ads, portals or WhatsApp into the sheet by hand",
       "There are several versions of the sheet and nobody is sure which is current",
       "You cannot see how many deals are open, or at which stage, without building a report",
       "A salesperson left and their leads and chat history went with them",
@@ -161,8 +161,8 @@ const PAGE = {
         body: (
           <>
             Instead of copying leads in, TracktCRM pulls them from WhatsApp,
-            and from Pro, a custom website form and Meta and Google ads, so each
-            lead arrives with its source already filled in. Our{" "}
+            custom website forms and portals such as 99acres, MagicBricks,
+            IndiaMART and Justdial, with Meta and Google ads from Pro. Our{" "}
             <Link href="/lead-management-software">lead management software</Link>{" "}
             page shows the full flow.
           </>
@@ -192,7 +192,7 @@ const PAGE = {
       },
       {
         title: "Connect your sources",
-        body: "Connect WhatsApp, and on Pro or above, your Meta and Google ad accounts and website form.",
+        body: "Connect WhatsApp and your portals, and on Pro or above, your Meta and Google ad accounts.",
       },
       {
         title: "Retire the sheet",

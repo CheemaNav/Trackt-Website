@@ -15,7 +15,7 @@ export const metadata = buildMetadata(ROUTE);
 const FAQS = [
   {
     q: "Is TracktCRM a good LeadSquared alternative?",
-    a: "Yes, for small and growing teams that want to sign up themselves, start on a free plan and work leads from WhatsApp, ads and website forms. LeadSquared suits larger, high-volume sales teams that want deep process customisation and a guided rollout.",
+    a: "Yes, for small and growing teams that want to sign up themselves, start on a free plan and work leads from WhatsApp, ads and portals. LeadSquared suits larger, high-volume sales teams that want deep process customisation and a guided rollout.",
   },
   {
     q: "Does LeadSquared have a free plan?",
@@ -31,7 +31,7 @@ const FAQS = [
   },
   {
     q: "Can TracktCRM capture IndiaMART and Justdial leads?",
-    a: "Not yet. TracktCRM does not offer lead portal integrations today. LeadSquared has an IndiaMART connector and a Justdial connector that its help page describes as a paid feature, so it is the better choice if portals are a major lead source.",
+    a: "Yes. TracktCRM lists integrations for IndiaMART and Justdial, along with 99acres, Housing.com, MagicBricks and TradeIndia. LeadSquared has an IndiaMART connector and a Justdial connector that its help page describes as a paid feature.",
   },
   {
     q: "How do I move from LeadSquared to TracktCRM?",
@@ -108,7 +108,7 @@ const PAGE = {
       "You are a small team and want to sign up and start today, without a sales call first",
       "You want a free plan to test with real leads before you pay",
       "You want WhatsApp ready on day one, without choosing and contracting a solution provider",
-      "You want Google Ads and website form leads captured on a simple plan, with the source on every lead",
+      "You get leads from IndiaMART, Justdial, 99acres or MagicBricks and want them captured on a simple plan",
       "Per-user pricing in the thousands is more than your team needs right now",
     ],
     stayTitle: "Who Should Stay With LeadSquared",
@@ -116,7 +116,7 @@ const PAGE = {
       "You run a large, high-volume sales team, for example in field sales, financial services or education",
       "You need deep process customisation mapped by a dedicated team",
       "You already pay for a guided rollout and your processes are built around it",
-      "You need IndiaMART, Justdial or other connectors from LeadSquared's Apps Marketplace, which TracktCRM does not offer",
+      "You need connectors from LeadSquared's Apps Marketplace that TracktCRM does not list",
     ],
     stayNote:
       "LeadSquared is built for scale. TracktCRM fits teams that want to move fast with fewer settings and a lower cost per user.",
@@ -143,14 +143,14 @@ const PAGE = {
         shot: COMPARE_SHOTS.whatsapp,
       },
       {
-        title: "Lead capture from ads, forms and portals",
+        title: "Lead capture from ads and portals",
         body: (
           <>
-            Both tools capture Facebook and Instagram lead ads. LeadSquared also
-            has an IndiaMART connector and a Justdial connector, a paid feature
-            switched on by its account manager. TracktCRM does not offer lead
-            portal integrations yet, but includes Google Ads and a custom
-            website form from Pro. Our{" "}
+            Both tools capture Facebook and Instagram lead ads and IndiaMART
+            enquiries. LeadSquared&apos;s Justdial connector is a paid feature
+            switched on by its account manager. TracktCRM lists Justdial,
+            99acres, Housing.com, MagicBricks and TradeIndia integrations, plus
+            Google Ads from Pro. Our{" "}
             <Link href="/lead-management-software">lead management software</Link>{" "}
             page shows the follow-up flow.
           </>
@@ -178,7 +178,7 @@ const PAGE = {
       { title: "Import your leads", body: "Use the Import button on the pipeline view to bring your records in." },
       {
         title: "Connect your sources",
-        body: "Connect WhatsApp, and on Pro or above, your Meta and Google ad accounts and website form.",
+        body: "Connect WhatsApp and your portals, and on Pro or above, your Meta and Google ad accounts.",
       },
       { title: "Switch your team", body: "Run both systems on live enquiries for a week, then move everyone over." },
     ],

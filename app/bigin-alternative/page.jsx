@@ -15,7 +15,7 @@ export const metadata = buildMetadata(ROUTE);
 const FAQS = [
   {
     q: "Is TracktCRM a good Bigin alternative?",
-    a: "Yes, if most of your leads come in on WhatsApp, Meta and Google ads or your website. TracktCRM includes WhatsApp on the Free plan and unlimited records from day one. Bigin is a strong choice if you already use Zoho apps and want its mobile apps and built-in calling.",
+    a: "Yes, if your leads come in on WhatsApp, Meta and Google ads or lead portals. TracktCRM includes WhatsApp on the Free plan and connects portals such as 99acres and IndiaMART. Bigin is a strong choice if you already use Zoho apps and want its mobile apps and built-in calling.",
   },
   {
     q: "Does Bigin have a free plan?",
@@ -49,7 +49,7 @@ const PAGE = {
   brand: "Bigin",
   h1: { lead: "Bigin Alternative for Teams", highlight: "That Sell on WhatsApp" },
   intro:
-    "Looking for a Bigin alternative? Bigin by Zoho is a capable, low-cost pipeline CRM for small teams. TracktCRM is built for teams whose leads arrive on WhatsApp, Meta and Google ads and website forms, and who want WhatsApp on the free plan. Here is an honest comparison so you can decide.",
+    "Looking for a Bigin alternative? Bigin by Zoho is a capable, low-cost pipeline CRM for small teams. TracktCRM is built for teams whose leads arrive on WhatsApp, Meta and Google ads and lead portals, and who want WhatsApp on the free plan. Here is an honest comparison so you can decide.",
   trust: COMPARE_TRUST,
   hero: {
     src: "/assets/compare/bigin-alternative-hero.webp",
@@ -103,7 +103,7 @@ const PAGE = {
     switch: [
       "Most of your enquiries start on WhatsApp and you want those chats inside the CRM from day one, without moving to a paid plan",
       "You run Meta or Google lead ads and want every form submission in the pipeline the moment it arrives",
-      "You want website form enquiries to land straight in your pipeline with the source attached",
+      "You buy leads from property portals or B2B marketplaces like 99acres, MagicBricks or IndiaMART",
       "You want unlimited records on the free plan instead of a record cap",
       "You would rather have a person help you set up stages and move your data than do it alone",
     ],
@@ -115,7 +115,7 @@ const PAGE = {
       "Your team is happy with how Bigin works today",
     ],
     stayNote:
-      "Switching takes effort. A Bigin alternative only makes sense when WhatsApp follow-up or ad leads are where your team loses time.",
+      "Switching takes effort. A Bigin alternative only makes sense when WhatsApp, ad leads or portal leads are where your team loses time.",
   },
   differ: {
     title: "Bigin vs TracktCRM: Where They Differ",
@@ -148,16 +148,16 @@ const PAGE = {
         shot: COMPARE_SHOTS.pipeline,
       },
       {
-        title: "Lead capture from ads and forms",
+        title: "Lead capture from ads and portals",
         body: (
           <>
             Bigin connects Facebook, Instagram, LinkedIn and TikTok lead ads
             through LeadChain, which Zoho bills as a separate subscription.
-            TracktCRM includes Meta Ads and Google Ads integrations from Pro,
-            along with a custom website form, so each new enquiry lands in the
-            pipeline with its source. Our{" "}
+            TracktCRM includes Meta Ads and Google Ads integrations from Pro and
+            lists integrations for 99acres, Housing.com, MagicBricks, IndiaMART,
+            Justdial and TradeIndia. Our{" "}
             <Link href="/lead-management-software">lead management software</Link>{" "}
-            page shows how leads are followed up.
+            page shows how leads are assigned and followed up.
           </>
         ),
       },

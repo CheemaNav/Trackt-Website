@@ -188,7 +188,7 @@ export const STEPS = [
 export const HUB_FAQS = [
   {
     q: "Does TracktCRM have a CRM for my industry?",
-    a: "Yes. TracktCRM is built as a CRM for every industry, with dedicated pages and workflows for real estate, education, agencies, recruitment, insurance, automotive, healthcare and travel, with a consulting setup on the way. If your industry is not listed, the pipeline stages are customizable, so you can adapt TracktCRM to the way your business sells.",
+    a: "Yes. TracktCRM is built as a CRM for every industry, with dedicated pages and workflows for real estate, education, agencies, recruitment, insurance, automotive, healthcare and travel. If your industry is not listed, the pipeline stages are customizable, so you can adapt TracktCRM to the way your business sells.",
   },
   {
     q: "How is an industry CRM different from a generic CRM?",

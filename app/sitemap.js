@@ -1,6 +1,7 @@
 import { readdirSync } from "fs";
 import { join } from "path";
 import { SITE_URL } from "./site";
+import { categoriesWithPosts, getAllPosts } from "@/lib/blog";
 
 const PAGE_FILE = /^page\.(js|jsx|ts|tsx)$/;
 const SKIP_DIRS = new Set([
@@ -77,6 +78,7 @@ const PRIORITY = {
   "/leadsquared-alternative": 0.85,
   "/crm-vs-excel": 0.85,
   "/pricing": 0.85,
+  "/blog": 0.8,
   "/contact": 0.8,
   "/about": 0.7,
   "/help": 0.5,
@@ -94,10 +96,29 @@ export default function sitemap() {
 
   const lastModified = new Date();
 
-  return routes.map((route) => ({
-    url: route === "/" ? SITE_URL : `${SITE_URL}${route}`,
-    lastModified,
-    changeFrequency: route === "/" ? "weekly" : "monthly",
-    priority: PRIORITY[route] ?? 0.7,
-  }));
+  const posts = getAllPosts().filter((post) => !post.draft);
+  const blogEntries = [
+    ...categoriesWithPosts(posts).map((category) => ({
+      url: `${SITE_URL}/blog/category/${category.slug}`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.6,
+    })),
+    ...posts.map((post) => ({
+      url: `${SITE_URL}${post.href}`,
+      lastModified: new Date(`${post.updatedAt}T00:00:00Z`),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    })),
+  ];
+
+  return [
+    ...routes.map((route) => ({
+      url: route === "/" ? SITE_URL : `${SITE_URL}${route}`,
+      lastModified,
+      changeFrequency: route === "/" || route === "/blog" ? "weekly" : "monthly",
+      priority: PRIORITY[route] ?? 0.7,
+    })),
+    ...blogEntries,
+  ];
 }

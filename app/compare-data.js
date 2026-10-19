@@ -24,10 +24,10 @@ export const TRACKT_FACTS = {
     </>
   ),
   ads: "Meta Ads and Google Ads integrations from Pro",
-  portals: "Not available yet",
+  portals: "99acres, Housing.com, MagicBricks, IndiaMART, Justdial and TradeIndia integrations",
   ai: "Premium and All-in-One: reply suggestions, drafting, record summaries and upsell ideas",
   onboarding: "Dedicated onboarding specialist from Pro, plus help moving your data on paid plans",
-  bestFor: "Small and growing teams that sell on WhatsApp and want a simple pipeline they can set up themselves",
+  bestFor: "Small and growing teams that sell on WhatsApp and get leads from ads and portals",
 };
 
 export const COMPARE_TRUST = "Free plan for 1 user · No credit card · WhatsApp included";

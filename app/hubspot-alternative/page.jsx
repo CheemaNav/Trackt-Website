@@ -15,7 +15,7 @@ export const metadata = buildMetadata(ROUTE);
 const FAQS = [
   {
     q: "Is TracktCRM a good HubSpot alternative?",
-    a: "Yes, for small sales teams that sell on WhatsApp, get leads from ads and website forms and want simple per-user pricing. HubSpot is the better choice if you want marketing, sales and service on one platform with a very large app ecosystem.",
+    a: "Yes, for small sales teams that sell on WhatsApp, get leads from ads and portals and want simple per-user pricing. HubSpot is the better choice if you want marketing, sales and service on one platform with a very large app ecosystem.",
   },
   {
     q: "Does HubSpot have a free CRM?",
@@ -49,7 +49,7 @@ const PAGE = {
   brand: "HubSpot",
   h1: { lead: "HubSpot Alternative for Small Teams", highlight: "That Sell on WhatsApp" },
   intro:
-    "Need a HubSpot alternative that fits a small sales team? HubSpot is a complete customer platform with marketing, sales and service tools and a huge ecosystem. TracktCRM is a focused CRM for teams whose leads arrive on WhatsApp, ads and website forms, with WhatsApp on the free plan. Here is a fair comparison.",
+    "Need a HubSpot alternative that fits a small sales team? HubSpot is a complete customer platform with marketing, sales and service tools and a huge ecosystem. TracktCRM is a focused CRM for teams whose leads arrive on WhatsApp, ads and lead portals, with WhatsApp on the free plan. Here is a fair comparison.",
   trust: COMPARE_TRUST,
   hero: {
     src: "/assets/compare/hubspot-alternative-hero.webp",
@@ -111,7 +111,7 @@ const PAGE = {
     switch: [
       "Your customers reply on WhatsApp and you want those chats in the CRM without buying a Professional hub",
       "You are a small team and the jump from Starter to Professional, plus its onboarding fee, is hard to justify",
-      "You want Google Ads and website form leads in the pipeline automatically, with the source on every lead",
+      "You get leads from 99acres, MagicBricks, IndiaMART or Justdial and want them in the pipeline automatically",
       "You want one clear per-user price instead of separate hubs, seats and credits",
       "You want a named person to help set up your pipeline and move your data",
     ],
@@ -123,7 +123,7 @@ const PAGE = {
       "You want lead ads from Facebook, LinkedIn, TikTok and Google on a free plan",
     ],
     stayNote:
-      "HubSpot is an excellent platform. TracktCRM is the better fit when WhatsApp, fast follow-up and a small budget matter more than an all-in-one suite.",
+      "HubSpot is an excellent platform. TracktCRM is the better fit when WhatsApp, portal leads and a small budget matter more than an all-in-one suite.",
   },
   differ: {
     title: "HubSpot vs TracktCRM: Where They Differ",
@@ -148,13 +148,14 @@ const PAGE = {
         shot: COMPARE_SHOTS.pipeline,
       },
       {
-        title: "Lead capture from ads and forms",
+        title: "Lead capture from ads and portals",
         body: (
           <>
             HubSpot is strong here: its ads tool can sync Facebook, LinkedIn,
             TikTok and Google lead ads on all plans. TracktCRM includes Meta
             Ads and Google Ads from Pro, LinkedIn and TikTok from Premium, and
-            a custom website form from Pro. Our{" "}
+            adds integrations for 99acres, Housing.com, MagicBricks, IndiaMART,
+            Justdial and TradeIndia. Our{" "}
             <Link href="/lead-management-software">lead management software</Link>{" "}
             page shows the follow-up flow.
           </>
@@ -170,7 +171,7 @@ const PAGE = {
       },
       {
         title: "Platform breadth",
-        body: "HubSpot brings marketing, sales and service together with a very large app ecosystem, which suits companies that want one platform for everything. TracktCRM is deliberately narrower, focused on WhatsApp, Gmail, Google Calendar, Google Ads, Google Sheets and a custom website form.",
+        body: "HubSpot brings marketing, sales and service together with a very large app ecosystem, which suits companies that want one platform for everything. TracktCRM is deliberately narrower, with 24 integrations focused on WhatsApp, lead portals, ads, email and payments.",
       },
     ],
   },
