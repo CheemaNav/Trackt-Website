@@ -83,11 +83,10 @@ export default async function BlogPostPage({ params }) {
             <h1 className="blog-post-title">{post.title}</h1>
             <p className="blog-post-excerpt">{post.excerpt}</p>
             <p className="blog-post-meta">
+              {post.author ? <span>By {post.author}</span> : null}
               <span>
                 Updated <time dateTime={post.updatedAt}>{formatDate(post.updatedAt)}</time>
-              </span>
-              <span>{post.readingTime} min read</span>
-            </p>
+              </span>            </p>
           </div>
           {post.heroImage ? (
             <figure className="blog-post-hero">

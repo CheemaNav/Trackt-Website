@@ -324,6 +324,11 @@ export default function HealthcareCrmPage() {
               </details>
             ))}
           </div>
+          <p className="re-section-intro is-centered">
+            Want more patients from Google, Practo and WhatsApp? Read our{" "}
+            <a href="/blog/hospital-marketing">hospital marketing guide</a> with
+            15 practical ideas for clinics and hospitals.
+          </p>
         </section>
 
         <section className="cta-section reveal" id="demo">

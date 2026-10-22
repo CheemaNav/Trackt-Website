@@ -744,7 +744,7 @@ export function BlogPostingJsonLd({ post }) {
     articleSection: post.category.label,
     keywords: post.primaryKeyword || undefined,
     wordCount: post.words,
-    author: BLOG_ORGANIZATION,
+    author: post.author ? { "@type": "Person", name: post.author } : BLOG_ORGANIZATION,
     publisher: BLOG_ORGANIZATION,
   };
 

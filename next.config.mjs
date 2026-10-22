@@ -190,6 +190,12 @@ const nextConfig = {
         destination: "/industries/education-crm",
         permanent: true,
       },
+      // No /partners hub yet; the breadcrumb level lands on the reseller page.
+      {
+        source: "/partners",
+        destination: "/partners/reseller-partner-program",
+        permanent: false,
+      },
       // Legal page aliases (Zayda-style paths)
       {
         source: "/privacy-policies",

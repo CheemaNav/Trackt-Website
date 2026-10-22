@@ -18,7 +18,6 @@ export default function BlogCard({ post, headingLevel = "h2" }) {
         ) : null}
       </Link>
       <div className="blog-card-body">
-        <p className="blog-card-time">{post.readingTime} min read</p>
         <Heading className="blog-card-title">
           <Link href={post.href}>{post.title}</Link>
         </Heading>

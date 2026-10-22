@@ -5,7 +5,16 @@ import { APP_REGISTER_URL } from "../../site";
 export function BlogCtaBox({
   title = "Try TracktCRM free",
   text = "Free plan for 1 user, WhatsApp included, no credit card needed.",
+  href = APP_REGISTER_URL,
 }) {
+  const label = (
+    <>
+      Start free
+      <span className="btn-arrow" aria-hidden="true">
+        <ArrowIcon />
+      </span>
+    </>
+  );
   return (
     <aside className="blog-cta" aria-label="Start with TracktCRM">
       <div>
@@ -13,12 +22,15 @@ export function BlogCtaBox({
         <p className="blog-cta-text">{text}</p>
       </div>
       <div className="blog-cta-actions">
-        <a className="btn btn-primary" href={APP_REGISTER_URL} target="_blank" rel="noopener noreferrer">
-          Start free
-          <span className="btn-arrow" aria-hidden="true">
-            <ArrowIcon />
-          </span>
-        </a>
+        {href.startsWith("/") ? (
+          <Link className="btn btn-primary" href={href}>
+            {label}
+          </Link>
+        ) : (
+          <a className="btn btn-primary" href={href} target="_blank" rel="noopener noreferrer">
+            {label}
+          </a>
+        )}
         <Link className="btn btn-outline" href="/contact">
           Book a demo
         </Link>

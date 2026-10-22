@@ -79,6 +79,8 @@ const PRIORITY = {
   "/crm-vs-excel": 0.85,
   "/pricing": 0.85,
   "/blog": 0.8,
+  "/partners/reseller-partner-program": 0.7,
+  "/partners/affiliate-partner-program": 0.7,
   "/contact": 0.8,
   "/about": 0.7,
   "/help": 0.5,

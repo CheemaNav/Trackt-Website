@@ -368,9 +368,9 @@ export const FOOTER_COLS = [
       { label: "About Us", href: "/about" },
       { label: "Contact", href: "/contact" },
       { label: "Blog", href: "/blog" },
+      { label: "Reseller Program", href: "/partners/reseller-partner-program" },
+      { label: "Affiliate Program", href: "/partners/affiliate-partner-program" },
       { label: "Help Center", href: "/help" },
-      { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Terms & Conditions", href: "/terms" },
     ],
   },
   {
