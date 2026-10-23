@@ -67,6 +67,7 @@ export default function BlogHub({ posts, categories, active = null }) {
       </div>
 
       <h2 className="blog-hub-title">{heading}</h2>
+      {active?.intro ? <p className="blog-hub-intro">{active.intro}</p> : null}
 
       {shown.length ? (
         <div className="blog-grid">

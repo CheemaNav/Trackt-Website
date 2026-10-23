@@ -1,8 +1,9 @@
 import Link from "next/link";
 import RevealInit from "./reveal-init";
-import { BreadcrumbJsonLd } from "../json-ld";
+import { BreadcrumbJsonLd, WebPageJsonLd } from "../json-ld";
 
 export default function ContentPage({
+  route,
   badge,
   title,
   lead,
@@ -12,6 +13,7 @@ export default function ContentPage({
 }) {
   return (
     <>
+      {route ? <WebPageJsonLd route={route} /> : null}
       {schema}
       {breadcrumbs ? <BreadcrumbJsonLd items={breadcrumbs} /> : null}
       <RevealInit />

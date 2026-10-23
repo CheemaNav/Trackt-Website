@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa6";
 import { LuClock, LuMail, LuMapPin, LuPhone } from "react-icons/lu";
-import { PhoneInput } from "react-international-phone";
+import PhoneInput from "../components/lazy-phone-input";
 import useReveal from "../use-reveal";
 import { CONTACT } from "../site";
 import { CONTACT_FAQS } from "./data";
@@ -121,7 +121,7 @@ export default function ContactPageClient() {
                 className="contact-card"
                 href={CONTACT.whatsappUrl}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel={CONTACT.whatsappRel}
               >
                 <span className="contact-card-icon is-wa" aria-hidden="true">
                   <FaWhatsapp size={22} />
@@ -180,7 +180,7 @@ export default function ContactPageClient() {
                   className="btn btn-primary contact-sent-cta"
                   href={CONTACT.whatsappUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel={CONTACT.whatsappRel}
                 >
                   Open WhatsApp
                 </a>

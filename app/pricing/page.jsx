@@ -1,10 +1,15 @@
 import Link from "next/link";
 import RevealInit from "../components/reveal-init";
 import { BookDemoButton } from "../components/demo-request-provider";
-import { BreadcrumbJsonLd, FaqJsonLd, PricingJsonLd, WebPageJsonLd } from "../json-ld";
+import {
+  BreadcrumbJsonLd,
+  FaqJsonLd,
+  SoftwareApplicationJsonLd,
+  WebPageJsonLd,
+} from "../json-ld";
 import { APP_REGISTER_URL, CONTACT } from "../site";
 import PricingPlans from "./pricing-plans";
-import { PLANS, PRICING_PERKS, YEARLY_SAVING } from "./plans";
+import { PRICING_PERKS, YEARLY_SAVING } from "./plans";
 import { PAGE_SEO, buildMetadata } from "@/lib/seo";
 
 const SEO = PAGE_SEO["/pricing"];
@@ -131,8 +136,8 @@ function PerkCheck() {
 export default function PricingPage() {
   return (
     <>
-      <WebPageJsonLd name={SEO.title} description={SEO.description} path="/pricing" />
-      <PricingJsonLd plans={PLANS} />
+      <WebPageJsonLd route="/pricing" />
+      <SoftwareApplicationJsonLd path="/pricing" />
       <FaqJsonLd id="schema-pricing-faq" faqs={FAQS} />
       <BreadcrumbJsonLd items={BREADCRUMBS} />
       <RevealInit />

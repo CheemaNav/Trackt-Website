@@ -113,7 +113,7 @@ export default function WhatsAppCrmPage() {
             <figure className="wa-hero-visual">
               <img
                 className="wa-hero-banner"
-                src="/assets/whatsapp/whatsapp-crm-hero.png"
+                src="/assets/whatsapp/whatsapp-crm-hero.webp"
                 alt="TracktCRM WhatsApp CRM on desktop and mobile, with chats and contact details in one place"
                 width={1400}
                 height={1000}
@@ -177,7 +177,7 @@ export default function WhatsAppCrmPage() {
               </div>
               <figure className="wa-what-visual">
                 <img
-                  src="/assets/whatsapp/whatsapp-banner.png"
+                  src="/assets/whatsapp/whatsapp-banner.webp"
                   alt="WhatsApp and TracktCRM sync, with messages flowing both ways into the CRM"
                   width={1200}
                   height={900}
@@ -414,7 +414,7 @@ export default function WhatsAppCrmPage() {
             </div>
             <figure className="wa-proof-frame">
               <img
-                src="/assets/whatsapp/whatsapp-lead-management.png"
+                src="/assets/whatsapp/whatsapp-lead-management.webp"
                 alt="TracktCRM WhatsApp lead management next to the sales pipeline"
                 width={1600}
                 height={900}

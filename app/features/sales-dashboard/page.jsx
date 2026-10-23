@@ -91,7 +91,7 @@ export default function SalesDashboardPage() {
             </div>
             <figure className="re-banner-media re-banner-media-ui">
               <img
-                src="/assets/sales-dashboard-hero.jpg"
+                src="/assets/sales-dashboard-hero.webp"
                 alt="TracktCRM AI assistant presenting the sales dashboard with deal totals, leads in stages, deals and revenue won charts"
                 width={1280}
                 height={720}
@@ -117,7 +117,7 @@ export default function SalesDashboardPage() {
             </div>
             <figure className="re-photo re-photo-contain">
               <img
-                src="/assets/leadmanage.png"
+                src="/assets/leadmanage.webp"
                 alt="TracktCRM pipeline report view used as a sales performance dashboard"
                 width={1383}
                 height={695}

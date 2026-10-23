@@ -1,7 +1,7 @@
 import BlogBanner from "../components/blog/blog-banner";
 import BlogHub from "../components/blog/blog-hub";
 import { BlogCollectionJsonLd, BreadcrumbJsonLd } from "../json-ld";
-import { categoriesWithPosts, getAllPosts, toCard } from "@/lib/blog";
+import { categoriesWithPosts, getAllPosts, toCard, toCategoryTab } from "@/lib/blog";
 import { buildMetadata, PAGE_SEO } from "@/lib/seo";
 
 const ROUTE = "/blog";
@@ -31,7 +31,7 @@ export default function BlogPage() {
       />
       <BlogBanner />
       <div className="blog-hub">
-        <BlogHub posts={posts.map(toCard)} categories={categoriesWithPosts(posts)} />
+        <BlogHub posts={posts.map(toCard)} categories={categoriesWithPosts(posts).map(toCategoryTab)} />
       </div>
     </main>
   );

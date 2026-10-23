@@ -12,7 +12,7 @@ export default function SiteFooter() {
         <div className="footer-brand">
           <img
             className="logo-img logo-img-lg"
-            src="/assets/tracktcrm-logo.png"
+            src="/assets/tracktcrm-logo.webp"
             alt="TracktCRM AI CRM software logo"
             width={160}
             height={40}
@@ -98,7 +98,7 @@ export default function SiteFooter() {
       </div>
       <div className="legal">
         <div className="legal-inner">
-          <span>© 2026 TracktCRM. All rights reserved.</span>
+          <span>© 2026 TracktCRM, a product of Terioat Infotech. All rights reserved.</span>
           <span className="legal-links">
             <Link href="/privacy-policy">Privacy Policy</Link>
             <Link href="/terms">Terms & Conditions</Link>

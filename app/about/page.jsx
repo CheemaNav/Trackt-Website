@@ -8,6 +8,7 @@ export const metadata = buildMetadata("/about");
 export default function AboutPage() {
   return (
     <ContentPage
+      route="/about"
       badge="ABOUT US"
       title={PAGE_SEO["/about"].h1}
       lead="TracktCRM is an AI CRM company based in Mohali, Punjab, India. We help sales teams reply faster, keep pipelines clean, and stop losing enquiries after hours."

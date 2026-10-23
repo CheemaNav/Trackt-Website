@@ -24,6 +24,7 @@ export const metadata = buildMetadata("/help");
 export default function HelpPage() {
   return (
     <ContentPage
+      route="/help"
       badge="HELP CENTER"
       title={PAGE_SEO["/help"].h1}
       lead="The TracktCRM Help Center has quick answers for sign-up, login and support. For everything else, talk to the team."

@@ -118,7 +118,7 @@ export default function InsuranceCrmPage() {
             </div>
             <figure className="re-photo re-photo-contain">
               <img
-                src="/assets/leadmanage.png"
+                src="/assets/leadmanage.webp"
                 alt="TracktCRM pipeline board keeping every insurance lead and quote in one view"
                 width={1383}
                 height={695}
@@ -143,7 +143,7 @@ export default function InsuranceCrmPage() {
           <div className="re-split re-split-reverse">
             <figure className="re-photo re-photo-contain">
               <img
-                src="/assets/AI-CRM-actually.jpg"
+                src="/assets/AI-CRM-actually.webp"
                 alt="Insurance CRM client record with the full history of calls, messages and notes"
                 width={1645}
                 height={802}
@@ -212,7 +212,7 @@ export default function InsuranceCrmPage() {
           <div className="re-split">
             <figure className="re-photo">
               <img
-                src="/assets/real-estate/broker-handshake.jpg"
+                src="/assets/real-estate/broker-handshake.webp"
                 alt="Insurance agent and client agreeing on a policy renewal"
                 width={1152}
                 height={864}
@@ -295,7 +295,7 @@ export default function InsuranceCrmPage() {
         <section className="section reveal" id="pipeline-preview">
           <figure className="re-shot re-shot-wide">
             <img
-              src="/assets/leadmanage.png"
+              src="/assets/leadmanage.webp"
               alt="TracktCRM insurance pipeline with lead, quote requested, quote sent, documents, policy issued and renewal due stages"
               width={1383}
               height={695}

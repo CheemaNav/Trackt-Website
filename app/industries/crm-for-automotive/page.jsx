@@ -118,7 +118,7 @@ export default function AutomotiveCrmPage() {
             </div>
             <figure className="re-photo re-photo-contain">
               <img
-                src="/assets/leadmanage.png"
+                src="/assets/leadmanage.webp"
                 alt="TracktCRM pipeline board keeping every dealership enquiry in one view"
                 width={1383}
                 height={695}
@@ -219,7 +219,7 @@ export default function AutomotiveCrmPage() {
           <div className="re-split">
             <figure className="re-photo">
               <img
-                src="/assets/real-estate/broker-handshake.jpg"
+                src="/assets/real-estate/broker-handshake.webp"
                 alt="Salesperson and customer shaking hands after a vehicle delivery"
                 width={1152}
                 height={864}
@@ -305,7 +305,7 @@ export default function AutomotiveCrmPage() {
         <section className="section reveal" id="pipeline-preview">
           <figure className="re-shot re-shot-wide">
             <img
-              src="/assets/leadmanage.png"
+              src="/assets/leadmanage.webp"
               alt="TracktCRM dealership pipeline with enquiry, test drive, quote, booking, delivery and after-sales stages"
               width={1383}
               height={695}

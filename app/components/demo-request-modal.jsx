@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
-import { PhoneInput } from "react-international-phone";
+import PhoneInput from "./lazy-phone-input";
+import { DEMO_REQUESTED_KEY } from "./demo-request-provider";
 import { CloseIcon } from "../icons";
 import { CONTACT } from "../site";
 
@@ -13,8 +14,6 @@ const INITIAL = {
   company: "",
   message: "",
 };
-
-export const DEMO_REQUESTED_KEY = "tc-demo-requested";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const REQUIRED_ORDER = ["name", "email", "phone"];
@@ -161,7 +160,7 @@ function DemoRequestDialog({ auto, onClose }) {
                 className="btn btn-primary"
                 href={CONTACT.whatsappUrl}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel={CONTACT.whatsappRel}
               >
                 Chat on WhatsApp
               </a>

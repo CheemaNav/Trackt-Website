@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   AiLeadIcon,
   ArrowIcon,
@@ -93,7 +94,7 @@ export default function HealthcareCrmPage() {
             </div>
             <figure className="re-banner-media re-banner-media-ui">
               <img
-                src="/assets/healthcare-crm-hero.jpg"
+                src="/assets/healthcare-crm-hero.webp"
                 alt="TracktCRM AI assistant at a clinic front desk with healthcare CRM software showing a patient enquiry booked into an appointment"
                 width={1280}
                 height={720}
@@ -119,7 +120,7 @@ export default function HealthcareCrmPage() {
             </div>
             <figure className="re-photo re-photo-contain">
               <img
-                src="/assets/leadmanage.png"
+                src="/assets/leadmanage.webp"
                 alt="TracktCRM pipeline board keeping every patient enquiry in one view"
                 width={1383}
                 height={695}
@@ -144,7 +145,7 @@ export default function HealthcareCrmPage() {
           <div className="re-split re-split-reverse">
             <figure className="re-photo re-photo-contain">
               <img
-                src="/assets/AI-CRM-actually.jpg"
+                src="/assets/AI-CRM-actually.webp"
                 alt="Healthcare CRM patient record with the full history of calls, messages and notes"
                 width={1645}
                 height={802}
@@ -298,7 +299,7 @@ export default function HealthcareCrmPage() {
         <section className="section reveal" id="pipeline-preview">
           <figure className="re-shot re-shot-wide">
             <img
-              src="/assets/leadmanage.png"
+              src="/assets/leadmanage.webp"
               alt="TracktCRM clinic pipeline with enquiry, appointment booked, visited and follow-up due stages"
               width={1383}
               height={695}
@@ -326,7 +327,7 @@ export default function HealthcareCrmPage() {
           </div>
           <p className="re-section-intro is-centered">
             Want more patients from Google, Practo and WhatsApp? Read our{" "}
-            <a href="/blog/hospital-marketing">hospital marketing guide</a> with
+            <Link href="/blog/hospital-marketing">hospital marketing guide</Link> with
             15 practical ideas for clinics and hospitals.
           </p>
         </section>

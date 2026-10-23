@@ -1,5 +1,13 @@
-import { CONTACT, SITE_NAME, SITE_URL, SOCIAL_PROFILES } from "./site";
+import {
+  CONTACT,
+  HOME_URL,
+  SAME_AS,
+  SITE_NAME,
+  SITE_RATING,
+  SITE_URL,
+} from "./site";
 import { FAQS } from "./home-data";
+import { PAGE_SEO, absoluteUrl } from "@/lib/seo";
 
 export function JsonLd({ data, id }) {
   return (
@@ -17,13 +25,13 @@ export function OrganizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: SITE_NAME,
-    url: SITE_URL,
+    url: HOME_URL,
     logo: `${SITE_URL}/logo.png`,
     email: CONTACT.email,
-    telephone: "+91-62395-20057",
+    telephone: CONTACT.phoneTel,
     description:
       "TracktCRM is an AI-powered CRM that captures leads, automates follow-ups and tracks sales pipelines for real estate teams, agencies, consultants and freelancers.",
-    sameAs: Object.values(SOCIAL_PROFILES),
+    sameAs: SAME_AS,
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
@@ -46,67 +54,58 @@ export function OrganizationJsonLd() {
   return <JsonLd id="schema-organization" data={organization} />;
 }
 
-/** Homepage-only WebSite + SoftwareApplication schema. */
+/** Homepage-only WebSite + WebPage schema (+ SoftwareApplication once rated). */
 export function HomeJsonLd() {
   const website = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: SITE_NAME,
-    url: SITE_URL,
+    url: HOME_URL,
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
     },
   };
+
+  return (
+    <>
+      <JsonLd id="schema-website" data={website} />
+      <WebPageJsonLd route="/" />
+      <SoftwareApplicationJsonLd path="/" />
+    </>
+  );
+}
+
+/**
+ * SoftwareApplication requires aggregateRating or review for Google rich
+ * results, so it is rendered only when SITE_RATING holds real totals.
+ */
+export function SoftwareApplicationJsonLd({ path }) {
+  const { ratingValue, ratingCount } = SITE_RATING;
+  if (!ratingValue || !ratingCount) return null;
 
   const software = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: SITE_NAME,
     applicationCategory: "BusinessApplication",
-    applicationSubCategory: "CRM Software",
     operatingSystem: "Web",
-    description:
-      "AI-powered CRM software that captures leads across WhatsApp, email and SMS, automates follow-ups, and manages sales pipelines for real estate, education, agencies, consultants and freelancers.",
+    url: absoluteUrl(path),
     offers: {
       "@type": "Offer",
-      url: `${SITE_URL}/pricing`,
-      priceCurrency: "INR",
       price: "0",
-      description: "Free plan for 1 user, no credit card required. Pro, Premium and All-in-One are paid per-user plans.",
-      category: "Free",
+      priceCurrency: "INR",
     },
-    url: SITE_URL,
-  };
-
-  return (
-    <>
-      <JsonLd id="schema-website" data={website} />
-      <JsonLd id="schema-software" data={software} />
-    </>
-  );
-}
-
-function industrySoftware({ name, path, features }) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: `${SITE_NAME} ${name}`,
-    applicationCategory: "BusinessApplication",
-    applicationSubCategory: `${name} Software`,
-    operatingSystem: "Web",
-    url: `${SITE_URL}${path}`,
-    featureList: features.map((item) => item.title),
-    offers: {
-      "@type": "Offer",
-      url: `${SITE_URL}/pricing`,
-      priceCurrency: "INR",
-      price: "0",
-      description: "Free plan for 1 user, no credit card required.",
-      category: "Free",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: String(ratingValue),
+      ratingCount: String(ratingCount),
+      bestRating: "5",
     },
   };
+
+  return <JsonLd id="schema-software" data={software} />;
 }
 
 export function BreadcrumbJsonLd({ items }) {
@@ -117,9 +116,7 @@ export function BreadcrumbJsonLd({ items }) {
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: item.href.startsWith("http")
-        ? item.href
-        : `${SITE_URL}${item.href === "/" ? "" : item.href}`,
+      item: item.href.startsWith("http") ? item.href : absoluteUrl(item.href),
     })),
   };
 
@@ -144,8 +141,8 @@ export function HomeFaqJsonLd() {
   return <JsonLd id="schema-home-faq" data={faqPage} />;
 }
 
-/** Real-estate page FAQ + Service + SoftwareApplication schema. */
-export function RealEstateJsonLd({ faqs, features }) {
+/** Real-estate page WebPage + FAQ + Service schema (+ SoftwareApplication once rated). */
+export function RealEstateJsonLd({ faqs }) {
   const faqPage = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -166,30 +163,26 @@ export function RealEstateJsonLd({ faqs, features }) {
     provider: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
     },
     description:
       "TracktCRM is real estate CRM software that captures leads from property portals, ads and WhatsApp, books site visits, and tracks brokers, inventory and bookings.",
     url: `${SITE_URL}/industries/real-estate-crm`,
   };
 
-  const software = industrySoftware({
-    name: "Real Estate CRM",
-    path: "/industries/real-estate-crm",
-    features,
-  });
 
   return (
     <>
       <JsonLd id="schema-re-faq" data={faqPage} />
+      <WebPageJsonLd route="/industries/real-estate-crm" />
       <JsonLd id="schema-re-service" data={service} />
-      <JsonLd id="schema-re-software" data={software} />
+      <SoftwareApplicationJsonLd path="/industries/real-estate-crm" />
     </>
   );
 }
 
-/** AI CRM page FAQ + Service + SoftwareApplication schema. */
-export function AiCrmJsonLd({ faqs, features }) {
+/** AI CRM page WebPage + FAQ + Service schema (+ SoftwareApplication once rated). */
+export function AiCrmJsonLd({ faqs }) {
   const faqPage = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -210,30 +203,26 @@ export function AiCrmJsonLd({ faqs, features }) {
     provider: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
     },
     description:
       "TracktCRM is AI CRM software with a built-in AI sales assistant that replies to every lead in seconds on WhatsApp, email and SMS, places follow-up calls and hands over to reps with full context.",
     url: `${SITE_URL}/industries/ai-crm`,
   };
 
-  const software = industrySoftware({
-    name: "AI CRM",
-    path: "/industries/ai-crm",
-    features,
-  });
 
   return (
     <>
       <JsonLd id="schema-ai-faq" data={faqPage} />
+      <WebPageJsonLd route="/industries/ai-crm" />
       <JsonLd id="schema-ai-service" data={service} />
-      <JsonLd id="schema-ai-software" data={software} />
+      <SoftwareApplicationJsonLd path="/industries/ai-crm" />
     </>
   );
 }
 
-/** Education CRM page FAQ + Service + SoftwareApplication schema. */
-export function EducationCrmJsonLd({ faqs, features }) {
+/** Education CRM page WebPage + FAQ + Service schema (+ SoftwareApplication once rated). */
+export function EducationCrmJsonLd({ faqs }) {
   const faqPage = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -254,30 +243,26 @@ export function EducationCrmJsonLd({ faqs, features }) {
     provider: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
     },
     description:
       "TracktCRM is an education CRM for schools, colleges and institutes that captures enquiries from ads, portals and WhatsApp, assigns counsellors, and tracks admissions and fees.",
     url: `${SITE_URL}/industries/education-crm`,
   };
 
-  const software = industrySoftware({
-    name: "Education CRM",
-    path: "/industries/education-crm",
-    features,
-  });
 
   return (
     <>
       <JsonLd id="schema-edu-faq" data={faqPage} />
+      <WebPageJsonLd route="/industries/education-crm" />
       <JsonLd id="schema-edu-service" data={service} />
-      <JsonLd id="schema-edu-software" data={software} />
+      <SoftwareApplicationJsonLd path="/industries/education-crm" />
     </>
   );
 }
 
-/** Agency CRM page FAQ + Service schema. */
-export function AgencyCrmJsonLd({ faqs, features }) {
+/** Agency CRM page WebPage + FAQ + Service schema (+ SoftwareApplication once rated). */
+export function AgencyCrmJsonLd({ faqs }) {
   const faqPage = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -298,30 +283,26 @@ export function AgencyCrmJsonLd({ faqs, features }) {
     provider: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
     },
     description:
       "Agency CRM for growing agencies: track pitches, proposals and retainer renewals, and keep client chats on WhatsApp in one pipeline.",
     url: `${SITE_URL}/industries/crm-for-agencies`,
   };
 
-  const software = industrySoftware({
-    name: "Agency CRM",
-    path: "/industries/crm-for-agencies",
-    features,
-  });
 
   return (
     <>
       <JsonLd id="schema-agency-faq" data={faqPage} />
+      <WebPageJsonLd route="/industries/crm-for-agencies" />
       <JsonLd id="schema-agency-service" data={service} />
-      <JsonLd id="schema-agency-software" data={software} />
+      <SoftwareApplicationJsonLd path="/industries/crm-for-agencies" />
     </>
   );
 }
 
-/** Recruitment CRM page FAQ + Service schema. */
-export function RecruitmentCrmJsonLd({ faqs, features }) {
+/** Recruitment CRM page WebPage + FAQ + Service schema (+ SoftwareApplication once rated). */
+export function RecruitmentCrmJsonLd({ faqs }) {
   const faqPage = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -342,29 +323,25 @@ export function RecruitmentCrmJsonLd({ faqs, features }) {
     provider: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
     },
     description:
       "Recruitment CRM for recruiters and staffing teams: track candidates and client roles, reach candidates on WhatsApp and get follow-up reminders.",
     url: `${SITE_URL}/industries/crm-for-recruitment`,
   };
 
-  const software = industrySoftware({
-    name: "Recruitment CRM",
-    path: "/industries/crm-for-recruitment",
-    features,
-  });
 
   return (
     <>
       <JsonLd id="schema-recruitment-faq" data={faqPage} />
+      <WebPageJsonLd route="/industries/crm-for-recruitment" />
       <JsonLd id="schema-recruitment-service" data={service} />
-      <JsonLd id="schema-recruitment-software" data={software} />
+      <SoftwareApplicationJsonLd path="/industries/crm-for-recruitment" />
     </>
   );
 }
 
-/** Insurance CRM page FAQ + Service schema. */
+/** Insurance CRM page WebPage + FAQ + Service schema. */
 export function InsuranceCrmJsonLd({ faqs }) {
   const faqPage = {
     "@context": "https://schema.org",
@@ -386,7 +363,7 @@ export function InsuranceCrmJsonLd({ faqs }) {
     provider: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
     },
     areaServed: "Worldwide",
     description:
@@ -397,12 +374,13 @@ export function InsuranceCrmJsonLd({ faqs }) {
   return (
     <>
       <JsonLd id="schema-insurance-faq" data={faqPage} />
+      <WebPageJsonLd route="/industries/crm-for-insurance" />
       <JsonLd id="schema-insurance-service" data={service} />
     </>
   );
 }
 
-/** Automotive CRM page FAQ + Service schema. */
+/** Automotive CRM page WebPage + FAQ + Service schema. */
 export function AutomotiveCrmJsonLd({ faqs }) {
   const faqPage = {
     "@context": "https://schema.org",
@@ -424,7 +402,7 @@ export function AutomotiveCrmJsonLd({ faqs }) {
     provider: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
     },
     areaServed: "Worldwide",
     description:
@@ -435,12 +413,13 @@ export function AutomotiveCrmJsonLd({ faqs }) {
   return (
     <>
       <JsonLd id="schema-automotive-faq" data={faqPage} />
+      <WebPageJsonLd route="/industries/crm-for-automotive" />
       <JsonLd id="schema-automotive-service" data={service} />
     </>
   );
 }
 
-/** Healthcare CRM page FAQ + Service schema. */
+/** Healthcare CRM page WebPage + FAQ + Service schema. */
 export function HealthcareCrmJsonLd({ faqs }) {
   const faqPage = {
     "@context": "https://schema.org",
@@ -462,7 +441,7 @@ export function HealthcareCrmJsonLd({ faqs }) {
     provider: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
     },
     areaServed: "Worldwide",
     description:
@@ -473,6 +452,7 @@ export function HealthcareCrmJsonLd({ faqs }) {
   return (
     <>
       <JsonLd id="schema-healthcare-faq" data={faqPage} />
+      <WebPageJsonLd route="/industries/crm-for-healthcare" />
       <JsonLd id="schema-healthcare-service" data={service} />
     </>
   );
@@ -507,8 +487,8 @@ export function IndustriesHubJsonLd({ industries, faqs }) {
   );
 }
 
-/** WhatsApp CRM page FAQ + Service schema. */
-export function WhatsAppCrmJsonLd({ faqs, features }) {
+/** WhatsApp CRM page WebPage + FAQ + Service schema (+ SoftwareApplication once rated). */
+export function WhatsAppCrmJsonLd({ faqs }) {
   const faqPage = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -529,24 +509,20 @@ export function WhatsAppCrmJsonLd({ faqs, features }) {
     provider: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
     },
     description:
       "WhatsApp CRM for growing teams: capture every WhatsApp enquiry as a lead, reply from a shared inbox, automate follow-ups and track deals.",
     url: `${SITE_URL}/features/whatsapp-crm`,
   };
 
-  const software = industrySoftware({
-    name: "WhatsApp CRM",
-    path: "/features/whatsapp-crm",
-    features,
-  });
 
   return (
     <>
       <JsonLd id="schema-wa-faq" data={faqPage} />
+      <WebPageJsonLd route="/features/whatsapp-crm" />
       <JsonLd id="schema-wa-service" data={service} />
-      <JsonLd id="schema-wa-software" data={software} />
+      <SoftwareApplicationJsonLd path="/features/whatsapp-crm" />
     </>
   );
 }
@@ -560,7 +536,7 @@ export function ContactPageJsonLd() {
     mainEntity: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
       email: CONTACT.email,
       telephone: CONTACT.phoneTel,
       address: {
@@ -577,58 +553,30 @@ export function ContactPageJsonLd() {
   return <JsonLd id="schema-contact" data={contactPage} />;
 }
 
-export function WebPageJsonLd({ name, description, path, dateModified }) {
+/** WebPage schema; pass `route` to read name/description from PAGE_SEO. */
+export function WebPageJsonLd({ route, name, description, path, dateModified }) {
+  const seo = route ? PAGE_SEO[route] : null;
   const page = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name,
-    description,
-    url: `${SITE_URL}${path}`,
-    dateModified,
+    name: seo?.title ?? name,
+    description: seo?.description ?? description,
+    url: absoluteUrl(route ?? path),
+    ...(dateModified && { dateModified }),
     inLanguage: "en-US",
     author: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
     },
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
     },
   };
 
   return <JsonLd id="schema-webpage" data={page} />;
-}
-
-/** Pricing plans as SoftwareApplication offers, in INR per user per month. */
-export function PricingJsonLd({ plans }) {
-  const software = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: SITE_NAME,
-    applicationCategory: "BusinessApplication",
-    applicationSubCategory: "CRM Software",
-    operatingSystem: "Web",
-    url: `${SITE_URL}/pricing`,
-    offers: plans.map((plan) => ({
-      "@type": "Offer",
-      name: `${SITE_NAME} ${plan.name}`,
-      description: plan.tagline,
-      url: `${SITE_URL}/pricing`,
-      price: String(plan.monthly),
-      priceCurrency: "INR",
-      priceSpecification: {
-        "@type": "UnitPriceSpecification",
-        price: String(plan.monthly),
-        priceCurrency: "INR",
-        unitText: "user per month",
-        billingDuration: "P1M",
-      },
-    })),
-  };
-
-  return <JsonLd id="schema-pricing" data={software} />;
 }
 
 export function FaqJsonLd({ id = "schema-faq", faqs }) {
@@ -648,7 +596,7 @@ export function FaqJsonLd({ id = "schema-faq", faqs }) {
   return <JsonLd id={id} data={faqPage} />;
 }
 
-/** CRM software pillar page FAQ schema; SoftwareApplication comes from the layout. */
+/** CRM software pillar page WebPage + FAQ schema. */
 export function CrmSoftwareJsonLd({ faqs }) {
   const faqPage = {
     "@context": "https://schema.org",
@@ -663,7 +611,12 @@ export function CrmSoftwareJsonLd({ faqs }) {
     })),
   };
 
-  return <JsonLd id="schema-cs-faq" data={faqPage} />;
+  return (
+    <>
+      <WebPageJsonLd route="/crm-software" />
+      <JsonLd id="schema-cs-faq" data={faqPage} />
+    </>
+  );
 }
 
 export function IntegrationsJsonLd({ apps, name, description, dateModified }) {
@@ -691,32 +644,13 @@ export function IntegrationsJsonLd({ apps, name, description, dateModified }) {
   return <JsonLd id="schema-integrations" data={page} />;
 }
 
-/** Feature landing page: FAQPage + SoftwareApplication on the Free plan offer. */
-export function FeatureSoftwareJsonLd({ id, name, path, description, faqs, features }) {
-  const software = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: `${SITE_NAME} ${name}`,
-    applicationCategory: "BusinessApplication",
-    applicationSubCategory: name,
-    operatingSystem: "Web",
-    description,
-    url: `${SITE_URL}${path}`,
-    featureList: features.map((item) => item.title),
-    offers: {
-      "@type": "Offer",
-      url: `${SITE_URL}/pricing`,
-      priceCurrency: "INR",
-      price: "0",
-      description: "Free plan for 1 user, no credit card required.",
-      category: "Free",
-    },
-  };
-
+/** Feature landing page: WebPage + FAQPage (+ SoftwareApplication once rated). */
+export function FeatureSoftwareJsonLd({ id, path, faqs }) {
   return (
     <>
+      <WebPageJsonLd route={path} />
       <FaqJsonLd id={`${id}-faq`} faqs={faqs} />
-      <JsonLd id={`${id}-software`} data={software} />
+      <SoftwareApplicationJsonLd path={path} />
     </>
   );
 }
@@ -724,7 +658,7 @@ export function FeatureSoftwareJsonLd({ id, name, path, description, faqs, featu
 const BLOG_ORGANIZATION = {
   "@type": "Organization",
   name: SITE_NAME,
-  url: SITE_URL,
+  url: HOME_URL,
   logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
 };
 
@@ -775,7 +709,7 @@ export function BlogCollectionJsonLd({ name, description, path, posts }) {
   return <JsonLd id="schema-blog-collection" data={data} />;
 }
 
-/** Travel CRM page FAQ + Service schema. */
+/** Travel CRM page WebPage + FAQ + Service schema. */
 export function TravelCrmJsonLd({ faqs }) {
   const service = {
     "@context": "https://schema.org",
@@ -784,7 +718,7 @@ export function TravelCrmJsonLd({ faqs }) {
     provider: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
     },
     areaServed: "Worldwide",
     description:
@@ -795,6 +729,7 @@ export function TravelCrmJsonLd({ faqs }) {
   return (
     <>
       <FaqJsonLd id="schema-travel-faq" faqs={faqs} />
+      <WebPageJsonLd route="/industries/crm-for-travel" />
       <JsonLd id="schema-travel-service" data={service} />
     </>
   );

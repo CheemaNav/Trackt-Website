@@ -24,9 +24,28 @@ const REDIRECTS = new Map([
   ["/terms-conditions", "/terms"],
 ]);
 
+/** No /partners hub yet; the breadcrumb level lands on the reseller page. */
+const TEMPORARY_REDIRECTS = new Map([["/partners", "/partners/reseller-partner-program"]]);
+
+const CANONICAL_ORIGIN = "https://tracktcrm.com";
+const HSTS = "max-age=31536000";
+
+// next.config headers() are not applied to proxy responses, so redirects set HSTS themselves.
+function redirectWithHsts(url, status) {
+  const response = NextResponse.redirect(url, status);
+  response.headers.set("Strict-Transport-Security", HSTS);
+  return response;
+}
+
 export function proxy(request) {
+  if (request.headers.get("host") === "www.tracktcrm.com") {
+    const { pathname: path, search } = request.nextUrl;
+    return redirectWithHsts(`${CANONICAL_ORIGIN}${path}${search}`, 301);
+  }
+
   const pathname = request.nextUrl.pathname.replace(/\/+$/, "") || "/";
-  const destination = REDIRECTS.get(pathname);
+  const permanent = REDIRECTS.get(pathname);
+  const destination = permanent ?? TEMPORARY_REDIRECTS.get(pathname);
 
   if (!destination) {
     return NextResponse.next();
@@ -34,11 +53,12 @@ export function proxy(request) {
 
   const url = request.nextUrl.clone();
   url.pathname = destination;
-  return NextResponse.redirect(url, 308);
+  return redirectWithHsts(url, permanent ? 308 : 307);
 }
 
 export const config = {
   matcher: [
+    { source: "/:path*", has: [{ type: "host", value: "www.tracktcrm.com" }] },
     "/whatsapp-crm",
     "/whatsapp-crm/",
     "/ai-crm",
@@ -79,5 +99,7 @@ export const config = {
     "/privacy-policies/",
     "/terms-conditions",
     "/terms-conditions/",
+    "/partners",
+    "/partners/",
   ],
 };

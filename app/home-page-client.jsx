@@ -222,7 +222,7 @@ export default function HomePageClient() {
             ) : tab === "pipeline" ? (
               <img
                 className="product-shot"
-                src="/assets/leadmanage.png"
+                src="/assets/leadmanage.webp"
                 alt="TracktCRM sales pipeline board with New, Won, Lost and Junk stages"
                 width={1383}
                 height={695}
@@ -478,7 +478,7 @@ export default function HomePageClient() {
           </div>
           <figure className="home-wa-visual">
             <img
-              src="/assets/whatsapp/whatsapp-crm-hero.png"
+              src="/assets/whatsapp/whatsapp-crm-hero.webp"
               alt="WhatsApp chat on a phone synced to the TracktCRM inbox and the lead's contact record"
               width={1683}
               height={935}

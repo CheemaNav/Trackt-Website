@@ -141,7 +141,11 @@ export default async function BlogPostPage({ params }) {
               <ul>
                 {post.sources.map((source) => (
                   <li key={source.href}>
-                    <a href={source.href} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={source.href}
+                      target="_blank"
+                      rel={source.nofollow ? "nofollow noopener noreferrer" : "noopener noreferrer"}
+                    >
                       {source.label}
                     </a>
                   </li>

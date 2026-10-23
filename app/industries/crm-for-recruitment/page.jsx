@@ -142,7 +142,7 @@ export default function RecruitmentCrmPage() {
           <div className="re-split re-split-reverse">
             <figure className="re-photo re-photo-contain">
               <img
-                src="/assets/AI-CRM-actually.jpg"
+                src="/assets/AI-CRM-actually.webp"
                 alt="TracktCRM record with a timeline of calls, notes, files, email and WhatsApp messages"
                 width={1645}
                 height={802}
@@ -281,7 +281,7 @@ export default function RecruitmentCrmPage() {
           <div className="re-split">
             <figure className="re-photo re-photo-contain">
               <img
-                src="/assets/leadmanage.png"
+                src="/assets/leadmanage.webp"
                 alt="TracktCRM pipeline board with a pipeline switcher and records grouped by stage, each with an owner"
                 width={1383}
                 height={695}

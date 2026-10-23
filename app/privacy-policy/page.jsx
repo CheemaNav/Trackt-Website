@@ -21,6 +21,7 @@ export const metadata = buildMetadata("/privacy-policy");
 export default function PrivacyPolicyPage() {
   return (
     <ContentPage
+      route="/privacy-policy"
       badge="LEGAL"
       title="Privacy Policy"
       lead={`${SITE_NAME} · Last updated: ${LAST_UPDATED}. This Privacy Policy applies to the TracktCRM application at ${APP_BASE_URL} and the website ${SITE_URL}. It explains how we collect, use, store, share, and delete information, including Google user data.`}
@@ -288,15 +289,8 @@ export default function PrivacyPolicyPage() {
           Support hours: {CONTACT.supportHours}
         </p>
         <p>
-          Questions? <Link href="/contact">Contact us</Link> or{" "}
-          <a
-            href={CONTACT.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            chat on WhatsApp
-          </a>
-          .
+          Questions? <Link href="/contact">Contact us</Link> or chat with us on
+          WhatsApp at {CONTACT.phoneDisplay}.
         </p>
       </article>
     </ContentPage>

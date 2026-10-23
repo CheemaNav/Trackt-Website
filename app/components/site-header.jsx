@@ -195,7 +195,7 @@ export default function SiteHeader() {
         <Link href="/" onClick={closeMenu}>
           <img
             className="logo-img"
-            src="/assets/tracktcrm-logo.png"
+            src="/assets/tracktcrm-logo.webp"
             alt="TracktCRM - AI CRM software"
             width={145}
             height={30}

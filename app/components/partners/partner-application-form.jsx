@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { PhoneInput } from "react-international-phone";
+import PhoneInput from "../lazy-phone-input";
 import { CheckIcon } from "../../icons";
 import {
   HONEYPOT_FIELD,

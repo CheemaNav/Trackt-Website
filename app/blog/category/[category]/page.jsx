@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import BlogBanner from "../../../components/blog/blog-banner";
 import BlogHub from "../../../components/blog/blog-hub";
 import { BlogCollectionJsonLd, BreadcrumbJsonLd } from "../../../json-ld";
-import { categoriesWithPosts, getAllPosts, getCategory, toCard } from "@/lib/blog";
+import { categoriesWithPosts, getAllPosts, getCategory, toCard, toCategoryTab } from "@/lib/blog";
 import { buildBlogCategoryMetadata } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -26,6 +26,7 @@ export default async function BlogCategoryPage({ params }) {
 
   const route = `/blog/category/${active.slug}`;
   const meta = buildBlogCategoryMetadata(active);
+  const categoryPosts = posts.filter((post) => post.category.slug === active.slug);
 
   return (
     <main className="blog-hub-page">
@@ -33,7 +34,7 @@ export default async function BlogCategoryPage({ params }) {
         name={meta.title.absolute}
         description={meta.description}
         path={route}
-        posts={posts.filter((post) => post.category.slug === active.slug)}
+        posts={categoryPosts}
       />
       <BreadcrumbJsonLd
         items={[
@@ -44,7 +45,11 @@ export default async function BlogCategoryPage({ params }) {
       />
       <BlogBanner />
       <div className="blog-hub">
-        <BlogHub posts={posts.map(toCard)} categories={categories} active={active} />
+        <BlogHub
+          posts={categoryPosts.map(toCard)}
+          categories={categories.map(toCategoryTab)}
+          active={{ slug: active.slug, label: active.label, intro: active.intro }}
+        />
       </div>
     </main>
   );

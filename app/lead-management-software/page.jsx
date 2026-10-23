@@ -93,7 +93,7 @@ export default function LeadManagementSoftwarePage() {
             </div>
             <figure className="re-banner-media re-banner-media-ui">
               <img
-                src="/assets/lead-management-hero.jpg"
+                src="/assets/lead-management-hero.webp"
                 alt="TracktCRM AI assistant next to the lead management software pipeline with leads in New, Contacted, Qualified, Won and Lost stages"
                 width={1280}
                 height={720}
@@ -123,7 +123,7 @@ export default function LeadManagementSoftwarePage() {
             </div>
             <figure className="re-photo re-photo-contain">
               <img
-                src="/assets/leadmanage.png"
+                src="/assets/leadmanage.webp"
                 alt="TracktCRM pipeline board used as a lead management system"
                 width={1383}
                 height={695}

@@ -13,6 +13,7 @@ export const metadata = buildMetadata("/terms");
 export default function TermsPage() {
   return (
     <ContentPage
+      route="/terms"
       badge="LEGAL"
       title="Terms & Conditions"
       lead={`${SITE_NAME} · Last updated: ${LAST_UPDATED}. These Terms & Conditions (“Terms”) govern access to and use of TracktCRM at ${APP_BASE_URL} and the website ${SITE_URL} (together, the “Service”). By creating an account, logging in, or using the Service, you agree to these Terms and to our Privacy Policy.`}

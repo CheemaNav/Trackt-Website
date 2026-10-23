@@ -97,7 +97,7 @@ export default function RealEstateCrmPage() {
           </div>
           <figure className="re-banner-media">
             <img
-              src="/assets/Property-enquiries.png"
+              src="/assets/Property-enquiries.webp"
               alt="Real estate sales agent at a laptop with TracktCRM panels showing the property lead list, sales chart and site visit pipeline"
               width={1552}
               height={1013}
@@ -124,7 +124,7 @@ export default function RealEstateCrmPage() {
           </div>
           <figure className="re-photo re-photo-contain">
             <img
-              src="/assets/real-estate/for-real-estate.jpg"
+              src="/assets/real-estate/for-real-estate.webp"
               alt="TracktCRM pipeline board organising real estate leads by stage"
               width={1386}
               height={698}
@@ -150,7 +150,7 @@ export default function RealEstateCrmPage() {
         <div className="re-split re-split-reverse">
           <figure className="re-photo re-photo-contain">
             <img
-              src="/assets/real-estate/real-estate-CRM-organizes.jpg"
+              src="/assets/real-estate/real-estate-CRM-organizes.webp"
               alt="TracktCRM organising real estate leads from portals, WhatsApp and ads in one pipeline"
               width={1600}
               height={900}
@@ -256,7 +256,7 @@ export default function RealEstateCrmPage() {
         <div className="re-split">
           <figure className="re-photo">
             <img
-              src="/assets/real-estate/broker-handshake.jpg"
+              src="/assets/real-estate/broker-handshake.webp"
               alt="Handshake closing a property partnership deal"
               width={1200}
               height={900}
@@ -392,7 +392,7 @@ export default function RealEstateCrmPage() {
         </p>
         <figure className="re-shot re-shot-wide">
           <img
-            src="/assets/leadmanage.png"
+            src="/assets/leadmanage.webp"
             alt="TracktCRM pipeline board with lead cards grouped by stage, each showing the owner, phone number and last activity"
             width={1600}
             height={900}

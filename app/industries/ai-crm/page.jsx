@@ -97,7 +97,7 @@ export default function AiCrmPage() {
           </div>
           <figure className="re-banner-media ai-banner-media">
             <img
-              src="/assets/AI-CRM.png"
+              src="/assets/AI-CRM.webp"
               alt="TracktCRM AI CRM replying to leads across WhatsApp, email and SMS"
               width={1600}
               height={1000}
@@ -138,7 +138,7 @@ export default function AiCrmPage() {
         <div className="re-split re-split-reverse">
           <figure className="re-photo re-photo-contain">
             <img
-              src="/assets/AI-CRM-actually.jpg"
+              src="/assets/AI-CRM-actually.webp"
               alt="TracktCRM lead record with the full history of calls, messages and notes"
               width={1600}
               height={900}
@@ -350,7 +350,7 @@ export default function AiCrmPage() {
         </p>
         <figure className="re-shot re-shot-wide">
           <img
-            src="/assets/AI-response.png"
+            src="/assets/AI-response.webp"
             alt="TracktCRM lead record showing AI reply, call transcript and summary before rep handover"
             width={1600}
             height={900}

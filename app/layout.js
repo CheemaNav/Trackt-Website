@@ -6,7 +6,7 @@ import SiteFooter from "./components/site-footer";
 import NavigationProgress from "./components/navigation-progress";
 import { DemoRequestProvider } from "./components/demo-request-provider";
 import { OrganizationJsonLd } from "./json-ld";
-import { SITE_NAME, SITE_URL } from "./site";
+import { HOME_URL, SITE_NAME, SITE_URL } from "./site";
 import { PAGE_SEO } from "@/lib/seo";
 import "./globals.css";
 
@@ -27,7 +27,7 @@ export const metadata = {
   },
   description: PAGE_SEO["/"].description,
   applicationName: SITE_NAME,
-  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  authors: [{ name: SITE_NAME, url: HOME_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
   category: "business",
@@ -50,9 +50,9 @@ export default function RootLayout({ children }) {
       <body>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

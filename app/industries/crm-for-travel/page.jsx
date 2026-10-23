@@ -85,7 +85,7 @@ export default function TravelCrmPage() {
             </div>
             <figure className="re-banner-media re-banner-media-ui">
               <img
-                src="/assets/travel-crm-hero.jpg"
+                src="/assets/travel-crm-hero.webp"
                 alt="TracktCRM AI assistant with a suitcase beside a travel CRM pipeline moving holiday package enquiries from quote to booked"
                 width={1280}
                 height={720}
@@ -115,7 +115,7 @@ export default function TravelCrmPage() {
             </div>
             <figure className="re-photo re-photo-contain">
               <img
-                src="/assets/leadmanage.png"
+                src="/assets/leadmanage.webp"
                 alt="TracktCRM travel CRM pipeline for enquiry, quote and booking stages"
                 width={1383}
                 height={695}

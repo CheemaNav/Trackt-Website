@@ -1,6 +1,6 @@
 import { readdirSync } from "fs";
 import { join } from "path";
-import { SITE_URL } from "./site";
+import { HOME_URL, SITE_URL } from "./site";
 import { categoriesWithPosts, getAllPosts } from "@/lib/blog";
 
 const PAGE_FILE = /^page\.(js|jsx|ts|tsx)$/;
@@ -116,7 +116,7 @@ export default function sitemap() {
 
   return [
     ...routes.map((route) => ({
-      url: route === "/" ? SITE_URL : `${SITE_URL}${route}`,
+      url: route === "/" ? HOME_URL : `${SITE_URL}${route}`,
       lastModified,
       changeFrequency: route === "/" || route === "/blog" ? "weekly" : "monthly",
       priority: PRIORITY[route] ?? 0.7,

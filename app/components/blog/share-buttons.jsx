@@ -39,7 +39,7 @@ export default function ShareButtons({ url, title }) {
           key={link.label}
           href={link.href}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow noopener noreferrer"
           aria-label={`Share on ${link.label}`}
         >
           {link.label}

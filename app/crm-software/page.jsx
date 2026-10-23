@@ -460,7 +460,7 @@ export default function CrmSoftwarePage() {
           <div className="cs-demo-grid">
             <figure className="re-shot">
               <img
-                src="/assets/leadmanage.png"
+                src="/assets/leadmanage.webp"
                 alt="TracktCRM pipeline board with deals in New, Won, Lost and Junk stages"
                 width={1383}
                 height={695}
@@ -470,7 +470,7 @@ export default function CrmSoftwarePage() {
             </figure>
             <figure className="re-shot">
               <img
-                src="/assets/whatsapp/whatsapp-lead-management.png"
+                src="/assets/whatsapp/whatsapp-lead-management.webp"
                 alt="TracktCRM deal record with its pipeline stage and the WhatsApp, email and call conversation on the lead"
                 width={1820}
                 height={864}

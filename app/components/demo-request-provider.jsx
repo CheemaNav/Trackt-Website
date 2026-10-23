@@ -8,8 +8,12 @@ import {
   useMemo,
   useState,
 } from "react";
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
-import DemoRequestModal, { DEMO_REQUESTED_KEY } from "./demo-request-modal";
+
+const DemoRequestModal = dynamic(() => import("./demo-request-modal"), { ssr: false });
+
+export const DEMO_REQUESTED_KEY = "tc-demo-requested";
 
 const DemoRequestContext = createContext(null);
 
@@ -65,7 +69,7 @@ export function DemoRequestProvider({ children }) {
   return (
     <DemoRequestContext.Provider value={value}>
       {children}
-      <DemoRequestModal open={open} auto={auto} onClose={closeDemo} />
+      {open ? <DemoRequestModal open={open} auto={auto} onClose={closeDemo} /> : null}
     </DemoRequestContext.Provider>
   );
 }

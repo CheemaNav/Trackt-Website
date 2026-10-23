@@ -201,7 +201,7 @@ export default function EducationCrmPage() {
           </h2>
           <figure className="edu-pipe-shot">
             <img
-              src="/assets/leadmanage.png"
+              src="/assets/leadmanage.webp"
               alt="TracktCRM pipeline board with lead cards grouped by stage, each showing the owner, phone number and last activity"
               width={1600}
               height={900}

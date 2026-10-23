@@ -89,7 +89,7 @@ export default function CloudBasedCrmPage() {
             </div>
             <figure className="re-banner-media re-banner-media-ui">
               <img
-                src="/assets/cloud-crm-hero.jpg"
+                src="/assets/cloud-crm-hero.webp"
                 alt="TracktCRM AI assistant on a cloud with the same CRM dashboard, pipeline and leads open on a desktop, laptop and phone"
                 width={1280}
                 height={720}
