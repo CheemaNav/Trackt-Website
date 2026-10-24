@@ -86,6 +86,8 @@ const PRIORITY = {
   "/help": 0.5,
   "/privacy-policy": 0.3,
   "/terms": 0.3,
+  "/refund-policy": 0.3,
+  "/delivery-policy": 0.3,
 };
 
 export default function sitemap() {

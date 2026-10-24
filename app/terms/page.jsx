@@ -1,6 +1,13 @@
 import Link from "next/link";
 import ContentPage from "../components/content-page";
-import { APP_BASE_URL, CONTACT, SITE_NAME, SITE_URL } from "../site";
+import {
+  APP_BASE_URL,
+  CONTACT,
+  LEGAL_NAME,
+  REGISTERED_OFFICE,
+  SITE_NAME,
+  SITE_URL,
+} from "../site";
 import { buildMetadata } from "@/lib/seo";
 
 const LAST_UPDATED = "16 October 2026";
@@ -36,13 +43,19 @@ export default function TermsPage() {
           meetings, reports, automations, and third-party integrations.
         </p>
         <p>
-          <strong>Operator:</strong> {SITE_NAME}
+          <strong>Operator:</strong> {SITE_NAME}, a product of {LEGAL_NAME}
+          (“we”, “us”).
+          <br />
+          Registered office: {REGISTERED_OFFICE.address}
+          <br />
+          Sales &amp; support office: {CONTACT.address}
           <br />
           Email: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
           <br />
-          Phone: <a href={`tel:${CONTACT.phoneTel}`}>{CONTACT.phoneDisplay}</a>
-          <br />
-          Address: {CONTACT.address}
+          Phone: <a href={`tel:${CONTACT.phoneTel}`}>{CONTACT.phoneDisplay}</a>{" "}
+          (sales &amp; support) ·{" "}
+          <a href={`tel:${CONTACT.officePhoneTel}`}>{CONTACT.officePhoneDisplay}</a>{" "}
+          (office)
         </p>
 
         <h2>2. Eligibility and accounts</h2>
@@ -207,13 +220,16 @@ export default function TermsPage() {
             purchase.
           </li>
           <li>
-            Unless a written contract or checkout page says otherwise, fees are
-            non-refundable for the current billing period.
+            Refunds follow our{" "}
+            <Link href="/refund-policy">Refund &amp; Cancellation Policy</Link>:
+            a full refund if requested within 7 days of the first payment of a
+            new subscription; renewals and requests after 7 days are not
+            refunded.
           </li>
           <li>
-            You may cancel a paid subscription from billing settings or by
-            contacting us. Access typically continues until the end of the
-            then-current billing period; it will not renew after that.
+            You may cancel a paid subscription from Settings → Billing or by
+            contacting us. Access continues until the end of the paid billing
+            period; it will not renew after that.
           </li>
           <li>
             We may change prices or plans with notice. Continued use after the
@@ -331,7 +347,9 @@ export default function TermsPage() {
           <a href={`tel:${CONTACT.phoneTel}`}>{CONTACT.phoneDisplay}</a> ·{" "}
           <Link href="/contact">Contact us</Link>
         </p>
-        <p>{CONTACT.address}</p>
+        <p>
+          {LEGAL_NAME}, registered office: {REGISTERED_OFFICE.address}
+        </p>
       </article>
     </ContentPage>
   );

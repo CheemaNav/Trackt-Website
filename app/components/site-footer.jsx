@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SOCIALS } from "../icons";
 import { FOOTER_COLS } from "../home-data";
-import { SOCIAL_PROFILES } from "../site";
+import { LEGAL_NAME, REGISTERED_OFFICE, SOCIAL_PROFILES } from "../site";
 
 const FOOTER_SOCIALS = SOCIALS.filter(({ id }) => SOCIAL_PROFILES[id]);
 
@@ -98,10 +98,14 @@ export default function SiteFooter() {
       </div>
       <div className="legal">
         <div className="legal-inner">
-          <span>© 2026 TracktCRM, a product of Terioat Infotech. All rights reserved.</span>
+          <span>
+            © 2026 TracktCRM, a product of {LEGAL_NAME}. Registered Office: {REGISTERED_OFFICE.short}.
+          </span>
           <span className="legal-links">
             <Link href="/privacy-policy">Privacy Policy</Link>
             <Link href="/terms">Terms & Conditions</Link>
+            <Link href="/refund-policy">Refund Policy</Link>
+            <Link href="/delivery-policy">Delivery Policy</Link>
             <Link href="/contact">Contact Us</Link>
           </span>
         </div>

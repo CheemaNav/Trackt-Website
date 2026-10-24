@@ -43,18 +43,32 @@ export const SAME_AS = [
 ].filter(Boolean);
 
 const PHONE_E164 = "916239520057";
+const OFFICE_PHONE_E164 = "917087290627";
+
+export const LEGAL_NAME = "Terioat Infotech";
+
+const REGISTERED_OFFICE_SHORT = "GR Tower, Industrial Area, Sector 75, SAS Nagar, Punjab 140308";
+
+export const REGISTERED_OFFICE = {
+  short: REGISTERED_OFFICE_SHORT,
+  address: `${REGISTERED_OFFICE_SHORT}, India`,
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=GR+Tower,+Industrial+Area,+Sector+75,+SAS+Nagar,+Punjab+140308",
+};
 
 export const CONTACT = {
   phoneE164: PHONE_E164,
   phoneDisplay: "+91 62395 20057",
   phoneTel: `+${PHONE_E164}`,
+  officePhoneDisplay: "+91 70872 90627",
+  officePhoneTel: `+${OFFICE_PHONE_E164}`,
   email: "support@tracktcrm.com",
   whatsappUrl: `https://wa.me/${PHONE_E164}`,
   // wa.me answers crawlers with HTTP 429; nofollow keeps audits from treating it as broken.
   whatsappRel: "nofollow noopener noreferrer",
   supportHours: "Mon–Fri, 10:00–19:00 IST",
   address:
-    "3rd Floor, D-231, Phase 8B, Sector 91, Sahibzada Ajit Singh Nagar, Punjab 140307",
+    "3rd Floor, D-231, Phase 8B, Sector 91, Sahibzada Ajit Singh Nagar, Punjab 140307, India",
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=3rd+Floor,+D-231,+Phase+8B,+Sector+91,+Sahibzada+Ajit+Singh+Nagar,+Punjab+140307",
 };

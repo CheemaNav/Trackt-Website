@@ -6,7 +6,7 @@ import { FaWhatsapp } from "react-icons/fa6";
 import { LuClock, LuMail, LuMapPin, LuPhone } from "react-icons/lu";
 import PhoneInput from "../components/lazy-phone-input";
 import useReveal from "../use-reveal";
-import { CONTACT } from "../site";
+import { CONTACT, LEGAL_NAME, REGISTERED_OFFICE } from "../site";
 import { CONTACT_FAQS } from "./data";
 
 const INITIAL = {
@@ -102,8 +102,18 @@ export default function ContactPageClient() {
                   <LuPhone size={20} strokeWidth={2.2} />
                 </span>
                 <span>
-                  <strong>Phone</strong>
+                  <strong>Sales &amp; Support</strong>
                   <em>{CONTACT.phoneDisplay}</em>
+                </span>
+              </a>
+
+              <a className="contact-card" href={`tel:${CONTACT.officePhoneTel}`}>
+                <span className="contact-card-icon" aria-hidden="true">
+                  <LuPhone size={20} strokeWidth={2.2} />
+                </span>
+                <span>
+                  <strong>Office</strong>
+                  <em>{CONTACT.officePhoneDisplay}</em>
                 </span>
               </a>
 
@@ -152,8 +162,23 @@ export default function ContactPageClient() {
                   <LuMapPin size={20} strokeWidth={2.2} />
                 </span>
                 <span>
-                  <strong>Office</strong>
+                  <strong>Sales &amp; Support Office</strong>
                   <em>{CONTACT.address}</em>
+                </span>
+              </a>
+
+              <a
+                className="contact-card"
+                href={REGISTERED_OFFICE.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="contact-card-icon" aria-hidden="true">
+                  <LuMapPin size={20} strokeWidth={2.2} />
+                </span>
+                <span>
+                  <strong>Registered Office ({LEGAL_NAME})</strong>
+                  <em>{REGISTERED_OFFICE.address}</em>
                 </span>
               </a>
             </div>

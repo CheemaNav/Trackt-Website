@@ -1,6 +1,13 @@
 import Link from "next/link";
 import ContentPage from "../components/content-page";
-import { APP_BASE_URL, CONTACT, SITE_NAME, SITE_URL } from "../site";
+import {
+  APP_BASE_URL,
+  CONTACT,
+  LEGAL_NAME,
+  REGISTERED_OFFICE,
+  SITE_NAME,
+  SITE_URL,
+} from "../site";
 import { buildMetadata } from "@/lib/seo";
 
 const LAST_UPDATED = "8 October 2026";
@@ -278,13 +285,19 @@ export default function PrivacyPolicyPage() {
 
         <h2>9. Contact</h2>
         <p>
-          <strong>{SITE_NAME}</strong>
+          <strong>{SITE_NAME}</strong>, a product of {LEGAL_NAME}. {LEGAL_NAME} is
+          responsible for the personal data described in this policy.
+          <br />
+          Registered office: {REGISTERED_OFFICE.address}
+          <br />
+          Sales &amp; support office: {CONTACT.address}
           <br />
           Email: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
           <br />
-          Phone: <a href={`tel:${CONTACT.phoneTel}`}>{CONTACT.phoneDisplay}</a>
-          <br />
-          Address: {CONTACT.address}
+          Phone: <a href={`tel:${CONTACT.phoneTel}`}>{CONTACT.phoneDisplay}</a>{" "}
+          (sales &amp; support) ·{" "}
+          <a href={`tel:${CONTACT.officePhoneTel}`}>{CONTACT.officePhoneDisplay}</a>{" "}
+          (office)
           <br />
           Support hours: {CONTACT.supportHours}
         </p>

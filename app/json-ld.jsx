@@ -1,6 +1,7 @@
 import {
   CONTACT,
   HOME_URL,
+  LEGAL_NAME,
   SAME_AS,
   SITE_NAME,
   SITE_RATING,
@@ -8,6 +9,16 @@ import {
 } from "./site";
 import { FAQS } from "./home-data";
 import { PAGE_SEO, absoluteUrl } from "@/lib/seo";
+
+// Must match the Google Business Profile address (Sector 91 office), not the registered office.
+const SALES_OFFICE_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: "3rd Floor, D-231, Phase 8B, Sector 91",
+  addressLocality: "Sahibzada Ajit Singh Nagar",
+  addressRegion: "Punjab",
+  postalCode: "140307",
+  addressCountry: "IN",
+};
 
 export function JsonLd({ data, id }) {
   return (
@@ -25,6 +36,7 @@ export function OrganizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: SITE_NAME,
+    legalName: LEGAL_NAME,
     url: HOME_URL,
     logo: `${SITE_URL}/logo.png`,
     email: CONTACT.email,
@@ -32,23 +44,25 @@ export function OrganizationJsonLd() {
     description:
       "TracktCRM is an AI-powered CRM that captures leads, automates follow-ups and tracks sales pipelines for real estate teams, agencies, consultants and freelancers.",
     sameAs: SAME_AS,
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "customer support",
-      telephone: CONTACT.phoneTel,
-      email: CONTACT.email,
-      url: `${SITE_URL}/contact`,
-      areaServed: "Worldwide",
-      availableLanguage: ["en", "hi"],
-    },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "3rd Floor, D-231, Phase 8B, Sector 91",
-      addressLocality: "Sahibzada Ajit Singh Nagar",
-      addressRegion: "Punjab",
-      postalCode: "140307",
-      addressCountry: "IN",
-    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        telephone: "+91-62395-20057",
+        email: CONTACT.email,
+        url: `${SITE_URL}/contact`,
+        areaServed: "Worldwide",
+        availableLanguage: ["en", "hi"],
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "office",
+        telephone: "+91-70872-90627",
+        areaServed: "IN",
+        availableLanguage: ["en", "hi"],
+      },
+    ],
+    address: SALES_OFFICE_ADDRESS,
   };
 
   return <JsonLd id="schema-organization" data={organization} />;
@@ -537,16 +551,10 @@ export function ContactPageJsonLd() {
       "@type": "Organization",
       name: SITE_NAME,
       url: HOME_URL,
+      legalName: LEGAL_NAME,
       email: CONTACT.email,
       telephone: CONTACT.phoneTel,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "3rd Floor, D-231, Phase 8B, Sector 91",
-        addressLocality: "Sahibzada Ajit Singh Nagar",
-        addressRegion: "Punjab",
-        postalCode: "140307",
-        addressCountry: "IN",
-      },
+      address: SALES_OFFICE_ADDRESS,
     },
   };
 
