@@ -106,17 +106,6 @@ export default function ContactPageClient() {
                   <em>{CONTACT.phoneDisplay}</em>
                 </span>
               </a>
-
-              <a className="contact-card" href={`tel:${CONTACT.officePhoneTel}`}>
-                <span className="contact-card-icon" aria-hidden="true">
-                  <LuPhone size={20} strokeWidth={2.2} />
-                </span>
-                <span>
-                  <strong>Office</strong>
-                  <em>{CONTACT.officePhoneDisplay}</em>
-                </span>
-              </a>
-
               <a className="contact-card" href={`mailto:${CONTACT.email}`}>
                 <span className="contact-card-icon" aria-hidden="true">
                   <LuMail size={20} strokeWidth={2.2} />

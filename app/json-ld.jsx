@@ -44,24 +44,15 @@ export function OrganizationJsonLd() {
     description:
       "TracktCRM is an AI-powered CRM that captures leads, automates follow-ups and tracks sales pipelines for real estate teams, agencies, consultants and freelancers.",
     sameAs: SAME_AS,
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        contactType: "customer support",
-        telephone: "+91-62395-20057",
-        email: CONTACT.email,
-        url: `${SITE_URL}/contact`,
-        areaServed: "Worldwide",
-        availableLanguage: ["en", "hi"],
-      },
-      {
-        "@type": "ContactPoint",
-        contactType: "office",
-        telephone: "+91-70872-90627",
-        areaServed: "IN",
-        availableLanguage: ["en", "hi"],
-      },
-    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      telephone: "+91-62395-20057",
+      email: CONTACT.email,
+      url: `${SITE_URL}/contact`,
+      areaServed: "Worldwide",
+      availableLanguage: ["en", "hi"],
+    },
     address: SALES_OFFICE_ADDRESS,
   };
 

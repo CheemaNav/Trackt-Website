@@ -43,8 +43,6 @@ export const SAME_AS = [
 ].filter(Boolean);
 
 const PHONE_E164 = "916239520057";
-const OFFICE_PHONE_E164 = "917087290627";
-
 export const LEGAL_NAME = "Terioat Infotech";
 
 const REGISTERED_OFFICE_SHORT = "GR Tower, Industrial Area, Sector 75, SAS Nagar, Punjab 140308";
@@ -60,8 +58,6 @@ export const CONTACT = {
   phoneE164: PHONE_E164,
   phoneDisplay: "+91 62395 20057",
   phoneTel: `+${PHONE_E164}`,
-  officePhoneDisplay: "+91 70872 90627",
-  officePhoneTel: `+${OFFICE_PHONE_E164}`,
   email: "support@tracktcrm.com",
   whatsappUrl: `https://wa.me/${PHONE_E164}`,
   // wa.me answers crawlers with HTTP 429; nofollow keeps audits from treating it as broken.

@@ -52,10 +52,8 @@ export default function TermsPage() {
           <br />
           Email: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
           <br />
-          Phone: <a href={`tel:${CONTACT.phoneTel}`}>{CONTACT.phoneDisplay}</a>{" "}
-          (sales &amp; support) ·{" "}
-          <a href={`tel:${CONTACT.officePhoneTel}`}>{CONTACT.officePhoneDisplay}</a>{" "}
-          (office)
+          Sales &amp; Support:{" "}
+          <a href={`tel:${CONTACT.phoneTel}`}>{CONTACT.phoneDisplay}</a>
         </p>
 
         <h2>2. Eligibility and accounts</h2>
