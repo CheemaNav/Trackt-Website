@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   ArrowIcon,
   CaptureIcon,
@@ -257,6 +258,13 @@ export default function CloudBasedCrmPage() {
               </p>
             </article>
           </div>
+          <p className="industry-page-links">
+            Related reading:{" "}
+            <Link href="/blog/cloud-based-crm-guide">
+              What is a cloud-based CRM? A plain-English guide with a 10-question checklist
+            </Link>
+            .
+          </p>
         </section>
 
         <section className="section reveal" id="why">

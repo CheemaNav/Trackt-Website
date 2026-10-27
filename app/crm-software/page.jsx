@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   AiLeadIcon,
   ArrowIcon,
@@ -153,6 +154,13 @@ export default function CrmSoftwarePage() {
             and sales teams in{" "}
             <a href="/industries/real-estate-crm">real estate</a> and{" "}
             <a href="/industries/education-crm">education</a>.
+          </p>
+          <p className="cs-footnote">
+            Related reading:{" "}
+            <Link href="/blog/crm-software-examples">
+              15 CRM software examples showing what a CRM does in real businesses
+            </Link>
+            .
           </p>
         </section>
 

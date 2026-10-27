@@ -86,7 +86,9 @@ export default async function BlogPostPage({ params }) {
               {post.author ? <span>By {post.author}</span> : null}
               <span>
                 Updated <time dateTime={post.updatedAt}>{formatDate(post.updatedAt)}</time>
-              </span>            </p>
+              </span>
+              <span>{post.readingTime} min read</span>
+            </p>
           </div>
           {post.heroImage ? (
             <figure className="blog-post-hero">
@@ -155,8 +157,11 @@ export default async function BlogPostPage({ params }) {
           ) : null}
 
           <BlogCtaBox
-            title="Put your leads and WhatsApp chats in one pipeline"
-            text="Start on the Free plan for 1 user. WhatsApp is included and Meta message charges apply. No credit card needed."
+            title={post.cta?.title ?? "Put your leads and WhatsApp chats in one pipeline"}
+            text={
+              post.cta?.text ??
+              "Start on the Free plan for 1 user. WhatsApp is included and Meta message charges apply. No credit card needed."
+            }
           />
 
           <ShareButtons url={url} title={post.title} />

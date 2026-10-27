@@ -9,8 +9,8 @@ Posts go in `content/blog/<slug>.mdx`. Set Status to `done` when a post is live 
 |---|---|
 | best-crm-software-india | done |
 | free-crm-small-business | done |
-| cloud-based-crm-guide | todo |
-| crm-software-examples | todo |
+| cloud-based-crm-guide | done |
+| crm-software-examples | done |
 | what-is-crm | todo |
 | erp-vs-crm | todo |
 | crm-benefits-drawbacks | todo |
@@ -28,7 +28,7 @@ Posts go in `content/blog/<slug>.mdx`. Set Status to `done` when a post is live 
 | Slug | Status |
 |---|---|
 | best-whatsapp-crm-india | done |
-| whatsapp-business-api-pricing-india | todo |
+| whatsapp-business-api-pricing-india | draft (confirm Meta INR rates and TracktCRM markup) |
 | whatsapp-sales-message-templates | todo |
 | zoho-crm-whatsapp-integration | todo |
 

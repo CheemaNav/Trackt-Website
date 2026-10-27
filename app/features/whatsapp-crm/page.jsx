@@ -15,8 +15,13 @@ import { BookDemoButton } from "../../components/demo-request-provider";
 import { APP_REGISTER_URL } from "../../site";
 import { BreadcrumbJsonLd, WhatsAppCrmJsonLd } from "../../json-ld";
 import { INTEGRATIONS as HOME_INTEGRATIONS } from "../../home-data";
+import { CHATBOT_SPOTS, CHATBOT_TEMPLATE_ICONS } from "./chatbot-icons";
 import {
   APP_VS_API_ROWS,
+  CHATBOT_FEATURES,
+  CHATBOT_POINTS,
+  CHATBOT_STEPS,
+  CHATBOT_TEMPLATES,
   CHOOSING_POINTS,
   FEATURES,
   PROBLEM_POINTS,
@@ -230,6 +235,140 @@ export default function WhatsAppCrmPage() {
                   </article>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        <section className="wa-section wa-bot reveal" id="whatsapp-chatbot">
+          <div className="wrap">
+            <div className="wa-bot-intro">
+              <div className="wa-section-head wa-bot-head">
+                <p className="kicker">WHATSAPP CHATBOT</p>
+                <h2 className="h2">
+                  WhatsApp Chatbot That Replies While Your Team Is Busy
+                </h2>
+                <p className="lead">
+                  Greet every new enquiry with a WhatsApp chatbot menu. When the
+                  customer taps an option, the bot sends the answer you set for
+                  it: text, an image, reply buttons or a link. When someone on
+                  your team replies by hand, the bot steps back.
+                </p>
+                <ul className="wa-bot-checks">
+                  {CHATBOT_POINTS.map((point) => (
+                    <li key={point}>
+                      <span className="wa-pill-check" aria-hidden="true">
+                        <CheckIcon size={13} />
+                      </span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+                <p className="wa-bot-plan">
+                  The chatbot runs on the official WhatsApp Business API,
+                  included on the Pro, Premium and All-in-One plans.{" "}
+                  <a href="/pricing">Compare plans</a>.
+                </p>
+              </div>
+              <figure className="wa-bot-visual">
+                <img
+                  src="/assets/whatsapp/whatsapp-chatbot-conversation.webp"
+                  alt="WhatsApp chatbot conversation: the customer says hi, gets a Main Menu with About us, Products and Talk to our team, taps Products and receives reply buttons"
+                  width={1440}
+                  height={1200}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </div>
+
+            <div className="wa-bot-grid">
+              {CHATBOT_FEATURES.map((feature) => {
+                const Spot = CHATBOT_SPOTS[feature.icon];
+                return (
+                  <article className="wa-bot-card" key={feature.title}>
+                    <div className="wa-bot-spot">
+                      <Spot />
+                    </div>
+                    <h3>{feature.title}</h3>
+                    <p>{feature.body}</p>
+                  </article>
+                );
+              })}
+            </div>
+
+            <div className="wa-bot-templates">
+              <h3 className="wa-bot-subhead">
+                Start From a Ready-Made WhatsApp Chatbot
+              </h3>
+              <p className="wa-bot-subtext">
+                Choose a template, change the text to match your business, then
+                save and turn it on.
+              </p>
+              <div className="wa-bot-template-grid">
+                {CHATBOT_TEMPLATES.map((template) => {
+                  const Icon = CHATBOT_TEMPLATE_ICONS[template.icon];
+                  return (
+                    <article className="wa-bot-template" key={template.name}>
+                      <div className="wa-bot-template-head">
+                        <span className="wa-bot-template-icon" aria-hidden="true">
+                          <Icon size={18} />
+                        </span>
+                        <h4>{template.name}</h4>
+                      </div>
+                      <p>{template.body}</p>
+                      <ul className="wa-bot-chips" aria-label={`${template.name} menu options`}>
+                        {template.options.map((option) => (
+                          <li key={option}>{option}</li>
+                        ))}
+                      </ul>
+                    </article>
+                  );
+                })}
+                <article className="wa-bot-template is-scratch">
+                  <span className="wa-bot-template-plus" aria-hidden="true">
+                    <CHATBOT_TEMPLATE_ICONS.plus size={18} />
+                  </span>
+                  <h4>Start from scratch</h4>
+                  <p>Build your own menu step by step, with up to 40 steps.</p>
+                </article>
+              </div>
+            </div>
+
+            <div className="wa-bot-setup">
+              <figure className="wa-bot-builder">
+                <img
+                  src="/assets/whatsapp/whatsapp-chatbot-builder.webp"
+                  alt="TracktCRM WhatsApp chatbot builder: a start message with three menu options, each linked to a reply with text and image, buttons, a link, or a hand-over to the team"
+                  width={1600}
+                  height={1013}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <div className="wa-bot-steps">
+                <h3 className="wa-bot-subhead">
+                  Set Up a WhatsApp Chatbot in 3 Steps
+                </h3>
+                <ol>
+                  {CHATBOT_STEPS.map((step, index) => (
+                    <li key={step.title}>
+                      <span className="wa-bot-step-num">{index + 1}</span>
+                      <div>
+                        <h4>{step.title}</h4>
+                        <p>{step.body}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+                <a
+                  className="btn btn-primary"
+                  href={APP_REGISTER_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Try the CRM free
+                </a>
+              </div>
             </div>
           </div>
         </section>

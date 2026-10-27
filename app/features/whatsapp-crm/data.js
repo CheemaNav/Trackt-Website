@@ -80,6 +80,81 @@ export const FEATURES = [
   },
 ];
 
+export const CHATBOT_POINTS = [
+  "Ready-made chatbots you can edit in minutes",
+  "No coding: build the menu step by step",
+  "Every bot chat saved on the lead in TracktCRM",
+];
+
+export const CHATBOT_FEATURES = [
+  {
+    icon: "templates",
+    title: "Ready-Made Chatbots",
+    body: "Start from Main menu, Product enquiry or Appointments & visits, change the text to match your business and turn it on.",
+  },
+  {
+    icon: "menu",
+    title: "Menus, Buttons and Links",
+    body: "Send a menu of up to 10 options, up to 3 reply buttons, a link button or a plain message, with an image if you want one. Customers can tap an option or type it.",
+  },
+  {
+    icon: "start",
+    title: "Starts on Its Own",
+    body: "The bot can greet every new conversation, or start when a customer types a keyword such as hi, hello or menu.",
+  },
+  {
+    icon: "handover",
+    title: "Your Team Can Take Over",
+    body: "Once someone on your team replies by hand, the bot stays quiet in that chat for 24 hours, so the customer never gets two answers.",
+  },
+  {
+    icon: "lead",
+    title: "Every Chat Saved on the Lead",
+    body: "Bot messages and customer replies show in the team inbox and on the lead, so your rep sees what was asked before replying.",
+  },
+  {
+    icon: "shield",
+    title: "Respects Opt-Outs",
+    body: "If a customer sends STOP, the bot stops messaging them. Built-in limits also stop two bots from replying to each other in a loop.",
+  },
+];
+
+export const CHATBOT_TEMPLATES = [
+  {
+    icon: "whatsapp",
+    name: "Main menu",
+    body: "Welcome customers with a menu: about your business, your products and a way to reach your team.",
+    options: ["About us", "Products", "Talk to our team"],
+  },
+  {
+    icon: "tag",
+    name: "Product enquiry",
+    body: "Answer product questions with buttons for features and price, and pass interested buyers to sales.",
+    options: ["Features", "Price", "Talk to sales"],
+  },
+  {
+    icon: "calendar",
+    name: "Appointments & visits",
+    body: "Share your timings and location, and send a booking link when someone wants an appointment.",
+    options: ["Book an appointment", "Timings", "Location", "Talk to us"],
+  },
+];
+
+export const CHATBOT_STEPS = [
+  {
+    title: "Connect WhatsApp Business",
+    body: "Connect your number through the official WhatsApp Business API from Integrations, then WhatsApp Business.",
+  },
+  {
+    title: "Pick a template and edit it",
+    body: "Change the welcome message, menu options and replies. Add an image, reply buttons or a booking link where you need one.",
+  },
+  {
+    title: "Turn it on",
+    body: "Choose when it starts, on every new conversation or on keywords like hi, hello and menu, and switch it on.",
+  },
+];
+
 export const WA_RULES = [
   {
     title: "The 24-hour window",
@@ -118,7 +193,7 @@ export const APP_VS_API_ROWS = [
     label: "Automation",
     app: "Basic quick replies",
     api: "Templates, bots, workflows",
-    tracktcrm: "Templates, AI first replies and reminders",
+    tracktcrm: "Templates, chatbot, AI first replies and reminders",
   },
   {
     label: "CRM records",
@@ -207,6 +282,14 @@ export const WA_FAQS = [
   {
     q: "Can I automate replies to common questions?",
     a: "Set up template quick replies, or let the AI send the first reply to new enquiries. Outside the 24-hour window, approved templates are used.",
+  },
+  {
+    q: "Does TracktCRM have a WhatsApp chatbot?",
+    a: "Yes. You can build a WhatsApp chatbot that replies with a menu, reply buttons, links and images, starting from a ready-made template or from scratch. It runs on the official WhatsApp Business API, which is included on the Pro, Premium and All-in-One plans.",
+  },
+  {
+    q: "Will the chatbot keep replying after my team answers?",
+    a: "No. Once someone on your team replies by hand, the chatbot stays quiet in that chat for 24 hours, so your rep can carry on the conversation.",
   },
   {
     q: "Can I use my existing WhatsApp number?",

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowIcon } from "../../icons";
 import { APP_REGISTER_URL } from "../../site";
+import WhatsAppCostCalculator from "./whatsapp-cost-calculator";
 
 export function BlogCtaBox({
   title = "Try TracktCRM free",
@@ -101,4 +102,5 @@ export const MDX_COMPONENTS = {
   KeyTakeaway,
   Figure,
   CTA: BlogCtaBox,
+  WhatsAppCostCalculator,
 };
