@@ -378,6 +378,7 @@ export const FOOTER_COLS = [
     links: [
       { label: "AI CRM Software", href: "/" },
       { label: "CRM Software", href: "/crm-software" },
+      { label: "CRM for Small Business", href: "/crm-for-small-business" },
       { label: "Pricing", href: "/pricing" },
       { label: "Integrations", href: "/integrations" },
       { label: "Contact / Demo", href: "/contact" },

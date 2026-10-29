@@ -67,6 +67,7 @@ const PRIORITY = {
   "/industries/crm-for-healthcare": 0.9,
   "/industries/crm-for-travel": 0.9,
   "/lead-management-software": 0.9,
+  "/crm-for-small-business": 0.8,
   "/cloud-based-crm": 0.85,
   "/features/sales-dashboard": 0.85,
   "/features/whatsapp-crm": 0.85,
