@@ -4,7 +4,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import PhoneInput from "./lazy-phone-input";
 import { DEMO_REQUESTED_KEY } from "./demo-request-provider";
 import { CloseIcon } from "../icons";
-import { CONTACT } from "../site";
+import { CONTACT, openExternal } from "../site";
 
 const INITIAL = {
   name: "",
@@ -156,14 +156,13 @@ function DemoRequestDialog({ auto, onClose }) {
               schedule your walkthrough.
             </p>
             <div className="demo-sent-actions">
-              <a
+              <button
+                type="button"
                 className="btn btn-primary"
-                href={CONTACT.whatsappUrl}
-                target="_blank"
-                rel={CONTACT.whatsappRel}
+                onClick={() => openExternal(CONTACT.whatsappUrl)}
               >
                 Chat on WhatsApp
-              </a>
+              </button>
               <button
                 type="button"
                 className="btn btn-outline"

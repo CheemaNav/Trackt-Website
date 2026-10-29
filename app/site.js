@@ -59,12 +59,16 @@ export const CONTACT = {
   phoneDisplay: "+91 62395 20057",
   phoneTel: `+${PHONE_E164}`,
   email: "support@tracktcrm.com",
+  // wa.me answers crawlers with HTTP 429 and nofollow is flagged by audits, so open it with
+  // openExternal() from a button instead of rendering it as an <a href>.
   whatsappUrl: `https://wa.me/${PHONE_E164}`,
-  // wa.me answers crawlers with HTTP 429; nofollow keeps audits from treating it as broken.
-  whatsappRel: "nofollow noopener noreferrer",
   supportHours: "Mon–Fri, 10:00–19:00 IST",
   address:
     "3rd Floor, D-231, Phase 8B, Sector 91, Sahibzada Ajit Singh Nagar, Punjab 140307, India",
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=3rd+Floor,+D-231,+Phase+8B,+Sector+91,+Sahibzada+Ajit+Singh+Nagar,+Punjab+140307",
 };
+
+export function openExternal(url) {
+  window.open(url, "_blank", "noopener,noreferrer");
+}

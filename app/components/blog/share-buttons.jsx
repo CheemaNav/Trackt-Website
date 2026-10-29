@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { openExternal } from "../../site";
 
 export default function ShareButtons({ url, title }) {
   const [copied, setCopied] = useState(false);
@@ -35,15 +36,14 @@ export default function ShareButtons({ url, title }) {
     <div className="blog-share">
       <span className="blog-share-label">Share</span>
       {links.map((link) => (
-        <a
+        <button
           key={link.label}
-          href={link.href}
-          target="_blank"
-          rel="nofollow noopener noreferrer"
+          type="button"
+          onClick={() => openExternal(link.href)}
           aria-label={`Share on ${link.label}`}
         >
           {link.label}
-        </a>
+        </button>
       ))}
       <button type="button" onClick={copyLink} aria-live="polite">
         {copied ? "Link copied" : "Copy link"}

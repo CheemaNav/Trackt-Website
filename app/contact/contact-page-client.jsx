@@ -6,7 +6,7 @@ import { FaWhatsapp } from "react-icons/fa6";
 import { LuClock, LuMail, LuMapPin, LuPhone } from "react-icons/lu";
 import PhoneInput from "../components/lazy-phone-input";
 import useReveal from "../use-reveal";
-import { CONTACT, LEGAL_NAME, REGISTERED_OFFICE } from "../site";
+import { CONTACT, LEGAL_NAME, REGISTERED_OFFICE, openExternal } from "../site";
 import { CONTACT_FAQS } from "./data";
 
 const INITIAL = {
@@ -116,11 +116,10 @@ export default function ContactPageClient() {
                 </span>
               </a>
 
-              <a
+              <button
+                type="button"
                 className="contact-card"
-                href={CONTACT.whatsappUrl}
-                target="_blank"
-                rel={CONTACT.whatsappRel}
+                onClick={() => openExternal(CONTACT.whatsappUrl)}
               >
                 <span className="contact-card-icon is-wa" aria-hidden="true">
                   <FaWhatsapp size={22} />
@@ -129,7 +128,7 @@ export default function ContactPageClient() {
                   <strong>WhatsApp</strong>
                   <em>Chat with us on WhatsApp</em>
                 </span>
-              </a>
+              </button>
 
               <div className="contact-card contact-card-static">
                 <span className="contact-card-icon" aria-hidden="true">
@@ -190,14 +189,13 @@ export default function ContactPageClient() {
                   Thanks {form.name || "there"} - we&apos;ll reply soon. You can
                   also reach us on WhatsApp anytime.
                 </p>
-                <a
+                <button
+                  type="button"
                   className="btn btn-primary contact-sent-cta"
-                  href={CONTACT.whatsappUrl}
-                  target="_blank"
-                  rel={CONTACT.whatsappRel}
+                  onClick={() => openExternal(CONTACT.whatsappUrl)}
                 >
                   Open WhatsApp
-                </a>
+                </button>
               </div>
             ) : (
               <form className="demo-form" onSubmit={onSubmit}>

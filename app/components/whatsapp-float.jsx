@@ -2,9 +2,9 @@
 
 import { usePathname } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa6";
-import { CONTACT } from "../site";
+import { CONTACT, openExternal } from "../site";
 
-// Pages that already show their own WhatsApp contact link; one wa.me link per page.
+// Pages that already show their own WhatsApp contact button.
 const HIDDEN_ON = new Set(["/contact"]);
 
 export default function WhatsAppFloat() {
@@ -12,11 +12,10 @@ export default function WhatsAppFloat() {
   if (HIDDEN_ON.has(pathname)) return null;
 
   return (
-    <a
+    <button
+      type="button"
       className="whatsapp-float"
-      href={CONTACT.whatsappUrl}
-      target="_blank"
-      rel={CONTACT.whatsappRel}
+      onClick={() => openExternal(CONTACT.whatsappUrl)}
       aria-label="Chat on WhatsApp"
     >
       <span className="whatsapp-ring" aria-hidden="true" />
@@ -24,6 +23,6 @@ export default function WhatsAppFloat() {
       <span className="whatsapp-btn">
         <FaWhatsapp size={30} aria-hidden="true" />
       </span>
-    </a>
+    </button>
   );
 }
