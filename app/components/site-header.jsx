@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import {
   AgencyIcon,
   AiLeadIcon,
+  ArrowIcon,
   AutomotiveIcon,
   CloseIcon,
   EducationIcon,
@@ -18,6 +19,7 @@ import {
   TravelIcon,
 } from "../icons";
 import { APP_LOGIN_URL, APP_REGISTER_URL } from "../site";
+import { FEATURE_ICONS, FEATURE_MENU, FEATURE_MENU_LINKS } from "../features/feature-nav";
 
 const INDUSTRY_LINKS = [
   {
@@ -76,16 +78,6 @@ const INDUSTRY_LINKS = [
   },
 ];
 
-const FEATURE_LINKS = [
-  { label: "AI CRM", href: "/industries/ai-crm" },
-  { label: "WhatsApp CRM", href: "/features/whatsapp-crm" },
-  { label: "Lead Management", href: "/lead-management-software" },
-  { label: "Sales Dashboard", href: "/features/sales-dashboard" },
-  { label: "Cloud CRM", href: "/cloud-based-crm" },
-  { label: "Forms", href: "/#forms" },
-  { label: "CRM Software", href: "/crm-software" },
-];
-
 export default function SiteHeader() {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -109,7 +101,7 @@ export default function SiteHeader() {
     clearTimeout(dropdownCloseTimer.current);
     setOpenDropdown(id);
     if (id === "industries") prefetchLinks(INDUSTRY_LINKS);
-    if (id === "features") prefetchLinks(FEATURE_LINKS);
+    if (id === "features") prefetchLinks(FEATURE_MENU_LINKS);
   }
 
   function scheduleCloseDropdownDesktop() {
@@ -125,7 +117,7 @@ export default function SiteHeader() {
     clearTimeout(dropdownCloseTimer.current);
     setOpenDropdown((current) => (current === id && isMobile ? null : id));
     if (id === "industries") prefetchLinks(INDUSTRY_LINKS);
-    if (id === "features") prefetchLinks(FEATURE_LINKS);
+    if (id === "features") prefetchLinks(FEATURE_MENU_LINKS);
   }
 
   useEffect(() => {
@@ -262,7 +254,7 @@ export default function SiteHeader() {
             </div>
           </div>
           <div
-            className={`nav-dropdown${featuresOpen ? " is-open" : ""}`}
+            className={`nav-dropdown nav-dropdown-wide${featuresOpen ? " is-open" : ""}`}
             ref={featuresRef}
             onMouseEnter={() => openDropdownDesktop("features")}
             onMouseLeave={scheduleCloseDropdownDesktop}
@@ -279,21 +271,54 @@ export default function SiteHeader() {
               <FieldDropdownIcon size={14} />
             </button>
             <div
-              className="nav-dropdown-menu"
+              className="nav-dropdown-menu nav-mega nav-features"
               id="features-menu"
               role="menu"
               hidden={!featuresOpen}
             >
-              {FEATURE_LINKS.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  role="menuitem"
-                  onClick={closeMenu}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              <div className="nav-features-cols">
+                {FEATURE_MENU.map((column) => (
+                  <div className="nav-features-col" key={column.title}>
+                    <p className="nav-features-title">{column.title}</p>
+                    {column.items.map((item) => {
+                      const Icon = FEATURE_ICONS[item.icon];
+                      return (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="nav-features-item"
+                          role="menuitem"
+                          onClick={closeMenu}
+                        >
+                          <span className="nav-features-icon" aria-hidden="true">
+                            <Icon size={18} />
+                          </span>
+                          {item.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+              <Link
+                href="/pricing"
+                className="nav-features-promo"
+                role="menuitem"
+                onClick={closeMenu}
+              >
+                <img
+                  src="/assets/features/pipeline-management-og.webp"
+                  alt=""
+                  width={1200}
+                  height={630}
+                  loading="lazy"
+                />
+                <strong>Compare plans and features</strong>
+                <span>Every feature by plan, starting with a Free plan for 1 user.</span>
+                <span className="nav-features-promo-link">
+                  View pricing <ArrowIcon size={13} />
+                </span>
+              </Link>
             </div>
           </div>
           <Link href="/integrations" onClick={closeMenu}>
