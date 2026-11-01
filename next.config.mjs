@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    // The host reports ~56 CPUs but has far less memory; one worker per CPU aborts the build.
+    cpus: 4,
+    staticGenerationRetryCount: 1,
+  },
   async headers() {
     return [
       {
