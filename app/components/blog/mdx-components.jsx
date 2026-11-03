@@ -40,19 +40,24 @@ export function BlogCtaBox({
   );
 }
 
-function Callout({ title, tone = "info", children }) {
+function CalloutTitle({ level, children }) {
+  const Tag = level === 2 || level === 3 ? `h${level}` : "p";
+  return <Tag className="blog-callout-title">{children}</Tag>;
+}
+
+function Callout({ title, tone = "info", level, children }) {
   return (
     <aside className={`blog-callout is-${tone}`}>
-      {title ? <p className="blog-callout-title">{title}</p> : null}
+      {title ? <CalloutTitle level={level}>{title}</CalloutTitle> : null}
       <div>{children}</div>
     </aside>
   );
 }
 
-function KeyTakeaway({ title = "Key takeaways", children }) {
+function KeyTakeaway({ title = "Key takeaways", level = 2, children }) {
   return (
     <aside className="blog-takeaway">
-      <p className="blog-callout-title">{title}</p>
+      <CalloutTitle level={level}>{title}</CalloutTitle>
       <div>{children}</div>
     </aside>
   );

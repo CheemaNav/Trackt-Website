@@ -144,7 +144,7 @@ export default function HomePageClient() {
             <span className="marquee-logo" key={`${logo.name}-${index}`}>
               <img
                 src={logo.src}
-                alt={index < LOGO_ROW.length ? logo.name : ""}
+                alt={`${logo.name} logo`}
                 aria-hidden={index < LOGO_ROW.length ? undefined : true}
                 width={logo.width}
                 height={logo.height}
@@ -772,7 +772,7 @@ export default function HomePageClient() {
               {AI_FEATURES.map((feature) => (
                 <article className="ai-feature-card" key={feature.title}>
                   <div className="ai-card-icon">
-                    <img src={feature.icon} alt="" width={60} height={60} loading="lazy" decoding="async" />
+                    <img src={feature.icon} alt={`${feature.title} icon`} width={60} height={60} loading="lazy" decoding="async" />
                   </div>
                   <h3 className="ai-card-title">{feature.title}</h3>
                   <p className="ai-card-description">{feature.body}</p>

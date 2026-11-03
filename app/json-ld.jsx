@@ -677,14 +677,37 @@ export function BlogPostingJsonLd({ post }) {
     articleSection: post.category.label,
     keywords: post.primaryKeyword || undefined,
     wordCount: post.words,
-    author:
-      post.author && post.author !== `${SITE_NAME} Team`
-        ? { "@type": "Person", name: post.author }
-        : BLOG_ORGANIZATION,
+    author: personSchema(post.author),
     publisher: BLOG_ORGANIZATION,
   };
 
   return <JsonLd id="schema-blogposting" data={data} />;
+}
+
+function personSchema(author) {
+  return {
+    "@type": "Person",
+    name: author.name,
+    ...(author.slug ? { url: `${SITE_URL}/authors/${author.slug}` } : {}),
+    ...(author.jobTitle ? { jobTitle: author.jobTitle } : {}),
+    worksFor: { "@type": "Organization", name: SITE_NAME, url: HOME_URL },
+  };
+}
+
+export function PersonJsonLd({ author }) {
+  const url = `${SITE_URL}/authors/${author.slug}`;
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    url,
+    mainEntity: {
+      ...personSchema(author),
+      "@id": `${url}#person`,
+      description: author.bio,
+    },
+  };
+
+  return <JsonLd id="schema-person" data={data} />;
 }
 
 export function BlogCollectionJsonLd({ name, description, path, posts }) {

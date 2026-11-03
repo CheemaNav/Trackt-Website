@@ -86,7 +86,7 @@ export default function HeroLottie() {
         <img
           className="hero-lottie-poster"
           src={POSTER_SRC}
-          alt=""
+          alt="TracktCRM dashboard loading"
           width={1440}
           height={890}
           fetchPriority="high"

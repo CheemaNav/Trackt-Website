@@ -5,6 +5,7 @@ import BlogToc from "../../components/blog/blog-toc";
 import ShareButtons from "../../components/blog/share-buttons";
 import { BlogCtaBox, MDX_COMPONENTS } from "../../components/blog/mdx-components";
 import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "../../json-ld";
+import { authorHref } from "@/lib/authors";
 import { compilePost, getAllPosts, getPost, getRelatedPosts, toCard } from "@/lib/blog";
 import { formatDate } from "@/lib/blog-format";
 import { absoluteUrl, buildBlogPostMetadata, PAGE_SEO } from "@/lib/seo";
@@ -83,10 +84,25 @@ export default async function BlogPostPage({ params }) {
             <h1 className="blog-post-title">{post.title}</h1>
             <p className="blog-post-excerpt">{post.excerpt}</p>
             <p className="blog-post-meta">
-              {post.author ? <span>By {post.author}</span> : null}
+              <span>
+                By{" "}
+                {post.author.slug ? (
+                  <Link href={authorHref(post.author)} rel="author">
+                    {post.author.name}
+                  </Link>
+                ) : (
+                  post.author.name
+                )}
+              </span>{" "}
+              <span className="blog-meta-sep" aria-hidden="true">
+                ·
+              </span>{" "}
               <span>
                 Updated <time dateTime={post.updatedAt}>{formatDate(post.updatedAt)}</time>
-              </span>
+              </span>{" "}
+              <span className="blog-meta-sep" aria-hidden="true">
+                ·
+              </span>{" "}
               <span>{post.readingTime} min read</span>
             </p>
           </div>
@@ -120,7 +136,7 @@ export default async function BlogPostPage({ params }) {
                 {post.faqs.map((item, index) => (
                   <details className="faq-item" key={item.q} open={index === 0}>
                     <summary>
-                      {item.q}
+                      <h3 className="blog-faq-q">{item.q}</h3>
                       <span className="faq-toggle" aria-hidden="true" />
                     </summary>
                     <p>{item.a}</p>
@@ -135,9 +151,9 @@ export default async function BlogPostPage({ params }) {
               <h2 id="sources">Sources</h2>
               {post.sourcesCheckedAt ? (
                 <p>
-                  Checked on <time dateTime={post.sourcesCheckedAt}>{formatDate(post.sourcesCheckedAt)}</time>{" "}
-                  from each vendor&apos;s official pages. Plans and prices change, so confirm current details on
-                  these links before you buy.
+                  Sources checked on{" "}
+                  <time dateTime={post.sourcesCheckedAt}>{formatDate(post.sourcesCheckedAt)}</time>. Plans and
+                  prices change, so confirm current details on these links before you buy.
                 </p>
               ) : null}
               <ul>
@@ -160,7 +176,7 @@ export default async function BlogPostPage({ params }) {
             title={post.cta?.title ?? "Put your leads and WhatsApp chats in one pipeline"}
             text={
               post.cta?.text ??
-              "Start on the Free plan for 1 user. WhatsApp is included and Meta message charges apply. No credit card needed."
+              "Start on the Free plan for 1 user. No credit card needed."
             }
           />
 

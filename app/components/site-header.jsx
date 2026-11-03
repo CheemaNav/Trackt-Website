@@ -308,7 +308,7 @@ export default function SiteHeader() {
               >
                 <img
                   src="/assets/features/pipeline-management-og.webp"
-                  alt=""
+                  alt="TracktCRM sales pipeline board"
                   width={1200}
                   height={630}
                   loading="lazy"

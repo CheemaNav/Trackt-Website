@@ -25,7 +25,10 @@ export default function BlogCard({ post, headingLevel = "h2" }) {
         <div className="blog-card-meta">
           <Link href={`/blog/category/${post.category.slug}`} className="blog-chip">
             {post.category.label}
-          </Link>
+          </Link>{" "}
+          <span className="blog-meta-sep" aria-hidden="true">
+            ·
+          </span>{" "}
           <time dateTime={post.publishedAt}>{formatDate(post.publishedAt, "short")}</time>
         </div>
       </div>

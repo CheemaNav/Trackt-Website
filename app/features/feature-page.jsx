@@ -222,7 +222,7 @@ export default function FeaturePage({ route, data }) {
           <ul className="fp-logos" aria-label="Popular TracktCRM integrations">
             {INTEGRATION_LOGOS.map((logo) => (
               <li key={logo.name}>
-                <img src={logo.src} alt="" width={28} height={28} loading="lazy" decoding="async" />
+                <img src={logo.src} alt={`${logo.name} logo`} width={28} height={28} loading="lazy" decoding="async" />
                 {logo.name}
               </li>
             ))}
