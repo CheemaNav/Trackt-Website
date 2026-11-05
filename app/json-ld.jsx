@@ -759,3 +759,29 @@ export function TravelCrmJsonLd({ faqs }) {
     </>
   );
 }
+
+/** Coworking CRM page WebPage + FAQ + Service schema. */
+export function CoworkingCrmJsonLd({ faqs }) {
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Coworking Space CRM Software",
+    provider: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: HOME_URL,
+    },
+    areaServed: "Worldwide",
+    description:
+      "TracktCRM is a coworking space CRM that captures enquiries, tracks cabin and seat availability, creates quotations and agreements and bills members every month.",
+    url: `${SITE_URL}/industries/crm-for-coworking`,
+  };
+
+  return (
+    <>
+      <FaqJsonLd id="schema-coworking-faq" faqs={faqs} />
+      <WebPageJsonLd route="/industries/crm-for-coworking" />
+      <JsonLd id="schema-coworking-service" data={service} />
+    </>
+  );
+}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LuBuilding2 } from "react-icons/lu";
 import {
   AgencyIcon,
   ArrowIcon,
@@ -21,6 +22,7 @@ export const INDUSTRY_ICONS = {
   automotive: AutomotiveIcon,
   healthcare: HealthcareIcon,
   travel: TravelIcon,
+  coworking: LuBuilding2,
 };
 
 /** Cross-links to the other live industry pages, plus a link back to the hub. */

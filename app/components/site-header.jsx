@@ -9,6 +9,7 @@ import {
   ArrowIcon,
   AutomotiveIcon,
   CloseIcon,
+  CoworkingIcon,
   EducationIcon,
   FieldDropdownIcon,
   HealthcareIcon,
@@ -75,6 +76,12 @@ const INDUSTRY_LINKS = [
     href: "/industries/crm-for-travel",
     Icon: TravelIcon,
     desc: "Follow up every trip quote and bring travellers back next season.",
+  },
+  {
+    label: "Coworking",
+    href: "/industries/crm-for-coworking",
+    Icon: CoworkingIcon,
+    desc: "Track space enquiries, tours, quotations and member agreements.",
   },
 ];
 

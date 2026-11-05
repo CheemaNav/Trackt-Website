@@ -6,6 +6,7 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa6";
 import {
+  LuArmchair,
   LuArrowRight,
   LuBoxes,
   LuBriefcase,
@@ -278,6 +279,10 @@ export function HealthcareIcon({ size = 22 }) {
 
 export function TravelIcon({ size = 22 }) {
   return <LuPlane size={size} strokeWidth={2} />;
+}
+
+export function CoworkingIcon({ size = 22 }) {
+  return <LuArmchair size={size} strokeWidth={2} />;
 }
 
 export function MobileIcon({ size = 22 }) {

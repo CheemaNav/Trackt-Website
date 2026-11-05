@@ -112,6 +112,20 @@ export const LIVE_INDUSTRIES = [
     ],
     cta: "See the travel CRM",
   },
+  {
+    id: "coworking",
+    name: "Coworking CRM",
+    href: "/industries/crm-for-coworking",
+    icon: "coworking",
+    body: "A coworking CRM that captures space enquiries, tracks cabin and seat availability, sends quotations and agreements and bills members every month.",
+    points: [
+      "Enquiries from forms, ads and WhatsApp in one inbox",
+      "Cabin, seat and room availability",
+      "Quotation, proforma and agreement from the lead",
+      "Monthly member invoices",
+    ],
+    cta: "See the coworking CRM",
+  },
 ];
 
 export const WHY_POINTS = [
@@ -123,6 +137,7 @@ export const WHY_POINTS = [
   "Car dealerships need fast replies, test drives and after-sales follow-up",
   "Clinics need fast replies, appointments and follow-up reminders",
   "Travel agencies need quote follow-ups and help with seasonal enquiry spikes",
+  "Coworking spaces need live space availability, agreements and monthly member billing",
 ];
 
 /** Not linked until each page is live. */

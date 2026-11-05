@@ -11,7 +11,7 @@ Posts go in `content/blog/<slug>.mdx`. Set Status to `done` when a post is live 
 | free-crm-small-business | done |
 | cloud-based-crm-guide | done |
 | crm-software-examples | done |
-| what-is-crm | todo |
+| what-is-crm | done |
 | erp-vs-crm | todo |
 | crm-benefits-drawbacks | todo |
 | how-to-choose-a-crm | todo |
@@ -37,6 +37,7 @@ Posts go in `content/blog/<slug>.mdx`. Set Status to `done` when a post is live 
 | Slug | Status |
 |---|---|
 | gentle-reminder-email-templates | done |
+| sales-kpis-examples | done |
 | sales-call-scripts | todo |
 | lead-management-process | todo |
 | sales-dashboard-examples | todo |

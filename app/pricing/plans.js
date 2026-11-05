@@ -29,6 +29,7 @@ export const PLANS = [
       { text: "WhatsApp integration" },
       { text: "Standard dashboard: charts & KPIs" },
       { text: "File storage", excluded: true },
+      { text: "Inventory management", excluded: true },
     ],
   },
   {
@@ -48,6 +49,7 @@ export const PLANS = [
       { text: "2 on-demand integrations based on your business requirements" },
       { text: "Custom website form" },
       { text: "Multi-team pipeline management" },
+      { text: "Inventory management: properties, rentals, vehicles, events and tours" },
       { text: "Dedicated onboarding specialist" },
     ],
   },
