@@ -40,6 +40,85 @@ export const FEATURES = [
   },
 ];
 
+export const SHOWCASE = [
+  {
+    id: "setup",
+    kicker: "SET UP YOUR SPACE",
+    title: "Set up locations, floors and spaces once",
+    body: "Add each location with its city and timezone, then its floors, then every space on them. Each space keeps its type, floor, capacity and monthly price, so the whole team quotes from the same list.",
+    points: [
+      "Locations with city and timezone",
+      "Floors with level and display order",
+      "Private offices, dedicated desks, hot desks and meeting rooms with capacity and price",
+      "Set a space to maintenance or deactivate it without deleting it",
+    ],
+    image: {
+      src: "/assets/industries/coworking/coworking-setup-locations-floors-spaces.webp",
+      alt: "TracktCRM coworking setup showing a location, its floors and a spaces list with type, floor, capacity and monthly price",
+      width: 1080,
+      height: 945,
+    },
+  },
+  {
+    id: "book",
+    kicker: "BOOK FROM THE LEAD",
+    title: "Book a space without leaving the lead",
+    body: "Open the Spaces tab on a lead, click Book a space and choose from the cabins, desks and rooms on screen. Filter by location, floor and type, so a prospect asking for a four-seat cabin gets an answer while they are still on the call.",
+    points: [
+      "Every booking stays on the lead record",
+      "Filter by location, floor and space type",
+      "Each card shows the type, capacity, monthly price and availability",
+    ],
+    image: {
+      src: "/assets/industries/coworking/coworking-book-space-from-lead.webp",
+      alt: "TracktCRM lead record with the Book a space window open, showing available private offices, a dedicated desk, a hot desk and a meeting room",
+      width: 1024,
+      height: 480,
+    },
+  },
+  {
+    id: "price",
+    kicker: "PRICE AND CONFIRM",
+    title: "See exactly what the client pays before you confirm",
+    body: "Add the guest or company name and a start date, then choose no end date for a rolling booking or set a fixed end date. Pick a discount if you offer one, and TracktCRM shows the list price, the tax and the monthly amount the client pays.",
+    points: [
+      "Rolling or fixed-term bookings",
+      "Notes for anything agreed on the tour",
+      "List price, discount, tax and final monthly price in one view",
+    ],
+    image: {
+      src: "/assets/industries/coworking/coworking-booking-price.webp",
+      alt: "TracktCRM Book space form with guest name, start date, end date options, notes, discount and the list price, tax and monthly amount the client pays",
+      width: 566,
+      height: 914,
+      portrait: true,
+    },
+  },
+];
+
+export const SPACE_STATUSES = [
+  {
+    id: "available",
+    label: "Available",
+    body: "Free for the time window you picked, so you can offer it straight away.",
+  },
+  {
+    id: "booked",
+    label: "Booked",
+    body: "Taken for those dates, so nobody on the team can promise it twice.",
+  },
+  {
+    id: "hold",
+    label: "On hold",
+    body: "Marked on hold, so the team knows not to offer it yet.",
+  },
+  {
+    id: "maintenance",
+    label: "Maintenance",
+    body: "Out of use until you set it back, without losing its details.",
+  },
+];
+
 export const PROCESS_STEPS = [
   {
     n: "01",

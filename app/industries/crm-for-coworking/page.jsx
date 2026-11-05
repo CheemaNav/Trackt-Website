@@ -16,6 +16,8 @@ import {
   FEATURES,
   PROBLEM_POINTS,
   PROCESS_STEPS,
+  SHOWCASE,
+  SPACE_STATUSES,
 } from "./data";
 import { buildMetadata } from "@/lib/seo";
 
@@ -83,10 +85,10 @@ export default function CoworkingCrmPage() {
             </div>
             <figure className="re-banner-media re-banner-media-ui">
               <img
-                src="/assets/leadmanage.webp"
-                alt="TracktCRM coworking CRM pipeline moving space enquiries from tour to quotation to signed agreement"
-                width={1383}
-                height={695}
+                src="/assets/industries/coworking/coworking-floor-view.webp"
+                alt="TracktCRM coworking floor view showing private offices, desks and a meeting room on two floors with available, booked, on hold and maintenance status"
+                width={1024}
+                height={484}
                 fetchPriority="high"
                 decoding="async"
               />
@@ -165,6 +167,60 @@ export default function CoworkingCrmPage() {
                 </article>
               );
             })}
+          </div>
+        </section>
+
+        {SHOWCASE.map((row, index) => (
+          <section className="section reveal fp-deep" id={row.id} key={row.id}>
+            <div className={`re-split${index % 2 ? " re-split-reverse fp-flip" : ""}`}>
+              <div className="re-split-copy">
+                <p className="kicker">{row.kicker}</p>
+                <h2 className="h2">{row.title}</h2>
+                <p className="re-section-intro">{row.body}</p>
+                <ul className="fp-checklist cw-checklist">
+                  {row.points.map((point) => (
+                    <li key={point}>
+                      <span className="re-point-check" aria-hidden="true">
+                        <CheckIcon size={14} />
+                      </span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <figure
+                className={`re-photo re-photo-contain cw-shot${row.image.portrait ? " cw-shot-portrait" : ""}`}
+              >
+                <img
+                  src={row.image.src}
+                  alt={row.image.alt}
+                  width={row.image.width}
+                  height={row.image.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </div>
+          </section>
+        ))}
+
+        <section className="section reveal" id="floor-view">
+          <div className="re-section-head is-wide">
+            <p className="kicker">LIVE FLOOR VIEW</p>
+            <h2 className="h2">Know the status of every space at a glance</h2>
+            <p className="re-section-intro industry-wide-intro">
+              The floor view groups spaces by floor and counts how many are
+              available, booked, on hold or under maintenance for any time
+              window, from the next hour to the next 30 days.
+            </p>
+          </div>
+          <div className="cw-status-grid">
+            {SPACE_STATUSES.map((status) => (
+              <article className="cw-status-card" key={status.id}>
+                <h3 className={`cw-chip is-${status.id}`}>{status.label}</h3>
+                <p>{status.body}</p>
+              </article>
+            ))}
           </div>
         </section>
 
